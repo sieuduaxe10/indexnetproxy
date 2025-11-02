@@ -1,4 +1,4 @@
-export const AdsIcon = () => {
+export const AdsIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,11 +15,9 @@ export const AdsIcon = () => {
           "var(--token-0cf05299-ac25-4756-9455-d3a56511e105, rgb(29, 204, 163))",
         flexShrink: 0,
       }}
+      {...props}
     >
-      <g
-        color="var(--token-0cf05299-ac25-4756-9455-d3a56511e105, rgb(29, 204, 163))"
-        
-      >
+      <g color="var(--token-0cf05299-ac25-4756-9455-d3a56511e105, rgb(29, 204, 163))">
         <path
           d="M144,69.09V170.91L50.24,199.67A8,8,0,0,1,40,192V48a8,8,0,0,1,10.24-7.67Z"
           opacity="0.2"

@@ -1,4 +1,4 @@
-export const ZoomIcon = () => {
+export const ZoomIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,6 +15,7 @@ export const ZoomIcon = () => {
           "var(--token-1e7ae411-f286-450c-a069-e9d414f4b713, rgb(5, 168, 230))",
         flexShrink: 0,
       }}
+      {...props}
     >
       <g
         color="var(--token-1e7ae411-f286-450c-a069-e9d414f4b713, rgb(5, 168, 230))"

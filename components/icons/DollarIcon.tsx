@@ -1,4 +1,4 @@
-export const DollcarIcon = () => {
+export const DollarIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,6 +15,7 @@ export const DollcarIcon = () => {
           "var(--token-89d9e315-f04a-40f9-a4a1-41ee7a97f847, rgb(255, 120, 31))",
         flexShrink: 0,
       }}
+      {...props}
     >
       <g
         color="var(--token-89d9e315-f04a-40f9-a4a1-41ee7a97f847, rgb(255, 120, 31))"

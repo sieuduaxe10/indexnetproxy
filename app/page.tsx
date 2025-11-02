@@ -1,4 +1,5 @@
 import { CaseStudies } from "@/components/CaseStudies";
+import { Contact } from "@/components/Contact";
 import { FAQs } from "@/components/FAQs";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Heder";
@@ -8,7 +9,6 @@ import { Pricing } from "@/components/Pricing";
 import { Resellers } from "@/components/Resellers";
 import { TopCountries } from "@/components/TopCountries";
 import { TrustedBy } from "@/components/TrustedBy";
-import { Contact } from "lucide-react";
 
 const MainPage = () => {
   return (
