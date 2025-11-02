@@ -1,0 +1,4 @@
+{
+  "editor.formatOnSave": true,
+  "tailwindCSS.classFunctions": ["tw", "clsx", "cn", "cva", "tw\\.[a-z-]+"]
+}
