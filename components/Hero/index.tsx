@@ -3,18 +3,24 @@ import { Button } from "../ui/button";
 export const Hero = () => {
   return (
     <section className="container">
-      <h1>
-        Residential Proxies P2P <br />
-        The best Proxy solution for MMO
-      </h1>
-      <p>
+      <div className="text-center font-sans">
+        <h2 className="text-3xl font-semibold text-gray-900">
+          Residential
+          <span className="text-orange-500">Proxies P2P</span>
+        </h2>
+        <p className="mt-1 text-2xl text-gray-800">
+          The best Proxy solution for
+          <span className="text-cyan-500 font-medium">MMO</span>
+        </p>
+      </div>
+      <p className="mx-auto text-[15px] leading-[25.5px] font-inter font-normal text-[rgb(87,96,117)] text-center break-words w-[768px] h-[51px] antialiased">
         With over 62 million proxy IPs across more than 220 countries and
         cities, we provide seamless, secure, and reliable proxy solutions for
         all your online needs.
       </p>
       <div>
         <Button size="lg" className="get-started-button">
-          Get Started
+          GET STARTED
         </Button>
         <Button variant={"outline"}>VIEW PRICE - AT $0.99</Button>
       </div>

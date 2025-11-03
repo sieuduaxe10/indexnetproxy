@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Noto_Sans } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const notoSans = Noto_Sans({
-  variable: "--font-noto-sans",
-  subsets: ["latin"],
-});
+import { geistSans, ibmPlexMono, notoSans } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Residential P2P Proxies – The Best Proxy Solution for MMO",
@@ -26,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notoSans.variable} ${geistSans.variable} antialiased`}
+        className={`${notoSans.variable} ${ibmPlexMono.variable} ${geistSans.variable} antialiased`}
       >
         {children}
       </body>
