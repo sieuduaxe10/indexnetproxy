@@ -3,11 +3,18 @@ import { ChromeIcon } from "../icons/ChromeIcon";
 import { WindowIcon } from "../icons/WindowIcon";
 import { AndroidIcon } from "../icons/AndroidIcon";
 import { AppleIcon } from "../icons/AppleIcon";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
     <footer className="pt-20 pb-10 bg-[#f2f7f7]">
-      <div className="container flex flex-row gap-10">
+      <div className="container flex flex-col lg:flex-row gap-10 px-5 lg:px-10">
         <div className="flex flex-col gap-30 max-w-[464px]">
           <div>
             <Image
@@ -49,29 +56,134 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="w-full ">
-          <div>
-            <div>Account</div>
-            <div>Login</div>
+        <div className="hidden min-[810px]:grid w-full grid-cols-4">
+          <div className="flex flex-col gap-4">
+            <div className="font-neue-kaine-bold text-primary text-21">
+              Account
+            </div>
+            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
+              Login
+            </div>
           </div>
-          <div>
-            <div>Affiliate</div>
-            <div>Reseller Program</div>
-            <div>Link Program</div>
+          <div className="flex flex-col gap-4">
+            <div className="font-neue-kaine-bold text-primary text-21">
+              Affiliate
+            </div>
+            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
+              Reseller Program
+            </div>
+            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
+              Link Program
+            </div>
           </div>
-          <div>
-            <div>Category</div>
-            <div>FAQs</div>
-            <div>Pricing</div>
-            <div>Contact</div>
+          <div className="flex flex-col gap-4">
+            <div className="font-neue-kaine-bold text-primary text-21">
+              Category
+            </div>
+            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
+              FAQs
+            </div>
+            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
+              Pricing
+            </div>
+            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
+              Contact
+            </div>
           </div>
-          <div>
-            <div>Service, Term</div>
-            <div>Privacy Policy</div>
-            <div>Cockie Policy</div>
-            <div>Term, service</div>
-            <div>Refund Policy</div>
+          <div className="flex flex-col gap-4">
+            <div className="font-neue-kaine-bold text-primary text-21">
+              Service, Term
+            </div>
+            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
+              Privacy Policy
+            </div>
+            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
+              Cockie Policy
+            </div>
+            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
+              Term, service
+            </div>
+            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
+              Refund Policy
+            </div>
           </div>
+        </div>
+
+        <div className="min-[810px]:hidden flex flex-col gap-4">
+          <Accordion
+            type="single"
+            collapsible
+            className="border p-4 border-[#e3ecec] rounded-xl"
+          >
+            <AccordionItem value="item-1">
+              <AccordionTrigger className="font-ibm-plex-mono text-21 text-primary p-0! hover:no-underline">
+                Account
+              </AccordionTrigger>
+              <AccordionContent className="pb-0! mt-2">
+                <div className="flex flex-col gap-2 font-ibm-plex-mono text-xs text-footer-text">
+                  <div>Create Account</div> <div>Login</div>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+          <Accordion
+            type="single"
+            collapsible
+            className="border p-4 border-[#e3ecec] rounded-xl"
+          >
+            <AccordionItem value="item-1">
+              <AccordionTrigger className="font-ibm-plex-mono text-21 text-primary p-0! hover:no-underline">
+                Category
+              </AccordionTrigger>
+              <AccordionContent className="pb-0! mt-2">
+                <div className="flex flex-col gap-2 font-ibm-plex-mono text-xs text-footer-text">
+                  <Link href={"#"} className="text-primary underline">
+                    FAQs
+                  </Link>
+                  <Link href={"#"} className="text-primary underline">
+                    PRICING
+                  </Link>
+                  <Link href={"#"} className="text-primary underline">
+                    CONTACT
+                  </Link>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+          <Accordion
+            type="single"
+            collapsible
+            className="border p-4 border-[#e3ecec] rounded-xl"
+          >
+            <AccordionItem value="item-1">
+              <AccordionTrigger className="font-ibm-plex-mono text-21 text-primary p-0! hover:no-underline">
+                Service, Term
+              </AccordionTrigger>
+              <AccordionContent className="pb-0! mt-2">
+                <div className="flex flex-col gap-2 font-ibm-plex-mono text-xs text-footer-text">
+                  <div>PRIVACY POLICY</div> <div>COOKIE POLICY</div>
+                  <div>TERMS OF SERVICE</div>
+                  <div>REFUND POLICY</div>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+          <Accordion
+            type="single"
+            collapsible
+            className="border p-4 border-[#e3ecec] rounded-xl"
+          >
+            <AccordionItem value="item-1">
+              <AccordionTrigger className="font-ibm-plex-mono text-21 text-primary p-0! hover:no-underline">
+                Affiliate
+              </AccordionTrigger>
+              <AccordionContent className="pb-0! mt-2">
+                <div className="flex flex-col gap-2 font-ibm-plex-mono text-xs text-footer-text">
+                  <div>RESELLER PROGRAM</div> <div>LINK PROGRAM</div>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </div>
     </footer>
