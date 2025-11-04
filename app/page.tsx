@@ -1,3 +1,4 @@
+import { BlurBackground } from "@/components/BlurBackground";
 import { CaseStudies } from "@/components/CaseStudies";
 import { Contact } from "@/components/Contact";
 import { FAQs } from "@/components/FAQs";
@@ -26,6 +27,7 @@ const MainPage = () => {
       <Resellers />
       <Footer />
       <Partnerships />
+      <BlurBackground />
     </main>
   );
 };

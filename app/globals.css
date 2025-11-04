@@ -11,6 +11,7 @@
   --font-mono: var(--font-geist-mono);
   --font-neue-kaine: var(--font-neue-kaine);
   --font-neue-kaine-bold: var(--font-neue-kaine-bold);
+  --font-ibm-plex-mono: var(--font-ibm-plex-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -55,6 +56,7 @@
   --breakpoint-7xl: 75rem; /* 1200px - default is 1280px */
   --container-960: 60rem; /* 960px */
   --text-13: var(--text-13);
+  --spacing-30: var(--spacing-30);
 }
 
 :root {
@@ -65,7 +67,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.72 0.19 47.56); /*  #ff7719 */
+  --primary: oklch(0.74 0.17 47.74); /*  #fc833d */
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(97.015% 0.00011 271.152);
   --secondary-foreground: oklch(0.205 0 0);
@@ -103,6 +105,7 @@
   --nav-orange-light: rgb(252 244 230);
   --footer-background: rgb(7, 22, 57);
   --text-13: 13px;
+  --spacing-30: 30px;
 }
 
 .dark {

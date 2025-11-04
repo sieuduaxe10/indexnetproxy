@@ -11,7 +11,7 @@ export const notoSans = Noto_Sans({
 });
 
 export const ibmPlexMono = IBM_Plex_Mono({
-  variable: "--font-noto-sans",
+  variable: "--font-ibm-plex-mono",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
