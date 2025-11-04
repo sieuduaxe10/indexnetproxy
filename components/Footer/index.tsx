@@ -61,7 +61,7 @@ export const Footer = () => {
             <div className="font-neue-kaine-bold text-primary text-21">
               Account
             </div>
-            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
+            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
               Login
             </div>
           </div>
@@ -69,42 +69,48 @@ export const Footer = () => {
             <div className="font-neue-kaine-bold text-primary text-21">
               Affiliate
             </div>
-            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
-              Reseller Program
-            </div>
-            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
-              Link Program
+            <div>
+              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
+                Reseller Program
+              </div>
+              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
+                Link Program
+              </div>
             </div>
           </div>
           <div className="flex flex-col gap-4">
             <div className="font-neue-kaine-bold text-primary text-21">
               Category
             </div>
-            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
-              FAQs
-            </div>
-            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
-              Pricing
-            </div>
-            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
-              Contact
+            <div>
+              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
+                FAQs
+              </div>
+              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
+                Pricing
+              </div>
+              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
+                Contact
+              </div>
             </div>
           </div>
           <div className="flex flex-col gap-4">
             <div className="font-neue-kaine-bold text-primary text-21">
               Service, Term
             </div>
-            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
-              Privacy Policy
-            </div>
-            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
-              Cockie Policy
-            </div>
-            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
-              Term, service
-            </div>
-            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium">
-              Refund Policy
+            <div>
+              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
+                Privacy Policy
+              </div>
+              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
+                Cockie Policy
+              </div>
+              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
+                Term, service
+              </div>
+              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
+                Refund Policy
+              </div>
             </div>
           </div>
         </div>
