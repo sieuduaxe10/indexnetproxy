@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { geistSans, ibmPlexMono, notoSans } from "./fonts";
+import localFont from "next/font/local";
+
+const neueKaineFont = localFont({
+  src: "../fonts/neue-kaine-variable.ttf",
+  variable: "--font-neue-kaine",
+});
+
+
 
 export const metadata: Metadata = {
   title: "Residential P2P Proxies – The Best Proxy Solution for MMO",
@@ -16,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notoSans.variable} ${ibmPlexMono.variable} ${geistSans.variable} antialiased`}
+        className={`${notoSans.variable} ${ibmPlexMono.variable} ${geistSans.variable} ${neueKaineFont.variable} antialiased`}
       >
         {children}
       </body>
