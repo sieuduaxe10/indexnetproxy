@@ -1,4 +1,4 @@
-import { title } from "process";
+import Image from "next/image";
 
 export const Partnerships = () => {
   const partnerShips = [
@@ -173,24 +173,82 @@ export const Partnerships = () => {
       link: "/affiliate-program",
     },
   ];
-  return (
-    <section className="container">
-      <h3>Partnerships</h3>
-      <ul className="center gap-2 flex-wrap">
-        {partnerShips.map((partner, index) => (
-          <li key={index}>
-            <a href={partner.link}>{partner.title}</a>
-          </li>
-        ))}
-      </ul>
 
+  const disclaimerPartner = [
+    "/images/disclaimer/9pay.png",
+    "/images/disclaimer/uob.png",
+    "/images/disclaimer/bank-of-china.png",
+    "/images/disclaimer/mizuho.png",
+    "/images/disclaimer/bitcoin.png",
+    "/images/disclaimer/visa.png",
+    "/images/disclaimer/tazapay.png",
+    "/images/disclaimer/mastercard.png",
+    "/images/disclaimer/bidv.png",
+    "/images/disclaimer/paypal.png",
+    "/images/disclaimer/mbbank.png",
+    "/images/disclaimer/true-money.png",
+    "/images/disclaimer/shopee-pay.png",
+    "/images/disclaimer/line-pay.png",
+    "/images/disclaimer/alipay.svg",
+    "/images/disclaimer/link-aja.png",
+    "/images/disclaimer/dana.png",
+    "/images/disclaimer/grab-pay.png",
+  ];
+
+  return (
+    <section className="bg-footer-background">
+      <div className="relative">
+        <div className="absolute top-0 left-0 right-0 h-[270px] z-0 bottom-0">
+          <Image
+            src={"/images/disclaimer/background.png"}
+            alt={"Disclaimer background"}
+            objectFit="cover"
+            fill
+          />
+        </div>
+        <div className="px-4 md:px-10 py-[30px] relative">
+          <div className="container flex flex-col gap-6">
+            <h3 className="font-neue-kaine-bold text-xl underline text-white hover:text-blue-500 cursor-pointer">
+              Partnerships
+            </h3>
+            <ul className="center flex-wrap">
+              {partnerShips.map((partner, index) => (
+                <li
+                  key={index}
+                  className="text-[#fc833d] hover:underline pr-6 text-13"
+                >
+                  <a href={partner.link}>{partner.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
       {/* Disclaimer */}
-      <div>
-        <p>
-          Disclaimer: Users are responsible for lawful use of our proxy
-          services. We are not liable for misuse. Thank you for your
-          understanding!
-        </p>
+      <div className="px-4 md:px-10 py-[30px] text-white relative">
+        <div className="container flex flex-row">
+          <p className="text-13">
+            Disclaimer: Users are responsible for lawful use of our proxy
+            services. We are not liable for misuse. Thank you for your
+            understanding!
+          </p>
+          <div className="flex gap-2 flex-row flex-wrap">
+            {disclaimerPartner.map((imgSrc, index) => (
+              <div
+                key={index}
+                className="w-[55px] h-[22px] bg-white rounded-xl flex items-center justify-center overflow-hidden"
+              >
+                <Image
+                  width={40}
+                  height={20}
+                  objectFit="contain"
+                  src={imgSrc}
+                  alt={`Disclaimer ${index + 1}`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

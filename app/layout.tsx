@@ -8,7 +8,10 @@ const neueKaineFont = localFont({
   variable: "--font-neue-kaine",
 });
 
-
+const neueKaineBoldFont = localFont({
+  src: "../fonts/neue-kaine-variable-bold.ttf",
+  variable: "--font-neue-kaine-bold",
+});
 
 export const metadata: Metadata = {
   title: "Residential P2P Proxies – The Best Proxy Solution for MMO",
@@ -24,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notoSans.variable} ${ibmPlexMono.variable} ${geistSans.variable} ${neueKaineFont.variable} antialiased`}
+        className={`${notoSans.variable} ${ibmPlexMono.variable} ${geistSans.variable} ${neueKaineFont.variable} ${neueKaineBoldFont.variable} antialiased`}
       >
         {children}
       </body>
