@@ -24,36 +24,49 @@ export const Footer = () => {
               height={43}
             />
           </div>
-          <div>
+          <div className="text-#6c7993 text-13">
             NetProxy.io provides residential proxy services, helping users to
             access the internet anonymously and securely, supporting tasks such
             as web scraping and market research with high speed and reliability.
           </div>
+
           <div className="grid grid-cols-2 font-ibm-plex-mono font-semibold text-xs gap-2">
-            <div className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center">
+            <Link
+              href="https://chromewebstore.google.com/detail/mnloefcpaepkpmhaoipjkpikbnkmbnic?utm_source=item-share-cb"
+              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border"
+            >
               <div className="w-10 h-10">
                 <ChromeIcon />
               </div>
               EXTENSIONS FOR <span className="text-primary">CHROME</span>
-            </div>
-            <div className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center">
+            </Link>
+            <Link
+              href="https://www.proxifier.com/"
+              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border"
+            >
               <div className="w-10 h-10">
                 <WindowIcon />
               </div>
-              DOWNLOAD FOR WINDOWS
-            </div>
-            <div className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center">
+              DOWNLOAD FOR <span className="text-[#ff4929]">WINDOWS</span>
+            </Link>
+            <Link
+              href="https://apps.apple.com/us/app/shadowrocket/id932747118"
+              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border"
+            >
               <div className="w-10 h-10">
                 <AppleIcon />
               </div>
-              DOWNLOAD FOR IOS
-            </div>{" "}
-            <div className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center">
+              DOWNLOAD FOR <span className="text-[#ff4929]">IOS</span>
+            </Link>{" "}
+            <Link
+              href="https://play.google.com/store/apps/details?id=com.scheler.superproxy"
+              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border"
+            >
               <div className="w-10 h-10">
                 <AndroidIcon />
               </div>
-              DOWNLOAD FOR ANDROID
-            </div>
+              DOWNLOAD FOR <span className="text-[#29b4ff]">ANDROID</span>
+            </Link>
           </div>
         </div>
         <div className="hidden min-[810px]:grid w-full grid-cols-4">

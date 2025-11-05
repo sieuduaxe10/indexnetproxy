@@ -1,4 +1,15 @@
+"use client";
+import { Accordion } from "@radix-ui/react-accordion";
+import {
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
+import { useState } from "react";
+import clsx from "clsx";
+
 export const FAQs = () => {
+  const [openItem, setOpenItem] = useState<string | undefined>(undefined);
   const FAQsData = [
     {
       question: "What types of proxies does NetProxy.io offer?",
@@ -24,17 +35,48 @@ export const FAQs = () => {
   ];
   return (
     <section>
-      <div>FAQs</div>
-      <h3>All your Questions, Answered</h3>
-      <div>
-        {FAQsData.map((faq, index) => (
-          <div key={index}>
-            <details>
-              <summary>{faq.question}</summary>
-              {faq.answer}
-            </details>
-          </div>
-        ))}
+      <div className="px-10 py-20">
+        <div className="text-13 text-primary text-center">FAQs</div>
+        <h3 className="text-2xl md:text-33 font-neue-kaine-bold text-center mb-10 text-[#2c303b] font-normal">
+          All your Questions, Answered
+        </h3>
+        <div className="max-w-960 mx-auto p-5 pb-0! bg-[#f2f7f7] rounded-[12px]">
+          <Accordion
+            type="single"
+            collapsible
+            value={openItem}
+            onValueChange={setOpenItem}
+            className="flex flex-col gap-3"
+          >
+            {FAQsData.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={faq.question}
+                className={clsx("item-1 border border-[#e3ecec] rounded-xl", {
+                  "border-primary border-2": openItem === faq.question,
+                })}
+              >
+                <AccordionTrigger
+                  className={clsx(
+                    "p-4 font-inter text-15 hover:no-underline text-[#2c303b] cursor-pointer",
+                    {
+                      "text-primary border-b-0! shadow-none! rounded-br-none! rounded-bl-none!":
+                        openItem === faq.question,
+                    }
+                  )}
+                >
+                  <strong>{faq.question}</strong>
+                </AccordionTrigger>
+                <AccordionContent className="p-4 border-t border-[#e3ecec]">
+                  <div className="flex flex-col gap-2 font-inter text-16 text-footer-text">
+                    {faq.answer}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+            <div className="pb-5"></div>
+          </Accordion>
+        </div>
       </div>
     </section>
   );

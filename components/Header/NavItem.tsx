@@ -14,10 +14,10 @@ export const NavItem = ({
   icon: string;
 }) => {
   return (
-    <li className="">
+    <li className=" cursor-pointer">
       <Link
         href={href}
-        className={`${ibmPlexMono.className} text-xs font-medium `}
+        className={`${ibmPlexMono.className} text-xs font-medium cursor-pointer`}
       >
         <motion.button
           initial={{ backgroundColor: "#fff" }}
@@ -28,14 +28,14 @@ export const NavItem = ({
             zIndex: 1,
             transition: { type: "spring", stiffness: 400, damping: 25 },
           }}
-          className="group relative flex items-center px-4 h-11 rounded-xl"
+          className="group relative flex items-center px-4 h-11 rounded-lg  cursor-pointer"
         >
           <Image
             src={icon}
             alt="Proxy illustration"
             width={20}
             height={20}
-            className="hidden  group-hover:inline"
+            className="hidden group-hover:inline"
           />
           {label}
         </motion.button>

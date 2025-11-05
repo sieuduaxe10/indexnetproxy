@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { geistSans, ibmPlexMono, notoSans } from "./fonts";
+import { geistSans, ibmPlexMono, notoSans, inter } from "./fonts";
 import localFont from "next/font/local";
 
 const neueKaineFont = localFont({
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notoSans.variable} ${ibmPlexMono.variable} ${geistSans.variable} ${neueKaineFont.variable} ${neueKaineBoldFont.variable} antialiased`}
+        className={`${notoSans.variable} ${ibmPlexMono.variable} ${geistSans.variable} ${neueKaineFont.variable} ${neueKaineBoldFont.variable} ${inter.variable} antialiased`}
       >
         {children}
       </body>

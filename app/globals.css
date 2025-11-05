@@ -56,8 +56,14 @@
   --breakpoint-4xl: 50.625rem; /* 810px - default is 896px*/
   --breakpoint-7xl: 75rem; /* 1200px - default is 1280px */
   --container-960: 60rem; /* 960px */
+  --container-600: 600px;
   --text-13: var(--text-13);
   --text-21: var(--text-21);
+  --text-40: var(--text-40);
+  --text-16: var(--text-16);
+  --text-15: var(--text-15);
+  --text-33: var(--text-33);
+  --text-18: var(--text-18);
   --spacing-30: var(--spacing-30);
 }
 
@@ -108,6 +114,11 @@
   --nav-orange-light: rgb(252 244 230);
   --footer-background: rgb(7, 22, 57);
   --text-13: 13px;
+  --text-40: 40px;
+  --text-16: 16px;
+  --text-15: 15px;
+  --text-33: 33px;
+  --text-18: 18px;
   --spacing-30: 30px;
   --text-21: 21px;
 }
@@ -194,5 +205,18 @@
     transform: scale(1.05);
     padding-left: 1rem; /* same as p-4 */
     color: rgb(255, 121, 41);
+  }
+
+  .box-border {
+    border-bottom-width: 1px;
+    border-color: #e3ecec;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-style: solid;
+    border-top-width: 1px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px;
+    opacity: 1;
   }
 }
