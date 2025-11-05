@@ -45,7 +45,7 @@ export const Hero = () => {
 
   const text = " Residential Proxies P2P The best Proxy solution for MMO";
   return (
-    <section className="container mx-auto relative">
+    <section className="container mx-auto relative pt-[168px] 7xl:pt-[172px]">
       <div className="hero-wrapper relative">
         <div className="hero-title-wrapper">
           <div className="hero-title">

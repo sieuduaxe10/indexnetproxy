@@ -2,13 +2,14 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-export const GlobeIcon = () => {
+export const GlobeIcon = (props: React.ComponentProps<"button">) => {
   return (
     <Button
       variant="icon"
       size="icon"
       className="h-9 w-9 rounded-md color-"
       aria-label="Change region"
+      {...props}
     >
       <Image
         src="/images/header/globle.svg"

@@ -3,11 +3,10 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useResponsive } from "@/hooks/useResponsive";
 import { useClickOutside } from "@/hooks/useClickOutside";
-import { GlobeIcon } from "./GlobeIcon";
-import { languages } from "@/common/constant";
-import { ibmPlexMono } from "@/app/fonts";
+import { Hamburger } from "./Hamburger";
+import { HomeIcon } from "../icons/HomeIcon";
 
-const Globe = () => {
+const HamburgerMenu = (props: React.ComponentProps<"div">) => {
   const { isMobile, isTablet } = useResponsive();
   const [menuOpen, setMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -20,6 +19,7 @@ const Globe = () => {
 
   return (
     <div
+      {...props}
       className="relative"
       ref={dropdownRef}
       {...(!(isMobile || isTablet) && {
@@ -27,7 +27,7 @@ const Globe = () => {
         onMouseLeave: () => setMenuOpen(false),
       })}
     >
-      <GlobeIcon
+      <Hamburger
         onClick={() => (isMobile || isTablet) && setMenuOpen((prev) => !prev)}
       />
 
@@ -42,19 +42,21 @@ const Globe = () => {
           >
             <div className="h-2" />
 
-            <ul className="flex max-w-[183px] flex-col flex-nowrap items-center justify-center gap-y-2 rounded-[10px] bg-background p-3 shadow-[0_10px_20px_0_rgba(0,0,0,0.05)]">
-              {languages.map(({ code, label, subLabel }) => (
-                <li
-                  key={code}
-                  className="will-change-auto  w-full whitespace-pre flex h-[22px] items-center justify-center rounded-xl hover:bg-[#fdf4e4] px-4 transition-colors"
-                >
-                  <span
-                    className={`${ibmPlexMono.className} uppercase text-[12px] font-medium leading-[14.4px] text-[#2b303b] duration-150 hover:text-primary transition-colors`}
-                  >
-                    {label} {subLabel && `(${subLabel})`}
-                  </span>
-                </li>
-              ))}
+            <ul>
+              <li className="flex items-center">
+                <HomeIcon
+                  width={20}
+                  height={20}
+                  className="text-[#1f1f1f] fill-[#1f1f1f]! bg-background"
+                  style={{ color: "white" }}
+                />
+                <span>Home</span>
+              </li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
             </ul>
           </motion.div>
         )}
@@ -63,4 +65,4 @@ const Globe = () => {
   );
 };
 
-export default Globe;
+export default HamburgerMenu;

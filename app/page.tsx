@@ -8,14 +8,12 @@ import { Hero } from "@/components/Hero";
 import { Partnerships } from "@/components/Partnerships";
 import { Pricing } from "@/components/Pricing";
 import { Resellers } from "@/components/Resellers";
-import { TopBar } from "@/components/TopBar";
 import { TopCountries } from "@/components/TopCountries";
 import { TrustedBy } from "@/components/TrustedBy";
 
 const MainPage = () => {
   return (
     <main>
-      <TopBar />
       <Header />
       <Hero />
       <TrustedBy />
