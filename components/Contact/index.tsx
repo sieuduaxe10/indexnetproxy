@@ -6,7 +6,7 @@ export const Contact = () => {
   return (
     <section className="bg-[#f9fbfb]">
       <div className="px-5 py-[60px] md:px-10 md:py-10">
-        <p className="text-13 text-primary text-center">Contact</p>
+        <p className="text-13 text-primary text-center font-medium">CONTACT</p>
         <h3 className="text-2xl md:text-33 font-neue-kaine-bold mb-10 text-center text-[#2b303b]">
           Need help from real people?
         </h3>
