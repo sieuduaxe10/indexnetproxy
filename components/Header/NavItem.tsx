@@ -7,11 +7,11 @@ import Image from "next/image";
 export const NavItem = ({
   href,
   label,
-  icon,
+  iconPath,
 }: {
   href: string;
   label: string;
-  icon: string;
+  iconPath: string;
 }) => {
   return (
     <li className=" cursor-pointer">
@@ -31,7 +31,7 @@ export const NavItem = ({
           className="group relative flex items-center px-4 h-11 rounded-lg  cursor-pointer"
         >
           <Image
-            src={icon}
+            src={iconPath}
             alt="Proxy illustration"
             width={20}
             height={20}

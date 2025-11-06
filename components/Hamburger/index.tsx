@@ -4,7 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useResponsive } from "@/hooks/useResponsive";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { Hamburger } from "./Hamburger";
-import { HomeIcon } from "../icons/HomeIcon";
+import HamburgerMenuItem from "./HamburgerMenuItem";
+import { Button } from "../ui/button";
+import Link from "next/link";
+import Image from "next/image";
 
 const HamburgerMenu = (props: React.ComponentProps<"div">) => {
   const { isMobile, isTablet } = useResponsive();
@@ -20,7 +23,6 @@ const HamburgerMenu = (props: React.ComponentProps<"div">) => {
   return (
     <div
       {...props}
-      className="relative"
       ref={dropdownRef}
       {...(!(isMobile || isTablet) && {
         onMouseEnter: () => setMenuOpen(true),
@@ -28,6 +30,7 @@ const HamburgerMenu = (props: React.ComponentProps<"div">) => {
       })}
     >
       <Hamburger
+        menuOpen={menuOpen}
         onClick={() => (isMobile || isTablet) && setMenuOpen((prev) => !prev)}
       />
 
@@ -38,26 +41,25 @@ const HamburgerMenu = (props: React.ComponentProps<"div">) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-0 mt-6 left-1/2 z-103 -translate-x-1/2 pt-3"
+            className="absolute bg-background w-screen top-0 mt-24 left-0 z-10 flex flex-col p-4 border-b border-gray-light"
           >
             <div className="h-2" />
 
-            <ul>
-              <li className="flex items-center">
-                <HomeIcon
+            <ul className="flex-col gap-2 w-full">
+              <HamburgerMenuItem />
+            </ul>
+            <Button asChild className="h-9 flex mt-2">
+              <Link href="/get-started">
+                GET STARTED
+                <Image
+                  src="/images/hero/pointer.svg"
+                  alt="Proxy illustration"
                   width={20}
                   height={20}
-                  className="text-[#1f1f1f] fill-[#1f1f1f]! bg-background"
-                  style={{ color: "white" }}
+                  className=""
                 />
-                <span>Home</span>
-              </li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
+              </Link>
+            </Button>
           </motion.div>
         )}
       </AnimatePresence>

@@ -1,14 +1,52 @@
+import { DollarOutlineIcon } from "../icons/DollarOutlineIcon";
+import { GlobeOutlineIcon } from "../icons/GlobeOutlineIcon";
+import { HomeOutlineIcon } from "../icons/HomeOutlineIcon";
+import { InfoOutlineIcon } from "../icons/InfoOutlineIcon";
+import { PhoneOutlineIcon } from "../icons/PhoneOutlineIcon";
+import { QuestionOutlineIcon } from "../icons/QuestionOutlineIcon";
+
 export type NavItem = {
   href: string;
   label: string;
-  icon: string;
+  iconPath: string;
+  iconComponent?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 };
 
 export const navLink: NavItem[] = [
-  { href: "/", label: "HOME", icon: "/images/header/home.svg" },
-  { href: "/pricing", label: "PRICING", icon: "/images/header/dollar.svg" },
-  { href: "/case-study", label: "CASE STUDY", icon: "/images/header/info.svg" },
-  { href: "/country", label: "COUNTRY", icon: "/images/header/globe-item.svg" },
-  { href: "/contact", label: "CONTACT", icon: "/images/header/phone.svg" },
-  { href: "/faq", label: "FAQ", icon: "/images/header/question-mask.svg" },
+  {
+    href: "/",
+    label: "HOME",
+    iconPath: "/images/header/home.svg",
+    iconComponent: HomeOutlineIcon,
+  },
+  {
+    href: "/pricing",
+    label: "PRICING",
+    iconPath: "/images/header/dollar.svg",
+    iconComponent: DollarOutlineIcon,
+  },
+  {
+    href: "/case-study",
+    label: "CASE STUDY",
+    iconPath: "/images/header/info.svg",
+    iconComponent: InfoOutlineIcon,
+  },
+  {
+    href: "/country",
+    label: "COUNTRY",
+    iconPath: "/images/header/globe-item.svg",
+    iconComponent: GlobeOutlineIcon,
+  },
+  {
+    href: "/contact",
+    label: "CONTACT",
+    iconPath: "/images/header/phone.svg",
+    iconComponent: PhoneOutlineIcon,
+  },
+  {
+    href: "/faq",
+    label: "FAQ",
+    iconPath: "/images/header/question-mask.svg",
+    iconComponent: QuestionOutlineIcon,
+  },
 ];
