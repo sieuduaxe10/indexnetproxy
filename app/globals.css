@@ -67,6 +67,7 @@
   --text-33: var(--text-33);
   --text-18: var(--text-18);
   --text-17: var(--text-17);
+  --text-40: var(--text-40);
   --spacing-30: var(--spacing-30);
 }
 
@@ -123,6 +124,7 @@
   --text-33: 33px;
   --text-18: 18px;
   --text-17: 17px;
+  --text-40: 40px;
   --spacing-30: 30px;
   --spacing-10: 10px;
   --text-21: 21px;

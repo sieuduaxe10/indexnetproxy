@@ -4,6 +4,10 @@ import { Button } from "../ui/button";
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { useEffect, useRef } from "react";
+import { CursorIcon } from "../icons/CursorIcon";
+import { MessageIcon } from "../icons/MessageIcon";
+import { BlueNetworkIcon } from "../icons/BlueNetworkIcon";
+import { WifiIcon } from "../icons/WifiIcon";
 
 gsap.registerPlugin(SplitText);
 
@@ -43,18 +47,51 @@ export const Hero = () => {
     );
   }, []);
 
-  const text = " Residential Proxies P2P The best Proxy solution for MMO";
+  const text = "Residential Proxies P2P The best Proxy solution for MMO";
   return (
-    <section className="container mx-auto relative pt-[168px] 7xl:pt-[172px]">
-      <div className="hero-wrapper relative">
-        <div className="hero-title-wrapper">
-          <div className="hero-title">
+    <section className="container mx-auto relative">
+      <div className="pt-[172px] relative">
+        <div className="w-[1041px] h-[478px] absolute top-[340px] left-[calc(50%-520.5px)] ">
+          <Image
+            src="/images/hero/block-1.png"
+            alt="Hero Image"
+            width={206}
+            height={129}
+            className="absolute inset-0 rounded-lg"
+          />
+          <Image
+            src="/images/hero/block-1.png"
+            alt="Hero Image"
+            width={206}
+            height={129}
+            className="absolute inset-0 rounded-lg"
+          />
+          <Image
+            src="/images/hero/block-1.png"
+            alt="Hero Image"
+            width={206}
+            height={129}
+            className="absolute inset-0 rounded-lg"
+          />
+
+          <Image
+            src="/images/hero/goose.png"
+            alt="Hero Image"
+            width={206}
+            height={129}
+            className="absolute inset-0 rounded-lg"
+          />
+        </div>
+
+        <div className="flex flex-col gap-[507px]">
+          <div>
             <h1
               ref={headerRef}
-              className="text-[40px] text-center font-neue-kaine font-bold"
+              className="text-center font-neue-kaine font-bold mb-5"
             >
               {text.split("").map((char, i) => {
-                const isMMO = i >= text.length - 3; // Last 3 characters are "MMO"
+                const isLastChar = i === text.length - 1;
+                const isMMO = i >= text.length - 3 && !isLastChar; // Last 3 characters are "MMO"
                 const isProxiesP2P =
                   i >= text.indexOf("Proxies") && i < text.indexOf("P2P") + 3; // "Proxies P2P"
                 const isAfterP2P = i === text.indexOf("P2P") + 3; // Position after "P2P"
@@ -62,9 +99,9 @@ export const Hero = () => {
                   <>
                     <span
                       key={i}
-                      className={`inline-block ${
-                        isMMO ? "text-blue-500" : ""
-                      } ${isProxiesP2P ? "text-orange-500" : ""}`}
+                      className={`inline-block text-40 text-[#2b303b] ${
+                        isMMO ? "text-[#00a7e6]!" : ""
+                      } ${isProxiesP2P ? "text-orange-500" : ""} ${isLastChar ? "text-[#1acda5]!" : ""}`}
                     >
                       {char === " " ? "\u00A0" : char}
                     </span>
@@ -73,73 +110,59 @@ export const Hero = () => {
                 );
               })}
             </h1>
-            <p className="mx-auto text-[15px] leading-[25.5px] font-inter font-normal text-[rgb(87,96,117)] text-center break-words w-[768px] h-[51px] antialiased">
+            <p className="mx-auto text-[15px] leading-[25.5px] font-inter font-normal text-[#576075] text-center wrap-break-words w-3xl mb-5 h-[51px] antialiased">
               With over 62 million proxy IPs across more than 220 countries and
               cities, we provide seamless, secure, and reliable proxy solutions
               for all your online needs.
             </p>
-            <div className="center mx-auto gap-2 flex-row">
-              <Button size="lg" className="get-started-button">
-                GET STARTED
+            <div className="w-fit mx-auto flex-row center gap-4">
+              <Button size="lg" className="get-started-button h-14">
+                GET STARTED{" "}
+                <p className="w-5 h-5">
+                  <CursorIcon />
+                </p>
               </Button>
-              <Button variant={"outline"}>VIEW PRICE - AT $0.99</Button>
+              <Button className="h-14" variant={"secondary"}>
+                VIEW PRICE - AT $0.99
+              </Button>
             </div>
           </div>
-        </div>
-        <div className="hero-animation-wrapper relative">
-          <div className="w-[840px] h-[478px] absolute top-0 l-[calc(46.9741% - 420px)]">
-            <Image
-              src="/images/hero/block-1.png"
-              alt="Hero Image"
-              width={206}
-              height={129}
-              className="absolute inset-0 rounded-lg"
-            />
-            <Image
-              src="/images/hero/block-1.png"
-              alt="Hero Image"
-              width={206}
-              height={129}
-              className="absolute inset-0 rounded-lg"
-            />
-            <Image
-              src="/images/hero/block-1.png"
-              alt="Hero Image"
-              width={206}
-              height={129}
-              className="absolute inset-0 rounded-lg"
-            />
 
-            <Image
-              src="/images/hero/goose.png"
-              alt="Hero Image"
-              width={206}
-              height={129}
-              className="absolute inset-0 rounded-lg"
-            />
-          </div>
-        </div>
-        <div className="hero-footer-wrapper">
-          <div className="hero-footer">
-            <div>
-              <div>Proxy Transparent</div>
-              <p>
+          <div className="flex flex-row gap-8">
+            <div className="bg-[#fafcfc] rounded-2xl pt-16 px-8 pb-8 flex-1 self-stretch relative">
+              <div className="w-20 h-20 absolute -top-[50px] left-1/2 -translate-x-1/2">
+                <MessageIcon width={80} height={80} />
+              </div>
+              <div className="text-21 font-neue-kaine-bold text-center text-[#2b303b]">
+                Proxy Transparent
+              </div>
+              <p className="text-15 text-[#576075] text-center mt-2">
                 A transparent proxy boosts security and enhances connection
                 performance.
               </p>
             </div>
 
-            <div>
-              <div>No Logs Kept</div>
-              <p>
+            <div className="bg-[#fafcfc] rounded-2xl pt-16 px-8 pb-8 flex-1 self-stretch relative">
+              <div className="w-20 h-20 absolute -top-[50px] left-1/2 -translate-x-1/2">
+                <BlueNetworkIcon width={80} height={80} />
+              </div>
+              <div className="text-21 font-neue-kaine-bold text-center text-[#2b303b]">
+                No Logs Kept
+              </div>
+              <p className="text-15 text-[#576075] text-center mt-2">
                 Our no-logs policy ensures privacy by not recording your
                 activities, keeping your data secure and your browsing private.
               </p>
             </div>
 
-            <div>
-              <div>Fast Connection</div>
-              <p>
+            <div className="bg-[#fafcfc] rounded-2xl pt-16 px-8 pb-8 flex-1 self-stretch relative">
+              <div className="w-20 h-20 absolute -top-[50px] left-1/2 -translate-x-1/2">
+                <WifiIcon width={80} height={80} />
+              </div>
+              <div className="text-21 font-neue-kaine-bold text-center text-[#2b303b]">
+                Fast Connection
+              </div>
+              <p className="text-15 text-[#576075] text-center mt-2">
                 Enjoy lightning-fast speeds with our optimized proxy service.
                 Reduced latency and improved response times provide seamless
                 browsing, streaming, and smooth online performance.
