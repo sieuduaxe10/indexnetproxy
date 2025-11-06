@@ -3,11 +3,13 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useResponsive } from "@/hooks/useResponsive";
 import { useClickOutside } from "@/hooks/useClickOutside";
-import { GlobeIcon } from "./GlobeIcon";
-import { languages } from "@/common/constant";
-import { ibmPlexMono } from "@/app/fonts";
+import { Hamburger } from "./Hamburger";
+import HamburgerMenuItem from "./HamburgerMenuItem";
+import { Button } from "../ui/button";
+import Link from "next/link";
+import Image from "next/image";
 
-const Globe = () => {
+const HamburgerMenu = (props: React.ComponentProps<"div">) => {
   const { isMobile, isTablet } = useResponsive();
   const [menuOpen, setMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -20,14 +22,15 @@ const Globe = () => {
 
   return (
     <div
-      className="relative"
+      {...props}
       ref={dropdownRef}
       {...(!(isMobile || isTablet) && {
         onMouseEnter: () => setMenuOpen(true),
         onMouseLeave: () => setMenuOpen(false),
       })}
     >
-      <GlobeIcon
+      <Hamburger
+        menuOpen={menuOpen}
         onClick={() => (isMobile || isTablet) && setMenuOpen((prev) => !prev)}
       />
 
@@ -38,24 +41,25 @@ const Globe = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-0 mt-6 left-1/2 z-103 -translate-x-1/2 pt-3"
+            className="absolute bg-background w-screen top-0 mt-24 left-0 z-10 flex flex-col p-4 border-b border-gray-light"
           >
             <div className="h-2" />
 
-            <ul className="flex max-w-[183px] flex-col flex-nowrap items-center justify-center gap-y-2 rounded-[10px] bg-background p-3 shadow-[0_10px_20px_0_rgba(0,0,0,0.05)]">
-              {languages.map(({ code, label, subLabel }) => (
-                <li
-                  key={code}
-                  className="will-change-auto  w-full whitespace-pre flex h-[22px] items-center justify-center rounded-xl hover:bg-[#fdf4e4] px-4 transition-colors"
-                >
-                  <span
-                    className={`${ibmPlexMono.className} uppercase text-[12px] font-medium leading-[14.4px] text-[#2b303b] duration-150 hover:text-primary transition-colors`}
-                  >
-                    {label} {subLabel && `(${subLabel})`}
-                  </span>
-                </li>
-              ))}
+            <ul className="flex-col gap-2 w-full">
+              <HamburgerMenuItem />
             </ul>
+            <Button asChild className="h-9 flex mt-2">
+              <Link href="/get-started">
+                GET STARTED
+                <Image
+                  src="/images/hero/pointer.svg"
+                  alt="Proxy illustration"
+                  width={20}
+                  height={20}
+                  className=""
+                />
+              </Link>
+            </Button>
           </motion.div>
         )}
       </AnimatePresence>
@@ -63,4 +67,4 @@ const Globe = () => {
   );
 };
 
-export default Globe;
+export default HamburgerMenu;

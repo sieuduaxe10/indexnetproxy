@@ -1,16 +1,18 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Logo from "../Logo";
-// import { ibmPlexMono } from "@/app/fonts";
 import Image from "next/image";
 import { Nav } from "./Nav";
 import Globe from "../Globe";
+import { TopBar } from "../TopBar";
+import HamburgerMenu from "../Hamburger";
 
 export const Header = () => {
   return (
-    <header className="w-full border-b border-gray-light">
-      <div className="mx-auto max-w-960 px-4">
-        <div className="grid grid-cols-[auto_1fr_auto] items-center gap-3 py-3">
+    <header className="w-full border-b border-gray-light fixed z-10 bg-background">
+      <TopBar />
+      <div className="mx-auto max-w-960 px-4 relative">
+        <div className="grid grid-cols-[auto_1fr_auto] items-center px-10 py-4 xl:py-3">
           <Link href="/" className="flex items-center gap-2">
             <Logo />
           </Link>
@@ -23,7 +25,7 @@ export const Header = () => {
             {/* <Globe /> */}
             <Globe />
 
-            <Button asChild className="h-9">
+            <Button asChild className="h-9 hidden 4xl:flex">
               <Link href="/get-started">
                 GET STARTED
                 <Image
@@ -35,6 +37,7 @@ export const Header = () => {
                 />
               </Link>
             </Button>
+            <HamburgerMenu className="7xl:hidden" />
           </div>
         </div>
       </div>

@@ -4,15 +4,14 @@ export const HomeIcon = (props: React.SVGProps<SVGSVGElement>) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 256 256"
       focusable="false"
-      color="var(--token-2f0c4eae-c905-409e-9b85-7e2a075c5ace, rgb(255, 121, 41))"
+      color="rgb(255, 121, 41))"
       style={{
         userSelect: "none",
         width: "100%",
         height: "100%",
         display: "inline-block",
-        fill: "var(--token-2f0c4eae-c905-409e-9b85-7e2a075c5ace, rgb(255, 121, 41))",
-        color:
-          "var(--token-2f0c4eae-c905-409e-9b85-7e2a075c5ace, rgb(255, 121, 41))",
+        fill: "rgb(255, 121, 41)",
+        color: "rgb(255, 121, 41)",
         flexShrink: 0,
       }}
       {...props}

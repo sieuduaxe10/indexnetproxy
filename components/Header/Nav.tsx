@@ -9,7 +9,7 @@ export const Nav = () => {
           key={item.href}
           href={item.href}
           label={item.label}
-          icon={item.icon}
+          iconPath={item.iconPath}
         />
       ))}
     </ul>
