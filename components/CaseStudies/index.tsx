@@ -1,5 +1,4 @@
 import {
-  CircleArrowRight,
   CircleArrowRightIcon,
   DatabaseIcon,
   NetworkIcon,
