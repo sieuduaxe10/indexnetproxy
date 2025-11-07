@@ -9,7 +9,7 @@ import HamburgerMenu from "../Hamburger";
 
 export const Header = () => {
   return (
-    <header className="w-full border-b border-gray-light fixed z-10 bg-background">
+    <header className="w-full border-b border-gray-light fixed z-30 bg-background">
       <TopBar />
       <div className="mx-auto max-w-960 px-4 relative">
         <div className="grid grid-cols-[auto_1fr_auto] items-center px-10 py-4 xl:py-3">
