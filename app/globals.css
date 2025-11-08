@@ -69,6 +69,13 @@
   --text-17: var(--text-17);
   --text-40: var(--text-40);
   --spacing-30: var(--spacing-30);
+  --mask-gradient: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 12.5%,
+    rgb(0, 0, 0) 87.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 :root {
@@ -282,5 +289,15 @@
     /* simulate bottom corners lifting */
     transform: perspective(800px) rotateX(4deg) scale(1);
     box-shadow: rgba(181, 158, 119, 0.3) 0px 8px 32px 0px;
+  }
+
+  .mask-image-x {
+    mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgb(0, 0, 0) 12.5%,
+      rgb(0, 0, 0) 87.5%,
+      rgba(0, 0, 0, 0) 100%
+    );
   }
 }
