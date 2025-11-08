@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { Button } from "../ui/button";
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
@@ -8,6 +7,9 @@ import { CursorIcon } from "../icons/CursorIcon";
 import { MessageIcon } from "../icons/MessageIcon";
 import { BlueNetworkIcon } from "../icons/BlueNetworkIcon";
 import { WifiIcon } from "../icons/WifiIcon";
+import { FloatingCircle } from "./FloatingCircle";
+import { MainHero } from "./MainHero";
+import { Particle } from "./Particle";
 
 gsap.registerPlugin(SplitText);
 
@@ -49,41 +51,13 @@ export const Hero = () => {
 
   const text = "Residential Proxies P2P The best Proxy solution for MMO";
   return (
-    <section className="container mx-auto relative">
-      <div className="pt-[172px] relative">
-        <div className="w-[1041px] h-[478px] absolute top-[340px] left-[calc(50%-520.5px)] ">
-          <Image
-            src="/images/hero/block-1.png"
-            alt="Hero Image"
-            width={206}
-            height={129}
-            className="absolute inset-0 rounded-lg"
-          />
-          <Image
-            src="/images/hero/block-1.png"
-            alt="Hero Image"
-            width={206}
-            height={129}
-            className="absolute inset-0 rounded-lg"
-          />
-          <Image
-            src="/images/hero/block-1.png"
-            alt="Hero Image"
-            width={206}
-            height={129}
-            className="absolute inset-0 rounded-lg"
-          />
+    <section className="w-svw pt-[172px] px-10 pb-8 relative" id="hero">
+      <div className="container">
+        {/* round icon orange  */}
+        <FloatingCircle />
+        <MainHero />
 
-          <Image
-            src="/images/hero/goose.png"
-            alt="Hero Image"
-            width={206}
-            height={129}
-            className="absolute inset-0 rounded-lg"
-          />
-        </div>
-
-        <div className="flex flex-col gap-[507px]">
+        <div className="flex flex-col gap-[507px] z-20">
           <div>
             <h1
               ref={headerRef}
@@ -128,7 +102,7 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className="flex flex-row gap-8">
+          <div className="flex flex-row gap-8 z-20">
             <div className="bg-[#fafcfc] rounded-2xl pt-16 px-8 pb-8 flex-1 self-stretch relative">
               <div className="w-20 h-20 absolute -top-[50px] left-1/2 -translate-x-1/2">
                 <MessageIcon width={80} height={80} />
@@ -171,6 +145,7 @@ export const Hero = () => {
           </div>
         </div>
       </div>
+      <Particle />
     </section>
   );
 };
