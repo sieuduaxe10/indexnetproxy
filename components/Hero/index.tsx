@@ -9,7 +9,7 @@ import { BlueNetworkIcon } from "../icons/BlueNetworkIcon";
 import { WifiIcon } from "../icons/WifiIcon";
 import { FloatingCircle } from "./FloatingCircle";
 import { MainHero } from "./MainHero";
-import { Particle } from "./Particle";
+import TwoLayerParticles from "./TwoLayerParticles";
 
 gsap.registerPlugin(SplitText);
 
@@ -152,7 +152,7 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-      <Particle />
+      <TwoLayerParticles />
     </section>
   );
 };
