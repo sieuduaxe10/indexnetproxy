@@ -3,7 +3,7 @@ import { NavItem } from "./NavItem";
 
 export const Nav = () => {
   return (
-    <ul className="flex items-center text-sm tracking-wide text-black/80">
+    <ul className="flex items-center text-sm tracking-wide text-black/80 top-nav-wrapper">
       {navLink.map((item) => (
         <NavItem
           key={item.href}

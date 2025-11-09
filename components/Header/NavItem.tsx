@@ -13,18 +13,18 @@ export const NavItem = ({
   iconPath: string;
 }) => {
   return (
-    <li className=" cursor-pointer">
+    <li className="cursor-pointer">
       <Link
         href={href}
         className={`${ibmPlexMono.className} text-xs font-medium cursor-pointer`}
       >
-        <div className="group relative flex items-center px-4 h-11 rounded-lg  cursor-pointer nav-item gap-1">
+        <div className="group relative flex items-center px-4 h-11 rounded-lg  cursor-pointer top-nav-item hover:gap-1 ">
           <Image
             src={iconPath}
             alt="Proxy illustration"
             width={20}
             height={20}
-            className="hidden group-hover:inline"
+            className="top-nav-item-icon group-hover:inline"
           />
           {label}
         </div>

@@ -223,26 +223,6 @@
     color: rgb(255, 121, 41);
   }
 
-  .nav-item {
-    background-color: rgba(255, 255, 255, 0);
-    border-radius: 8px;
-    padding: 0 16px;
-    cursor: pointer;
-    width: fit-content;
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease,
-      transform 0.25s ease,
-      padding 0.2s ease;
-  }
-
-  .nav-item:hover {
-    background-color: rgb(253, 244, 228);
-    transform: scale(1.05);
-    padding-left: 1rem; /* same as p-4 */
-    color: rgb(255, 121, 41);
-  }
-
   .box-border {
     border-bottom-width: 1px;
     border-color: #e3ecec;
@@ -299,5 +279,28 @@
       rgb(0, 0, 0) 87.5%,
       rgba(0, 0, 0, 0) 100%
     );
+  }
+
+  .top-nav-wrapper {
+    transform-origin: 50% 50% 0;
+  }
+  .top-nav-item {
+    white-space: nowrap;
+  }
+
+  .top-nav-item:hover {
+    background-color: #fdf4e4;
+  }
+  .top-nav-item-icon {
+    width: 0;
+    height: 0;
+    transition: all 0.1s ease-out;
+    transform: translateX(10px);
+  }
+
+  .top-nav-item:hover .top-nav-item-icon {
+    width: 20px;
+    height: 20px;
+    transform: translateX(0);
   }
 }
