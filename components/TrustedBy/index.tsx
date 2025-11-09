@@ -36,7 +36,7 @@ export const TrustedBy = () => {
   };
 
   return (
-    <section className="container bg-background p-10 flex flex-col gap-6">
+    <section className="container bg-background px-5 py-8 md:px-10 md:py-10 flex flex-col gap-6">
       <p className="text-base text-footer-text mx-auto text-center leading-[27.2px]">
         Trusted by many businesses to enhance learning and drive educational
         growth.

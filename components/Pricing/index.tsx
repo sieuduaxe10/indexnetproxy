@@ -124,7 +124,10 @@ export const Pricing = () => {
     },
   ];
   return (
-    <section className="py-[60px] px-5 md:px-10 md:py-20 relative border-b border-[#e3ecec] bg-[#f2f7f7]">
+    <section
+      id="pricing"
+      className="py-[60px] px-5 md:px-10 md:py-20 relative border-b border-[#e3ecec] bg-[#f2f7f7]"
+    >
       <div className="container flex flex-col gap-10">
         <div className="text-center">
           <p className="text-13 text-primary text-center font-medium">
@@ -140,7 +143,7 @@ export const Pricing = () => {
           </div>
         </div>
 
-        <div className="mt-10 flex gap-2 flex-row">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {pricingPlans.map((plan, index) => (
             <Link
               href={"#"}

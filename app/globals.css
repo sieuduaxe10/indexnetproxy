@@ -67,7 +67,7 @@
   --text-33: var(--text-33);
   --text-18: var(--text-18);
   --text-17: var(--text-17);
-  --text-40: var(--text-40);
+  --text-38: var(--text-38);
   --spacing-30: var(--spacing-30);
   --mask-gradient: linear-gradient(
     to right,
@@ -131,7 +131,7 @@
   --text-33: 33px;
   --text-18: 18px;
   --text-17: 17px;
-  --text-40: 40px;
+  --text-38: 38px;
   --spacing-30: 30px;
   --spacing-10: 10px;
   --text-21: 21px;
@@ -182,6 +182,7 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground;

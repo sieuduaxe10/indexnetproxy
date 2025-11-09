@@ -65,7 +65,10 @@ export const TopCountries = () => {
     },
   ];
   return (
-    <section className="py-[60px] px-5 md:px-10 md:py-20 relative border-b border-[#e3ecec]">
+    <section
+      id="country"
+      className="py-[60px] px-5 md:px-10 md:py-20 relative border-b border-[#e3ecec]"
+    >
       <div className="absolute top-[18px] left-[75px]">
         <Image
           src={"/images/decor/orange-circle.png"}

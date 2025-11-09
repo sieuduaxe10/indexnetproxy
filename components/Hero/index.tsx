@@ -51,7 +51,7 @@ export const Hero = () => {
 
   const text = "Residential Proxies P2P The best Proxy solution for MMO";
   return (
-    <section className="w-svw pt-[172px] px-10 pb-8 relative" id="hero">
+    <section className="w-svw pt-[172px] px-5 md:px-10 pb-8 relative" id="hero">
       <div className="container">
         {/* round icon orange  */}
         <FloatingCircle />
@@ -72,8 +72,8 @@ export const Hero = () => {
                 return (
                   <>
                     <span
-                      key={i}
-                      className={`inline-block text-40 text-[#2b303b] ${
+                      key={`${i}-${char}`}
+                      className={`inline-block text-33 min-[800px]:text-38 md:text-40 text-[#2b303b] ${
                         isMMO ? "text-[#00a7e6]!" : ""
                       } ${isProxiesP2P ? "text-orange-500" : ""} ${isLastChar ? "text-[#1acda5]!" : ""}`}
                     >
@@ -102,45 +102,52 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className="flex flex-row gap-8 z-20">
-            <div className="bg-[#fafcfc] rounded-2xl pt-16 px-8 pb-8 flex-1 self-stretch relative">
-              <div className="w-20 h-20 absolute -top-[50px] left-1/2 -translate-x-1/2">
-                <MessageIcon width={80} height={80} />
+          <div className="flex flex-col min-[800px]:flex-row gap-4 md:gap-8 z-20">
+            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row min-[800px]:flex-col gap-5">
+              <div className="w-20 h-20 relative min-[800px]:absolute min-[800px]:-top-[50px] min-[800px]:left-1/2 min-[800px]:-translate-x-1/2 center">
+                <MessageIcon className="w-10! h-10! md:w-20! md:h-20!" />
               </div>
-              <div className="text-21 font-neue-kaine-bold text-center text-[#2b303b]">
-                Proxy Transparent
+              <div>
+                <div className="md:text-21 font-neue-kaine-bold md:text-center text-[#2b303b] text-18">
+                  Proxy Transparent
+                </div>
+                <p className="text-15 text-[#576075] text-start md:text-center mt-2">
+                  A transparent proxy boosts security and enhances connection
+                  performance.
+                </p>
               </div>
-              <p className="text-15 text-[#576075] text-center mt-2">
-                A transparent proxy boosts security and enhances connection
-                performance.
-              </p>
             </div>
 
-            <div className="bg-[#fafcfc] rounded-2xl pt-16 px-8 pb-8 flex-1 self-stretch relative">
-              <div className="w-20 h-20 absolute -top-[50px] left-1/2 -translate-x-1/2">
-                <BlueNetworkIcon width={80} height={80} />
+            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row min-[800px]:flex-col gap-5">
+              <div className="w-20 h-20 relative min-[800px]:absolute min-[800px]:-top-[50px] min-[800px]:left-1/2 min-[800px]:-translate-x-1/2 center">
+                <BlueNetworkIcon className="w-10! h-10! md:w-20! md:h-20!" />
               </div>
-              <div className="text-21 font-neue-kaine-bold text-center text-[#2b303b]">
-                No Logs Kept
+              <div>
+                <div className="md:text-21 font-neue-kaine-bold md:text-center text-[#2b303b] text-18">
+                  No Logs Kept
+                </div>
+                <p className="text-15 text-[#576075] text-start md:text-center mt-2">
+                  Our no-logs policy ensures privacy by not recording your
+                  activities, keeping your data secure and your browsing
+                  private.
+                </p>
               </div>
-              <p className="text-15 text-[#576075] text-center mt-2">
-                Our no-logs policy ensures privacy by not recording your
-                activities, keeping your data secure and your browsing private.
-              </p>
             </div>
 
-            <div className="bg-[#fafcfc] rounded-2xl pt-16 px-8 pb-8 flex-1 self-stretch relative">
-              <div className="w-20 h-20 absolute -top-[50px] left-1/2 -translate-x-1/2">
-                <WifiIcon width={80} height={80} />
+            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row min-[800px]:flex-col gap-5">
+              <div className="w-20 h-20 relative min-[800px]:absolute min-[800px]:-top-[50px] min-[800px]:left-1/2 min-[800px]:-translate-x-1/2 center">
+                <WifiIcon className="w-10! h-10! md:w-20! md:h-20!" />
               </div>
-              <div className="text-21 font-neue-kaine-bold text-center text-[#2b303b]">
-                Fast Connection
+              <div>
+                <div className="md:text-21 font-neue-kaine-bold md:text-center text-[#2b303b] text-18">
+                  Fast Connection
+                </div>
+                <p className="text-15 text-[#576075] text-start md:text-center mt-2">
+                  Enjoy lightning-fast speeds with our optimized proxy service.
+                  Reduced latency and improved response times provide seamless
+                  browsing, streaming, and smooth online performance.
+                </p>
               </div>
-              <p className="text-15 text-[#576075] text-center mt-2">
-                Enjoy lightning-fast speeds with our optimized proxy service.
-                Reduced latency and improved response times provide seamless
-                browsing, streaming, and smooth online performance.
-              </p>
             </div>
           </div>
         </div>

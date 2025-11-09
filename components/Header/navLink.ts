@@ -14,37 +14,37 @@ export type NavItem = {
 
 export const navLink: NavItem[] = [
   {
-    href: "/",
+    href: "#hero",
     label: "HOME",
     iconPath: "/images/header/home.svg",
     iconComponent: HomeOutlineIcon,
   },
   {
-    href: "/pricing",
+    href: "#pricing",
     label: "PRICING",
     iconPath: "/images/header/dollar.svg",
     iconComponent: DollarOutlineIcon,
   },
   {
-    href: "/case-study",
+    href: "#case-study",
     label: "CASE STUDY",
     iconPath: "/images/header/info.svg",
     iconComponent: InfoOutlineIcon,
   },
   {
-    href: "/country",
+    href: "#country",
     label: "COUNTRY",
     iconPath: "/images/header/globe-item.svg",
     iconComponent: GlobeOutlineIcon,
   },
   {
-    href: "/contact",
+    href: "#contact",
     label: "CONTACT",
     iconPath: "/images/header/phone.svg",
     iconComponent: PhoneOutlineIcon,
   },
   {
-    href: "/faq",
+    href: "#faqs",
     label: "FAQ",
     iconPath: "/images/header/question-mask.svg",
     iconComponent: QuestionOutlineIcon,

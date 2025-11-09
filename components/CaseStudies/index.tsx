@@ -44,7 +44,10 @@ export const CaseStudies = () => {
   ];
 
   return (
-    <section className="py-[60px] px-5 md:px-10 md:py-20 relative border-b border-[#e3ecec]">
+    <section
+      id="case-study"
+      className="py-[60px] px-5 md:px-10 md:py-20 relative border-b border-[#e3ecec]"
+    >
       <div className="container">
         <div className="text-center">
           <p className="text-13 text-primary text-center font-medium">

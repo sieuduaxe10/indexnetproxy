@@ -34,7 +34,7 @@ export const FAQs = () => {
     },
   ];
   return (
-    <section>
+    <section id="faqs">
       <div className="px-10 py-20">
         <div className="text-13 text-primary text-center">FAQs</div>
         <h3 className="text-2xl md:text-33 font-neue-kaine-bold text-center mb-10 text-[#2c303b] font-normal">
