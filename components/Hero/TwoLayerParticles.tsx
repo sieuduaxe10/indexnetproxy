@@ -80,25 +80,31 @@ export default function TwoLayerParticles() {
   }, []);
 
   return (
-    <div className="relative w-full h-[600px">
-      {/* Layer 1 - Cross icon */}
-      <Particles
-        id="One"
-        init={init}
-        options={baseOptions("/images/hero/background-cross-icon.png")}
-        className="absolute inset-0 z-[1] pointer-events-none"
-      />
+    <>
+      <div className="absolute inset-0 z-10 flex-none">
+        {/* Layer 1 - Cross icon */}
+        <div className="relative w-full h-full overflow-hidden bg-transparent translate-z-0 rounded-none">
+          <Particles
+            id="One"
+            init={init}
+            options={baseOptions("/images/hero/background-cross-icon.png")}
+            className=""
+          />
+        </div>
 
-      {/* Layer 2 - Round icon */}
-      <Particles
-        id="Two"
-        init={init}
-        options={baseOptions("/images/hero/background-round-icon.png")}
-        className="absolute inset-0 z-[2] pointer-events-none"
-      />
-
-      {/* Your foreground content here */}
-      <div className="relative z-[3] text-white p-6">{/* ... */}</div>
-    </div>
+        {/* Your foreground content here */}
+      </div>
+      <div className="absolute inset-0 z-10 flex-none">
+        <div className="relative w-full h-full overflow-hidden bg-transparent translate-z-0 rounded-none">
+          {/* Layer 2 - Round icon */}
+          <Particles
+            id="Two"
+            init={init}
+            options={baseOptions("/images/hero/background-round-icon.png")}
+            className=""
+          />
+        </div>
+      </div>
+    </>
   );
 }

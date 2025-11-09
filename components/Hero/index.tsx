@@ -51,8 +51,11 @@ export const Hero = () => {
 
   const text = "Residential Proxies P2P The best Proxy solution for MMO";
   return (
-    <section className="w-svw pt-[172px] px-5 md:px-10 pb-8 relative" id="hero">
-      <div className="container">
+    <section
+      className="w-svw pt-[140px] px-5 pb-8 4xl:pt-[168px] 4xl:px-10 7xl:pt-[172px] relative"
+      id="hero"
+    >
+      <div className="container relative z-20">
         {/* round icon orange  */}
         <FloatingCircle />
         <MainHero />
@@ -73,7 +76,7 @@ export const Hero = () => {
                   <>
                     <span
                       key={`${i}-${char}`}
-                      className={`inline-block text-33 min-[800px]:text-38 md:text-40 text-[#2b303b] ${
+                      className={`inline-block text-33 min-[800px]:text-38 md:text-40 leading-[48px] text-[#2b303b] ${
                         isMMO ? "text-[#00a7e6]!" : ""
                       } ${isProxiesP2P ? "text-orange-500" : ""} ${isLastChar ? "text-[#1acda5]!" : ""}`}
                     >
@@ -153,6 +156,7 @@ export const Hero = () => {
         </div>
       </div>
       <TwoLayerParticles />
+      <div className="absolute top-0 left-0 right-0 h-[438px] z-10 flex-none pointer-events-none overflow-hidden bg-[linear-gradient(#fff_80%,#fff0_100%)]"></div>
     </section>
   );
 };
