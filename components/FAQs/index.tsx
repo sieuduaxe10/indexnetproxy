@@ -58,14 +58,32 @@ export const FAQs = () => {
               >
                 <AccordionTrigger
                   className={clsx(
-                    "p-4 font-inter text-15 hover:no-underline text-[#2c303b] cursor-pointer",
+                    "p-4 font-inter text-15 hover:no-underline text-[#2c303b] cursor-pointer bg-white faq-shadow",
                     {
                       "text-primary border-b-0! shadow-none! rounded-br-none! rounded-bl-none!":
                         openItem === faq.question,
                     }
                   )}
                 >
-                  <strong>{faq.question}</strong>
+                  <div className="flex gap-2 center">
+                    <div
+                      style={{
+                        width: "32px", // adjust size as needed
+                        height: "32px",
+                        border: "1px solid rgb(227, 236, 236)",
+                        borderRadius: "50%", // makes it a perfect circle
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontWeight: "bold",
+                        color: "rgb(25, 41, 77)",
+                        backgroundColor: "white", // optional
+                      }}
+                    >
+                      {index + 1}
+                    </div>{" "}
+                    <strong>{faq.question}</strong>
+                  </div>
                 </AccordionTrigger>
                 <AccordionContent className="p-4 border-t border-[#e3ecec]">
                   <div className="flex flex-col gap-2 font-inter text-16 text-footer-text">

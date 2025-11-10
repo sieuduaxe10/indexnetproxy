@@ -10,13 +10,13 @@ export const Resellers = () => {
           </h3>
           <div className="center">
             <Button
-              className="mx-auto! text-primary uppercase font-semibold px-8"
+              className="mx-auto! text-primary uppercase font-semibold px-8 h-10 center"
               variant={"secondary"}
             >
               Get Started
             </Button>
           </div>
-          <p className="text-center text-[#fdfdfd] mx-auto max-w-600">
+          <p className="text-center text-[#fdfdfd] mx-auto max-w-600 opacity-80">
             The most cost-effective and risk-free way to start a proxy business,
             don&apos;t miss out on this opportunity.
           </p>

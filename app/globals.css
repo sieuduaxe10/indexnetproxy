@@ -68,6 +68,7 @@
   --text-18: var(--text-18);
   --text-17: var(--text-17);
   --text-38: var(--text-38);
+  --text-28: var(--text-28);
   --spacing-30: var(--spacing-30);
   --mask-gradient: linear-gradient(
     to right,
@@ -132,6 +133,7 @@
   --text-18: 18px;
   --text-17: 17px;
   --text-38: 38px;
+  --text-28: 28px;
   --spacing-30: 30px;
   --spacing-10: 10px;
   --text-21: 21px;
@@ -303,5 +305,8 @@
     width: 20px;
     height: 20px;
     transform: translateX(0);
+  }
+  .faq-shadow {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 4px 0px;
   }
 }

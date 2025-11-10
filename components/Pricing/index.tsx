@@ -126,14 +126,14 @@ export const Pricing = () => {
   return (
     <section
       id="pricing"
-      className="py-[60px] px-5 md:px-10 md:py-20 relative border-b border-[#e3ecec] bg-[#f2f7f7]"
+      className="py-[60px] px-5 min-[1200px]:px-10 min-[1200px]:py-20 relative border-b border-[#e3ecec] bg-[#f2f7f7]"
     >
       <div className="container flex flex-col gap-10">
         <div className="text-center">
           <p className="text-13 text-primary text-center font-medium">
             FLASH SALE DISCOUNT 20%
           </p>
-          <h2 className="text-2xl md:text-33 font-neue-kaine-bold  text-center text-[#2b303b]">
+          <h2 className="text-2xl min-[800px]:text-28 min-[1200px]:text-33 font-neue-kaine-bold  text-center text-[#2b303b]">
             Daily price proxy
           </h2>
           <div className="mt-5 font-inter text-15 max-w-600 mx-auto text-[#576075]">
@@ -143,7 +143,7 @@ export const Pricing = () => {
           </div>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-10 grid grid-cols-1 min-[800px]:grid-cols-2 min-[1200px]:grid-cols-4 gap-6">
           {pricingPlans.map((plan, index) => (
             <Link
               href={"#"}

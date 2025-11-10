@@ -2,176 +2,51 @@ import Image from "next/image";
 
 export const Partnerships = () => {
   const partnerShips = [
-    {
-      title: "HIDDENCE.NET",
-      link: "/affiliate-program",
-    },
-    {
-      title: "GENLOGIN.COM",
-      link: "/affiliate-program",
-    },
-    {
-      title: "BITBROWSER.NET",
-      link: "/affiliate-program",
-    },
-
-    {
-      title: "SHOPSOCKS5.COM",
-      link: "/affiliate-program",
-    },
-
-    {
-      title: "BIGADS.VN",
-      link: "/affiliate-program",
-    },
-    {
-      title: "GEMLOGIN.VN",
-      link: "/affiliate-program",
-    },
-    {
-      title: "OMOCAPTCHA.COM",
-      link: "/affiliate-program",
-    },
-    {
-      title: "FARMREEL.ME",
-      link: "/affiliate-program",
-    },
-    {
-      title: "GENFARMER.COM",
-      link: "/affiliate-program",
-    },
-    {
-      title: "SMIT.VN",
-      link: "/affiliate-program",
-    },
-    {
-      title: "MULOGIN.COM",
-      link: "/affiliate-program",
-    },
-    {
-      title: "DOLPHIN-ANTY.COM",
-      link: "/affiliate-program",
-    },
-    {
-      title: "LS.APP",
-      link: "/affiliate-program",
-    },
+    { title: "HIDDENCE.NET", url: "https://hiddence.net/" },
+    { title: "GENLOGIN.COM", url: "https://genlogin.com/" },
+    { title: "BITBROWSER.NET", url: "https://bitbrowser.net/?code=ef0218" },
+    { title: "SHOPSOCKS5.COM", url: "https://shopsocks5.com/" },
+    { title: "BIGADS.VN", url: "https://bigads.vn/" },
+    { title: "GEMLOGIN.VN", url: "https://gemlogin.vn/" },
+    { title: "OMOCAPTCHA.COM", url: "https://omocaptcha.com/" },
+    { title: "FARMREEL.ME", url: "https://www.farmreel.me/" },
+    { title: "GENFARMER.COM", url: "https://genfarmer.com/" },
+    { title: "SMIT.VN", url: "http://smit.vn/" },
+    { title: "MULOGIN.COM", url: "https://www.mulogin.com/" },
+    { title: "DOLPHIN-ANTY.COM", url: "https://dolphin-anty.com/" },
+    { title: "LS.APP", url: "https://ls.app/?utm_source=netproxy" },
     {
       title: "BROWSER.VISION",
-      link: "/affiliate-program",
+      url: "https://browser.vision/en?utm_source=netproxy&utm_medium=partner&utm_campaign=promo&utm_content=link",
     },
-    {
-      title: "MORELOGIN.COM",
-      link: "/affiliate-program",
-    },
-    {
-      title: "XLOGIN.US",
-      link: "/affiliate-program",
-    },
-    {
-      title: "SHOPHPTOOLS.COM",
-      link: "/affiliate-program",
-    },
-    {
-      title: "FTIOS.COM",
-      link: "/affiliate-program",
-    },
-    {
-      title: "DICLOAK.COM",
-      link: "/affiliate-program",
-    },
-    {
-      title: "CORONIUM.IO",
-      link: "/affiliate-program",
-    },
-    {
-      title: "WPROXY.NET",
-      link: "/affiliate-program",
-    },
-    {
-      title: "TOPMMO.VN",
-      link: "/affiliate-program",
-    },
-    {
-      title: "INOTE.VN",
-      link: "/affiliate-program",
-    },
-    {
-      title: "MOBILEPROXY.SPACE",
-      link: "/affiliate-program",
-    },
-    {
-      title: "UMIX.VN",
-      link: "/affiliate-program",
-    },
-    {
-      title: "2PROXY.VN",
-      link: "/affiliate-program",
-    },
-    {
-      title: "GOMETA.VIP",
-      link: "/affiliate-program",
-    },
-    {
-      title: "HIEUDEV.COM",
-      link: "/affiliate-program",
-    },
-    {
-      title: "TOPPROXY.VN",
-      link: "/affiliate-program",
-    },
-    {
-      title: "BESUB.NET",
-      link: "/affiliate-program",
-    },
-    {
-      title: "HACKLIKE16.COM",
-      link: "/affiliate-program",
-    },
-    {
-      title: "ECOMKEY.ASIA",
-      link: "/affiliate-program",
-    },
-    {
-      title: "MUABANREF.COM",
-      link: "/affiliate-program",
-    },
-    {
-      title: "PROXYVN.VN",
-      link: "/affiliate-program",
-    },
-    {
-      title: "CYBERTIZ.IO",
-      link: "/affiliate-program",
-    },
-    {
-      title: "ACCVIA.COM",
-      link: "/affiliate-program",
-    },
-    {
-      title: "KHOVIA24H.COM",
-      link: "/affiliate-program",
-    },
-    {
-      title: "CHIENFB.COM",
-      link: "/affiliate-program",
-    },
-    {
-      title: "CLONE29.COM",
-      link: "/affiliate-program",
-    },
-    {
-      title: "VIMAIL.VN",
-      link: "/affiliate-program",
-    },
-    {
-      title: "VINANONWOVEN.COM",
-      link: "/affiliate-program",
-    },
-    {
-      title: "MINSOFTWARE.VN",
-      link: "/affiliate-program",
-    },
+    { title: "MORELOGIN.COM", url: "https://www.morelogin.com/" },
+    { title: "XLOGIN.US", url: "https://xlogin.us/?sub=netproxy" },
+    { title: "SHOPHPTOOLS.COM", url: "https://shophptools.com" },
+    { title: "FTIOS.COM", url: "https://ftios.com/" },
+    { title: "DICLOAK.COM", url: "https://dicloak.com/?utm_source=netproxyio" },
+    { title: "CORONIUM.IO", url: "https://coronium.io/" },
+    { title: "WPROXY.NET", url: "https://wproxy.net/" },
+    { title: "TOPMMO.VN", url: "https://topmmo.vn/" },
+    { title: "INOTE.VN", url: "https://inote.vn/" },
+    { title: "MOBILEPROXY.SPACE", url: "https://mobileproxy.space/en/" },
+    { title: "UMIX.VN", url: "https://umix.vn/" },
+    { title: "2PROXY.VN", url: "https://2proxy.vn/" },
+    { title: "GOMETA.VIP", url: "https://gometa.vip/" },
+    { title: "HIEUDEV.COM", url: "https://hieudev.com/" },
+    { title: "TOPPROXY.VN", url: "https://topproxy.vn/" },
+    { title: "BESUB.NET", url: "https://besub.net/" },
+    { title: "HACKLIKE16.COM", url: "https://hacklike16.com/" },
+    { title: "ECOMKEY.ASIA", url: "https://ecomkey.asia/" },
+    { title: "MUABANREF.COM", url: "https://muabanref.com/" },
+    { title: "PROXYVN.VN", url: "https://proxyvn.vn/" },
+    { title: "CYBERTIZ.IO", url: "https://cybertiz.io/" },
+    { title: "ACCVIA.COM", url: "https://accvia.com/" },
+    { title: "KHOVIA24H.COM", url: "https://khovia24h.com/" },
+    { title: "CHIENFB.COM", url: "https://chienfb.com/" },
+    { title: "CLONE29.COM", url: "https://clone29.com/" },
+    { title: "VIMAIL.VN", url: "https://vimail.vn/" },
+    { title: "VINANONWOVEN.COM", url: "https://vinanonwoven.com/" },
+    { title: "MINSOFTWARE.VN", url: "https://minsoftware.vn/" },
   ];
 
   const disclaimerPartner = [
@@ -217,7 +92,7 @@ export const Partnerships = () => {
                   key={index}
                   className="text-[#fc833d] hover:underline pr-6 text-13"
                 >
-                  <a href={partner.link}>{partner.title}</a>
+                  <a href={partner.url}>{partner.title}</a>
                 </li>
               ))}
             </ul>

@@ -87,12 +87,12 @@ export const TopCountries = () => {
         />
       </div>
 
-      <div className="border-[#addeed] border-[6px] rounded-3xl p-5 md:p-10 flex flex-col min-[1200px]:flex-row gap-10 bg-[#00a7e6] container items-center">
+      <div className="border-[#addeed] border-[6px] rounded-3xl p-5 md:p-10 flex flex-col min-[1200px]:flex-row gap-10 bg-[#00a7e6] container min-[1200px]items-center">
         <div className="text-[#fdfdfd]" style={{ flex: ".5 0 0" }}>
           <p className="text-13 font-inter font-medium">
             <strong>TOP LOCATIONS</strong>
           </p>
-          <h3 className="text-2xl md:text-33 font-neue-kaine-bold leading-[120%]">
+          <h3 className="text-2xl md:text-28 min-[1200px]:text-33 font-neue-kaine-bold leading-[120%]">
             Countries with the best proxy usage
           </h3>
           <p className="mt-5">
@@ -105,7 +105,7 @@ export const TopCountries = () => {
           className="bg-[#fdfdfd]! h-[191px]! hidden min-[1220px]:block"
         />
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-9 flex-1 w-full">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-5 min-[1200px]:gap-9 flex-1 w-full">
           {countries.map((country) => (
             <div
               key={country.name}
@@ -121,7 +121,7 @@ export const TopCountries = () => {
                   />
                 </div>
                 <div className="text-[#fdfdfd]">
-                  <h4 className=" text-13">{country.name}</h4>
+                  <h4 className="opacity-60 text-13">{country.name}</h4>
                   <p className="text-17">{country.ips}</p>
                 </div>
               </div>

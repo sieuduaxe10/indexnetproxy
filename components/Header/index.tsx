@@ -9,10 +9,10 @@ import HamburgerMenu from "../Hamburger";
 
 export const Header = () => {
   return (
-    <header className="w-full border-b border-gray-light fixed z-30 bg-background">
+    <header className="w-full border-b border-gray-light fixed z-30 bg-background  px-5 md:px-10 py-4 xl:py-3">
       <TopBar />
       <div className="mx-auto max-w-960 relative">
-        <div className="grid grid-cols-[auto_1fr_auto] items-center px-5 md:px-10 py-4 xl:py-3">
+        <div className="grid grid-cols-[auto_1fr_auto] items-center">
           <Link href="/" className="flex items-center gap-2">
             <Logo />
           </Link>
