@@ -101,17 +101,17 @@ export const Partnerships = () => {
       </div>
       {/* Disclaimer */}
       <div className="px-4 md:px-10 py-[30px] text-white relative">
-        <div className="container flex flex-row">
-          <p className="text-13">
+        <div className="container flex flex-row ">
+          <p className="text-13 flex-1">
             Disclaimer: Users are responsible for lawful use of our proxy
             services. We are not liable for misuse. Thank you for your
             understanding!
           </p>
-          <div className="flex gap-2 flex-row flex-wrap">
+          <div className="flex gap-2 flex-row flex-wrap flex-1">
             {disclaimerPartner.map((imgSrc, index) => (
               <div
                 key={index}
-                className="w-[55px] h-[22px] bg-white rounded-xl flex items-center justify-center overflow-hidden"
+                className="w-[55px] h-[22px] bg-white rounded-[4px] flex items-center justify-center overflow-hidden"
               >
                 <Image
                   width={40}

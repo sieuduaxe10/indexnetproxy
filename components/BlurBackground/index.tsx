@@ -9,6 +9,7 @@ export const BlurBackground = () => {
           right: 0,
           bottom: 0,
           left: 0,
+          zIndex: 120,
           backgroundRepeat: "repeat",
           backgroundPosition: "left top",
           backgroundSize: "64px auto",

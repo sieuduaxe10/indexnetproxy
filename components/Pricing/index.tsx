@@ -143,7 +143,7 @@ export const Pricing = () => {
           </div>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 min-[800px]:grid-cols-2 min-[1200px]:grid-cols-4 gap-6">
+        <div className="mt-10 grid grid-cols-1 min-[800px]:grid-cols-2 min-[1200px]:grid-cols-4 gap-10 min-[810px]:gap-y-10 min-[810px]:gap-x-5  min-[1200px]:gap-2">
           {pricingPlans.map((plan, index) => (
             <Link
               href={"#"}
@@ -165,11 +165,13 @@ export const Pricing = () => {
                   {plan.unit}
                 </p>
               </div>
-              <ul>
+              <ul className="flex flex-col gap-1">
                 {plan.features.map((feature, index) => (
                   <li key={index} className="center gap-2">
-                    <span className="w-5 h-5">{feature.icon}</span>
-                    <span>{feature.title}</span>
+                    <span className="w-5 h-5 center">{feature.icon}</span>
+                    <span className="text-13 text-[#2b303b]">
+                      {feature.title}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -179,7 +181,7 @@ export const Pricing = () => {
               </div>
 
               {plan.isPopular && (
-                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
+                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
                   <ButtonLightEffect />
                 </div>
               )}

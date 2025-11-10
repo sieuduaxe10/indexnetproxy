@@ -87,12 +87,12 @@ export const TopCountries = () => {
         />
       </div>
 
-      <div className="border-[#addeed] border-[6px] rounded-3xl p-5 md:p-10 flex flex-col min-[1200px]:flex-row gap-10 bg-[#00a7e6] container min-[1200px]items-center">
+      <div className="border-[#addeed] border-[6px] rounded-3xl p-5 md:p-[34px] flex flex-col min-[1200px]:flex-row gap-10 bg-[#00a7e6] container min-[1200px]:items-center">
         <div className="text-[#fdfdfd]" style={{ flex: ".5 0 0" }}>
           <p className="text-13 font-inter font-medium">
             <strong>TOP LOCATIONS</strong>
           </p>
-          <h3 className="text-2xl md:text-28 min-[1200px]:text-33 font-neue-kaine-bold leading-[120%]">
+          <h3 className="text-2xl min-[810px]:text-28 min-[1200px]:text-33 font-neue-kaine-bold leading-[120%]">
             Countries with the best proxy usage
           </h3>
           <p className="mt-5">
@@ -102,7 +102,7 @@ export const TopCountries = () => {
 
         <Separator
           orientation="vertical"
-          className="bg-[#fdfdfd]! h-[191px]! hidden min-[1220px]:block"
+          className="bg-[#fdfdfd]! h-[191px]! hidden min-[1220px]:block opacity-20"
         />
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-5 min-[1200px]:gap-9 flex-1 w-full">
@@ -111,7 +111,7 @@ export const TopCountries = () => {
               key={country.name}
               className="rounded-lg transition-transform duration-300 hover:scale-110 cursor-pointer"
             >
-              <div className="flex items-center gap-4 mb-2">
+              <div className="flex items-center gap-4 min-[1200px]:gap-2 mb-2">
                 <div className="w-10 h-10 relative rounded-full border-[#fdfdfd] border-2 overflow-hidden">
                   <Image
                     src={country.flag}

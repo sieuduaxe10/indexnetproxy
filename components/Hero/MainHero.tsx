@@ -7,7 +7,7 @@ import HeroGlobeIcon from "./HeroGlobeIcon";
 import HeroTopCrossIcon from "./HeroTopCrossIcon";
 export const MainHero = () => {
   return (
-    <div className="w-[1041px] h-[632px] absolute bottom-[278px] left-[calc(50%-520.5px)] z-10 user-select-">
+    <div className="w-[1041px] h-[632px] absolute bottom-[230px] left-[calc(50%-520.5px)] z-10 user-select-none overflow-hidden">
       <CloudImage />
       {/*  main Image*/}
       <div className="w-[840px] h-[478px] absolute bottom-0 left left-[calc(46.9741%-420px)] overflow-visible">

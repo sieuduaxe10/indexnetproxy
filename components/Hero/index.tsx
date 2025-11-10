@@ -60,7 +60,7 @@ export const Hero = () => {
         <FloatingCircle />
         <MainHero />
 
-        <div className="flex flex-col gap-[507px] z-20">
+        <div className="flex flex-col gap-[507px] z-20 relative">
           <div>
             <h1
               ref={headerRef}
@@ -78,7 +78,7 @@ export const Hero = () => {
                       key={`${i}-${char}`}
                       className={`inline-block text-33 min-[800px]:text-38 md:text-40 leading-[48px] text-[#2b303b] ${
                         isMMO ? "text-[#00a7e6]!" : ""
-                      } ${isProxiesP2P ? "text-orange-500" : ""} ${isLastChar ? "text-[#1acda5]!" : ""}`}
+                      } ${isProxiesP2P ? "text-[#fc833d]" : ""} ${isLastChar ? "text-[#1acda5]!" : ""}`}
                     >
                       {char === " " ? "\u00A0" : char}
                     </span>
@@ -93,13 +93,13 @@ export const Hero = () => {
               for all your online needs.
             </p>
             <div className="w-fit mx-auto flex-row center gap-4">
-              <Button size="lg" className="get-started-button h-14">
+              <Button size="lg" className="get-started-button h-14 px-8">
                 GET STARTED{" "}
                 <p className="w-5 h-5">
                   <CursorIcon />
                 </p>
               </Button>
-              <Button className="h-14" variant={"secondary"}>
+              <Button className="h-14 px-8 py-0" variant={"secondary"}>
                 VIEW PRICE - AT $0.99
               </Button>
             </div>
