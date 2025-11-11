@@ -18,7 +18,7 @@ export const NavItem = ({
         href={href}
         className={`${ibmPlexMono.className} text-xs font-medium cursor-pointer`}
       >
-        <div className="group relative flex items-center px-4 h-11 rounded-lg  cursor-pointer top-nav-item hover:gap-1 ">
+        <div className="group relative flex items-center px-4 h-11 rounded-lg  cursor-pointer top-nav-item hover:gap-1 leading-[120%] tracking-normal">
           <Image
             src={iconPath}
             alt="Proxy illustration"

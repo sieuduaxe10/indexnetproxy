@@ -1,6 +1,6 @@
 export const BlurBackground = () => {
   return (
-    <div className="select-none mix-blend-multiply opacity-15 pointer-events-none z-[9] flex-none fixed inset-0 overflow-hidden">
+    <div className="select-none mix-blend-multiply opacity-15 pointer-events-none z-20 flex-none fixed inset-0 overflow-hidden">
       <div
         style={{
           position: "absolute",

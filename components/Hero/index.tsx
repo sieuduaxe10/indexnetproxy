@@ -64,7 +64,7 @@ export const Hero = () => {
           <div>
             <h1
               ref={headerRef}
-              className="text-center font-neue-kaine font-bold mb-5"
+              className="text-center font-neue-kaine font-bold mb-5 tracking-normal"
             >
               {text.split("").map((char, i) => {
                 const isLastChar = i === text.length - 1;
@@ -76,7 +76,7 @@ export const Hero = () => {
                   <>
                     <span
                       key={`${i}-${char}`}
-                      className={`inline-block text-33 min-[800px]:text-38 md:text-40 leading-[48px] text-[#2b303b] ${
+                      className={`h-12 inline-block text-33 min-[800px]:text-38 md:text-40 text-[#2b303b] ${
                         isMMO ? "text-[#00a7e6]!" : ""
                       } ${isProxiesP2P ? "text-[#fc833d]" : ""} ${isLastChar ? "text-[#1acda5]!" : ""}`}
                     >
