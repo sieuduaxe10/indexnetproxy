@@ -4,12 +4,12 @@ import { geistSans, ibmPlexMono, notoSans, inter } from "./fonts";
 import localFont from "next/font/local";
 
 const neueKaineFont = localFont({
-  src: "../fonts/neue-kaine-variable-bold.woff2",
+  src: "/fonts/neue-kaine-variable-bold.woff2",
   variable: "--font-neue-kaine",
 });
 
 const neueKaineBoldFont = localFont({
-  src: "../fonts/neue-kaine-variable-bold.woff2",
+  src: "/fonts/neue-kaine-variable-bold.woff2",
   variable: "--font-neue-kaine-bold",
 });
 

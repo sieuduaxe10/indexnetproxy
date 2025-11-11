@@ -1,4 +1,5 @@
-import { Geist, Noto_Sans, IBM_Plex_Mono, Inter } from "next/font/google";
+import { Geist, Noto_Sans, IBM_Plex_Mono } from "next/font/google";
+import localFont from "next/font/local";
 
 export const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,9 +17,24 @@ export const ibmPlexMono = IBM_Plex_Mono({
   weight: ["400", "500", "600", "700"],
 });
 
-export const inter = Inter({
+export const inter = localFont({
+  src: [
+    {
+      path: "/fonts/Inter-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "/fonts/Inter-Medium.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "/fonts/Inter-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-inter",
-  subsets: ["latin"],
   display: "swap",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
