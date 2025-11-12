@@ -7,7 +7,7 @@ import { ThunderIcon } from "../icons/ThunderIcon";
 import { Separator } from "../ui/separator";
 import { ButtonLightEffect } from "../ButtonLightEffect";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -176,7 +176,7 @@ export const Pricing = () => {
           </div>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 min-[800px]:grid-cols-2 min-[1200px]:grid-cols-4 gap-10 min-[810px]:gap-y-10 min-[810px]:gap-x-5  min-[1200px]:gap-2">
+        <div className="mt-10 grid grid-cols-1 min-[800px]:grid-cols-2 min-[1200px]:grid-cols-4 gap-10 min-[810px]:gap-y-10 min-[810px]:gap-x-5  min-[1200px]:gap-2 cards-wrapper">
           {pricingPlans.map((plan, index) => (
             <Link
               href={"#"}
