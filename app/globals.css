@@ -310,3 +310,31 @@
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 4px 0px;
   }
 }
+
+@layer components {
+  /* Wrapper: only styles inside .rte are affected */
+  .rte {
+    @apply text-[15px] leading-[170%] text-[#576075];
+  }
+  /* Paragraphs & emphasis */
+  .rte :where(p) {
+    @apply font-normal;
+  }
+  .rte :where(strong) {
+    @apply font-bold;
+  }
+
+  /* Lists */
+  .rte :where(ul) {
+    @apply [padding-inline-start:3ch];
+  }
+  .rte :where(li) {
+    @apply [counter-increment:list-item_1] list-none;
+    /* define before pseudo-element */
+    &::before {
+      position: absolute;
+      inset-inline-start: 0px;
+      content: "•";
+    }
+  }
+}
