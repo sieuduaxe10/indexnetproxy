@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Separator } from "../ui/separator";
+import ParallaxWrapper from "../ParallaxWrapper/ParallaxWrapper";
 
 export const TopCountries = () => {
   const countries = [
@@ -69,6 +70,50 @@ export const TopCountries = () => {
       id="country"
       className="py-[60px] px-5 md:px-10 md:py-20 relative border-b border-[#e3ecec]"
     >
+      <ParallaxWrapper
+        speed={1.3}
+        className="absolute bottom-[120px] right-[43px] rotate-[149deg] aspect-square w-[59px] opacity-100 overflow-visible will-change-transform"
+      >
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero/hero-round-icon.png"
+            alt="netproxy play icon"
+            width={39}
+            height={35}
+            className=""
+          />
+        </div>
+      </ParallaxWrapper>
+
+      <ParallaxWrapper
+        speed={1.3}
+        className="absolute bottom-[20px] left-[43px] rotate-[90deg] aspect-square w-[59px] opacity-100 overflow-visible will-change-transform"
+      >
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero/hero-cross-icon-medium.png"
+            alt="netproxy play icon"
+            width={70}
+            height={70}
+            className=""
+          />
+        </div>
+      </ParallaxWrapper>
+
+      <ParallaxWrapper
+        speed={1.3}
+        className="absolute -bottom-[320px] right-[23px] rotate-[90deg] aspect-square w-[59px] opacity-100 overflow-visible will-change-transform"
+      >
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero/hero-play-icon.png"
+            alt="netproxy play icon"
+            width={39}
+            height={35}
+            className=""
+          />
+        </div>
+      </ParallaxWrapper>
       <div className="absolute top-[18px] left-[75px]">
         <Image
           src={"/images/decor/orange-circle.png"}

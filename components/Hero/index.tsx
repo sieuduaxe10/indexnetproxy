@@ -106,8 +106,8 @@ export const Hero = () => {
           </div>
 
           <div className="flex flex-col min-[800px]:flex-row gap-4 md:gap-8 z-20">
-            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row min-[800px]:flex-col gap-5">
-              <div className="w-20 h-20 relative min-[800px]:absolute min-[800px]:-top-[50px] min-[800px]:left-1/2 min-[800px]:-translate-x-1/2 center">
+            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row min-[800px]:flex-col gap-5 items-center">
+              <div className="w-10 h-10 4xl:w-20 4xl:h-20 relative min-[800px]:absolute min-[800px]:-top-[50px] min-[800px]:left-1/2 min-[800px]:-translate-x-1/2 center justify-center">
                 <MessageIcon className="w-10! h-10! md:w-20! md:h-20!" />
               </div>
               <div>
@@ -121,8 +121,8 @@ export const Hero = () => {
               </div>
             </div>
 
-            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row min-[800px]:flex-col gap-5">
-              <div className="w-20 h-20 relative min-[800px]:absolute min-[800px]:-top-[50px] min-[800px]:left-1/2 min-[800px]:-translate-x-1/2 center">
+            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row min-[800px]:flex-col gap-5 items-center">
+              <div className="w-10 h-10 4xl:w-20 4xl:h-20 relative min-[800px]:absolute min-[800px]:-top-[50px] min-[800px]:left-1/2 min-[800px]:-translate-x-1/2 center">
                 <BlueNetworkIcon className="w-10! h-10! md:w-20! md:h-20!" />
               </div>
               <div>
@@ -137,8 +137,8 @@ export const Hero = () => {
               </div>
             </div>
 
-            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row min-[800px]:flex-col gap-5">
-              <div className="w-20 h-20 relative min-[800px]:absolute min-[800px]:-top-[50px] min-[800px]:left-1/2 min-[800px]:-translate-x-1/2 center">
+            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row min-[800px]:flex-col gap-5 items-center">
+              <div className="w-10 h-10 4xl:w-20 4xl:h-20 relative min-[800px]:absolute min-[800px]:-top-[50px] min-[800px]:left-1/2 min-[800px]:-translate-x-1/2 center">
                 <WifiIcon className="w-10! h-10! md:w-20! md:h-20!" />
               </div>
               <div>
