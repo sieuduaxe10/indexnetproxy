@@ -83,14 +83,14 @@ export const Partnerships = () => {
         </div>
         <div className="px-4 md:px-10 py-[30px] relative">
           <div className="container flex flex-col gap-6">
-            <h3 className="font-neue-kaine-bold text-xl underline text-white hover:text-blue-500 cursor-pointer">
+            <h3 className="font-neue-kaine-bold text-xl underline text-white hover:text-blue-500 cursor-pointer w-fit">
               Partnerships
             </h3>
-            <ul className="center flex-wrap">
+            <ul className="center flex flex-wrap content-start items-start gap-x-6 gap-y-1 w-full h-min p-0 relative opacity-100">
               {partnerShips.map((partner, index) => (
                 <li
                   key={index}
-                  className="text-[#fc833d] hover:underline pr-6 text-13"
+                  className="text-[#fc833d] hover:underline whitespace-nowrap font-semibold text-13 flex flex-row content-center items-start gap-0 w-min h-min relative opacity-100"
                 >
                   <a href={partner.url}>{partner.title}</a>
                 </li>

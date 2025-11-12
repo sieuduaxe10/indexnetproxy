@@ -52,9 +52,12 @@ export const FAQs = () => {
               <AccordionItem
                 key={index}
                 value={faq.question}
-                className={clsx("item-1 border border-[#e3ecec] rounded-xl", {
-                  "border-primary border-2": openItem === faq.question,
-                })}
+                className={clsx(
+                  "item-1 border border-[#e3ecec] rounded-xl overflow-hidden",
+                  {
+                    "border-primary border-2": openItem === faq.question,
+                  }
+                )}
               >
                 <AccordionTrigger
                   className={clsx(
@@ -85,7 +88,7 @@ export const FAQs = () => {
                     <strong>{faq.question}</strong>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="p-4 border-t border-[#e3ecec]">
+                <AccordionContent className="p-4 border-t border-[#e3ecec] bg-white">
                   <div className="flex flex-col gap-2 font-inter text-16 text-footer-text">
                     {faq.answer}
                   </div>

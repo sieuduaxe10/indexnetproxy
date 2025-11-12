@@ -14,7 +14,7 @@ import Link from "next/link";
 export const Footer = () => {
   return (
     <footer className="pt-20 pb-10 bg-[#f2f7f7]">
-      <div className="container flex flex-col lg:flex-row gap-10 px-5 lg:px-10">
+      <div className="container flex flex-col 7xl:flex-row gap-10">
         <div className="flex flex-col gap-30 max-w-[464px]">
           <div>
             <Image
@@ -24,7 +24,7 @@ export const Footer = () => {
               height={43}
             />
           </div>
-          <div className="text-#6c7993 text-13">
+          <div className="text-[#6c7993] text-13 leading-[180%] tracking-[0em] font-semibold">
             NetProxy.io provides residential proxy services, helping users to
             access the internet anonymously and securely, supporting tasks such
             as web scraping and market research with high speed and reliability.
@@ -33,7 +33,7 @@ export const Footer = () => {
           <div className="grid grid-cols-2 font-ibm-plex-mono font-semibold text-xs gap-2">
             <Link
               href="https://chromewebstore.google.com/detail/mnloefcpaepkpmhaoipjkpikbnkmbnic?utm_source=item-share-cb"
-              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border"
+              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border min-h-[56px]"
             >
               <div className="w-10 h-10">
                 <ChromeIcon />
@@ -42,7 +42,7 @@ export const Footer = () => {
             </Link>
             <Link
               href="https://www.proxifier.com/"
-              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border"
+              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border min-h-[56px]"
             >
               <div className="w-10 h-10">
                 <WindowIcon />
@@ -51,7 +51,7 @@ export const Footer = () => {
             </Link>
             <Link
               href="https://apps.apple.com/us/app/shadowrocket/id932747118"
-              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border"
+              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border min-h-[56px]"
             >
               <div className="w-10 h-10">
                 <AppleIcon />
@@ -60,7 +60,7 @@ export const Footer = () => {
             </Link>{" "}
             <Link
               href="https://play.google.com/store/apps/details?id=com.scheler.superproxy"
-              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border"
+              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border min-h-[56px]"
             >
               <div className="w-10 h-10">
                 <AndroidIcon />
