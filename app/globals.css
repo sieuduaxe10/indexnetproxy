@@ -55,6 +55,7 @@
   --radius-10: var(--border-radius-10);
   --shadow-primary: var(--primary-shadow);
   --shadow-header: var(--header-shadow);
+  --shadow-upgo: var(--shadow-upgo);
   --breakpoint-4xl: 50.625rem; /* 810px - default is 896px*/
   --breakpoint-7xl: 75rem; /* 1200px - default is 1280px */
   --container-960: 60rem; /* 960px */
@@ -139,6 +140,12 @@
   --text-21: 21px;
   --hamburger-dark: oklch(30.9% 0.02107 265.916);
   --border-radius-10: 10px;
+  --shadow-upgo:
+    0 0.706592px 0.706592px -0.625px #00000026,
+    0 1.80656px 1.80656px -1.25px #00000025,
+    0 3.62176px 3.62176px -1.875px #00000023,
+    0 6.8656px 6.8656px -2.5px #00000020,
+    0 13.6468px 13.6468px -3.125px #0000001b, 0 30px 30px -3.75px #0000000d;
 }
 
 .dark {

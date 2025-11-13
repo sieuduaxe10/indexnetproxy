@@ -67,7 +67,7 @@ export const PageTitleAnimate = (props: PageTitleAnimateProps) => {
           {props.secondColorTitle && (
             <span
               key="middle-space"
-              className={`h-12 inline-block text-33 4xl:text-38 7xl:text-40 7xl:text-40`}
+              className={`h-12 inline-block text-33 4xl:text-38 7xl:text-40`}
             >
               {"\u00A0"}
             </span>
