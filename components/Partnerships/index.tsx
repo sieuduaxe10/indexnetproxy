@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export const Partnerships = () => {
+  const t = useTranslations("partnerships");
   const partnerShips = [
     { title: "HIDDENCE.NET", url: "https://hiddence.net/" },
     { title: "GENLOGIN.COM", url: "https://genlogin.com/" },
@@ -84,7 +88,7 @@ export const Partnerships = () => {
         <div className="px-4 md:px-10 py-[30px] relative">
           <div className="container flex flex-col gap-6">
             <h3 className="font-neue-kaine-bold text-xl underline text-white hover:text-blue-500 cursor-pointer w-fit">
-              Partnerships
+              {t("title")}
             </h3>
             <ul className="center flex flex-wrap content-start items-start gap-x-6 gap-y-1 w-full h-min p-0 relative opacity-100">
               {partnerShips.map((partner, index) => (
@@ -102,11 +106,7 @@ export const Partnerships = () => {
       {/* Disclaimer */}
       <div className="px-4 md:px-10 py-[30px] text-white relative">
         <div className="container flex flex-row ">
-          <p className="text-13 flex-1">
-            Disclaimer: Users are responsible for lawful use of our proxy
-            services. We are not liable for misuse. Thank you for your
-            understanding!
-          </p>
+          <p className="text-13 flex-1">{t("disclaimer")}</p>
           <div className="flex gap-2 flex-row flex-wrap flex-1">
             {disclaimerPartner.map((imgSrc, index) => (
               <div

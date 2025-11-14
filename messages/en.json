@@ -1,0 +1,181 @@
+{
+  "metadata": {
+    "title": "Residential P2P Proxies – The Best Proxy Solution for MMO",
+    "description": "NetProxy.io offers secure, high-performance residential P2P proxies for MMO gamers and marketers. Enjoy global access, low latency, and stable connections with millions of real IPs. Experience ultimate online freedom and reliability."
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "readMore": "Read More",
+    "buyNow": "Buy Now",
+    "tryFree": "Try Free"
+  },
+  "nav": {
+    "home": "HOME",
+    "pricing": "PRICING",
+    "caseStudy": "CASE STUDY",
+    "country": "COUNTRY",
+    "contact": "CONTACT",
+    "faq": "FAQ",
+    "cookiePolicy": "Cookie Policy",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "refundService": "Refund Service"
+  },
+  "hero": {
+    "title": "Residential P2P Proxies",
+    "subtitle": "The Best Proxy Solution for MMO",
+    "description": "With over 62 million proxy IPs across more than 220 countries and cities, we provide seamless, secure, and reliable proxy solutions for all your online needs.",
+    "cta": "Get Started Now",
+    "viewPrice": "VIEW PRICE - AT $0.99",
+    "features": {
+      "transparent": {
+        "title": "Proxy Transparent",
+        "description": "A transparent proxy boosts security and enhances connection performance."
+      },
+      "noLogs": {
+        "title": "No Logs Kept",
+        "description": "Our no-logs policy ensures privacy by not recording your activities, keeping your data secure and your browsing private."
+      },
+      "fastConnection": {
+        "title": "Fast Connection",
+        "description": "Enjoy lightning-fast speeds with our optimized proxy service. Reduced latency and improved response times provide seamless browsing, streaming, and smooth online performance."
+      }
+    }
+  },
+  "pricing": {
+    "flashSale": "FLASH SALE DISCOUNT 20%",
+    "title": "Daily price proxy",
+    "subtitle": "Pay only for the days you need, with no long-term commitments. Seamless browsing with IPs sourced globally through a decentralized network.",
+    "plans": {
+      "ipv6": {
+        "title": "IPv6 Proxy",
+        "unit": "Gigabytes",
+        "price": "$0.04"
+      },
+      "rotation": {
+        "title": "Rotation Residential",
+        "unit": "Day",
+        "price": "$0.20"
+      },
+      "static": {
+        "title": "Static Residential",
+        "unit": "Day",
+        "price": "$5"
+      },
+      "unlimited": {
+        "title": "Unlimited Proxy",
+        "unit": "No Limited",
+        "price": "$255"
+      }
+    },
+    "features": {
+      "httpSupport": "Supports HTTP/HTTPS",
+      "exportPorts": "Exports: 10,000 Ports Proxies",
+      "ipRotation": "IP Rotation: Every 10 Minutes",
+      "unlimitedRotations": "Unlimited IP Rotations",
+      "unlimitedBandwidth": "Unlimited Bandwidth",
+      "speed": "Speed up to 50 Mbps"
+    },
+    "certificate": "Certified data centers and net providers"
+  },
+  "contact": {
+    "tag": "CONTACT",
+    "title": "Need help from real people?",
+    "anyQuestions": "Any Questions?",
+    "description": "We are here to help and answer any questions you may have. We look forward to hearing from you. Fill out this form or send us an email at",
+    "wantCollaborate": "Want to collaborate?",
+    "collaborateDescription": "Send an email to contact our business team",
+    "phone": "(+84) 327 072 120",
+    "address": "117 Duong Nguyen Du, Phuong Ben Thanh, Quan 1, Ho Chi Minh 700000"
+  },
+  "faqs": {
+    "tag": "FAQs",
+    "title": "All your Questions, Answered",
+    "questions": {
+      "q1": {
+        "question": "What types of proxies does NetProxy.io offer?",
+        "answer": "NetProxy.io offers a variety of proxy types, including residential proxies, datacenter proxies, and mobile proxies. Each proxy type is designed to meet different needs, such as scraping, ad verification, or managing multiple accounts."
+      },
+      "q2": {
+        "question": "What is proxy and how does it work?",
+        "answer": "A proxy is an intermediary server between your device and the internet, helping to forward your web requests and return responses from the server. NetProxy offers continuous IP rotation proxy packages, such as 1-minute or 2-minute IP rotation plans, which help protect your identity and enhance online security."
+      },
+      "q3": {
+        "question": "Is NetProxy.io suitable for large-scale tasks like web scraping?",
+        "answer": "Absolutely! NetProxy.io is ideal for large-scale tasks like web scraping. Our proxies are designed to bypass detection, ensuring stable and uninterrupted connections, which are perfect for gathering data without risking bans."
+      },
+      "q4": {
+        "question": "How can I get started with NetProxy.io?",
+        "answer": "Getting started is simple! Just sign up on our website, choose a proxy plan that fits your needs, and follow the step-by-step setup guide. If you encounter any issues, our support team is available 24/7 to assist you."
+      }
+    }
+  },
+  "topCountries": {
+    "title": "Top Countries",
+    "subtitle": "Our proxies are available worldwide",
+    "ips": "IPs"
+  },
+  "partnerships": {
+    "title": "Partnerships",
+    "subtitle": "Trusted by leading companies",
+    "disclaimer": "Disclaimer: Users are responsible for lawful use of our proxy services. We are not liable for misuse. Thank you for your understanding!"
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "subtitle": "See how our clients succeed",
+    "items": {
+      "adVerification": "Ad verification",
+      "fastShopping": "Fast Shopping",
+      "pricingMonitoring": "Pricing Monitoring",
+      "network": "Network",
+      "talentSourcing": "Talent sourcing",
+      "dataCollection": "Data collection",
+      "verification": "Verification",
+      "marketResearch": "Market Research"
+    }
+  },
+  "resellers": {
+    "title": "Get Started with Netproxy.io Reseller Program",
+    "subtitle": "Join our partner program",
+    "button": "Get Started",
+    "description": "The most cost-effective and risk-free way to start a proxy business, don't miss out on this opportunity."
+  },
+  "trustedBy": {
+    "title": "Trusted By",
+    "subtitle": "Companies that trust our service"
+  },
+  "footer": {
+    "description": "NetProxy.io provides residential proxy services, helping users to access the internet anonymously and securely, supporting tasks such as web scraping and market research with high speed and reliability.",
+    "extensions": {
+      "chrome": "EXTENSIONS FOR CHROME",
+      "windows": "DOWNLOAD FOR WINDOWS",
+      "ios": "DOWNLOAD FOR IOS",
+      "android": "DOWNLOAD FOR ANDROID"
+    },
+    "account": {
+      "title": "Account",
+      "createAccount": "Create Account",
+      "login": "Login"
+    },
+    "affiliate": {
+      "title": "Affiliate",
+      "resellerProgram": "Reseller Program",
+      "linkProgram": "Link Program"
+    },
+    "category": {
+      "title": "Category",
+      "faqs": "FAQs",
+      "pricing": "Pricing",
+      "contact": "Contact"
+    },
+    "serviceTerm": {
+      "title": "Service, Term",
+      "privacyPolicy": "Privacy Policy",
+      "cookiePolicy": "Cookie Policy",
+      "termsOfService": "Terms of Service",
+      "refundPolicy": "Refund Policy"
+    }
+  }
+}

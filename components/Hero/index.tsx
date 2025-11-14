@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
 import { CursorIcon } from "../icons/CursorIcon";
 import { MessageIcon } from "../icons/MessageIcon";
 import { BlueNetworkIcon } from "../icons/BlueNetworkIcon";
@@ -14,6 +15,8 @@ import TwoLayerParticles from "./TwoLayerParticles";
 gsap.registerPlugin(SplitText);
 
 export const Hero = () => {
+  const t = useTranslations("hero");
+  const tCommon = useTranslations("common");
   const headerRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
@@ -49,7 +52,8 @@ export const Hero = () => {
     );
   }, []);
 
-  const text = "Residential Proxies P2P The best Proxy solution for MMO";
+  // Use translation for the main title
+  const text = t("title") + " " + t("subtitle");
   return (
     <section
       className="w-svw pt-[140px] px-5 pb-8 4xl:pt-[168px] 4xl:px-10 7xl:pt-[172px] relative"
@@ -88,19 +92,17 @@ export const Hero = () => {
               })}
             </h1>
             <p className="mx-auto text-[15px] leading-[25.5px] font-inter font-normal text-[#576075] text-center wrap-break-words w-3xl mb-5 h-[51px] antialiased">
-              With over 62 million proxy IPs across more than 220 countries and
-              cities, we provide seamless, secure, and reliable proxy solutions
-              for all your online needs.
+              {t("description")}
             </p>
             <div className="w-fit mx-auto flex-row center gap-4">
               <Button size="lg" className="get-started-button h-14 px-8">
-                GET STARTED{" "}
+                {tCommon("getStarted").toUpperCase()}{" "}
                 <p className="w-5 h-5">
                   <CursorIcon />
                 </p>
               </Button>
               <Button className="h-14 px-8 py-0" variant={"secondary"}>
-                VIEW PRICE - AT $0.99
+                {t("viewPrice")}
               </Button>
             </div>
           </div>
@@ -112,11 +114,10 @@ export const Hero = () => {
               </div>
               <div>
                 <div className="md:text-21 font-neue-kaine-bold md:text-center text-[#2b303b] text-18">
-                  Proxy Transparent
+                  {t("features.transparent.title")}
                 </div>
                 <p className="text-15 text-[#576075] text-start md:text-center mt-2">
-                  A transparent proxy boosts security and enhances connection
-                  performance.
+                  {t("features.transparent.description")}
                 </p>
               </div>
             </div>
@@ -127,12 +128,10 @@ export const Hero = () => {
               </div>
               <div>
                 <div className="md:text-21 font-neue-kaine-bold md:text-center text-[#2b303b] text-18">
-                  No Logs Kept
+                  {t("features.noLogs.title")}
                 </div>
                 <p className="text-15 text-[#576075] text-start md:text-center mt-2">
-                  Our no-logs policy ensures privacy by not recording your
-                  activities, keeping your data secure and your browsing
-                  private.
+                  {t("features.noLogs.description")}
                 </p>
               </div>
             </div>
@@ -143,12 +142,10 @@ export const Hero = () => {
               </div>
               <div>
                 <div className="md:text-21 font-neue-kaine-bold md:text-center text-[#2b303b] text-18">
-                  Fast Connection
+                  {t("features.fastConnection.title")}
                 </div>
                 <p className="text-15 text-[#576075] text-start md:text-center mt-2">
-                  Enjoy lightning-fast speeds with our optimized proxy service.
-                  Reduced latency and improved response times provide seamless
-                  browsing, streaming, and smooth online performance.
+                  {t("features.fastConnection.description")}
                 </p>
               </div>
             </div>

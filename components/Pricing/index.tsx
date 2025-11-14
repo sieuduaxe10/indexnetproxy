@@ -1,12 +1,13 @@
 "use client";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { CertificateIcon } from "../icons/CertificateIcon";
 import { RefreshIcon } from "../icons/RefreshIcon";
 import { InfiniteIcon } from "../icons/InfiniteIcon";
 import { ThunderIcon } from "../icons/ThunderIcon";
 import { Separator } from "../ui/separator";
 import { ButtonLightEffect } from "../ButtonLightEffect";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -14,6 +15,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export const Pricing = () => {
+  const t = useTranslations("pricing");
+
   useEffect(() => {
     const cards = gsap.utils.toArray(".pricing-card") as HTMLElement[];
 
@@ -43,116 +46,116 @@ export const Pricing = () => {
 
   const pricingPlans = [
     {
-      title: "IPv6 Proxy",
-      unit: "Gigabytes",
+      title: t("plans.ipv6.title"),
+      unit: t("plans.ipv6.unit"),
       features: [
         {
-          title: "Supports HTTP/HTTPS",
+          title: t("features.httpSupport"),
           icon: <CertificateIcon />,
         },
         {
-          title: "Exports: 10,000 Ports Proxies",
+          title: t("features.exportPorts"),
           icon: <RefreshIcon />,
         },
         {
-          title: "Unlimited IP Rotations",
+          title: t("features.unlimitedRotations"),
           icon: <InfiniteIcon />,
         },
         {
-          title: "Unlimited Bandwidth",
+          title: t("features.unlimitedBandwidth"),
           icon: <InfiniteIcon />,
         },
         {
-          title: "Speed up to 50 Mbps",
+          title: t("features.speed"),
           icon: <ThunderIcon />,
         },
       ],
-      price: "$0.04",
+      price: t("plans.ipv6.price"),
       topLineColor: "#1acda5",
     },
     {
-      title: "Rotation Residential",
-      unit: "Day",
+      title: t("plans.rotation.title"),
+      unit: t("plans.rotation.unit"),
       features: [
         {
-          title: "Supports HTTP/HTTPS",
+          title: t("features.httpSupport"),
           icon: <CertificateIcon />,
         },
         {
-          title: "IP Rotation: Every 10 Minutes",
+          title: t("features.ipRotation"),
           icon: <RefreshIcon />,
         },
         {
-          title: "Unlimited IP Rotations",
+          title: t("features.unlimitedRotations"),
           icon: <InfiniteIcon />,
         },
         {
-          title: "Unlimited Bandwidth",
+          title: t("features.unlimitedBandwidth"),
           icon: <InfiniteIcon />,
         },
         {
-          title: "Speed up to 50 Mbps",
+          title: t("features.speed"),
           icon: <ThunderIcon />,
         },
       ],
-      price: "$0.20",
+      price: t("plans.rotation.price"),
       topLineColor: "#fc833d",
     },
     {
-      title: "Static Residential",
-      unit: "Day",
+      title: t("plans.static.title"),
+      unit: t("plans.static.unit"),
       features: [
         {
-          title: "Supports HTTP/HTTPS",
+          title: t("features.httpSupport"),
           icon: <CertificateIcon />,
         },
         {
-          title: "IP Rotation: Every 10 Minutes",
+          title: t("features.ipRotation"),
           icon: <RefreshIcon />,
         },
         {
-          title: "Unlimited IP Rotations",
+          title: t("features.unlimitedRotations"),
           icon: <InfiniteIcon />,
         },
         {
-          title: "Unlimited Bandwidth",
+          title: t("features.unlimitedBandwidth"),
           icon: <InfiniteIcon />,
         },
         {
-          title: "Speed up to 50 Mbps",
+          title: t("features.speed"),
           icon: <ThunderIcon />,
         },
       ],
-      price: "$5",
+      price: t("plans.static.price"),
       isPopular: true,
       topLineColor: "#00a7e6",
     },
     {
-      title: "Unlimited Proxy",
-      unit: "No Limited",
+      title: t("plans.unlimited.title"),
+      unit: t("plans.unlimited.unit"),
       features: [
         {
-          title: "Supports HTTP/HTTPS",
+          title: t("features.httpSupport"),
           icon: <CertificateIcon />,
         },
         {
-          title: "Exports: 10,000 Ports Proxies",
+          title: t("features.exportPorts"),
           icon: <RefreshIcon />,
         },
         {
-          title: "Unlimited IP Rotations",
+          title: t("features.unlimitedRotations"),
           icon: <InfiniteIcon />,
         },
         {
-          title: "Unlimited Bandwidth",
+          title: t("features.unlimitedBandwidth"),
           icon: <InfiniteIcon />,
         },
         {
-          title: "Speed up to 50 Mbps",
+          title: t("features.speed"),
           icon: <ThunderIcon />,
         },
       ],
-      price: "$255",
+      price: t("plans.unlimited.price"),
       topLineColor: "#f2c3bb",
     },
   ];
@@ -164,15 +167,13 @@ export const Pricing = () => {
       <div className="container flex flex-col gap-10">
         <div className="text-center">
           <p className="text-13 text-primary text-center font-medium">
-            FLASH SALE DISCOUNT 20%
+            {t("flashSale")}
           </p>
           <h2 className="text-2xl min-[800px]:text-28 min-[1200px]:text-33 font-neue-kaine-bold  text-center text-[#2b303b]">
-            Daily price proxy
+            {t("title")}
           </h2>
           <div className="mt-5 font-inter text-15 max-w-600 mx-auto text-[#576075]">
-            Pay only for the days you need, with no long-term commitments.
-            Seamless browsing with IPs sourced globally through a decentralized
-            network.
+            {t("subtitle")}
           </div>
         </div>
 
@@ -233,7 +234,7 @@ export const Pricing = () => {
             />
           </div>
           <div className="text-15 font-inter text-[#2b303b]">
-            Certified data centers and net providers
+            {t("certificate")}
           </div>
         </div>
       </div>

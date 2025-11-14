@@ -1,68 +1,73 @@
+"use client";
+
 import Image from "next/image";
 import { Separator } from "../ui/separator";
 import ParallaxWrapper from "../ParallaxWrapper/ParallaxWrapper";
+import { useTranslations } from "next-intl";
 
 export const TopCountries = () => {
+  const t = useTranslations("topCountries");
+
   const countries = [
     {
       name: "Vietnam",
       flag: "/images/flag/vietnam.png",
-      ips: "981,177 IPs",
+      ips: "981,177",
     },
     {
       name: "United States",
       flag: "/images/flag/american.svg",
-      ips: "889,389 IPs",
+      ips: "889,389",
     },
     {
       name: "India",
       flag: "/images/flag/india.png",
-      ips: "889,389 IPs",
+      ips: "889,389",
     },
     {
       name: "Brazil",
       flag: "/images/flag/brazil.svg",
-      ips: "813,810 IPs",
+      ips: "813,810",
     },
     {
       name: "Germany",
       flag: "/images/flag/germany.svg",
-      ips: "767,098 IPs",
+      ips: "767,098",
     },
     {
       name: "France",
       flag: "/images/flag/france.svg",
-      ips: "645,901 IPs",
+      ips: "645,901",
     },
     {
       name: "Canada",
       flag: "/images/flag/canada.svg",
-      ips: "613,050 IPs",
+      ips: "613,050",
     },
     {
       name: "Japan",
       flag: "/images/flag/japan.svg",
-      ips: "591,729 IPs",
+      ips: "591,729",
     },
     {
       name: "United Kingdom",
       flag: "/images/flag/united-kingdom.svg",
-      ips: "588,309 IPs",
+      ips: "588,309",
     },
     {
       name: "Australia",
       flag: "/images/flag/australia.svg",
-      ips: "574,403 IPs",
+      ips: "574,403",
     },
     {
       name: "South Korea",
       flag: "/images/flag/korean.svg",
-      ips: "532,966 IPs",
+      ips: "532,966",
     },
     {
       name: "Russia",
       flag: "/images/flag/russia.svg",
-      ips: "400,849 IPs",
+      ips: "400,849",
     },
   ];
   return (
@@ -138,11 +143,9 @@ export const TopCountries = () => {
             <strong>TOP LOCATIONS</strong>
           </p>
           <h3 className="text-2xl min-[810px]:text-28 min-[1200px]:text-33 font-neue-kaine-bold leading-[120%]">
-            Countries with the best proxy usage
+            {t("title")}
           </h3>
-          <p className="mt-5">
-            Choose the best proxies in every city or country you ever heard of.
-          </p>
+          <p className="mt-5">{t("subtitle")}</p>
         </div>
 
         <Separator
@@ -167,7 +170,9 @@ export const TopCountries = () => {
                 </div>
                 <div className="text-[#fdfdfd]">
                   <h4 className="opacity-60 text-13">{country.name}</h4>
-                  <p className="text-17">{country.ips}</p>
+                  <p className="text-17">
+                    {country.ips} {t("ips")}
+                  </p>
                 </div>
               </div>
             </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { ChromeIcon } from "../icons/ChromeIcon";
 import { WindowIcon } from "../icons/WindowIcon";
@@ -9,9 +11,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 export const Footer = () => {
+  const t = useTranslations("footer");
+
   return (
     <footer className="pt-20 pb-10 bg-[#f2f7f7]">
       <div className="container flex flex-col 7xl:flex-row gap-10">
@@ -25,9 +30,7 @@ export const Footer = () => {
             />
           </div>
           <div className="text-[#6c7993] text-13 leading-[180%] tracking-[0em] font-semibold">
-            NetProxy.io provides residential proxy services, helping users to
-            access the internet anonymously and securely, supporting tasks such
-            as web scraping and market research with high speed and reliability.
+            {t("description")}
           </div>
 
           <div className="grid grid-cols-2 font-ibm-plex-mono font-semibold text-xs gap-2">
@@ -38,7 +41,7 @@ export const Footer = () => {
               <div className="w-10 h-10">
                 <ChromeIcon />
               </div>
-              EXTENSIONS FOR <span className="text-primary">CHROME</span>
+              {t("extensions.chrome")}
             </Link>
             <Link
               href="https://www.proxifier.com/"
@@ -47,7 +50,7 @@ export const Footer = () => {
               <div className="w-10 h-10">
                 <WindowIcon />
               </div>
-              DOWNLOAD FOR <span className="text-[#ff4929]">WINDOWS</span>
+              {t("extensions.windows")}
             </Link>
             <Link
               href="https://apps.apple.com/us/app/shadowrocket/id932747118"
@@ -56,7 +59,7 @@ export const Footer = () => {
               <div className="w-10 h-10">
                 <AppleIcon />
               </div>
-              DOWNLOAD FOR <span className="text-[#ff4929]">IOS</span>
+              {t("extensions.ios")}
             </Link>{" "}
             <Link
               href="https://play.google.com/store/apps/details?id=com.scheler.superproxy"
@@ -65,64 +68,64 @@ export const Footer = () => {
               <div className="w-10 h-10">
                 <AndroidIcon />
               </div>
-              DOWNLOAD FOR <span className="text-[#29b4ff]">ANDROID</span>
+              {t("extensions.android")}
             </Link>
           </div>
         </div>
         <div className="hidden min-[810px]:grid w-full grid-cols-4">
           <div className="flex flex-col gap-4">
             <div className="font-neue-kaine-bold text-primary text-21">
-              Account
+              {t("account.title")}
             </div>
             <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-              Login
+              {t("account.login")}
             </div>
           </div>
           <div className="flex flex-col gap-4">
             <div className="font-neue-kaine-bold text-primary text-21">
-              Affiliate
+              {t("affiliate.title")}
             </div>
             <div>
               <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-                Reseller Program
+                {t("affiliate.resellerProgram")}
               </div>
               <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-                Link Program
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col gap-4">
-            <div className="font-neue-kaine-bold text-primary text-21">
-              Category
-            </div>
-            <div>
-              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-                FAQs
-              </div>
-              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-                Pricing
-              </div>
-              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-                Contact
+                {t("affiliate.linkProgram")}
               </div>
             </div>
           </div>
           <div className="flex flex-col gap-4">
             <div className="font-neue-kaine-bold text-primary text-21">
-              Service, Term
+              {t("category.title")}
             </div>
             <div>
               <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-                Privacy Policy
+                {t("category.faqs")}
               </div>
               <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-                Cockie Policy
+                {t("category.pricing")}
               </div>
               <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-                Term, service
+                {t("category.contact")}
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-4">
+            <div className="font-neue-kaine-bold text-primary text-21">
+              {t("serviceTerm.title")}
+            </div>
+            <div>
+              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
+                {t("serviceTerm.privacyPolicy")}
               </div>
               <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-                Refund Policy
+                {t("serviceTerm.cookiePolicy")}
+              </div>
+              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
+                {t("serviceTerm.termsOfService")}
+              </div>
+              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
+                {t("serviceTerm.refundPolicy")}
               </div>
             </div>
           </div>
@@ -136,11 +139,12 @@ export const Footer = () => {
           >
             <AccordionItem value="item-1">
               <AccordionTrigger className="font-ibm-plex-mono text-21 text-primary p-0! hover:no-underline">
-                Account
+                {t("account.title")}
               </AccordionTrigger>
               <AccordionContent className="pb-0! mt-2">
                 <div className="flex flex-col gap-2 font-ibm-plex-mono text-xs text-footer-text">
-                  <div>Create Account</div> <div>Login</div>
+                  <div>{t("account.createAccount")}</div>{" "}
+                  <div>{t("account.login")}</div>
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -152,18 +156,18 @@ export const Footer = () => {
           >
             <AccordionItem value="item-1">
               <AccordionTrigger className="font-ibm-plex-mono text-21 text-primary p-0! hover:no-underline">
-                Category
+                {t("category.title")}
               </AccordionTrigger>
               <AccordionContent className="pb-0! mt-2">
                 <div className="flex flex-col gap-2 font-ibm-plex-mono text-xs text-footer-text">
                   <Link href={"#"} className="text-primary underline">
-                    FAQs
+                    {t("category.faqs")}
                   </Link>
                   <Link href={"#"} className="text-primary underline">
-                    PRICING
+                    {t("category.pricing")}
                   </Link>
                   <Link href={"#"} className="text-primary underline">
-                    CONTACT
+                    {t("category.contact")}
                   </Link>
                 </div>
               </AccordionContent>
@@ -176,13 +180,14 @@ export const Footer = () => {
           >
             <AccordionItem value="item-1">
               <AccordionTrigger className="font-ibm-plex-mono text-21 text-primary p-0! hover:no-underline">
-                Service, Term
+                {t("serviceTerm.title")}
               </AccordionTrigger>
               <AccordionContent className="pb-0! mt-2">
                 <div className="flex flex-col gap-2 font-ibm-plex-mono text-xs text-footer-text">
-                  <div>PRIVACY POLICY</div> <div>COOKIE POLICY</div>
-                  <div>TERMS OF SERVICE</div>
-                  <div>REFUND POLICY</div>
+                  <div>{t("serviceTerm.privacyPolicy")}</div>{" "}
+                  <div>{t("serviceTerm.cookiePolicy")}</div>
+                  <div>{t("serviceTerm.termsOfService")}</div>
+                  <div>{t("serviceTerm.refundPolicy")}</div>
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -194,11 +199,12 @@ export const Footer = () => {
           >
             <AccordionItem value="item-1">
               <AccordionTrigger className="font-ibm-plex-mono text-21 text-primary p-0! hover:no-underline">
-                Affiliate
+                {t("affiliate.title")}
               </AccordionTrigger>
               <AccordionContent className="pb-0! mt-2">
                 <div className="flex flex-col gap-2 font-ibm-plex-mono text-xs text-footer-text">
-                  <div>RESELLER PROGRAM</div> <div>LINK PROGRAM</div>
+                  <div>{t("affiliate.resellerProgram")}</div>{" "}
+                  <div>{t("affiliate.linkProgram")}</div>
                 </div>
               </AccordionContent>
             </AccordionItem>

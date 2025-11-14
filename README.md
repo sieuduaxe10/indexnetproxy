@@ -1,5 +1,25 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## 🌐 Internationalization (i18n)
+
+This project supports multiple languages using `next-intl`:
+
+- 🇺🇸 English (default)
+- 🇻🇳 Vietnamese
+
+### Quick Start with i18n
+
+1. Access the site at `http://localhost:3000` (auto-redirects to your language)
+2. Switch languages using the language switcher component
+3. URLs automatically include locale: `/en/...` or `/vi/...`
+
+### Documentation
+
+- **[I18N_README.md](./I18N_README.md)** - Complete i18n documentation
+- **[I18N_QUICK_REFERENCE.md](./I18N_QUICK_REFERENCE.md)** - Quick reference guide
+- **[I18N_INTEGRATION_CHECKLIST.md](./I18N_INTEGRATION_CHECKLIST.md)** - Integration checklist
+- **[I18N_STRUCTURE.md](./I18N_STRUCTURE.md)** - Project structure overview
+
 ## Getting Started
 
 First, run the development server:
@@ -16,7 +36,7 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can start editing the page by modifying `app/[locale]/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 

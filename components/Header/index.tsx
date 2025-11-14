@@ -1,4 +1,4 @@
-import Link from "next/link";
+"use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Logo from "../Logo";
@@ -6,8 +6,12 @@ import { Nav } from "./Nav";
 import Globe from "../Globe";
 import { TopBar } from "../TopBar";
 import HamburgerMenu from "../Hamburger";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 export const Header = () => {
+  const tCommon = useTranslations("common");
+
   return (
     <header className="w-full border-b border-gray-light fixed z-30 bg-background">
       <TopBar />
@@ -31,7 +35,7 @@ export const Header = () => {
 
               <Button asChild className="hidden 4xl:flex h-10">
                 <Link href="/get-started">
-                  GET STARTED
+                  {tCommon("getStarted").toUpperCase()}
                   <Image
                     src="/images/hero/pointer.svg"
                     alt="Proxy illustration"
