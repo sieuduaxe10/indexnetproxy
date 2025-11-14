@@ -6,7 +6,7 @@ export const HamburgerMenuItem = () => {
   return navLink.map((item) => (
     <li
       key={item.href}
-      className="py-3 px-4 hover:bg-gray-light rounded-md flex justify-center"
+      className="h-11 px-4 hover:bg-gray-light rounded-md flex justify-center"
     >
       <Link href={item.href} className="flex items-center gap-2">
         {item.iconComponent && (

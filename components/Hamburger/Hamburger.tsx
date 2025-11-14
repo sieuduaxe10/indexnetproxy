@@ -30,7 +30,7 @@ export const Hamburger = ({
       {/* Middle bar */}
       <div
         className={cn(
-          "absolute h-[3px] w-[34px] overflow-hidden top-[calc(50.8772%-2px)] left-[calc(50.8772%-17px)] rounded-10 bg-hamburger-dark will-change-transform opacity-100",
+          "absolute h-[3px] w-[34px] overflow-hidden top-[calc(50.8772%-1.5px)] left-[calc(50.8772%-17px)] rounded-10 bg-hamburger-dark will-change-transform opacity-100",
           menuOpen && "opacity-0 rounded-10"
         )}
         style={{ transform: "none", transformOrigin: "50% 50% 0px" }}

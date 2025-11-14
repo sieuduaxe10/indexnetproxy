@@ -41,14 +41,14 @@ const HamburgerMenu = (props: React.ComponentProps<"div">) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute bg-background w-screen top-0 mt-24 left-0 z-10 flex flex-col p-4 border-b border-gray-light"
+            className="absolute bg-background w-screen top-0 mt-[73px] -left-5 4xl:left-[calc((-100vw+100%)/2)] z-10 flex flex-col p-4 border-b border-gray-light"
           >
             <div className="h-2" />
 
-            <ul className="flex-col gap-2 w-full">
+            <ul className="flex flex-col gap-2 w-full">
               <HamburgerMenuItem />
             </ul>
-            <Button asChild className="h-9 flex mt-2">
+            <Button asChild className="h-9 flex mt-2 4xl:hidden">
               <Link href="/get-started">
                 GET STARTED
                 <Image
