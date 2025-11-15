@@ -159,17 +159,18 @@ export const Pricing = () => {
       topLineColor: "#f2c3bb",
     },
   ];
+
   return (
     <section
       id="pricing"
-      className="py-[60px] px-5 min-[1200px]:px-10 min-[1200px]:py-20 relative border-b border-[#e3ecec] bg-[#f2f7f7]"
+      className="py-[60px] px-4 7xl:px-10 7xl:py-20 relative border-b border-[#e3ecec] bg-[#f2f7f7]"
     >
       <div className="container flex flex-col gap-10">
         <div className="text-center">
           <p className="text-13 text-primary text-center font-medium">
             {t("flashSale")}
           </p>
-          <h2 className="text-2xl min-[800px]:text-28 min-[1200px]:text-33 font-neue-kaine-bold  text-center text-[#2b303b]">
+          <h2 className="text-2xl min-[800px]:text-28 7xl:text-33 font-neue-kaine-bold  text-center text-[#2b303b]">
             {t("title")}
           </h2>
           <div className="mt-5 font-inter text-15 max-w-600 mx-auto text-[#576075]">
@@ -177,49 +178,50 @@ export const Pricing = () => {
           </div>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 min-[800px]:grid-cols-2 min-[1200px]:grid-cols-4 gap-10 min-[810px]:gap-y-10 min-[810px]:gap-x-5  min-[1200px]:gap-2 cards-wrapper">
+        <div className="7xl:mt-10 grid grid-cols-1 min-[800px]:grid-cols-2 7xl:grid-cols-4 gap-10 min-[810px]:gap-y-10 min-[810px]:gap-x-5  7xl:gap-2 cards-wrapper">
           {pricingPlans.map((plan, index) => (
-            <Link
-              href={"#"}
-              key={index}
-              className="pricing-card p-6 pt-8 flex gap-4 flex-col bg-[#fafcfc] border border-[#e5eaea] rounded-2xl relative card-item"
-            >
-              <div
-                className="w-[168px] h-2 absolute top-0 left-1/2 -translate-x-1/2"
-                data-framer-name="top line"
-                style={{
-                  backgroundColor: plan.topLineColor,
-                }}
-              ></div>
-              <div>
-                <h3 className="text-21 font-neue-kaine-bold text-[#2b303b]">
-                  {plan.title}
-                </h3>
-                <p className="text-21 font-neue-kaine-bold text-primary">
-                  {plan.unit}
-                </p>
-              </div>
-              <ul className="flex flex-col gap-1">
-                {plan.features.map((feature, index) => (
-                  <li key={index} className="center gap-2">
-                    <span className="w-5 h-5 center">{feature.icon}</span>
-                    <span className="text-13 text-[#2b303b] font-semibold">
-                      {feature.title}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <Separator className="bg-[#e3ecec]" />
-              <div className="font-neue-kaine-bold text-40 text-primary text-center font-normal">
-                {plan.price}
-              </div>
-
-              {plan.isPopular && (
-                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                  <ButtonLightEffect />
+            <div key={index} className="pricing-card">
+              <Link
+                href={"#"}
+                className="card-item p-6 pt-8 flex gap-4 flex-col bg-[#fafcfc] border border-[#e5eaea] rounded-2xl relative "
+              >
+                <div
+                  className="w-[168px] h-2 absolute top-0 left-1/2 -translate-x-1/2"
+                  data-framer-name="top line"
+                  style={{
+                    backgroundColor: plan.topLineColor,
+                  }}
+                />
+                <div>
+                  <h3 className="text-18 4xl:text-20 7xl:text-21 font-neue-kaine-bold text-[#2b303b]">
+                    {plan.title}
+                  </h3>
+                  <p className="text-18 4xl:text-20 7xl:text-21 font-neue-kaine-bold text-primary">
+                    {plan.unit}
+                  </p>
                 </div>
-              )}
-            </Link>
+                <ul className="flex flex-col gap-1">
+                  {plan.features.map((feature, index) => (
+                    <li key={index} className="center gap-2">
+                      <span className="w-5 h-5 center">{feature.icon}</span>
+                      <span className="text-13 text-[#2b303b] font-semibold">
+                        {feature.title}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <Separator className="bg-[#e3ecec]" />
+                <div className="font-neue-kaine-bold text-40 text-primary text-center font-normal">
+                  {plan.price}
+                </div>
+
+                {plan.isPopular && (
+                  <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                    <ButtonLightEffect />
+                  </div>
+                )}
+              </Link>
+            </div>
           ))}
         </div>
 

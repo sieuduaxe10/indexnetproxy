@@ -70,6 +70,7 @@
   --text-17: var(--text-17);
   --text-38: var(--text-38);
   --text-28: var(--text-28);
+  --text-20: var(--text-20);
   --spacing-30: var(--spacing-30);
   --mask-gradient: linear-gradient(
     to right,
@@ -135,6 +136,7 @@
   --text-17: 17px;
   --text-38: 38px;
   --text-28: 28px;
+  --text-20: 20px;
   --spacing-30: 30px;
   --spacing-10: 10px;
   --text-21: 21px;
