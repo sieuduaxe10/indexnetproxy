@@ -10,15 +10,15 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="bg-[#f9fbfb]">
-      <div className="px-5 py-[60px] md:px-10 md:py-10">
+      <div className="px-5 py-[60px] 7xl:px-10 7xl:py-10">
         <p className="text-13 text-primary text-center font-medium">
           {t("tag")}
         </p>
-        <h3 className="text-2xl md:text-33 font-neue-kaine-bold mb-10 text-center text-[#2b303b]">
+        <h3 className="text-2xl 4xl:text-28 7xl:text-33 font-neue-kaine-bold mb-10 text-center text-[#2b303b]">
           {t("title")}
         </h3>
         <div className="max-w-3xl mx-auto">
-          <h4 className="text-18 text-21 font-neue-kaine-bold mb-2 text-[#2b303b]">
+          <h4 className="text-18 7xl:text-21 font-neue-kaine-bold mb-2 text-[#2b303b]">
             {t("anyQuestions")}
           </h4>
           <div className="text-15 font-inter text-[#576075] mb-8 max-w-600">

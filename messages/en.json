@@ -113,8 +113,8 @@
     }
   },
   "topCountries": {
-    "title": "Top Countries",
-    "subtitle": "Our proxies are available worldwide",
+    "title": "Countries with the best proxy usage",
+    "subtitle": "Choose the best proxies in every city or country you ever heard of.",
     "ips": "IPs"
   },
   "partnerships": {
@@ -124,7 +124,7 @@
   },
   "caseStudies": {
     "title": "Case Studies",
-    "subtitle": "See how our clients succeed",
+    "subtitle": "Peer-to-Peer (P2P) proxy service designed to enhance your browsing experience by providing flexible, high-speed, and reliable proxy solutions.",
     "items": {
       "adVerification": "Ad verification",
       "fastShopping": "Fast Shopping",

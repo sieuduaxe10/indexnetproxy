@@ -145,7 +145,7 @@ export const TopCountries = () => {
           <h3 className="text-2xl min-[810px]:text-28 min-[1200px]:text-33 font-neue-kaine-bold leading-[120%]">
             {t("title")}
           </h3>
-          <p className="mt-5">{t("subtitle")}</p>
+          <p className="mt-5 4xl:max-w-[400px]">{t("subtitle")}</p>
         </div>
 
         <Separator
@@ -159,7 +159,7 @@ export const TopCountries = () => {
               key={country.name}
               className="rounded-lg transition-transform duration-300 hover:scale-110 cursor-pointer"
             >
-              <div className="flex items-center gap-4 min-[1200px]:gap-2 mb-2">
+              <div className="flex flex-col items-start 4xl:flex-row 4xl:items-center gap-4 min-[1200px]:gap-2 mb-2">
                 <div className="w-10 h-10 relative rounded-full border-[#fdfdfd] border-2 overflow-hidden">
                   <Image
                     src={country.flag}

@@ -64,11 +64,11 @@ export const Hero = () => {
         <FloatingCircle />
         <MainHero />
 
-        <div className="flex flex-col 4xl:gap-[461px] 7xl:gap-[507px] z-20 relative">
+        <div className="flex flex-col gap-[461px] 7xl:gap-[507px] z-20 relative">
           <div>
             <h1
               ref={headerRef}
-              className="text-center font-neue-kaine font-bold mb-5 tracking-normal"
+              className="text-center font-neue-kaine font-bold mb-5 tracking-normal wrap-break-word"
             >
               {(() => {
                 // Split text into words
@@ -143,11 +143,14 @@ export const Hero = () => {
                 return elements;
               })()}
             </h1>
-            <p className="mx-auto text-[15px] leading-[25.5px] font-inter font-normal text-[#576075] text-center wrap-break-words w-3xl mb-5 7xl:h-[51px] antialiased">
+            <p className="mx-auto text-[15px] leading-[25.5px] font-inter font-normal text-[#576075] text-center wrap-break-words 7xl:w-3xl mb-5 7xl:h-[51px] antialiased">
               {t("description")}
             </p>
             <div className="w-fit mx-auto flex-row center gap-4">
-              <Button size="lg" className="get-started-button h-14 px-8">
+              <Button
+                size="lg"
+                className="get-started-button h-14 px-4 4xl:px-8"
+              >
                 {tCommon("getStarted").toUpperCase()}{" "}
                 <p className="w-5 h-5">
                   <CursorIcon />
@@ -159,8 +162,8 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className="flex flex-col 4xl:flex-row 4xl:gap-4 7xl:gap-8 z-20">
-            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row 4xl:flex-col gap-5 items-center">
+          <div className="flex flex-col 4xl:flex-row gap-4 7xl:gap-8 z-20">
+            <div className="bg-[#fafcfc] rounded-2xl pt-4 4xl:px-6 4xl:pt-16 px-4 7xl:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row 4xl:flex-col gap-5 items-center">
               <div className="w-10 h-10 4xl:w-20 4xl:h-20 relative 4xl:absolute 4xl:-top-[35px] 4xl:left-1/2 4xl:-translate-x-1/2 center justify-center">
                 <MessageIcon className="w-10! h-10! md:w-20! md:h-20!" />
               </div>
@@ -174,7 +177,7 @@ export const Hero = () => {
               </div>
             </div>
 
-            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row 4xl:flex-col gap-5 items-center">
+            <div className="bg-[#fafcfc] rounded-2xl pt-4 4xl:px-6 4xl:pt-16 px-4 7xl:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row 4xl:flex-col gap-5 items-center">
               <div className="w-10 h-10 4xl:w-20 4xl:h-20 relative 4xl:absolute 4xl:-top-[35px] 4xl:left-1/2 4xl:-translate-x-1/2 center justify-center">
                 <BlueNetworkIcon className="w-10! h-10! md:w-20! md:h-20!" />
               </div>
@@ -188,7 +191,7 @@ export const Hero = () => {
               </div>
             </div>
 
-            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row 4xl:flex-col gap-5 items-center">
+            <div className="bg-[#fafcfc] rounded-2xl pt-4 4xl:px-6 4xl:pt-16 px-4 7xl:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row 4xl:flex-col gap-5 items-center">
               <div className="w-10 h-10 4xl:w-20 4xl:h-20 relative 4xl:absolute 4xl:-top-[35px] 4xl:left-1/2 4xl:-translate-x-1/2 center justify-center">
                 <WifiIcon className="w-10! h-10! md:w-20! md:h-20!" />
               </div>

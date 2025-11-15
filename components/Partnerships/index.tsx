@@ -104,8 +104,8 @@ export const Partnerships = () => {
         </div>
       </div>
       {/* Disclaimer */}
-      <div className="px-4 md:px-10 py-[30px] text-white relative">
-        <div className="container flex flex-row ">
+      <div className="px-4 4xl:px-10 py-[30px] text-white relative">
+        <div className="container flex flex-col 4xl:flex-row gap-4 4xl:gap-0">
           <p className="text-13 flex-1">{t("disclaimer")}</p>
           <div className="flex gap-2 flex-row flex-wrap flex-1">
             {disclaimerPartner.map((imgSrc, index) => (

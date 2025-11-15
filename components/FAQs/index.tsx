@@ -34,9 +34,9 @@ export const FAQs = () => {
 
   return (
     <section id="faqs">
-      <div className="px-10 py-20">
+      <div className="px-5 py-10 4xl:px-10 4xl:py-20">
         <div className="text-13 text-primary text-center">{t("tag")}</div>
-        <h3 className="text-2xl md:text-33 font-neue-kaine-bold text-center mb-10 text-[#2c303b] font-normal">
+        <h3 className="text-2xl 4xl:text-28 7xl:text-33 font-neue-kaine-bold text-center mb-10 text-[#2c303b] font-normal">
           {t("title")}
         </h3>
         <div className="max-w-960 mx-auto p-5 pb-0! bg-[#f2f7f7] rounded-[12px]">
@@ -52,7 +52,7 @@ export const FAQs = () => {
                 key={index}
                 value={faq.questionKey}
                 className={clsx(
-                  "item-1 border border-[#e3ecec] rounded-xl overflow-hidden",
+                  "item-1 border border-[#e3ecec] rounded-lg overflow-hidden shadow-[0_1px_4px_rgba(0,0,0,0.12)]",
                   {
                     "border-primary border-2": openItem === faq.questionKey,
                   }
@@ -70,6 +70,8 @@ export const FAQs = () => {
                   <div className="flex gap-2 center">
                     <div
                       style={{
+                        minWidth: "32px",
+                        minHeight: "32px",
                         width: "32px",
                         height: "32px",
                         border: "1px solid rgb(227, 236, 236)",
