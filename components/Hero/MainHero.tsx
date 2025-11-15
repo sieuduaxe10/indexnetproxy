@@ -5,9 +5,11 @@ import { MainCharacter } from "./MainCharacter";
 import ParallaxWrapper from "../ParallaxWrapper/ParallaxWrapper";
 import HeroGlobeIcon from "./HeroGlobeIcon";
 import HeroTopCrossIcon from "./HeroTopCrossIcon";
+import { useResponsive } from "@/hooks/useResponsive";
 export const MainHero = () => {
+  const { isDesktop } = useResponsive();
   return (
-    <div className="w-[1041px] h-[632px] absolute bottom-[230px] left-[calc(50%-520.5px)] z-10 user-select-none overflow-hidden">
+    <div className="w-[1041px] 4xl:h-[568px] 7xl:h-[632px] absolute 4xl:top-[235px] 7xl:bottom-[230px] left-[calc(50%-520.5px)] z-10 user-select-none overflow-hidden">
       <CloudImage />
       {/*  main Image*/}
       <div className="w-[840px] h-[478px] absolute bottom-0 left left-[calc(46.9741%-420px)] overflow-visible">
@@ -17,14 +19,14 @@ export const MainHero = () => {
         {/* Block 1 (106%) */}
         <ParallaxWrapper
           speed={1.06}
-          className="absolute z-10 top-[41%] left-[24%] translate-x-[-50%] translate-y-[-50%] aspect-[1.58498] h-auto w-[206px] opacity-100 will-change-transform"
+          className="absolute z-10 top-[41%] left-[30%] 7xl:left-[24%] translate-x-[-50%] translate-y-[-50%] aspect-[1.58498] h-auto w-[206px] opacity-100 will-change-transform"
         >
           <div className="absolute inset-0">
             <Image
               src="/images/hero/block-1.png"
               alt="Hero Image"
-              width={206}
-              height={130}
+              width={isDesktop ? 206 : 186}
+              height={isDesktop ? 130 : 117}
             />
           </div>
         </ParallaxWrapper>
@@ -32,26 +34,25 @@ export const MainHero = () => {
         {/* Block 2 (103%) */}
         <ParallaxWrapper
           speed={1.03}
-          className="absolute z-10 top-[55%] left-[24%] translate-x-[-50%] translate-y-[-50%] aspect-[1.58498] h-auto w-[206px] opacity-100 will-change-transform"
+          className="absolute z-10 top-[55%] left-[30%] 7xl:left-[24%] translate-x-[-50%] translate-y-[-50%] aspect-[1.58498] h-auto w-[206px] opacity-100 will-change-transform"
         >
           <div className="absolute inset-0">
             <Image
               src="/images/hero/block-1.png"
               alt="Hero Image"
-              width={206}
-              height={130}
+              width={isDesktop ? 206 : 186}
+              height={isDesktop ? 130 : 117}
             />
           </div>
         </ParallaxWrapper>
         {/* Block 3 */}
-        <div className="absolute z-10 top-[69%] left-[24%] translate-x-[-50%] translate-y-[-50%] aspect-[1.58498] h-auto w-[206px] opacity-100 will-change-transform">
+        <div className="absolute z-10 top-[69%] left-[30%] 7xl:left-[24%] translate-x-[-50%] translate-y-[-50%] aspect-[1.58498] h-auto w-[206px] opacity-100 will-change-transform">
           <div className="absolute inset-0">
             <Image
               src="/images/hero/block-1.png"
               alt="Hero Image"
-              width={206}
-              height={130}
-              className=""
+              width={isDesktop ? 206 : 186}
+              height={isDesktop ? 130 : 117}
             />
           </div>
         </div>

@@ -4,11 +4,13 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useResponsive } from "@/hooks/useResponsive";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const MonitorImage = () => {
   const ref = useRef<HTMLDivElement>(null);
+  const { isDesktop } = useResponsive();
 
   useEffect(() => {
     const el = ref.current;
@@ -40,14 +42,14 @@ export const MonitorImage = () => {
   return (
     <div
       ref={ref}
-      className="absolute top-[21%] left-[49%] translate-x-[-50%] translate-y-[-50%] aspect-[0.867374] h-auto w-[153px] opacity-100 will-change-transform"
+      className="absolute top-[21%] left-[56%] 7xl:left-[49%] translate-x-[-50%] translate-y-[-50%] aspect-[0.867374] h-auto w-[153px] opacity-100 will-change-transform"
     >
       <div className="absolute inset-0">
         <Image
           src="/images/hero/monitor-icon.avif"
           alt="netproxy monitor icon"
-          width={153}
-          height={176}
+          width={isDesktop ? 153 : 139}
+          height={isDesktop ? 176 : 160}
           className="object-contain"
           priority
         />

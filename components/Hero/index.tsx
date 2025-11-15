@@ -2,7 +2,7 @@
 import { Button } from "../ui/button";
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
-import { useEffect, useRef } from "react";
+import { JSX, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { CursorIcon } from "../icons/CursorIcon";
 import { MessageIcon } from "../icons/MessageIcon";
@@ -64,34 +64,86 @@ export const Hero = () => {
         <FloatingCircle />
         <MainHero />
 
-        <div className="flex flex-col gap-[507px] z-20 relative">
+        <div className="flex flex-col 4xl:gap-[461px] 7xl:gap-[507px] z-20 relative">
           <div>
             <h1
               ref={headerRef}
               className="text-center font-neue-kaine font-bold mb-5 tracking-normal"
             >
-              {text.split("").map((char, i) => {
-                const isLastChar = i === text.length - 1;
-                const isMMO = i >= text.length - 3 && !isLastChar; // Last 3 characters are "MMO"
-                const isProxiesP2P =
-                  i >= text.indexOf("Proxies") && i < text.indexOf("P2P") + 3; // "Proxies P2P"
-                const isAfterP2P = i === text.indexOf("P2P") + 3; // Position after "P2P"
-                return (
-                  <>
+              {(() => {
+                // Split text into words
+                const words = text.split(" ");
+                const elements: JSX.Element[] = [];
+
+                // Define indices
+                const proxiesP2PStart = text.indexOf("Proxies");
+                const p2pEnd = text.indexOf("P2P") + 3;
+
+                let charIndex = 0;
+
+                words.forEach((word, wordIndex) => {
+                  const wordStartIndex = charIndex;
+                  const wordEndIndex = charIndex + word.length;
+
+                  elements.push(
                     <span
-                      key={`${i}-${char}`}
-                      className={`h-12 inline-block text-33 min-[800px]:text-38 md:text-40 text-[#2b303b] ${
-                        isMMO ? "text-[#00a7e6]!" : ""
-                      } ${isProxiesP2P ? "text-[#fc833d]" : ""} ${isLastChar ? "text-[#1acda5]!" : ""}`}
+                      key={`word-${wordIndex}`}
+                      style={{ whiteSpace: "nowrap" }}
                     >
-                      {char === " " ? "\u00A0" : char}
+                      {word.split("").map((char, charIdx) => {
+                        const globalIdx = wordStartIndex + charIdx;
+                        const isLastChar = globalIdx === text.length - 1;
+                        const isMMO =
+                          globalIdx >= text.length - 3 && !isLastChar;
+                        const isProxiesP2P =
+                          globalIdx >= proxiesP2PStart && globalIdx < p2pEnd;
+
+                        const colorClasses = `${
+                          isMMO ? "text-[#00a7e6]!" : ""
+                        } ${isProxiesP2P ? "text-[#fc833d]" : ""} ${
+                          isLastChar ? "text-[#1acda5]!" : ""
+                        }`;
+
+                        return (
+                          <span
+                            key={`${globalIdx}-${char}`}
+                            className={`inline-block h-12 text-33 4xl:text-38 md:text-40 text-[#2b303b] ${colorClasses}`}
+                            style={{
+                              display: "inline-block",
+                              willChange: "transform",
+                            }}
+                          >
+                            {char === " " ? "\u00A0" : char}
+                          </span>
+                        );
+                      })}
                     </span>
-                    {isAfterP2P && <br />}
-                  </>
-                );
-              })}
+                  );
+
+                  charIndex += word.length + 1; // +1 for space
+
+                  // Add line break after "P2P"
+                  if (wordEndIndex === p2pEnd) {
+                    elements.push(
+                      <br key={`br-${wordIndex}`} className="framer-text" />
+                    );
+                  } else if (wordIndex < words.length - 1) {
+                    // Add space between words (except before line break)
+                    elements.push(
+                      <span
+                        key={`space-${wordIndex}`}
+                        style={{ whiteSpace: "pre" }}
+                      >
+                        {"  "}
+                      </span>
+                    );
+                  }
+                });
+
+                return elements;
+              })()}
             </h1>
-            <p className="mx-auto text-[15px] leading-[25.5px] font-inter font-normal text-[#576075] text-center wrap-break-words w-3xl mb-5 h-[51px] antialiased">
+            <p className="mx-auto text-[15px] leading-[25.5px] font-inter font-normal text-[#576075] text-center wrap-break-words w-3xl mb-5 7xl:h-[51px] antialiased">
               {t("description")}
             </p>
             <div className="w-fit mx-auto flex-row center gap-4">
@@ -101,15 +153,15 @@ export const Hero = () => {
                   <CursorIcon />
                 </p>
               </Button>
-              <Button className="h-14 px-8 py-0" variant={"secondary"}>
+              <Button className="h-14 px-4 7xl:px-8 py-0" variant={"secondary"}>
                 {t("viewPrice")}
               </Button>
             </div>
           </div>
 
-          <div className="flex flex-col min-[800px]:flex-row gap-4 md:gap-8 z-20">
-            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row min-[800px]:flex-col gap-5 items-center">
-              <div className="w-10 h-10 4xl:w-20 4xl:h-20 relative min-[800px]:absolute min-[800px]:-top-[50px] min-[800px]:left-1/2 min-[800px]:-translate-x-1/2 center justify-center">
+          <div className="flex flex-col 4xl:flex-row 4xl:gap-4 7xl:gap-8 z-20">
+            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row 4xl:flex-col gap-5 items-center">
+              <div className="w-10 h-10 4xl:w-20 4xl:h-20 relative 4xl:absolute 4xl:-top-[35px] 4xl:left-1/2 4xl:-translate-x-1/2 center justify-center">
                 <MessageIcon className="w-10! h-10! md:w-20! md:h-20!" />
               </div>
               <div>
@@ -122,8 +174,8 @@ export const Hero = () => {
               </div>
             </div>
 
-            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row min-[800px]:flex-col gap-5 items-center">
-              <div className="w-10 h-10 4xl:w-20 4xl:h-20 relative min-[800px]:absolute min-[800px]:-top-[50px] min-[800px]:left-1/2 min-[800px]:-translate-x-1/2 center">
+            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row 4xl:flex-col gap-5 items-center">
+              <div className="w-10 h-10 4xl:w-20 4xl:h-20 relative 4xl:absolute 4xl:-top-[35px] 4xl:left-1/2 4xl:-translate-x-1/2 center justify-center">
                 <BlueNetworkIcon className="w-10! h-10! md:w-20! md:h-20!" />
               </div>
               <div>
@@ -136,8 +188,8 @@ export const Hero = () => {
               </div>
             </div>
 
-            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row min-[800px]:flex-col gap-5 items-center">
-              <div className="w-10 h-10 4xl:w-20 4xl:h-20 relative min-[800px]:absolute min-[800px]:-top-[50px] min-[800px]:left-1/2 min-[800px]:-translate-x-1/2 center">
+            <div className="bg-[#fafcfc] rounded-2xl pt-4 md:pt-16 px-4 md:px-8 pb-4 md:pb-8 flex-1 self-stretch relative flex flex-row 4xl:flex-col gap-5 items-center">
+              <div className="w-10 h-10 4xl:w-20 4xl:h-20 relative 4xl:absolute 4xl:-top-[35px] 4xl:left-1/2 4xl:-translate-x-1/2 center justify-center">
                 <WifiIcon className="w-10! h-10! md:w-20! md:h-20!" />
               </div>
               <div>
