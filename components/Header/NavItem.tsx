@@ -26,7 +26,7 @@ export const NavItem = ({
             height={20}
             className="top-nav-item-icon group-hover:inline"
           />
-          {label}
+          <p className="group-hover:pr-4">{label}</p>
         </div>
       </Link>
     </li>

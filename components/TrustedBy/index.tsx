@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import GsapMarquee from "./InfiniteMarquee";
+import { useTranslations } from "next-intl";
 
 export const trustedByCompanies = [
   { name: "GenLogin", logo: "/images/trusted-by/gen-login.avif" },
@@ -21,6 +22,7 @@ export const trustedByCompanies = [
 ];
 
 export const TrustedBy = () => {
+  const t = useTranslations("trustedBy");
   const [speed] = useState(80);
 
   // animate grayscale smoothly
@@ -38,8 +40,7 @@ export const TrustedBy = () => {
   return (
     <section className="container bg-background px-5 py-8 md:px-10 md:py-10 flex flex-col gap-6">
       <p className="text-base text-footer-text mx-auto text-center leading-[27.2px]">
-        Trusted by many businesses to enhance learning and drive educational
-        growth.
+        {t("title")}
       </p>
 
       <div className="container mx-auto overflow-hidden select-none w-[82%] h-[76px] mask-[linear-gradient(to_right,rgba(0,0,0,0)_0%,rgb(0,0,0)_12.5%,rgb(0,0,0)_87.5%,rgba(0,0,0,0)_100%)]">

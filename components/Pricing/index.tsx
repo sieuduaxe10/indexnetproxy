@@ -203,7 +203,7 @@ export const Pricing = () => {
                 {plan.features.map((feature, index) => (
                   <li key={index} className="center gap-2">
                     <span className="w-5 h-5 center">{feature.icon}</span>
-                    <span className="text-13 text-[#2b303b]">
+                    <span className="text-13 text-[#2b303b] font-semibold">
                       {feature.title}
                     </span>
                   </li>
