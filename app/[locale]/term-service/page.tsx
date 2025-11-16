@@ -4,6 +4,8 @@ import { Header } from "@/components/Header";
 import { Partnerships } from "@/components/Partnerships";
 import TermService from "@/components/TermService";
 
+export const runtime = 'edge';
+
 const TermServicePage = () => {
   return (
     <main>

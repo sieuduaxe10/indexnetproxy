@@ -4,6 +4,8 @@ import { Header } from "@/components/Header";
 import { Partnerships } from "@/components/Partnerships";
 import RefundService from "@/components/RefundService";
 
+export const runtime = 'edge';
+
 const RefundServicePage = () => {
   return (
     <main>

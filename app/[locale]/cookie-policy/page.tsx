@@ -4,6 +4,8 @@ import { Header } from "@/components/Header";
 import { Partnerships } from "@/components/Partnerships";
 import CookiePolicy from "@/components/CookiePolicy";
 
+export const runtime = 'edge';
+
 const CookiePolicyPage = () => {
   return (
     <main>
