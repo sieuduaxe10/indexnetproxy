@@ -30,7 +30,6 @@ export const Header = () => {
             </nav>
 
             <div className="ml-auto flex items-center gap-2">
-              {/* <Globe /> */}
               <Globe />
 
               <Button asChild className="hidden 4xl:flex h-10">

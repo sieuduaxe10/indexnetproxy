@@ -1,22 +1,34 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useTransition } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useResponsive } from "@/hooks/useResponsive";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { GlobeIcon } from "./GlobeIcon";
 import { languages } from "@/common/constant";
 import { ibmPlexMono } from "@/app/fonts";
+import { usePathname, useRouter } from "@/i18n/routing";
 
 const Globe = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isPending, startTransition] = useTransition();
   const { isMobile, isTablet } = useResponsive();
   const [menuOpen, setMenuOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useClickOutside(dropdownRef, () => setMenuOpen(false));
 
   useEffect(() => {
     console.log({ isMobile, isTablet });
   }, [isMobile, isTablet]);
+
+  const handleChangeLanguage = (code: string) => {
+    if (isPending) return;
+    const nextLocale = code;
+    startTransition(() => {
+      router.replace(pathname, { locale: nextLocale });
+    });
+  };
 
   return (
     <div
@@ -46,7 +58,8 @@ const Globe = () => {
               {languages.map(({ code, label, subLabel }) => (
                 <li
                   key={code}
-                  className="will-change-auto  w-full whitespace-pre flex h-[22px] items-center justify-center rounded-xl hover:bg-[#fdf4e4] px-4 transition-colors"
+                  className="cursor-pointer will-change-auto  w-full whitespace-pre flex h-[22px] items-center justify-center rounded-xl hover:bg-[#fdf4e4] px-4 transition-colors"
+                  onClick={() => handleChangeLanguage(code)}
                 >
                   <span
                     className={`${ibmPlexMono.className} uppercase text-[12px] font-medium leading-[14.4px] text-[#2b303b] duration-150 hover:text-primary transition-colors`}

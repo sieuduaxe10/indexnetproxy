@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "住宅P2P代理 – MMO最佳代理解决方案",
-    "description": "NetProxy.io为MMO游戏玩家和营销人员提供安全、高性能的住宅P2P代理。享受全球访问、低延迟和稳定连接，拥有数百万真实IP。体验终极在线自由和可靠性。"
+    "title": "住宅 P2P 代理 – 最佳 MMO 代理解决方案",
+    "description": "NetProxy.io 提供安全、高性能的住宅 P2P 代理。享受全球访问、低延迟和稳定连接，覆盖数百万真实 IP，带来可靠自由的上网体验。"
   },
   "common": {
     "learnMore": "了解更多",
@@ -17,35 +17,50 @@
     "caseStudy": "案例研究",
     "country": "国家",
     "contact": "联系",
-    "faq": "常见问题",
-    "cookiePolicy": "Cookie政策",
+    "faq": "FAQ",
+    "cookiePolicy": "Cookie 政策",
     "privacyPolicy": "隐私政策",
     "termsOfService": "服务条款",
     "refundService": "退款服务"
   },
   "hero": {
-    "title": "住宅P2P代理",
-    "subtitle": "MMO最佳代理解决方案",
-    "description": "我们拥有超过6200万个代理IP，遍布220多个国家和城市，为您的所有在线需求提供无缝、安全和可靠的代理解决方案。",
-    "cta": "立即开始"
+    "title": "住宅 P2P 代理",
+    "subtitle": "MMO 最佳代理解决方案",
+    "description": "拥有超过 62,000,000 个代理 IP，覆盖 220 多个国家与城市，提供稳定、安全、可靠的代理服务，满足您的所有在线需求。",
+    "cta": "开始使用",
+    "viewPrice": "查看价格 - 起价 $0.99",
+    "features": {
+      "transparent": {
+        "title": "透明代理",
+        "description": "透明代理提升安全性并增强连接性能。"
+      },
+      "noLogs": {
+        "title": "无日志",
+        "description": "严格的无日志政策，不记录任何活动，确保安全与隐私。"
+      },
+      "fastConnection": {
+        "title": "高速连接",
+        "description": "享受极速代理服务。低延迟与快速响应，让浏览、串流与任务执行更顺畅。"
+      }
+    }
   },
   "pricing": {
-    "flashSale": "限时优惠折扣20%",
+    "flashSale": "限时优惠 20%",
     "title": "每日代理价格",
-    "subtitle": "只需为您需要的天数付费，无需长期承诺。通过分散网络从全球获取IP，实现无缝浏览。",
+    "subtitle": "只需为使用的天数付费，无长期绑定。全球分布式网络带来流畅稳定的体验。",
     "plans": {
       "ipv6": {
-        "title": "IPv6代理",
-        "unit": "千兆字节",
+        "title": "IPv6 代理",
+        "unit": "GB",
         "price": "$0.04"
       },
       "rotation": {
-        "title": "轮换住宅",
+        "title": "轮换住宅代理",
         "unit": "天",
         "price": "$0.20"
       },
       "static": {
-        "title": "静态住宅",
+        "title": "静态住宅代理",
         "unit": "天",
         "price": "$5"
       },
@@ -57,35 +72,89 @@
     },
     "features": {
       "httpSupport": "支持 HTTP/HTTPS",
-      "exportPorts": "导出：10,000个代理端口",
-      "ipRotation": "IP轮换：每10分钟",
-      "unlimitedRotations": "无限IP轮换",
+      "exportPorts": "可导出 10,000 个端口",
+      "ipRotation": "IP 每 10 分钟轮换",
+      "unlimitedRotations": "无限 IP 轮换",
       "unlimitedBandwidth": "无限带宽",
-      "speed": "速度高达50 Mbps"
+      "speed": "速度高达 50 Mbps"
     },
-    "certificate": "认证的数据中心和网络提供商"
+    "certificate": "认证数据中心与网络服务商"
   },
   "contact": {
-    "tag": "联系我们",
-    "title": "需要真人帮助吗？",
-    "anyQuestions": "有任何问题吗？",
-    "description": "我们随时为您提供帮助并回答您可能遇到的任何问题。我们期待听到您的声音。请填写此表格或发送电子邮件至",
-    "wantCollaborate": "想要合作吗？",
-    "collaborateDescription": "发送电子邮件联系我们的业务团队",
+    "tag": "联系",
+    "title": "需要真人支持？",
+    "anyQuestions": "有任何问题？",
+    "description": "我们随时为您提供帮助。填写表单或发送电子邮件至",
+    "wantCollaborate": "想要合作？",
+    "collaborateDescription": "发送邮件联系我们的商务团队",
     "phone": "(+84) 327 072 120",
-    "address": "117 Duong Nguyen Du, Phuong Ben Thanh, Quan 1, Ho Chi Minh 700000"
+    "address": "117 Nguyen Du, Ben Thanh Ward, District 1, Ho Chi Minh City 700000"
+  },
+  "faqs": {
+    "tag": "FAQs",
+    "title": "所有问题，都有答案",
+    "questions": {
+      "q1": {
+        "question": "NetProxy.io 提供哪些类型的代理？",
+        "answer": "我们提供住宅代理、数据中心代理和移动代理，适用于抓取、广告验证、多账户管理等不同需求。"
+      },
+      "q2": {
+        "question": "什么是代理？它如何工作？",
+        "answer": "代理是设备与互联网之间的中间服务器，负责转发请求并返回响应。NetProxy 提供按分钟轮换 IP 的套餐，用于保护身份并提升安全性。"
+      },
+      "q3": {
+        "question": "NetProxy.io 适合大规模任务，例如爬虫吗？",
+        "answer": "非常适合！我们的代理专为绕过检测设计，稳定不断线，是大规模数据采集的完美选择。"
+      },
+      "q4": {
+        "question": "如何开始使用 NetProxy.io？",
+        "answer": "注册账号，选择套餐，并按指南配置即可。如遇问题，我们的支持团队 24/7 可提供协助。"
+      }
+    }
+  },
+  "topCountries": {
+    "title": "代理使用量最高的国家",
+    "subtitle": "在每个城市或国家找到最佳代理。",
+    "ips": "IPs"
+  },
+  "partnerships": {
+    "title": "合作伙伴",
+    "subtitle": "受到领先企业信赖",
+    "disclaimer": "免责声明：用户需对代理服务的合法使用负责，我们不对不当使用承担责任。感谢理解！"
+  },
+  "caseStudies": {
+    "title": "案例研究",
+    "subtitle": "P2P 代理服务提供灵活、高速、可靠的浏览体验。",
+    "items": {
+      "adVerification": "广告验证",
+      "fastShopping": "快速购物",
+      "pricingMonitoring": "价格监控",
+      "network": "网络",
+      "talentSourcing": "人才搜寻",
+      "dataCollection": "数据采集",
+      "verification": "验证",
+      "marketResearch": "市场调研"
+    }
+  },
+  "resellers": {
+    "title": "加入 json.io 分销商计划",
+    "subtitle": "成为合作伙伴",
+    "button": "开始使用",
+    "description": "启动代理业务最省钱、最安全的方式，不要错过机会。"
+  },
+  "trustedBy": {
+    "title": "被众多企业信赖，用于提升学习与增长。",
+    "subtitle": "信任我们的企业"
   },
   "footer": {
-    "description": "NetProxy.io提供住宅代理服务，帮助用户匿名安全地访问互联网，支持网络爬虫和市场研究等任务，具有高速度和可靠性。",
-    "quickLinks": "快速链接",
-    "legal": "法律",
-    "followUs": "关注我们",
-    "copyright": "© 2025 NetProxy.io. 保留所有权利。",
+    "description": "NetProxy.io 提供住宅代理，让用户匿名、安全上网，并支持爬虫、市场研究等高速稳定的任务。",
     "extensions": {
-      "chrome": "CHROME 扩展",
-      "windows": "下载 WINDOWS 版",
-      "ios": "下载 IOS 版",
-      "android": "下载 ANDROID 版"
+      "chrome": "Chrome",
+      "windows": "Windows",
+      "ios": "iOS",
+      "android": "Android",
+      "downloadFor": "下载适用于",
+      "extensionsFor": "扩展适用于"
     },
     "account": {
       "title": "账户",
@@ -93,78 +162,22 @@
       "login": "登录"
     },
     "affiliate": {
-      "title": "联盟",
-      "resellerProgram": "经销商计划",
+      "title": "推广联盟",
+      "resellerProgram": "分销商计划",
       "linkProgram": "链接计划"
     },
     "category": {
-      "title": "类别",
-      "faqs": "常见问题",
+      "title": "分类",
+      "faqs": "FAQs",
       "pricing": "价格",
       "contact": "联系"
     },
     "serviceTerm": {
       "title": "服务条款",
       "privacyPolicy": "隐私政策",
-      "cookiePolicy": "Cookie政策",
+      "cookiePolicy": "Cookie 政策",
       "termsOfService": "服务条款",
       "refundPolicy": "退款政策"
     }
-  },
-  "faqs": {
-    "tag": "常见问题",
-    "title": "您的所有问题，已解答",
-    "questions": {
-      "q1": {
-        "question": "NetProxy.io提供哪些类型的代理？",
-        "answer": "NetProxy.io提供多种代理类型，包括住宅代理、数据中心代理和移动代理。每种代理类型旨在满足不同的需求，例如爬虫、广告验证或管理多个账户。"
-      },
-      "q2": {
-        "question": "什么是代理，它如何工作？",
-        "answer": "代理是您的设备和互联网之间的中间服务器，帮助转发您的网络请求并返回服务器的响应。NetProxy提供连续IP轮换代理套餐，例如1分钟或2分钟IP轮换计划，有助于保护您的身份并增强在线安全性。"
-      },
-      "q3": {
-        "question": "NetProxy.io适合大规模任务如网络爬虫吗？",
-        "answer": "绝对适合！NetProxy.io非常适合大规模任务如网络爬虫。我们的代理旨在绕过检测，确保稳定不间断的连接，非常适合收集数据而无需担心被封禁。"
-      },
-      "q4": {
-        "question": "如何开始使用NetProxy.io？",
-        "answer": "开始非常简单！只需在我们的网站上注册，选择适合您需求的代理计划，并按照分步设置指南操作。如果您遇到任何问题，我们的支持团队全天候为您提供帮助。"
-      }
-    }
-  },
-  "topCountries": {
-    "title": "热门国家",
-    "subtitle": "我们的代理在全球范围内可用",
-    "ips": "IPs"
-  },
-  "partnerships": {
-    "title": "合作伙伴",
-    "subtitle": "受领先公司信赖",
-    "disclaimer": "免责声明：用户对我们代理服务的合法使用负责。我们对滥用不承担责任。感谢您的理解！"
-  },
-  "caseStudies": {
-    "title": "案例研究",
-    "subtitle": "了解我们的客户如何成功",
-    "items": {
-      "adVerification": "广告验证",
-      "fastShopping": "快速购物",
-      "pricingMonitoring": "价格监控",
-      "network": "网络",
-      "talentSourcing": "人才招聘",
-      "dataCollection": "数据收集",
-      "verification": "验证",
-      "marketResearch": "市场研究"
-    }
-  },
-  "resellers": {
-    "title": "开始使用 Netproxy.io 经销商计划",
-    "subtitle": "加入我们的合作伙伴计划",
-    "button": "立即开始",
-    "description": "最具成本效益且零风险的方式来开始代理业务，不要错过这个机会。"
-  },
-  "trustedBy": {
-    "title": "受信任的品牌",
-    "subtitle": "信任我们服务的公司"
   }
 }

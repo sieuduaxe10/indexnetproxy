@@ -137,7 +137,7 @@
     }
   },
   "resellers": {
-    "title": "Get Started with Netproxy.io Reseller Program",
+    "title": "Get Started with json.io Reseller Program",
     "subtitle": "Join our partner program",
     "button": "Get Started",
     "description": "The most cost-effective and risk-free way to start a proxy business, don't miss out on this opportunity."
@@ -149,10 +149,12 @@
   "footer": {
     "description": "NetProxy.io provides residential proxy services, helping users to access the internet anonymously and securely, supporting tasks such as web scraping and market research with high speed and reliability.",
     "extensions": {
-      "chrome": "EXTENSIONS FOR CHROME",
-      "windows": "DOWNLOAD FOR WINDOWS",
-      "ios": "DOWNLOAD FOR IOS",
-      "android": "DOWNLOAD FOR ANDROID"
+      "chrome": "CHROME",
+      "windows": "WINDOWS",
+      "ios": "IOS",
+      "android": "ANDROID",
+      "downloadFor": "DOWNLOAD FOR",
+      "extensionsFor": "EXTENSIONS FOR"
     },
     "account": {
       "title": "Account",

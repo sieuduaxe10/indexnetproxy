@@ -13,8 +13,6 @@ declare global {
   interface IntlMessages extends Messages {}
 }
 
-export type Locale = "en" | "vi" | "zh" | "hi";
-
 export type TranslationNamespace = keyof Messages;
 
 export type TranslationKeys<T extends TranslationNamespace> = keyof Messages[T];

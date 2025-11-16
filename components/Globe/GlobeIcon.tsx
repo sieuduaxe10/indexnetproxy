@@ -7,7 +7,7 @@ export const GlobeIcon = (props: React.ComponentProps<"button">) => {
     <Button
       variant="icon"
       size="icon"
-      className="h-9 w-9 min-[800px]:h-10 min-[800px]:w-10 rounded-md border-0"
+      className="h-9 w-9 min-[800px]:h-10 min-[800px]:w-10 rounded-md border"
       aria-label="Change region"
       {...props}
     >

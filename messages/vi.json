@@ -1,46 +1,61 @@
 {
   "metadata": {
-    "title": "Proxy P2P Dân Cư – Giải Pháp Proxy Tốt Nhất Cho MMO",
-    "description": "NetProxy.io cung cấp proxy P2P dân cư bảo mật, hiệu suất cao cho game thủ MMO và marketers. Tận hưởng truy cập toàn cầu, độ trễ thấp và kết nối ổn định với hàng triệu IP thật. Trải nghiệm tự do trực tuyến tối đa và độ tin cậy."
+    "title": "Proxy Residential P2P – Giải pháp Proxy tốt nhất cho MMO",
+    "description": "NetProxy.io cung cấp proxy residential P2P an toàn, hiệu suất cao cho MMO và marketing. Truy cập toàn cầu, độ trễ thấp, kết nối ổn định với hàng triệu IP thật."
   },
   "common": {
     "learnMore": "Tìm Hiểu Thêm",
     "getStarted": "Bắt Đầu",
     "contactUs": "Liên Hệ",
-    "readMore": "Đọc Thêm",
+    "readMore": "Xem Thêm",
     "buyNow": "Mua Ngay",
-    "tryFree": "Dùng Thử Miễn Phí"
+    "tryFree": "Dùng Thử"
   },
   "nav": {
     "home": "TRANG CHỦ",
-    "pricing": "BẢNG GIÁ",
-    "caseStudy": "NGHIÊN CỨU",
+    "pricing": "GIÁ",
+    "caseStudy": "CASE STUDY",
     "country": "QUỐC GIA",
     "contact": "LIÊN HỆ",
-    "faq": "CÂU HỎI",
-    "cookiePolicy": "Chính Sách Cookie",
-    "privacyPolicy": "Chính Sách Bảo Mật",
-    "termsOfService": "Điều Khoản Dịch Vụ",
-    "refundService": "Chính Sách Hoàn Tiền"
+    "faq": "FAQ",
+    "cookiePolicy": "Cookie Policy",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "refundService": "Refund Service"
   },
   "hero": {
-    "title": "Proxy P2P Dân Cư",
-    "subtitle": "Giải Pháp Proxy Tốt Nhất Cho MMO",
-    "description": "Với hơn 62 triệu IP proxy trên hơn 220 quốc gia và thành phố, chúng tôi cung cấp các giải pháp proxy liền mạch, an toàn và đáng tin cậy cho mọi nhu cầu trực tuyến của bạn.",
-    "cta": "Bắt Đầu Ngay"
+    "title": "Proxy Residential P2P",
+    "subtitle": "Giải pháp Proxy tốt nhất cho MMO",
+    "description": "Hơn 62 triệu IP proxy tại hơn 220 quốc gia và thành phố, mang đến kết nối liền mạch, an toàn và ổn định cho mọi nhu cầu online.",
+    "cta": "BẮT ĐẦU",
+    "viewPrice": "XEM GIÁ - TỪ $0.99",
+    "features": {
+      "transparent": {
+        "title": "Proxy Minh Bạch",
+        "description": "Proxy minh bạch giúp tăng bảo mật và tối ưu hiệu năng kết nối."
+      },
+      "noLogs": {
+        "title": "Không Lưu Log",
+        "description": "Chính sách không lưu log đảm bảo quyền riêng tư, không ghi hoạt động của bạn để giữ dữ liệu luôn an toàn."
+      },
+      "fastConnection": {
+        "title": "Kết Nối Nhanh",
+        "description": "Tận hưởng tốc độ nhanh với proxy tối ưu. Giảm độ trễ và cải thiện phản hồi cho việc duyệt web, xem video và làm việc ổn định."
+      }
+    }
   },
   "pricing": {
     "flashSale": "GIẢM GIÁ SỐC 20%",
     "title": "Giá proxy theo ngày",
-    "subtitle": "Chỉ trả tiền cho số ngày bạn cần, không cần cam kết dài hạn. Duyệt web liền mạch với IP được lấy từ toàn cầu thông qua mạng lưới phi tập trung.",
+    "subtitle": "Chỉ trả cho những ngày bạn dùng, không cam kết dài hạn. Trải nghiệm kết nối mượt mà với IP từ mạng lưới phân tán toàn cầu.",
     "plans": {
       "ipv6": {
-        "title": "IPv6 Proxy",
+        "title": "Proxy IPv6",
         "unit": "Gigabytes",
         "price": "$0.04"
       },
       "rotation": {
-        "title": "Residential Luân Chuyển",
+        "title": "Residential Luân Phiên",
         "unit": "Ngày",
         "price": "$0.20"
       },
@@ -57,38 +72,89 @@
     },
     "features": {
       "httpSupport": "Hỗ trợ HTTP/HTTPS",
-      "exportPorts": "Xuất: 10,000 Cổng Proxy",
-      "ipRotation": "Luân chuyển IP: Mỗi 10 Phút",
-      "unlimitedRotations": "Luân Chuyển IP Không Giới Hạn",
-      "unlimitedBandwidth": "Băng Thông Không Giới Hạn",
-      "speed": "Tốc độ lên đến 50 Mbps",
-      "fastConnection": {
-        "description": "Tận hưởng tốc độ nhanh như chớp với dịch vụ proxy được tối ưu hóa của chúng tôi. Giảm độ trễ và cải thiện thời gian phản hồi mang lại trải nghiệm duyệt web, phát trực tuyến và hiệu suất trực tuyến mượt mà."
-      }
+      "exportPorts": "Xuất: 10,000 cổng proxy",
+      "ipRotation": "Luân phiên IP: mỗi 10 phút",
+      "unlimitedRotations": "Luân phiên IP không giới hạn",
+      "unlimitedBandwidth": "Băng thông không giới hạn",
+      "speed": "Tốc độ lên đến 50 Mbps"
     },
-    "certificate": "Trung tâm dữ liệu và nhà cung cấp mạng được chứng nhận"
+    "certificate": "Trung tâm dữ liệu và nhà mạng đạt chuẩn"
   },
   "contact": {
     "tag": "LIÊN HỆ",
-    "title": "Cần trợ giúp từ người thật?",
-    "anyQuestions": "Có câu hỏi nào không?",
-    "description": "Chúng tôi ở đây để giúp đỡ và trả lời bất kỳ câu hỏi nào bạn có. Chúng tôi mong được nghe từ bạn. Điền vào biểu mẫu này hoặc gửi email cho chúng tôi tại",
+    "title": "Cần hỗ trợ từ người thật?",
+    "anyQuestions": "Có câu hỏi nào?",
+    "description": "Chúng tôi luôn sẵn sàng hỗ trợ và trả lời mọi thắc mắc của bạn. Điền form hoặc gửi email đến",
     "wantCollaborate": "Muốn hợp tác?",
-    "collaborateDescription": "Gửi email để liên hệ đội ngũ kinh doanh của chúng tôi",
+    "collaborateDescription": "Gửi email để liên hệ đội ngũ kinh doanh",
     "phone": "(+84) 327 072 120",
-    "address": "117 Đường Nguyễn Du, Phường Bến Thành, Quận 1, Hồ Chí Minh 700000"
+    "address": "117 Nguyễn Du, Phường Bến Thành, Quận 1, TP. Hồ Chí Minh 700000"
+  },
+  "faqs": {
+    "tag": "FAQs",
+    "title": "Tất cả câu hỏi, đã có lời đáp",
+    "questions": {
+      "q1": {
+        "question": "NetProxy.io cung cấp những loại proxy nào?",
+        "answer": "NetProxy.io cung cấp nhiều loại proxy: residential, datacenter và mobile. Mỗi loại phù hợp cho các nhu cầu như scraping, kiểm tra quảng cáo hoặc quản lý nhiều tài khoản."
+      },
+      "q2": {
+        "question": "Proxy là gì và hoạt động thế nào?",
+        "answer": "Proxy là một máy chủ trung gian giữa thiết bị và internet, giúp chuyển tiếp yêu cầu web và nhận phản hồi. NetProxy cung cấp gói proxy luân phiên theo phút, giúp bảo vệ danh tính và tăng mức độ an toàn."
+      },
+      "q3": {
+        "question": "NetProxy.io có phù hợp cho các tác vụ lớn như web scraping?",
+        "answer": "Hoàn toàn phù hợp! Proxy của NetProxy.io được thiết kế để vượt qua phát hiện, kết nối ổn định – lý tưởng cho thu thập dữ liệu quy mô lớn mà không lo bị chặn."
+      },
+      "q4": {
+        "question": "Làm sao để bắt đầu với NetProxy.io?",
+        "answer": "Rất đơn giản! Tạo tài khoản, chọn gói proxy phù hợp và làm theo hướng dẫn thiết lập. Nếu gặp vấn đề, đội hỗ trợ 24/7 luôn sẵn sàng."
+      }
+    }
+  },
+  "topCountries": {
+    "title": "Các quốc gia có nhu cầu proxy cao",
+    "subtitle": "Chọn proxy tốt nhất tại mọi thành phố hoặc quốc gia bạn biết.",
+    "ips": "IPs"
+  },
+  "partnerships": {
+    "title": "Đối Tác",
+    "subtitle": "Được tin dùng bởi nhiều công ty hàng đầu",
+    "disclaimer": "Lưu ý: Người dùng chịu trách nhiệm cho việc sử dụng hợp pháp dịch vụ proxy. Chúng tôi không chịu trách nhiệm cho việc sử dụng sai mục đích."
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "subtitle": "Dịch vụ proxy P2P mang lại trải nghiệm duyệt web linh hoạt, nhanh và đáng tin cậy.",
+    "items": {
+      "adVerification": "Xác minh quảng cáo",
+      "fastShopping": "Mua sắm nhanh",
+      "pricingMonitoring": "Theo dõi giá",
+      "network": "Mạng lưới",
+      "talentSourcing": "Tìm nguồn nhân lực",
+      "dataCollection": "Thu thập dữ liệu",
+      "verification": "Xác minh",
+      "marketResearch": "Nghiên cứu thị trường"
+    }
+  },
+  "resellers": {
+    "title": "Bắt đầu với chương trình Reseller của json.io",
+    "subtitle": "Tham gia chương trình đối tác",
+    "button": "Bắt Đầu",
+    "description": "Giải pháp tiết kiệm và an toàn nhất để khởi nghiệp với proxy – đừng bỏ lỡ!"
+  },
+  "trustedBy": {
+    "title": "Được nhiều doanh nghiệp tin dùng để nâng cao trải nghiệm và hiệu quả.",
+    "subtitle": "Các công ty tin tưởng dịch vụ của chúng tôi"
   },
   "footer": {
-    "description": "NetProxy.io cung cấp dịch vụ proxy dân cư, giúp người dùng truy cập internet ẩn danh và an toàn, hỗ trợ các tác vụ như web scraping và nghiên cứu thị trường với tốc độ cao và độ tin cậy.",
-    "quickLinks": "Liên Kết Nhanh",
-    "legal": "Pháp Lý",
-    "followUs": "Theo Dõi Chúng Tôi",
-    "copyright": "© 2025 NetProxy.io. Tất cả quyền được bảo lưu.",
+    "description": "NetProxy.io cung cấp proxy residential giúp truy cập internet ẩn danh và an toàn, hỗ trợ các tác vụ như scraping và nghiên cứu thị trường với tốc độ cao và ổn định.",
     "extensions": {
-      "chrome": "TIỆN ÍCH CHO CHROME",
-      "windows": "TẢI VỀ CHO WINDOWS",
-      "ios": "TẢI VỀ CHO IOS",
-      "android": "TẢI VỀ CHO ANDROID"
+      "chrome": "CHROME",
+      "windows": "WINDOWS",
+      "ios": "IOS",
+      "android": "ANDROID",
+      "downloadFor": "TẢI CHO",
+      "extensionsFor": "TIỆN ÍCH CHO"
     },
     "account": {
       "title": "Tài Khoản",
@@ -96,78 +162,22 @@
       "login": "Đăng Nhập"
     },
     "affiliate": {
-      "title": "Liên Kết",
-      "resellerProgram": "Chương Trình Đại Lý",
-      "linkProgram": "Chương Trình Liên Kết"
+      "title": "Affiliate",
+      "resellerProgram": "Chương Trình Reseller",
+      "linkProgram": "Chương Trình Link"
     },
     "category": {
       "title": "Danh Mục",
-      "faqs": "Câu Hỏi Thường Gặp",
-      "pricing": "Bảng Giá",
-      "contact": "Liên Hệ"
+      "faqs": "FAQs",
+      "pricing": "Giá",
+      "contact": "Liên hệ"
     },
     "serviceTerm": {
-      "title": "Dịch Vụ, Điều Khoản",
-      "privacyPolicy": "Chính Sách Bảo Mật",
-      "cookiePolicy": "Chính Sách Cookie",
-      "termsOfService": "Điều Khoản Dịch Vụ",
-      "refundPolicy": "Chính Sách Hoàn Tiền"
+      "title": "Điều Khoản",
+      "privacyPolicy": "Privacy Policy",
+      "cookiePolicy": "Cookie Policy",
+      "termsOfService": "Terms of Service",
+      "refundPolicy": "Refund Policy"
     }
-  },
-  "faqs": {
-    "tag": "Câu hỏi thường gặp",
-    "title": "Tất cả câu hỏi của bạn, được trả lời",
-    "questions": {
-      "q1": {
-        "question": "NetProxy.io cung cấp những loại proxy nào?",
-        "answer": "NetProxy.io cung cấp nhiều loại proxy, bao gồm proxy dân cư, proxy trung tâm dữ liệu và proxy di động. Mỗi loại proxy được thiết kế để đáp ứng các nhu cầu khác nhau, chẳng hạn như scraping, xác minh quảng cáo hoặc quản lý nhiều tài khoản."
-      },
-      "q2": {
-        "question": "Proxy là gì và nó hoạt động như thế nào?",
-        "answer": "Proxy là một máy chủ trung gian giữa thiết bị của bạn và internet, giúp chuyển tiếp các yêu cầu web của bạn và trả về phản hồi từ máy chủ. NetProxy cung cấp các gói proxy xoay vòng IP liên tục, chẳng hạn như gói xoay IP 1 phút hoặc 2 phút, giúp bảo vệ danh tính của bạn và tăng cường bảo mật trực tuyến."
-      },
-      "q3": {
-        "question": "NetProxy.io có phù hợp cho các tác vụ quy mô lớn như web scraping không?",
-        "answer": "Chắc chắn rồi! NetProxy.io lý tưởng cho các tác vụ quy mô lớn như web scraping. Các proxy của chúng tôi được thiết kế để vượt qua phát hiện, đảm bảo kết nối ổn định và không bị gián đoạn, hoàn hảo cho việc thu thập dữ liệu mà không có nguy cơ bị cấm."
-      },
-      "q4": {
-        "question": "Làm thế nào để bắt đầu với NetProxy.io?",
-        "answer": "Bắt đầu rất đơn giản! Chỉ cần đăng ký trên trang web của chúng tôi, chọn gói proxy phù hợp với nhu cầu của bạn và làm theo hướng dẫn thiết lập từng bước. Nếu bạn gặp bất kỳ vấn đề nào, đội ngũ hỗ trợ của chúng tôi luôn sẵn sàng hỗ trợ bạn 24/7."
-      }
-    }
-  },
-  "topCountries": {
-    "title": "Quốc Gia Hàng Đầu",
-    "subtitle": "Proxy của chúng tôi có sẵn trên toàn thế giới",
-    "ips": "IPs"
-  },
-  "partnerships": {
-    "title": "Đối Tác",
-    "subtitle": "Được tin tưởng bởi các công ty hàng đầu",
-    "disclaimer": "Tuyên bố miễn trừ trách nhiệm: Người dùng chịu trách nhiệm sử dụng hợp pháp các dịch vụ proxy của chúng tôi. Chúng tôi không chịu trách nhiệm về việc sử dụng sai mục đích. Cảm ơn bạn đã hiểu!"
-  },
-  "caseStudies": {
-    "title": "Nghiên Cứu Tình Huống",
-    "subtitle": "Xem cách khách hàng của chúng tôi thành công",
-    "items": {
-      "adVerification": "Xác minh quảng cáo",
-      "fastShopping": "Mua sắm nhanh",
-      "pricingMonitoring": "Giám sát giá cả",
-      "network": "Mạng lưới",
-      "talentSourcing": "Tìm nguồn nhân tài",
-      "dataCollection": "Thu thập dữ liệu",
-      "verification": "Xác minh",
-      "marketResearch": "Nghiên cứu thị trường"
-    }
-  },
-  "resellers": {
-    "title": "Bắt Đầu Với Chương Trình Đại Lý Netproxy.io",
-    "subtitle": "Tham gia chương trình đối tác của chúng tôi",
-    "button": "Bắt Đầu",
-    "description": "Cách hiệu quả nhất về chi phí và không rủi ro để bắt đầu kinh doanh proxy, đừng bỏ lỡ cơ hội này."
-  },
-  "trustedBy": {
-    "title": "Được Tin Tưởng Bởi",
-    "subtitle": "Các công ty tin tưởng dịch vụ của chúng tôi"
   }
 }

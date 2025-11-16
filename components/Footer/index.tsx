@@ -41,7 +41,8 @@ export const Footer = () => {
               <div className="w-10 h-10">
                 <ChromeIcon />
               </div>
-              {t("extensions.chrome")}
+              {t("extensions.extensionsFor")}{" "}
+              <span className="text-primary">{t("extensions.chrome")}</span>
             </Link>
             <Link
               href="https://www.proxifier.com/"
@@ -50,7 +51,8 @@ export const Footer = () => {
               <div className="w-10 h-10">
                 <WindowIcon />
               </div>
-              {t("extensions.windows")}
+              {t("extensions.downloadFor")}{" "}
+              <span className="text-[#ff4929]"> {t("extensions.windows")}</span>
             </Link>
             <Link
               href="https://apps.apple.com/us/app/shadowrocket/id932747118"
@@ -59,7 +61,8 @@ export const Footer = () => {
               <div className="w-10 h-10">
                 <AppleIcon />
               </div>
-              {t("extensions.ios")}
+              {t("extensions.downloadFor")}{" "}
+              <span className="text-[#ff4929]">{t("extensions.ios")}</span>
             </Link>{" "}
             <Link
               href="https://play.google.com/store/apps/details?id=com.scheler.superproxy"
@@ -68,7 +71,8 @@ export const Footer = () => {
               <div className="w-10 h-10">
                 <AndroidIcon />
               </div>
-              {t("extensions.android")}
+              {t("extensions.downloadFor")}{" "}
+              <span className="text-[#29b4ff]">{t("extensions.android")}</span>
             </Link>
           </div>
         </div>
