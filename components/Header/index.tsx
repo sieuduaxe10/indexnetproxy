@@ -40,7 +40,6 @@ export const Header = () => {
                     alt="Proxy illustration"
                     width={20}
                     height={20}
-                    className=""
                   />
                 </Link>
               </Button>

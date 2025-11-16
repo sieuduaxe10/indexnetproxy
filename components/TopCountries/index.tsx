@@ -85,7 +85,6 @@ export const TopCountries = () => {
             alt="netproxy play icon"
             width={39}
             height={35}
-            className=""
           />
         </div>
       </ParallaxWrapper>
@@ -100,7 +99,6 @@ export const TopCountries = () => {
             alt="netproxy play icon"
             width={70}
             height={70}
-            className=""
           />
         </div>
       </ParallaxWrapper>
@@ -115,7 +113,6 @@ export const TopCountries = () => {
             alt="netproxy play icon"
             width={39}
             height={35}
-            className=""
           />
         </div>
       </ParallaxWrapper>

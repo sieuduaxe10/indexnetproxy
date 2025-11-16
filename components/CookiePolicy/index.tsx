@@ -8,7 +8,7 @@ const PageTitleAnimate = dynamic(() => import("../PageTitleAnimate"), {
 
 const CookiePolicy = () => {
   return (
-    <div className="">
+    <div>
       <div className="relative z-20 flex flex-col items-center justify-center w-full h-min pt-[140px] px-5 pb-5 4xl:pt-[200px] 7xl:px-10 7xl:pb-10 bg-white flex-none">
         <PageTitleAnimate firstColorTitle="Cockie" secondColorTitle="Policy" />
         <div className="relative flex flex-col justify-start w-full max-w-600 h-auto flex-none whitespace-pre-wrap wrap-break-word outline-none">

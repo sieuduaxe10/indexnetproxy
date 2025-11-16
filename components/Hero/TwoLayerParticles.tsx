@@ -88,7 +88,6 @@ export default function TwoLayerParticles() {
             id="One"
             init={init}
             options={baseOptions("/images/hero/background-cross-icon.png")}
-            className=""
           />
         </div>
 
@@ -101,7 +100,6 @@ export default function TwoLayerParticles() {
             id="Two"
             init={init}
             options={baseOptions("/images/hero/background-round-icon.png")}
-            className=""
           />
         </div>
       </div>

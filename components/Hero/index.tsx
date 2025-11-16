@@ -8,7 +8,6 @@ import { CursorIcon } from "../icons/CursorIcon";
 import { MessageIcon } from "../icons/MessageIcon";
 import { BlueNetworkIcon } from "../icons/BlueNetworkIcon";
 import { WifiIcon } from "../icons/WifiIcon";
-import { FloatingCircle } from "./FloatingCircle";
 import { MainHero } from "./MainHero";
 import TwoLayerParticles from "./TwoLayerParticles";
 
@@ -60,8 +59,6 @@ export const Hero = () => {
       id="hero"
     >
       <div className="container relative z-20">
-        {/* round icon orange  */}
-        <FloatingCircle />
         <MainHero />
 
         <div className="flex flex-col gap-[461px] 7xl:gap-[507px] z-20 relative">

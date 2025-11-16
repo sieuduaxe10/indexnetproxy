@@ -16,7 +16,6 @@ export const GlobeIcon = (props: React.ComponentProps<"button">) => {
         alt="Proxy illustration"
         width={20}
         height={20}
-        className=""
       />
     </Button>
   );

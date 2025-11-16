@@ -49,7 +49,7 @@ export const PageTitleAnimate = (props: PageTitleAnimateProps) => {
 
   return (
     <div>
-      <div className="">
+      <div>
         <h1
           ref={headerRef}
           className="text-center font-neue-kaine font-bold mb-5 tracking-normal"

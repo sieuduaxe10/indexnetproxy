@@ -10,6 +10,7 @@ export const MainCharacter = () => {
           width={400}
           height={421}
           className="w-[363px] h-[382px] 7xl:w-[400px] 7xl:h-[421px]"
+          priority
         />
       </div>
     </div>

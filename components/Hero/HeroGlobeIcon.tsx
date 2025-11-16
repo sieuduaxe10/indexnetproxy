@@ -8,7 +8,7 @@ const HeroGlobeIcon = () => {
           alt="netproxy globe icon"
           width={56}
           height={60}
-          className=""
+          priority
         />
       </div>
     </div>

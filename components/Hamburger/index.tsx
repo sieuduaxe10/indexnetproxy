@@ -56,7 +56,6 @@ const HamburgerMenu = (props: React.ComponentProps<"div">) => {
                   alt="Proxy illustration"
                   width={20}
                   height={20}
-                  className=""
                 />
               </Link>
             </Button>

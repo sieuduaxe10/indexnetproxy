@@ -39,7 +39,7 @@ export const FAQs = () => {
         <h3 className="text-2xl 4xl:text-28 7xl:text-33 font-neue-kaine-bold text-center mb-10 text-[#2c303b] font-normal">
           {t("title")}
         </h3>
-        <div className="max-w-960 mx-auto p-5 pb-0! bg-[#f2f7f7] rounded-[12px]">
+        <div className="max-w-960 mx-auto p-5 pb-0! bg-[#f2f7f7]  rounded-[12px]">
           <Accordion
             type="single"
             collapsible
@@ -60,7 +60,7 @@ export const FAQs = () => {
               >
                 <AccordionTrigger
                   className={clsx(
-                    "p-4 font-inter text-15 hover:no-underline text-[#2c303b] cursor-pointer bg-white faq-shadow",
+                    "p-4 font-inter text-15 hover:no-underline text-[#2c303b] cursor-pointer hover:bg-[#fdf4e4] bg-white faq-shadow",
                     {
                       "text-primary border-b-0! shadow-none! rounded-br-none! rounded-bl-none!":
                         openItem === faq.questionKey,
