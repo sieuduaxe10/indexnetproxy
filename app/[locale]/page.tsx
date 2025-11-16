@@ -9,6 +9,7 @@ import { Partnerships } from "@/components/Partnerships";
 import { Pricing } from "@/components/Pricing";
 import { Resellers } from "@/components/Resellers";
 import { SmoothScrollProvider } from "@/components/ScrollSmothlyProvider";
+import StickyExpandableList from "@/components/StickyExpandableList";
 import { TopCountries } from "@/components/TopCountries";
 import { TrustedBy } from "@/components/TrustedBy";
 
@@ -31,6 +32,7 @@ const MainPage = () => {
         <Partnerships />
       </SmoothScrollProvider>
       <BlurBackground />
+      <StickyExpandableList />
     </main>
   );
 };
