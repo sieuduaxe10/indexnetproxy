@@ -8,7 +8,7 @@ import { Hero } from "@/components/Hero";
 import { Partnerships } from "@/components/Partnerships";
 import { Pricing } from "@/components/Pricing";
 import { Resellers } from "@/components/Resellers";
-import { ScrollSmoothlyProvider } from "@/components/ScrollSmothlyProvider";
+import { SmoothScrollProvider } from "@/components/ScrollSmothlyProvider";
 import { TopCountries } from "@/components/TopCountries";
 import { TrustedBy } from "@/components/TrustedBy";
 
@@ -18,8 +18,8 @@ const MainPage = () => {
   return (
     <main>
       <Header />
-      <Hero />
-      <ScrollSmoothlyProvider>
+      <SmoothScrollProvider speedMultiplier={0.8}>
+        <Hero />
         <TrustedBy />
         <Pricing />
         <CaseStudies />
@@ -29,7 +29,7 @@ const MainPage = () => {
         <Resellers />
         <Footer />
         <Partnerships />
-      </ScrollSmoothlyProvider>
+      </SmoothScrollProvider>
       <BlurBackground />
     </main>
   );
