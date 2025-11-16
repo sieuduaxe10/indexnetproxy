@@ -37,6 +37,7 @@ export const Footer = () => {
             <Link
               href="https://chromewebstore.google.com/detail/mnloefcpaepkpmhaoipjkpikbnkmbnic?utm_source=item-share-cb"
               className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border min-h-[56px]"
+              target="_blank"
             >
               <div className="w-10 h-10">
                 <ChromeIcon />
@@ -47,6 +48,7 @@ export const Footer = () => {
             <Link
               href="https://www.proxifier.com/"
               className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border min-h-[56px]"
+              target="_blank"
             >
               <div className="w-10 h-10">
                 <WindowIcon />
@@ -57,6 +59,7 @@ export const Footer = () => {
             <Link
               href="https://apps.apple.com/us/app/shadowrocket/id932747118"
               className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border min-h-[56px]"
+              target="_blank"
             >
               <div className="w-10 h-10">
                 <AppleIcon />
@@ -67,6 +70,7 @@ export const Footer = () => {
             <Link
               href="https://play.google.com/store/apps/details?id=com.scheler.superproxy"
               className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border min-h-[56px]"
+              target="_blank"
             >
               <div className="w-10 h-10">
                 <AndroidIcon />
