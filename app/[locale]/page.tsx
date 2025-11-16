@@ -11,6 +11,8 @@ import { Resellers } from "@/components/Resellers";
 import { TopCountries } from "@/components/TopCountries";
 import { TrustedBy } from "@/components/TrustedBy";
 
+export const runtime = 'edge';
+
 const MainPage = () => {
   return (
     <main>
