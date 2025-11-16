@@ -8,25 +8,28 @@ import { Hero } from "@/components/Hero";
 import { Partnerships } from "@/components/Partnerships";
 import { Pricing } from "@/components/Pricing";
 import { Resellers } from "@/components/Resellers";
+import { ScrollSmoothlyProvider } from "@/components/ScrollSmothlyProvider";
 import { TopCountries } from "@/components/TopCountries";
 import { TrustedBy } from "@/components/TrustedBy";
 
-export const runtime = 'edge';
+export const runtime = "edge";
 
 const MainPage = () => {
   return (
     <main>
       <Header />
       <Hero />
-      <TrustedBy />
-      <Pricing />
-      <CaseStudies />
-      <TopCountries />
-      <Contact />
-      <FAQs />
-      <Resellers />
-      <Footer />
-      <Partnerships />
+      <ScrollSmoothlyProvider>
+        <TrustedBy />
+        <Pricing />
+        <CaseStudies />
+        <TopCountries />
+        <Contact />
+        <FAQs />
+        <Resellers />
+        <Footer />
+        <Partnerships />
+      </ScrollSmoothlyProvider>
       <BlurBackground />
     </main>
   );

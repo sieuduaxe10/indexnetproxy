@@ -56,7 +56,7 @@ export const Hero = () => {
   const text = t("title") + " " + t("subtitle");
   return (
     <section
-      className="w-svw pt-[140px] px-5 pb-8 4xl:pt-[168px] 4xl:px-10 7xl:pt-[172px] relative"
+      className="w-full pt-[140px] px-5 pb-8 4xl:pt-[168px] 4xl:px-10 7xl:pt-[172px] relative"
       id="hero"
     >
       <div className="container relative z-20">
