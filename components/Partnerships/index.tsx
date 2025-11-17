@@ -96,7 +96,9 @@ export const Partnerships = () => {
                   key={index}
                   className="text-[#fc833d] hover:underline whitespace-nowrap font-semibold text-13 flex flex-row content-center items-start gap-0 w-min h-min relative opacity-100"
                 >
-                  <a href={partner.url}>{partner.title}</a>
+                  <a href={partner.url} target="_blank" rel="noopener">
+                    {partner.title}
+                  </a>
                 </li>
               ))}
             </ul>
