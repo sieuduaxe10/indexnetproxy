@@ -8,41 +8,9 @@ import { ThunderIcon } from "../icons/ThunderIcon";
 import { Separator } from "../ui/separator";
 import { ButtonLightEffect } from "../ButtonLightEffect";
 import { Link } from "@/i18n/routing";
-import { useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export const Pricing = () => {
   const t = useTranslations("pricing");
-
-  useEffect(() => {
-    const cards = gsap.utils.toArray(".pricing-card") as HTMLElement[];
-
-    // Set initial state
-    gsap.set(cards, { opacity: 0, y: 100 });
-
-    // Custom animation timeline
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".cards-wrapper",
-        start: "top 80%", // when wrapper hits 80% viewport
-        toggleActions: "play none none reverse",
-      },
-      defaults: {
-        opacity: 1,
-        y: 0,
-        duration: 0.1,
-        ease: "back.out(0.07)", // spring-like snap
-      },
-    });
-
-    // Order: 2 -> 3 -> 1,4
-    tl.to(cards[1], {}, "+=0.1") // card 2
-      .to(cards[2], {}, "+=0.05") // card 3
-      .to([cards[0], cards[3]], { stagger: 0.1 }, "+=0.05"); // cards 1 and 4
-  }, []);
 
   const pricingPlans = [
     {
