@@ -33,10 +33,10 @@ export const Footer = () => {
             {t("description")}
           </div>
 
-          <div className="grid grid-cols-2 font-ibm-plex-mono font-semibold text-xs gap-2">
+          <div className="grid grid-cols-1 4xl:grid-cols-2 font-ibm-plex-mono font-semibold text-xs gap-2 max-w-[271px] 4xl:max-w-full">
             <Link
               href="https://chromewebstore.google.com/detail/mnloefcpaepkpmhaoipjkpikbnkmbnic?utm_source=item-share-cb"
-              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border min-h-[56px]"
+              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-start 4xl:justify-center pl-[22px] 4xl:pl-0 box-border min-h-[56px]"
               target="_blank"
             >
               <div className="w-10 h-10">
@@ -47,7 +47,7 @@ export const Footer = () => {
             </Link>
             <Link
               href="https://www.proxifier.com/"
-              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border min-h-[56px]"
+              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-start 4xl:justify-center pl-[22px] 4xl:pl-0 box-border min-h-[56px]"
               target="_blank"
             >
               <div className="w-10 h-10">
@@ -58,7 +58,7 @@ export const Footer = () => {
             </Link>
             <Link
               href="https://apps.apple.com/us/app/shadowrocket/id932747118"
-              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border min-h-[56px]"
+              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-start 4xl:justify-center pl-[22px] 4xl:pl-0 box-border min-h-[56px]"
               target="_blank"
             >
               <div className="w-10 h-10">
@@ -69,7 +69,7 @@ export const Footer = () => {
             </Link>{" "}
             <Link
               href="https://play.google.com/store/apps/details?id=com.scheler.superproxy"
-              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-center box-border min-h-[56px]"
+              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-start 4xl:justify-center pl-[22px] 4xl:pl-0 box-border min-h-[56px]"
               target="_blank"
             >
               <div className="w-10 h-10">
