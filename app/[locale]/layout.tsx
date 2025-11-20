@@ -46,7 +46,29 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as "en" | "vi" | "zh" | "hi")) {
+  if (
+    !routing.locales.includes(
+      locale as
+        | "en"
+        | "vi"
+        | "zh"
+        | "hi"
+        | "es"
+        | "ar"
+        | "fr"
+        | "pt"
+        | "ru"
+        | "bn"
+        | "id"
+        | "ja"
+        | "th"
+        | "ko"
+        | "tr"
+        | "ph"
+        | "br"
+        | "fa"
+    )
+  ) {
     notFound();
   }
 

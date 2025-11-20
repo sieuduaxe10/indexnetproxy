@@ -19,8 +19,8 @@ export const routing = defineRouting({
     "th",
     "ko",
     "tr",
-    "fil",
-    "pt-br",
+    "ph",
+    "br",
     "fa",
   ],
 

@@ -1,15 +1,9 @@
 "use client";
 
+import { locales } from "@/common/constant";
 import { usePathname, useRouter } from "@/i18n/routing";
 import { useLocale } from "next-intl";
 import { useState, useTransition } from "react";
-
-const locales = [
-  { code: "en", name: "English", flag: "🇺🇸" },
-  { code: "vi", name: "Tiếng Việt", flag: "🇻🇳" },
-  { code: "zh", name: "简体中文", flag: "🇨🇳" },
-  { code: "hi", name: "हिन्दी", flag: "🇮🇳" },
-] as const;
 
 export function LanguageSwitcher() {
   const [isPending, startTransition] = useTransition();
@@ -40,7 +34,9 @@ export function LanguageSwitcher() {
           {currentLocale?.code.toUpperCase()}
         </span>
         <svg
-          className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          className={`w-4 h-4 transition-transform ${
+            isOpen ? "rotate-180" : ""
+          }`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

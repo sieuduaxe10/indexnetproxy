@@ -1,0 +1,183 @@
+{
+  "metadata": {
+    "title": "Proksi Residensial P2P – Solusi Proxy Terbaik untuk MMO",
+    "description": "NetProxy.io menawarkan proksi residensial P2P yang aman dan berperforma tinggi untuk gamer MMO dan pemasar. Nikmati akses global, latensi rendah, dan koneksi stabil dengan jutaan IP asli. Rasakan kebebasan dan keandalan online terbaik."
+  },
+  "common": {
+    "learnMore": "Pelajari Lebih Lanjut",
+    "getStarted": "Mulai",
+    "contactUs": "Hubungi Kami",
+    "readMore": "Baca Selengkapnya",
+    "buyNow": "Beli Sekarang",
+    "tryFree": "Coba Gratis"
+  },
+  "nav": {
+    "home": "BERANDA",
+    "pricing": "HARGA",
+    "caseStudy": "STUDI KASUS",
+    "country": "NEGARA",
+    "contact": "KONTAK",
+    "faq": "FAQ",
+    "cookiePolicy": "Kebijakan Cookie",
+    "privacyPolicy": "Kebijakan Privasi",
+    "termsOfService": "Ketentuan Layanan",
+    "refundService": "Layanan Pengembalian"
+  },
+  "hero": {
+    "title": "Proksi Residensial P2P",
+    "subtitle": "Solusi Proxy Terbaik untuk MMO",
+    "description": "Dengan lebih dari 62 juta IP proxy di lebih dari 220 negara dan kota, kami menyediakan solusi proxy yang lancar, aman, dan andal untuk semua kebutuhan online Anda.",
+    "cta": "MULAI",
+    "viewPrice": "LIHAT HARGA - MULAI $0.99",
+    "features": {
+      "transparent": {
+        "title": "Proxy Transparan",
+        "description": "Proxy transparan meningkatkan keamanan dan meningkatkan performa koneksi."
+      },
+      "noLogs": {
+        "title": "Tanpa Log",
+        "description": "Kebijakan tanpa log kami memastikan privasi dengan tidak merekam aktivitas Anda, menjaga data tetap aman dan penelusuran tetap pribadi."
+      },
+      "fastConnection": {
+        "title": "Koneksi Cepat",
+        "description": "Nikmati kecepatan super cepat dengan layanan proxy kami yang telah dioptimalkan. Latensi lebih rendah dan waktu respons lebih cepat memberikan pengalaman browsing dan streaming yang lancar."
+      }
+    }
+  },
+  "pricing": {
+    "flashSale": "DISKON FLASH SALE 20%",
+    "title": "Harga harian proxy",
+    "subtitle": "Bayar hanya untuk hari yang Anda butuhkan, tanpa komitmen jangka panjang. Penelusuran lancar dengan IP dari seluruh dunia melalui jaringan terdesentralisasi.",
+    "plans": {
+      "ipv6": {
+        "title": "Proxy IPv6",
+        "unit": "Gigabyte",
+        "price": "$0.04"
+      },
+      "rotation": {
+        "title": "Residensial Rotasi",
+        "unit": "Hari",
+        "price": "$0.20"
+      },
+      "static": {
+        "title": "Residensial Statis",
+        "unit": "Hari",
+        "price": "$5"
+      },
+      "unlimited": {
+        "title": "Proxy Tanpa Batas",
+        "unit": "Tanpa Batas",
+        "price": "$255"
+      }
+    },
+    "features": {
+      "httpSupport": "Mendukung HTTP/HTTPS",
+      "exportPorts": "Ekspor: 10.000 Port Proxy",
+      "ipRotation": "Rotasi IP: Setiap 10 Menit",
+      "unlimitedRotations": "Rotasi IP Tanpa Batas",
+      "unlimitedBandwidth": "Bandwidth Tanpa Batas",
+      "speed": "Kecepatan hingga 50 Mbps"
+    },
+    "certificate": "Pusat data dan penyedia jaringan bersertifikat"
+  },
+  "contact": {
+    "tag": "KONTAK",
+    "title": "Butuh bantuan dari orang asli?",
+    "anyQuestions": "Ada pertanyaan?",
+    "description": "Kami siap membantu dan menjawab semua pertanyaan Anda. Isi formulir ini atau kirim email kepada kami:",
+    "wantCollaborate": "Ingin berkolaborasi?",
+    "collaborateDescription": "Kirim email untuk menghubungi tim bisnis kami",
+    "phone": "(+84) 327 072 120",
+    "address": "117 Jalan Nguyen Du, Ben Thanh Ward, Distrik 1, Ho Chi Minh 700000"
+  },
+  "faqs": {
+    "tag": "FAQs",
+    "title": "Semua Pertanyaan Anda Terjawab",
+    "questions": {
+      "q1": {
+        "question": "Jenis proxy apa yang ditawarkan NetProxy.io?",
+        "answer": "NetProxy.io menyediakan berbagai jenis proxy, termasuk proxy residensial, proxy pusat data, dan proxy seluler. Setiap jenis dirancang untuk kebutuhan berbeda seperti scraping, verifikasi iklan, atau mengelola banyak akun."
+      },
+      "q2": {
+        "question": "Apa itu proxy dan bagaimana cara kerjanya?",
+        "answer": "Proxy adalah server perantara antara perangkat Anda dan internet, meneruskan permintaan web Anda dan mengembalikan respons dari server. NetProxy menawarkan paket proxy dengan rotasi IP berkelanjutan, seperti rotasi 1 menit atau 2 menit, yang membantu melindungi identitas dan meningkatkan keamanan online."
+      },
+      "q3": {
+        "question": "Apakah NetProxy.io cocok untuk tugas skala besar seperti web scraping?",
+        "answer": "Tentu! NetProxy.io sangat ideal untuk web scraping skala besar. Proksi kami dirancang untuk menghindari deteksi dan memastikan koneksi stabil serta tidak terputus untuk pengumpulan data tanpa risiko pemblokiran."
+      },
+      "q4": {
+        "question": "Bagaimana cara memulai dengan NetProxy.io?",
+        "answer": "Sangat mudah! Daftar di situs web kami, pilih paket proxy yang sesuai kebutuhan Anda, dan ikuti panduan langkah demi langkah. Jika Anda mengalami masalah, tim dukungan kami tersedia 24/7."
+      }
+    }
+  },
+  "topCountries": {
+    "title": "Negara dengan penggunaan proxy terbaik",
+    "subtitle": "Pilih proxy terbaik di setiap kota atau negara yang Anda ketahui.",
+    "ips": "IP"
+  },
+  "partnerships": {
+    "title": "Kemitraan",
+    "subtitle": "Dipercaya oleh perusahaan terkemuka",
+    "disclaimer": "Peringatan: Pengguna bertanggung jawab atas penggunaan layanan proxy secara legal. Kami tidak bertanggung jawab atas penyalahgunaan. Terima kasih atas pengertiannya!"
+  },
+  "caseStudies": {
+    "title": "Studi Kasus",
+    "subtitle": "Layanan proxy Peer-to-Peer (P2P) yang dirancang untuk meningkatkan pengalaman browsing Anda dengan solusi proxy yang fleksibel, cepat, dan andal.",
+    "items": {
+      "adVerification": "Verifikasi Iklan",
+      "fastShopping": "Belanja Cepat",
+      "pricingMonitoring": "Pemantauan Harga",
+      "network": "Jaringan",
+      "talentSourcing": "Pencarian Talenta",
+      "dataCollection": "Pengumpulan Data",
+      "verification": "Verifikasi",
+      "marketResearch": "Riset Pasar"
+    }
+  },
+  "resellers": {
+    "title": "Mulai dengan Program Reseller json.io",
+    "subtitle": "Bergabung dengan program mitra kami",
+    "button": "Mulai",
+    "description": "Cara paling hemat biaya dan bebas risiko untuk memulai bisnis proxy — jangan lewatkan kesempatan ini."
+  },
+  "trustedBy": {
+    "title": "Dipercaya oleh banyak bisnis untuk meningkatkan pembelajaran dan pertumbuhan pendidikan.",
+    "subtitle": "Perusahaan yang mempercayai layanan kami"
+  },
+  "footer": {
+    "description": "NetProxy.io menyediakan layanan proxy residensial yang membantu pengguna mengakses internet secara anonim dan aman, mendukung tugas seperti web scraping dan riset pasar dengan kecepatan tinggi dan keandalan.",
+    "extensions": {
+      "chrome": "CHROME",
+      "windows": "WINDOWS",
+      "ios": "IOS",
+      "android": "ANDROID",
+      "downloadFor": "UNDUH UNTUK",
+      "extensionsFor": "EKSTENSI UNTUK"
+    },
+    "account": {
+      "title": "Akun",
+      "createAccount": "Buat Akun",
+      "login": "Masuk"
+    },
+    "affiliate": {
+      "title": "Afiliasi",
+      "resellerProgram": "Program Reseller",
+      "linkProgram": "Program Tautan"
+    },
+    "category": {
+      "title": "Kategori",
+      "faqs": "FAQs",
+      "pricing": "Harga",
+      "contact": "Kontak"
+    },
+    "serviceTerm": {
+      "title": "Layanan & Ketentuan",
+      "privacyPolicy": "Kebijakan Privasi",
+      "cookiePolicy": "Kebijakan Cookie",
+      "termsOfService": "Ketentuan Layanan",
+      "refundPolicy": "Kebijakan Pengembalian"
+    }
+  }
+}

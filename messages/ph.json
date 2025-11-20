@@ -1,0 +1,183 @@
+{
+  "metadata": {
+    "title": "Residential P2P Proxies – Ang Pinakamahusay na Proxy Solution para sa MMO",
+    "description": "Nag-aalok ang NetProxy.io ng secure at high-performance na residential P2P proxies para sa MMO gamers at marketers. Masiyahan sa global access, mababang latency, at matatag na koneksyon gamit ang milyun-milyong tunay na IP. Maranasan ang tunay na online freedom at reliability."
+  },
+  "common": {
+    "learnMore": "Matuto Pa",
+    "getStarted": "Magsimula",
+    "contactUs": "Makipag-ugnayan sa Amin",
+    "readMore": "Magbasa Pa",
+    "buyNow": "Bumili Ngayon",
+    "tryFree": "Subukan nang Libre"
+  },
+  "nav": {
+    "home": "HOME",
+    "pricing": "PRICING",
+    "caseStudy": "CASE STUDY",
+    "country": "COUNTRY",
+    "contact": "CONTACT",
+    "faq": "FAQ",
+    "cookiePolicy": "Cookie Policy",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "refundService": "Refund Service"
+  },
+  "hero": {
+    "title": "Residential Proxies P2P",
+    "subtitle": "Ang pinakamahusay na Proxy solution para sa MMO",
+    "description": "May higit sa 62 milyong proxy IPs sa mahigit 220 bansa at lungsod, nagbibigay kami ng tuluy-tuloy, secure, at maaasahang proxy solutions para sa lahat ng iyong online na pangangailangan.",
+    "cta": "MAGSIMULA",
+    "viewPrice": "TINGNAN ANG PRESYO - SA $0.99",
+    "features": {
+      "transparent": {
+        "title": "Transparent Proxy",
+        "description": "Pinapataas ng transparent proxy ang security at pinapahusay ang performance ng koneksyon."
+      },
+      "noLogs": {
+        "title": "Walang Logs",
+        "description": "Tinitiyak ng aming no-logs policy ang iyong privacy sa pamamagitan ng hindi pagre-record ng iyong aktibidad, kaya ligtas ang iyong data at pribado ang iyong pagba-browse."
+      },
+      "fastConnection": {
+        "title": "Mabilis na Koneksyon",
+        "description": "Masiyahan sa sobrang bilis gamit ang aming optimized proxy service. Mas mababang latency at mas mabilis na response time para sa smooth na browsing at streaming."
+      }
+    }
+  },
+  "pricing": {
+    "flashSale": "FLASH SALE DISCOUNT 20%",
+    "title": "Daily price proxy",
+    "subtitle": "Magbayad lamang para sa araw na kailangan mo, walang long-term commitments. Seamless browsing gamit ang global IPs mula sa decentralized network.",
+    "plans": {
+      "ipv6": {
+        "title": "IPv6 Proxy",
+        "unit": "Gigabytes",
+        "price": "$0.04"
+      },
+      "rotation": {
+        "title": "Rotation Residential",
+        "unit": "Araw",
+        "price": "$0.20"
+      },
+      "static": {
+        "title": "Static Residential",
+        "unit": "Araw",
+        "price": "$5"
+      },
+      "unlimited": {
+        "title": "Unlimited Proxy",
+        "unit": "Walang Limitasyon",
+        "price": "$255"
+      }
+    },
+    "features": {
+      "httpSupport": "Supports HTTP/HTTPS",
+      "exportPorts": "Exports: 10,000 Ports Proxies",
+      "ipRotation": "IP Rotation: Bawat 10 Minuto",
+      "unlimitedRotations": "Walang limitasyong IP Rotations",
+      "unlimitedBandwidth": "Unlimited Bandwidth",
+      "speed": "Speed hanggang 50 Mbps"
+    },
+    "certificate": "Certified data centers at net providers"
+  },
+  "contact": {
+    "tag": "CONTACT",
+    "title": "Kailangan ng tulong mula sa totoong tao?",
+    "anyQuestions": "May mga katanungan?",
+    "description": "Narito kami upang tumulong at sagutin ang anumang tanong mo. Punan ang form na ito o mag-email sa amin:",
+    "wantCollaborate": "Nais makipag-collaborate?",
+    "collaborateDescription": "Magpadala ng email upang makipag-ugnayan sa aming business team",
+    "phone": "(+84) 327 072 120",
+    "address": "117 Duong Nguyen Du, Ben Thanh, District 1, Ho Chi Minh 700000"
+  },
+  "faqs": {
+    "tag": "FAQs",
+    "title": "Lahat ng Tanong Mo, Nasagot",
+    "questions": {
+      "q1": {
+        "question": "Anong uri ng proxies ang inaalok ng NetProxy.io?",
+        "answer": "Nag-aalok ang NetProxy.io ng iba’t ibang uri ng proxies tulad ng residential proxies, datacenter proxies, at mobile proxies. Ang bawat uri ay ginawa para sa iba’t ibang pangangailangan gaya ng scraping, ad verification, at multi-account management."
+      },
+      "q2": {
+        "question": "Ano ang proxy at paano ito gumagana?",
+        "answer": "Ang proxy ay isang intermediary server sa pagitan ng iyong device at ng internet, na nagfa-forward ng request mo at bumabalik ng response mula sa server. Nag-aalok ang NetProxy ng continuous IP rotation plans tulad ng 1-minute o 2-minute rotation para maprotektahan ang iyong identity at online security."
+      },
+      "q3": {
+        "question": "Ang NetProxy.io ba ay angkop para sa large-scale tasks tulad ng web scraping?",
+        "answer": "Oo! Ang NetProxy.io ay perpekto para sa large-scale web scraping. Ang aming proxies ay ginawa upang maiwasan ang detection, kaya tiyak ang stable at uninterrupted connections—ideal para sa data gathering nang walang ban risk."
+      },
+      "q4": {
+        "question": "Paano ako makakapagsimula sa NetProxy.io?",
+        "answer": "Napakadali! Mag-sign up lang sa aming website, pumili ng proxy plan na akma sa iyong pangangailangan, at sundin ang step-by-step guide. Kung may problema ka, available ang aming support team 24/7."
+      }
+    }
+  },
+  "topCountries": {
+    "title": "Mga Bansa na may Pinakamagandang Proxy Usage",
+    "subtitle": "Piliin ang pinakamahusay na proxies sa bawat lungsod o bansa na alam mo.",
+    "ips": "IPs"
+  },
+  "partnerships": {
+    "title": "Partnerships",
+    "subtitle": "Trusted ng leading companies",
+    "disclaimer": "Paalala: Ang user ay responsable sa tamang paggamit ng aming proxy services. Hindi kami mananagot sa maling paggamit. Salamat sa pag-unawa!"
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "subtitle": "Peer-to-Peer (P2P) proxy service na idinisenyo upang mapahusay ang iyong browsing experience gamit ang flexible, high-speed, at reliable proxy solutions.",
+    "items": {
+      "adVerification": "Ad Verification",
+      "fastShopping": "Fast Shopping",
+      "pricingMonitoring": "Pricing Monitoring",
+      "network": "Network",
+      "talentSourcing": "Talent Sourcing",
+      "dataCollection": "Data Collection",
+      "verification": "Verification",
+      "marketResearch": "Market Research"
+    }
+  },
+  "resellers": {
+    "title": "Magsimula sa json.io Reseller Program",
+    "subtitle": "Sumali sa aming partner program",
+    "button": "Magsimula",
+    "description": "Ang pinaka cost-effective at risk-free na paraan upang magsimula ng proxy business — huwag palampasin ang pagkakataong ito."
+  },
+  "trustedBy": {
+    "title": "Trusted ng maraming negosyo para mapahusay ang learning at educational growth.",
+    "subtitle": "Mga kumpanyang nagtitiwala sa aming serbisyo"
+  },
+  "footer": {
+    "description": "Nagbibigay ang NetProxy.io ng residential proxy services na tumutulong sa users na makapag-browse nang anonymous at secure, para sa tasks tulad ng web scraping at market research na may mataas na bilis at reliability.",
+    "extensions": {
+      "chrome": "CHROME",
+      "windows": "WINDOWS",
+      "ios": "IOS",
+      "android": "ANDROID",
+      "downloadFor": "I-DOWNLOAD PARA SA",
+      "extensionsFor": "EXTENSIONS PARA SA"
+    },
+    "account": {
+      "title": "Account",
+      "createAccount": "Gumawa ng Account",
+      "login": "Mag-login"
+    },
+    "affiliate": {
+      "title": "Affiliate",
+      "resellerProgram": "Reseller Program",
+      "linkProgram": "Link Program"
+    },
+    "category": {
+      "title": "Category",
+      "faqs": "FAQs",
+      "pricing": "Pricing",
+      "contact": "Contact"
+    },
+    "serviceTerm": {
+      "title": "Service & Term",
+      "privacyPolicy": "Privacy Policy",
+      "cookiePolicy": "Cookie Policy",
+      "termsOfService": "Terms of Service",
+      "refundPolicy": "Refund Policy"
+    }
+  }
+}

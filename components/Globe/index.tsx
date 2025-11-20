@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useResponsive } from "@/hooks/useResponsive";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { GlobeIcon } from "./GlobeIcon";
-import { languages } from "@/common/constant";
+import { locales } from "@/common/constant";
 import { ibmPlexMono } from "@/app/fonts";
 import { usePathname, useRouter } from "@/i18n/routing";
 
@@ -55,7 +55,7 @@ const Globe = () => {
             <div className="h-2" />
 
             <ul className="flex max-w-[183px] flex-col flex-nowrap items-center justify-center gap-y-2 rounded-[10px] bg-background p-3 shadow-[0_10px_20px_0_rgba(0,0,0,0.05)]">
-              {languages.map(({ code, label, subLabel }) => (
+              {locales.map(({ code, name, subLabel }) => (
                 <li
                   key={code}
                   className="cursor-pointer will-change-auto  w-full whitespace-pre flex h-[22px] items-center justify-center rounded-xl hover:bg-[#fdf4e4] px-4 transition-colors"
@@ -64,7 +64,7 @@ const Globe = () => {
                   <span
                     className={`${ibmPlexMono.className} uppercase text-[12px] font-medium leading-[14.4px] text-[#2b303b] duration-150 hover:text-primary transition-colors`}
                   >
-                    {label} {subLabel && `(${subLabel})`}
+                    {name} {subLabel && `(${subLabel})`}
                   </span>
                 </li>
               ))}
