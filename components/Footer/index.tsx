@@ -1,21 +1,64 @@
-"use client";
-
 import Image from "next/image";
 import { ChromeIcon } from "../icons/ChromeIcon";
 import { WindowIcon } from "../icons/WindowIcon";
 import { AndroidIcon } from "../icons/AndroidIcon";
 import { AppleIcon } from "../icons/AppleIcon";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../ui/accordion";
 import { Link } from "@/i18n/routing";
-import { useTranslations } from "next-intl";
+import { FooterAccordionMenu } from "./FooterAccordionMenu";
+import { getTranslations } from "next-intl/server";
 
-export const Footer = () => {
-  const t = useTranslations("footer");
+export const Footer = async () => {
+  const t = await getTranslations("footer");
+
+  const categoryLinks = [
+    { href: "#faqs", label: t("category.faqs").toLocaleUpperCase() },
+    { href: "#pricing", label: t("category.pricing").toLocaleUpperCase() },
+    { href: "#contact", label: t("category.contact").toLocaleUpperCase() },
+  ];
+
+  const serviceTermLinks = [
+    {
+      href: "/privacy-policy",
+      label: t("serviceTerm.privacyPolicy").toLocaleUpperCase(),
+    },
+    {
+      href: "/cookie-policy",
+      label: t("serviceTerm.cookiePolicy").toLocaleUpperCase(),
+    },
+    {
+      href: "/term-service",
+      label: t("serviceTerm.termsOfService").toLocaleUpperCase(),
+    },
+    {
+      href: "/refund-service",
+      label: t("serviceTerm.refundPolicy").toLocaleUpperCase(),
+    },
+  ];
+
+  const accordionSections = [
+    {
+      title: t("account.title"),
+      items: [
+        { label: t("account.createAccount") },
+        { label: t("account.login") },
+      ],
+    },
+    {
+      title: t("category.title"),
+      items: categoryLinks,
+    },
+    {
+      title: t("serviceTerm.title"),
+      items: serviceTermLinks,
+    },
+    {
+      title: t("affiliate.title"),
+      items: [
+        { label: t("affiliate.resellerProgram") },
+        { label: t("affiliate.linkProgram") },
+      ],
+    },
+  ];
 
   return (
     <footer className="pt-20 pb-10 bg-[#f2f7f7] px-5 4xl:px-10">
@@ -38,6 +81,7 @@ export const Footer = () => {
               href="https://chromewebstore.google.com/detail/mnloefcpaepkpmhaoipjkpikbnkmbnic?utm_source=item-share-cb"
               className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-start 4xl:justify-center pl-[22px] 4xl:pl-0 box-border min-h-[56px]"
               target="_blank"
+              rel="noreferrer"
             >
               <div className="w-10 h-10">
                 <ChromeIcon />
@@ -49,6 +93,7 @@ export const Footer = () => {
               href="https://www.proxifier.com/"
               className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-start 4xl:justify-center pl-[22px] 4xl:pl-0 box-border min-h-[56px]"
               target="_blank"
+              rel="noreferrer"
             >
               <div className="w-10 h-10">
                 <WindowIcon />
@@ -60,6 +105,7 @@ export const Footer = () => {
               href="https://apps.apple.com/us/app/shadowrocket/id932747118"
               className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-start 4xl:justify-center pl-[22px] 4xl:pl-0 box-border min-h-[56px]"
               target="_blank"
+              rel="noreferrer"
             >
               <div className="w-10 h-10">
                 <AppleIcon />
@@ -71,6 +117,7 @@ export const Footer = () => {
               href="https://play.google.com/store/apps/details?id=com.scheler.superproxy"
               className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-start 4xl:justify-center pl-[22px] 4xl:pl-0 box-border min-h-[56px]"
               target="_blank"
+              rel="noreferrer"
             >
               <div className="w-10 h-10">
                 <AndroidIcon />
@@ -80,6 +127,7 @@ export const Footer = () => {
             </Link>
           </div>
         </div>
+
         <div className="hidden min-[810px]:grid w-full grid-cols-4">
           <div className="flex flex-col gap-4">
             <div className="font-neue-kaine-bold text-primary text-21">
@@ -107,15 +155,15 @@ export const Footer = () => {
               {t("category.title")}
             </div>
             <div>
-              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-                {t("category.faqs")}
-              </div>
-              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-                {t("category.pricing")}
-              </div>
-              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-                {t("category.contact")}
-              </div>
+              {categoryLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item block"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
           <div className="flex flex-col gap-4">
@@ -123,101 +171,20 @@ export const Footer = () => {
               {t("serviceTerm.title")}
             </div>
             <div>
-              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-                {t("serviceTerm.privacyPolicy")}
-              </div>
-              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-                {t("serviceTerm.cookiePolicy")}
-              </div>
-              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-                {t("serviceTerm.termsOfService")}
-              </div>
-              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-                {t("serviceTerm.refundPolicy")}
-              </div>
+              {serviceTermLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item block"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
 
-        <div className="min-[810px]:hidden flex flex-col gap-4">
-          <Accordion
-            type="single"
-            collapsible
-            className="border p-4 border-[#e3ecec] rounded-xl"
-          >
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="font-ibm-plex-mono text-21 text-primary p-0! hover:no-underline">
-                {t("account.title")}
-              </AccordionTrigger>
-              <AccordionContent className="pb-0! mt-2">
-                <div className="flex flex-col gap-2 font-ibm-plex-mono text-xs text-footer-text">
-                  <div>{t("account.createAccount")}</div>{" "}
-                  <div>{t("account.login")}</div>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-          <Accordion
-            type="single"
-            collapsible
-            className="border p-4 border-[#e3ecec] rounded-xl"
-          >
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="font-ibm-plex-mono text-21 text-primary p-0! hover:no-underline">
-                {t("category.title")}
-              </AccordionTrigger>
-              <AccordionContent className="pb-0! mt-2">
-                <div className="flex flex-col gap-2 font-ibm-plex-mono text-xs text-footer-text">
-                  <Link href={"#"} className="text-primary underline">
-                    {t("category.faqs")}
-                  </Link>
-                  <Link href={"#"} className="text-primary underline">
-                    {t("category.pricing")}
-                  </Link>
-                  <Link href={"#"} className="text-primary underline">
-                    {t("category.contact")}
-                  </Link>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-          <Accordion
-            type="single"
-            collapsible
-            className="border p-4 border-[#e3ecec] rounded-xl"
-          >
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="font-ibm-plex-mono text-21 text-primary p-0! hover:no-underline">
-                {t("serviceTerm.title")}
-              </AccordionTrigger>
-              <AccordionContent className="pb-0! mt-2">
-                <div className="flex flex-col gap-2 font-ibm-plex-mono text-xs text-footer-text">
-                  <div>{t("serviceTerm.privacyPolicy")}</div>{" "}
-                  <div>{t("serviceTerm.cookiePolicy")}</div>
-                  <div>{t("serviceTerm.termsOfService")}</div>
-                  <div>{t("serviceTerm.refundPolicy")}</div>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-          <Accordion
-            type="single"
-            collapsible
-            className="border p-4 border-[#e3ecec] rounded-xl"
-          >
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="font-ibm-plex-mono text-21 text-primary p-0! hover:no-underline">
-                {t("affiliate.title")}
-              </AccordionTrigger>
-              <AccordionContent className="pb-0! mt-2">
-                <div className="flex flex-col gap-2 font-ibm-plex-mono text-xs text-footer-text">
-                  <div>{t("affiliate.resellerProgram")}</div>{" "}
-                  <div>{t("affiliate.linkProgram")}</div>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
+        <FooterAccordionMenu sections={accordionSections} />
       </div>
     </footer>
   );

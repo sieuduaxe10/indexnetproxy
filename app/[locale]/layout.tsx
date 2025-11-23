@@ -1,30 +1,18 @@
 import type { Metadata } from "next";
-import "../globals.css";
-import { geistSans, ibmPlexMono, notoSans, inter } from "../fonts";
-import localFont from "next/font/local";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 
-const neueKaineFont = localFont({
-  src: "../fonts/neue-kaine-variable-bold.woff2",
-  variable: "--font-neue-kaine",
-});
-
-const neueKaineBoldFont = localFont({
-  src: "../fonts/neue-kaine-variable-bold.woff2",
-  variable: "--font-neue-kaine-bold",
-});
+type Locale = (typeof routing.locales)[number];
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
-
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: Locale }>;
 }): Promise<Metadata> {
   const { locale } = await params;
   const messages = await getMessages({ locale });
@@ -35,40 +23,17 @@ export async function generateMetadata({
     description: metadata.description,
   };
 }
-
 export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
 
   // Ensure that the incoming `locale` is valid
-  if (
-    !routing.locales.includes(
-      locale as
-        | "en"
-        | "vi"
-        | "zh"
-        | "hi"
-        | "es"
-        | "ar"
-        | "fr"
-        | "pt"
-        | "ru"
-        | "bn"
-        | "id"
-        | "ja"
-        | "th"
-        | "ko"
-        | "tr"
-        | "ph"
-        | "br"
-        | "fa"
-    )
-  ) {
+  if (!routing.locales.includes(locale)) {
     notFound();
   }
 
@@ -77,14 +42,8 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body
-        className={`${notoSans.variable} ${ibmPlexMono.variable} ${geistSans.variable} ${neueKaineFont.variable} ${neueKaineBoldFont.variable} ${inter.variable} antialiased`}
-      >
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider messages={messages}>
+      {children}
+    </NextIntlClientProvider>
   );
 }
