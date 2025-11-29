@@ -81,8 +81,8 @@ export const Partnerships = () => {
           <Image
             src={"/images/disclaimer/background.png"}
             alt={"Disclaimer background"}
-            objectFit="cover"
             fill
+            style={{ objectFit: "cover" }}
           />
         </div>
         <div className="px-4 md:px-10 py-[30px] relative">
@@ -118,9 +118,9 @@ export const Partnerships = () => {
                 <Image
                   width={40}
                   height={20}
-                  objectFit="contain"
                   src={imgSrc}
                   alt={`Disclaimer ${index + 1}`}
+                  style={{ objectFit: "contain" }}
                 />
               </div>
             ))}
