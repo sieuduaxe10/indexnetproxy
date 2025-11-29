@@ -53,9 +53,10 @@ export const MainHero = () => {
           <div className="absolute inset-0">
             <Image
               src="/images/hero/block-1.png"
-              alt="Hero Image"
+              alt="netproxy Hero Image"
               width={206}
               height={130}
+              sizes="(min-width:1200px) 206px, (min-width:810px) 206px, 186px"
             />
           </div>
         </ParallaxWrapper>
@@ -68,10 +69,10 @@ export const MainHero = () => {
           <div className="absolute inset-0">
             <Image
               src="/images/hero/block-1.png"
-              alt="Hero Image"
+              alt="netproxy Hero Image"
               width={206}
               height={130}
-              priority
+              sizes="(min-width:1200px) 206px, (min-width:810px) 206px, 186px"
             />
           </div>
         </ParallaxWrapper>
@@ -80,10 +81,10 @@ export const MainHero = () => {
           <div className="absolute inset-0">
             <Image
               src="/images/hero/block-1.png"
-              alt="Hero Image"
+              alt="netproxy Hero Image"
               width={206}
               height={130}
-              priority
+              sizes="(min-width:1200px) 206px, (min-width:810px) 206px, 186px"
             />
           </div>
         </div>
@@ -105,6 +106,7 @@ export const MainHero = () => {
               alt="netproxy round orange icon"
               width={59}
               height={59}
+              sizes="(min-width:1200px) 59px, (min-width:810px) 39px, 28px"
             />
           </div>
         </ParallaxWrapper>
@@ -119,6 +121,7 @@ export const MainHero = () => {
               alt="netproxy play icon"
               width={39}
               height={35}
+              sizes="(min-width:1200px) 39px, (min-width:810px) 39px, 28px"
             />
           </div>
         </ParallaxWrapper>
@@ -134,6 +137,7 @@ export const MainHero = () => {
               alt="netproxy cross icon"
               width={31}
               height={31}
+              sizes="(min-width:1200px) 31px, (min-width:810px) 31px, 28px"
             />
           </div>
         </ParallaxWrapper>

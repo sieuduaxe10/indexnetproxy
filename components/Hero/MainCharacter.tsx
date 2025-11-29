@@ -9,8 +9,8 @@ export const MainCharacter = () => {
           alt="netproxy goose character"
           width={400}
           height={421}
+          sizes="(min-width:1200px) 400px, (min-width:810px) 363px, 374px"
           className="w-full h-auto"
-          priority
         />
       </div>
     </div>

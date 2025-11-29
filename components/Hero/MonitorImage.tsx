@@ -6,11 +6,12 @@ export const MonitorImage = () => {
   return (
     <div className="absolute inset-0">
       <Image
-        src="/images/hero/monitor-icon.avif"
+        src="/images/hero/monitor-icon.png"
         alt="netproxy monitor icon"
         width={153}
         height={176}
-        className="h-auto"
+        sizes="(min-width:1200px) 153px, (min-width:810px) 139px, 144px"
+        className="w-full h-auto"
       />
     </div>
     // </div>

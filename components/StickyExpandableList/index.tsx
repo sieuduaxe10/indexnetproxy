@@ -54,7 +54,7 @@ export default function ExpandableItem() {
           alt="Login IO"
           width={84}
           height={27}
-          priority
+          sizes="(min-width:1200px) 84px, (min-width:810px) 84px, 84px"
         />
         {isOpen ? (
           <div
@@ -89,7 +89,7 @@ export default function ExpandableItem() {
             alt="Anonymous Browser"
             width={230}
             height={416}
-            priority
+            sizes="(min-width:1200px) 230px, (min-width:810px) 230px, 230px"
           />
         </Link>
       </div>

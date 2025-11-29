@@ -54,6 +54,7 @@ const HeroTopCrossIcon = () => {
           alt="netproxy cross icon"
           width={71}
           height={70}
+          sizes="(min-width:1200px) 49px, (min-width:810px) 49px, 28px"
         />
       </div>
     </div>
