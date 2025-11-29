@@ -46,7 +46,7 @@ const HeroTopCrossIcon = () => {
   return (
     <div
       ref={ref}
-      className="absolute top-[198px] left-[74px] translate-y-[19px] rotate-[0deg] aspect-[1.01429] h-auto w-[49px] flex-none z-10 opacity-50 overflow-visible will-change-transform"
+      className="absolute bottom-[228px] left-[28px] translate-y-[19px] aspect-[1.01429] h-auto w-[28px] flex-none z-10 opacity-50 overflow-visible will-change-transform 4xl:bottom-auto 4xl:top-[198px] 4xl:left-[-41px] 4xl:w-[49px] 7xl:left-[74px]"
     >
       <div className="absolute">
         <Image

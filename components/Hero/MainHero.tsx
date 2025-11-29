@@ -1,18 +1,48 @@
+"use client";
+
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import { CloudImage } from "./CloudImage";
-import { MonitorImage } from "./MonitorImage";
-import { MainCharacter } from "./MainCharacter";
-import ParallaxWrapper from "../ParallaxWrapper/ParallaxWrapper";
-import HeroGlobeIcon from "./HeroGlobeIcon";
-import HeroTopCrossIcon from "./HeroTopCrossIcon";
+import { useResponsive } from "@/hooks/useResponsive";
+
+const CloudImage = dynamic(() =>
+  import("./CloudImage").then((mod) => ({ default: mod.CloudImage }))
+);
+const MonitorImage = dynamic(
+  () => import("./MonitorImage").then((mod) => ({ default: mod.MonitorImage })),
+  { ssr: false }
+);
+const MainCharacter = dynamic(() =>
+  import("./MainCharacter").then((mod) => ({ default: mod.MainCharacter }))
+);
+const ParallaxWrapper = dynamic(
+  () => import("../ParallaxWrapper/ParallaxWrapper"),
+  { ssr: false }
+);
+const HeroGlobeIcon = dynamic(() => import("./HeroGlobeIcon"));
+const HeroTopCrossIcon = dynamic(() => import("./HeroTopCrossIcon"), {
+  ssr: false,
+});
 
 export const MainHero = () => {
+  const { isMobile, isTablet } = useResponsive();
+
   return (
-    <div className="w-[1041px] h-[568px] 7xl:h-[632px] absolute bottom-[420px] 4xl:bottom-[235px] 7xl:bottom-[230px] left-[calc(50%-520.5px)] z-10 user-select-none overflow-hidden">
+    <div className="absolute top-[485px] left-0 right-0 h-[449px] w-auto flex-none z-20 user-select-none overflow-hidden 4xl:top-[318px] 4xl:h-[568px] 7xl:top-auto 7xl:bottom-[278px] 7xl:left-[calc(50%-520.5px)] 7xl:right-auto 7xl:w-[1041px] 7xl:h-[632px]">
       <CloudImage />
       {/*  main Image*/}
-      <div className="w-[840px] h-[478px] absolute bottom-0 left left-[calc(46.9741%-420px)] overflow-visible">
-        <MonitorImage />
+      <div className="absolute bottom-10 4xl:-bottom-5 7xl:bottom-0 left-[calc(41.4286%-196px)] 4xl:left-[calc(50%-405px)] 7xl:left-[calc(46.9741%-420px)] w-[392px] 4xl:w-[810px] 7xl:w-[840px] h-[436px] 4xl:h-[462px] 7xl:h-[478px] overflow-visible">
+        {isMobile ? (
+          <div className="absolute top-[34%] left-[31%] translate-x-[-50%] translate-y-[-50%] aspect-[0.867374] h-auto w-36 opacity-100 4xl:top-auto 4xl:bottom-[236px] 4xl:left-1/2 4xl:w-[139px] 4xl:translate-x-[-50%] 4xl:translate-y-[-52px] 4xl:will-change-transform 7xl:top-[2.548%] 7xl:bottom-auto 7xl:left-[39.85%] 7xl:w-[153px] 7xl:translate-x-[-50%] 7xl:translate-y-[calc(-50%-52px)] 7xl:will-change-transform">
+            <MonitorImage />
+          </div>
+        ) : (
+          <ParallaxWrapper
+            speed={1.1}
+            className="absolute top-[34%] left-[31%] translate-x-[-50%] translate-y-[-50%] aspect-[0.867374] h-auto w-36 opacity-100 4xl:top-auto 4xl:bottom-[236px] 4xl:left-1/2 4xl:w-[139px] 4xl:translate-x-[-50%] 4xl:translate-y-[-52px] 4xl:will-change-transform 7xl:top-[2.548%] 7xl:bottom-auto 7xl:left-[39.85%] 7xl:w-[153px] 7xl:translate-x-[-50%] 7xl:translate-y-[calc(-50%-52px)] 7xl:will-change-transform"
+          >
+            <MonitorImage />
+          </ParallaxWrapper>
+        )}
         {/* Goose Character */}
         <MainCharacter />
         {/* Block 1 (106%) */}
@@ -26,7 +56,6 @@ export const MainHero = () => {
               alt="Hero Image"
               width={206}
               height={130}
-              priority
             />
           </div>
         </ParallaxWrapper>
@@ -68,7 +97,7 @@ export const MainHero = () => {
         {/* Hero round icon orange bottom */}
         <ParallaxWrapper
           speed={1.2}
-          className="absolute bottom-[-99px] left-[334px] rotate-149 aspect-[1] h-auto w-[39px] flex-none opacity-80 overflow-visible will-change-transform"
+          className="absolute bottom-[-33px] left-[125px] rotate-149 aspect-[1] h-auto w-[28px] flex-none opacity-80 overflow-visible will-change-transform 4xl:bottom-[-163px] 4xl:left-[219px] 4xl:w-[39px] 7xl:bottom-[-99px] 7xl:left-[334px]"
         >
           <div className="absolute inset-0">
             <Image
@@ -82,7 +111,7 @@ export const MainHero = () => {
         {/* Hero play icon */}
         <ParallaxWrapper
           speed={1.3}
-          className="absolute -bottom-20 left-[942px] translate-y-[0px] rotate-[-30deg] aspect-[1.12097] h-auto w-[39px] opacity-100 overflow-visible will-change-transform"
+          className="absolute bottom-[-39px] left-[94%] translate-x-[-50%] rotate-[-30deg] aspect-[1.12097] h-auto w-[28px] opacity-100 overflow-visible will-change-transform 4xl:bottom-[-144px] 4xl:left-auto 4xl:right-[-56px] 4xl:translate-x-0 4xl:w-[39px] 7xl:bottom-[-80px] 7xl:left-[942px] 7xl:right-auto 7xl:translate-x-0"
         >
           <div className="absolute inset-0">
             <Image
@@ -97,7 +126,7 @@ export const MainHero = () => {
 
         <ParallaxWrapper
           speed={1.4}
-          className="absolute bottom-[-122px] left-[150px] rotate-[-30deg] aspect-[1.01429] h-auto w-[31px] z-10 opacity-50 overflow-visible will-change-transform"
+          className="absolute bottom-[-42px] left-1/2 translate-x-[-50%] translate-y-[-147.6px] rotate-[-30deg] aspect-[1.01429] h-auto w-7 z-10 opacity-50 overflow-visible will-change-transform 4xl:bottom-[-188px] 4xl:left-[35px] 4xl:translate-x-0 4xl:w-[31px] 7xl:bottom-[-122px] 7xl:left-[150px]"
         >
           <div className="absolute">
             <Image
