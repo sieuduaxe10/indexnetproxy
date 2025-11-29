@@ -62,7 +62,7 @@ const baseOptions = (imageSrc: string): ISourceOptions => ({
     },
     modes: {
       // included for parity with your Framer config (even if hover/click are disabled)
-      connect: { distance: 100, radius: 50, links: { opacity: 0.2 } as any },
+      connect: { distance: 100, radius: 50, links: { opacity: 0.2 } },
       grab: { distance: 100, links: { opacity: 0.2 } },
       bubble: { distance: 100, size: 40, duration: 0.4 },
       repulse: { distance: 200, duration: 1.2 },

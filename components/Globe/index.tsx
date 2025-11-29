@@ -18,9 +18,7 @@ const Globe = () => {
 
   useClickOutside(dropdownRef, () => setMenuOpen(false));
 
-  useEffect(() => {
-    console.log({ isMobile, isTablet });
-  }, [isMobile, isTablet]);
+  useEffect(() => {}, [isMobile, isTablet]);
 
   const handleChangeLanguage = (code: string) => {
     if (isPending) return;

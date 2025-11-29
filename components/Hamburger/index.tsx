@@ -16,9 +16,7 @@ const HamburgerMenu = (props: React.ComponentProps<"div">) => {
 
   useClickOutside(dropdownRef, () => setMenuOpen(false));
 
-  useEffect(() => {
-    console.log({ isMobile, isTablet });
-  }, [isMobile, isTablet]);
+  useEffect(() => {}, [isMobile, isTablet]);
 
   return (
     <div
