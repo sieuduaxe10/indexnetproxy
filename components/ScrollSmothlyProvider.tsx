@@ -26,6 +26,34 @@ export const SmoothScrollProvider: React.FC<SmoothScrollProviderProps> = ({
   const isMobile = useRef(false);
   const isScrolling = useRef(false);
   const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
+  const hasHashScrolled = useRef(false);
+
+  const scrollToHash = useCallback(
+    (hash: string) => {
+      const attemptScroll = (attempt = 0) => {
+        if (!hash || attempt > 10) return;
+        const targetId = hash.replace("#", "");
+        const el = document.getElementById(targetId);
+
+        if (!el) {
+          // element might not be in the DOM yet; retry shortly
+          requestAnimationFrame(() => attemptScroll(attempt + 1));
+          return;
+        }
+
+        const targetTop = el.getBoundingClientRect().top + window.scrollY;
+        requestAnimationFrame(() =>
+          window.scrollTo({
+            top: targetTop,
+            behavior: disableOnMobile && isMobile.current ? "auto" : "smooth",
+          })
+        );
+      };
+
+      attemptScroll();
+    },
+    [disableOnMobile]
+  );
 
   // Detect mobile device
   useEffect(() => {
@@ -33,7 +61,7 @@ export const SmoothScrollProvider: React.FC<SmoothScrollProviderProps> = ({
       isMobile.current =
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
           navigator.userAgent
-        ) || window.innerWidth < 768;
+        ) || window.innerWidth < 1200; // enable smooth scroll on 7xl (>=1200px)
     };
     checkMobile();
     window.addEventListener("resize", checkMobile);
@@ -57,6 +85,7 @@ export const SmoothScrollProvider: React.FC<SmoothScrollProviderProps> = ({
       wrapper.style.position = "static";
       wrapper.style.transform = "none";
       document.body.style.height = "";
+      scrollToHash(window.location.hash);
       return;
     }
 
@@ -104,7 +133,7 @@ export const SmoothScrollProvider: React.FC<SmoothScrollProviderProps> = ({
       }
 
       // Smooth lerp
-      currentY.current += distance * ease;
+      currentY.current += distance * ease * speedMultiplier;
 
       // Use translate3d for better performance (GPU acceleration)
       wrapper.style.transform = `translate3d(0, -${currentY.current}px, 0)`;
@@ -117,6 +146,12 @@ export const SmoothScrollProvider: React.FC<SmoothScrollProviderProps> = ({
 
     // Start animation loop
     rafId.current = requestAnimationFrame(animate);
+
+    // ensure hash scroll runs after layout is ready
+    if (!hasHashScrolled.current) {
+      hasHashScrolled.current = true;
+      scrollToHash(window.location.hash);
+    }
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -136,7 +171,52 @@ export const SmoothScrollProvider: React.FC<SmoothScrollProviderProps> = ({
       document.body.style.height = "";
       wrapper.style.transform = "none";
     };
-  }, [ease, speedMultiplier, updateHeight, disableOnMobile]);
+  }, [ease, speedMultiplier, updateHeight, disableOnMobile, scrollToHash]);
+
+  useEffect(() => {
+    // handle initial hash and subsequent changes or hash links
+    const onLoad = () => scrollToHash(window.location.hash);
+    onLoad();
+
+    const onHashChange = () => scrollToHash(window.location.hash);
+    window.addEventListener("hashchange", onHashChange);
+
+    const onClick = (event: MouseEvent) => {
+      const target = (event.target as HTMLElement | null)?.closest("a");
+      if (!target) return;
+      const href = target.getAttribute("href");
+      if (!href) return;
+
+      // Support full URLs or just hash
+      const url = href.startsWith("#")
+        ? new URL(window.location.href.split("#")[0] + href)
+        : (() => {
+            try {
+              return new URL(href, window.location.href);
+            } catch {
+              return null;
+            }
+          })();
+      if (!url) return;
+
+      if (url.pathname === window.location.pathname && url.hash) {
+        event.preventDefault();
+        if (history.pushState) {
+          history.pushState(null, "", url.hash);
+        } else {
+          window.location.hash = url.hash;
+        }
+        scrollToHash(url.hash);
+      }
+    };
+
+    window.addEventListener("click", onClick);
+
+    return () => {
+      window.removeEventListener("hashchange", onHashChange);
+      window.removeEventListener("click", onClick);
+    };
+  }, [scrollToHash]);
 
   return (
     <div

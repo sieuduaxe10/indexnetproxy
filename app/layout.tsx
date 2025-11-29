@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { geistSans, ibmPlexMono, notoSans, inter } from "./fonts";
 import localFont from "next/font/local";
+import { routing } from "@/i18n/routing";
 
 const neueKaineFont = localFont({
   src: "./fonts/neue-kaine-variable-bold.woff2",
@@ -18,15 +19,17 @@ export const metadata: Metadata = {
   description:
     "NetProxy.io offers secure, high-performance residential P2P proxies for MMO gamers and marketers. Enjoy global access, low latency, and stable connections with millions of real IPs. Experience ultimate online freedom and reliability.",
 };
+type Locale = (typeof routing.locales)[number];
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-  params?: { locale?: string };
-}>) {
-  const locale = params?.locale ?? "en";
+  params?: Promise<{ locale?: Locale }>;
+}) {
+  const resolvedParams = params ? await params : undefined;
+  const locale = resolvedParams?.locale ?? "en";
   const bodyClassName = `${notoSans.variable} ${ibmPlexMono.variable} ${geistSans.variable} ${neueKaineFont.variable} ${neueKaineBoldFont.variable} ${inter.variable} antialiased`;
 
   return (
