@@ -22,7 +22,7 @@ interface FooterAccordionMenuProps {
 
 export function FooterAccordionMenu({ sections }: FooterAccordionMenuProps) {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="4xl:hidden flex flex-col gap-4">
       {sections.map((section, index) => (
         <Accordion
           key={`${section.title}-${index}`}
