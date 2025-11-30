@@ -50,15 +50,7 @@ export const HeroTextContent = () => {
       elements.push(
         <span
           key={`word-${wordIndex}`}
-          style={{
-            whiteSpace: "nowrap",
-            translate: "none",
-            rotate: "none",
-            scale: "none",
-            transformOrigin: "50% 50%",
-            transform: "translate(0px, 0px)",
-            opacity: "1",
-          }}
+          className="inline-block whitespace-nowrap"
         >
           {word.split("").map((char, charIdx) => {
             const globalIdx = wordStartIndex + charIdx;
@@ -88,11 +80,7 @@ export const HeroTextContent = () => {
       if (wordEndIndex === p2pEnd) {
         elements.push(<br key={`br-${wordIndex}`} className="framer-text" />);
       } else if (wordIndex < words.length - 1) {
-        elements.push(
-          <span key={`space-${wordIndex}`} style={{ whiteSpace: "pre" }}>
-            {"  "}
-          </span>
-        );
+        elements.push(<span key={`space-${wordIndex}`}> </span>);
       }
     });
 
