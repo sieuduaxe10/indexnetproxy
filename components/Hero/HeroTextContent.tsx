@@ -159,7 +159,7 @@ export const HeroTextContent = () => {
             </div>
             <div>
               <div className="whitespace-pre-wrap [word-break:break-word] [word-wrap:break-word] flex-none w-full h-auto relative flex flex-col justify-start outline-none">
-                <h3 className="text-[18px] leading-[140%] 4xl:text-[20px] font-neue-kaine-bold text-[#2b303b]">
+                <h3 className="text-[18px] leading-[140%] 4xl:text-[20px] font-neue-kaine-bold text-left 4xl:text-center text-[#2b303b]">
                   {card.title}
                 </h3>
               </div>
