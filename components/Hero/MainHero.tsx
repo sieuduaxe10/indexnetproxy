@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { useResponsive } from "@/hooks/useResponsive";
 
 const CloudImage = dynamic(() =>
@@ -25,13 +26,23 @@ const HeroTopCrossIcon = dynamic(() => import("./HeroTopCrossIcon"), {
 
 export const MainHero = () => {
   const { isMobile, isTablet } = useResponsive();
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    // Defer to the next tick to avoid synchronous setState warnings
+    const id = requestAnimationFrame(() => setHasMounted(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
+
+  // Default to mobile layout for initial SSR/client pass to avoid hydration mismatches.
+  const renderAsMobile = hasMounted ? isMobile : true;
 
   return (
     <div className="absolute top-[485px] left-0 right-0 h-[449px] w-auto flex-none z-20 user-select-none overflow-hidden 4xl:top-[318px] 4xl:h-[568px] 7xl:top-auto 7xl:bottom-[278px] 7xl:left-[calc(50%-520.5px)] 7xl:right-auto 7xl:w-[1041px] 7xl:h-[632px]">
       <CloudImage />
       {/*  main Image*/}
       <div className="absolute bottom-10 4xl:-bottom-5 7xl:bottom-0 left-[calc(41.4286%-196px)] 4xl:left-[calc(50%-405px)] 7xl:left-[calc(46.9741%-420px)] w-[392px] 4xl:w-[810px] 7xl:w-[840px] h-[436px] 4xl:h-[462px] 7xl:h-[478px] overflow-visible">
-        {isMobile ? (
+        {renderAsMobile ? (
           <div className="absolute top-[34%] left-[31%] translate-x-[-50%] translate-y-[-50%] aspect-[0.867374] h-auto w-36 opacity-100 4xl:top-auto 4xl:bottom-[236px] 4xl:left-1/2 4xl:w-[139px] 4xl:translate-x-[-50%] 4xl:translate-y-[-52px] 4xl:will-change-transform 7xl:top-[2.548%] 7xl:bottom-auto 7xl:left-[39.85%] 7xl:w-[153px] 7xl:translate-x-[-50%] 7xl:translate-y-[calc(-50%-52px)] 7xl:will-change-transform">
             <MonitorImage />
           </div>
