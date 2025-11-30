@@ -6,7 +6,7 @@ export const MonitorImage = () => {
   return (
     <div className="absolute inset-0">
       <Image
-        src="/images/hero/monitor-icon.png"
+        src="/images/hero/monitor-icon.webp"
         alt="netproxy monitor icon"
         width={153}
         height={176}

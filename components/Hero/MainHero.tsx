@@ -63,7 +63,7 @@ export const MainHero = () => {
         >
           <div className="absolute inset-0">
             <Image
-              src="/images/hero/block-1.png"
+              src="/images/hero/block-1.webp"
               alt="netproxy Hero Image"
               width={206}
               height={130}
@@ -79,7 +79,7 @@ export const MainHero = () => {
         >
           <div className="absolute inset-0">
             <Image
-              src="/images/hero/block-1.png"
+              src="/images/hero/block-1.webp"
               alt="netproxy Hero Image"
               width={206}
               height={130}
@@ -91,7 +91,7 @@ export const MainHero = () => {
         <div className="hidden 4xl:block absolute z-10 top-[69%] left-[24%] translate-x-[-50%] translate-y-[-50%] aspect-[1.58498] opacity-100 will-change-transform w-[186px] h-[117px] 4xl:w-[206px] 4xl:h-[130px]">
           <div className="absolute inset-0">
             <Image
-              src="/images/hero/block-1.png"
+              src="/images/hero/block-1.webp"
               alt="netproxy Hero Image"
               width={206}
               height={130}

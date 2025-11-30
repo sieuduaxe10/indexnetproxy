@@ -66,7 +66,7 @@ export const Footer = async () => {
         <div className="flex flex-col gap-30 max-w-[464px]">
           <div>
             <Image
-              src="/images/netproxy-logo.png"
+              src="/images/logo/Logo.webp"
               alt="Net proxy Logo"
               width={174}
               height={43}

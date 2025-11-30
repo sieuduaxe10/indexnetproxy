@@ -3,7 +3,7 @@ import Image from "next/image";
 const Logo = () => (
   <div className="flex items-center">
     <Image
-      src="/images/logo/Logo.avif"
+      src="/images/logo/Logo.webp"
       alt="Netproxy Logo"
       width={174} // intrinsic size (largest case)
       height={43.98}
