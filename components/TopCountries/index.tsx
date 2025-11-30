@@ -1,9 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { Separator } from "../ui/separator";
-import ParallaxWrapper from "../ParallaxWrapper/ParallaxWrapper";
 import { useTranslations } from "next-intl";
+import dynamic from "next/dynamic";
+import { Separator } from "../ui/separator";
+
+const ParallaxWrapper = dynamic(
+  () => import("../ParallaxWrapper/ParallaxWrapper"),
+  { ssr: false }
+);
 
 export const TopCountries = () => {
   const t = useTranslations("topCountries");
