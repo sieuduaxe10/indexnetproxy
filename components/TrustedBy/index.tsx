@@ -14,7 +14,6 @@ export const trustedByCompanies = [
   { name: "LILICAT", logo: "/images/trusted-by/v1/LILICAT.svg" },
   { name: "MICROSOFT EDGE", logo: "/images/trusted-by/v1/MICROSOFT_EDGE.svg" },
   { name: "OPERA", logo: "/images/trusted-by/v1/OPERA.svg" },
-  { name: "SPHERE BROWSE", logo: "/images/trusted-by/v1/SPHERE_BROWSE.svg" },
   { name: "VIVALDI", logo: "/images/trusted-by/v1/VIVALDI.svg" },
 
   { name: "ANDROID", logo: "/images/trusted-by/v1/ANDROID.svg" },
