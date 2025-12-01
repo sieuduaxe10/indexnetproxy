@@ -56,6 +56,7 @@
   --shadow-primary: var(--primary-shadow);
   --shadow-header: var(--header-shadow);
   --shadow-upgo: var(--shadow-upgo);
+  --shadow-secondary-btn: var(--shadow-secondary-btn);
   --breakpoint-4xl: 50.625rem; /* 810px - default is 896px*/
   --breakpoint-7xl: 75rem; /* 1200px - default is 1280px */
   --container-960: 60rem; /* 960px */
@@ -148,6 +149,9 @@
     0 3.62176px 3.62176px -1.875px #00000023,
     0 6.8656px 6.8656px -2.5px #00000020,
     0 13.6468px 13.6468px -3.125px #0000001b, 0 30px 30px -3.75px #0000000d;
+  --shadow-secondary-btn:
+    rgba(0, 0, 0, 0.69) 0px 0.482901px 0.482901px -1.875px,
+    rgba(0, 0, 0, 0.25) 0px 4px 4px -3.75px;
 }
 
 .dark {

@@ -13,7 +13,7 @@ const buttonVariants = cva(
         default: `${ibmPlexMono.className} bg-primary text-primary-foreground font-semibold shadow-primary px-4 h-full brightness-100 will-change-transform rounded-lg border border-solid border-orange-light hover:brightness-120`,
         destructive: `${ibmPlexMono.className} bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60`,
         outline: `${ibmPlexMono.className} bg-background text-primary border shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50`,
-        secondary: `${ibmPlexMono.className} bg-white border border-primary text-primary font-semibold hover:brightness-120`,
+        secondary: `${ibmPlexMono.className} bg-white border border-primary text-primary font-semibold hover:brightness-120 shadow-secondary-btn`,
         ghost: `${ibmPlexMono.className} hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50`,
         link: `${ibmPlexMono.className} text-primary underline-offset-4 hover:underline`,
         icon: `${ibmPlexMono.className} bg-background text-primary shadow-header border border-gray-light`,
