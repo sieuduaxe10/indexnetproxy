@@ -39,7 +39,8 @@ export const HeroTextContent = () => {
   const renderTitle = () => {
     const words = text.split(" ");
     const elements: JSX.Element[] = [];
-    const proxiesP2PStart = text.indexOf("Proxies");
+    const secondWord = words?.[1] || "Proxies";
+    const proxiesP2PStart = text.indexOf(secondWord);
     const p2pEnd = text.indexOf("P2P") + 3;
     let charIndex = 0;
 
@@ -65,7 +66,7 @@ export const HeroTextContent = () => {
             return (
               <span
                 key={`${globalIdx}-${char}`}
-                className={`inline-block tracking-[-.02em] leading-[120%] text-33 4xl:text-38 7xl:text-40 text-[#2b303b] ${colorClasses}`}
+                className={`inline-block tracking-normal leading-[120%] text-33 4xl:text-38 7xl:text-40 text-[#2b303b] ${colorClasses}`}
                 style={{ display: "inline-block", willChange: "transform" }}
               >
                 {char === " " ? "\u00A0" : char}
