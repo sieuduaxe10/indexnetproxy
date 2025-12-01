@@ -148,10 +148,10 @@ export const Pricing = () => {
 
         <div className="7xl:mt-10 grid grid-cols-1 min-[800px]:grid-cols-2 7xl:grid-cols-4 gap-10 min-[810px]:gap-y-10 min-[810px]:gap-x-5  7xl:gap-2 cards-wrapper">
           {pricingPlans.map((plan, index) => (
-            <div key={index} className="pricing-card">
+            <div key={index} className="pricing-card h-full">
               <Link
                 href={"#"}
-                className="card-item p-6 pt-8 flex gap-4 flex-col bg-[#fafcfc] border border-[#e5eaea] rounded-2xl relative "
+                className="card-item p-6 pt-8 flex gap-4 flex-col bg-[#fafcfc] border border-[#e5eaea] rounded-2xl relative h-full"
               >
                 <div
                   className="w-[168px] h-2 absolute top-0 left-1/2 -translate-x-1/2"
@@ -160,7 +160,7 @@ export const Pricing = () => {
                     backgroundColor: plan.topLineColor,
                   }}
                 />
-                <div>
+                <div className="min-h-[64px] flex flex-col gap-1">
                   <h3 className="text-18 4xl:text-20 7xl:text-21 font-neue-kaine-bold text-[#2b303b]">
                     {plan.title}
                   </h3>
@@ -168,7 +168,7 @@ export const Pricing = () => {
                     {plan.unit}
                   </p>
                 </div>
-                <ul className="flex flex-col gap-1">
+                <ul className="flex flex-col gap-1 flex-1 min-h-[170px]">
                   {plan.features.map((feature, index) => (
                     <li key={index} className="center gap-2">
                       <span className="w-5 h-5 center">{feature.icon}</span>
@@ -179,15 +179,17 @@ export const Pricing = () => {
                   ))}
                 </ul>
                 <Separator className="bg-[#e3ecec]" />
-                <div className="font-neue-kaine-bold text-40 text-primary text-center font-normal">
-                  {plan.price}
-                </div>
-
-                {plan.isPopular && (
-                  <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                    <ButtonLightEffect />
+                <div className="mt-auto pt-2 flex flex-col items-center gap-3">
+                  <div className="font-neue-kaine-bold text-40 text-primary text-center font-normal">
+                    {plan.price}
                   </div>
-                )}
+
+                  {plan.isPopular && (
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                      <ButtonLightEffect />
+                    </div>
+                  )}
+                </div>
               </Link>
             </div>
           ))}
