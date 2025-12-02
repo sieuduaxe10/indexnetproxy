@@ -34,7 +34,7 @@ export default function ExpandableItem() {
     <div
       ref={itemRef}
       onClick={toggle}
-      className="fixed left-2.5 bottom-2.5 4xl:left-5 4xl:bottom-5"
+      className="fixed left-2.5 bottom-2.5 4xl:left-5 4xl:bottom-5 z-50"
       style={{
         width: 230,
         height: 40,

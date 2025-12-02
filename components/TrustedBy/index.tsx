@@ -7,27 +7,18 @@ import GsapMarquee from "./InfiniteMarquee";
 import { useTranslations } from "next-intl";
 
 export const trustedByCompanies = [
-  { name: "AdsPower", logo: "/images/trusted-by/v1/AdsPower.svg" },
-  { name: "BRAVE", logo: "/images/trusted-by/v1/BRAVE.svg" },
-  { name: "DOLPHIN ANTY", logo: "/images/trusted-by/v1/DOLPHIN_ANTY.svg" },
-  { name: "INCOGNITON", logo: "/images/trusted-by/v1/INCOGNITON.svg" },
-  { name: "LILICAT", logo: "/images/trusted-by/v1/LILICAT.svg" },
-  { name: "MICROSOFT EDGE", logo: "/images/trusted-by/v1/MICROSOFT_EDGE.svg" },
-  { name: "OPERA", logo: "/images/trusted-by/v1/OPERA.svg" },
-  { name: "VIVALDI", logo: "/images/trusted-by/v1/VIVALDI.svg" },
-
-  { name: "ANDROID", logo: "/images/trusted-by/v1/ANDROID.svg" },
-  { name: "Chrome", logo: "/images/trusted-by/v1/Chrome.svg" },
-  {
-    name: "FIREFOX BROWSER",
-    logo: "/images/trusted-by/v1/FIREFOX_BROWSER.svg",
-  },
-  { name: "INITEDO SWITCH", logo: "/images/trusted-by/v1/INITEDO_SWITCH.svg" },
-  { name: "MBBROWSER", logo: "/images/trusted-by/v1/MBBROWSER.svg" },
-  { name: "NOXPLAYER", logo: "/images/trusted-by/v1/NOXPLAYER.svg" },
-  { name: "PROXIFIER", logo: "/images/trusted-by/v1/PROXIFIER.svg" },
-  { name: "TELEGRAM", logo: "/images/trusted-by/v1/TELEGRAM.svg" },
-  { name: "WATERFOX", logo: "/images/trusted-by/v1/WATERFOX.svg" },
+  { name: "GenLogin", logo: "/images/trusted-by/gen-login.avif" },
+  { name: "Smir", logo: "/images/trusted-by/smir.png" },
+  { name: "GemLogin", logo: "/images/trusted-by/gem-login.png" },
+  { name: "ComKey", logo: "/images/trusted-by/comkey.png" },
+  { name: "ftios Team", logo: "/images/trusted-by/ftios.png" },
+  { name: "Hiddence", logo: "/images/trusted-by/hiddence.png" },
+  { name: "Umix", logo: "/images/trusted-by/umix.png" },
+  { name: "GoMeta.vip", logo: "/images/trusted-by/gometa.png" },
+  { name: "BigAds", logo: "/images/trusted-by/bigads.png" },
+  { name: "wproxy", logo: "/images/trusted-by/wproxy.png" },
+  { name: "MinSoftware", logo: "/images/trusted-by/min-software.png" },
+  { name: "MetaMask", logo: "/images/trusted-by/metamax.png" },
 ];
 
 export const TrustedBy = () => {

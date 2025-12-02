@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "../ui/button";
 import { useTranslations } from "next-intl";
 
@@ -13,14 +14,14 @@ export const Resellers = () => {
           <h3 className="text-center font-neue-kaine-bold text-2xl md:text-40 text-white max-w-[768px] mx-auto">
             {t("title")}
           </h3>
-          <div className="center">
+          <Link href="https://console.netproxy.io" className="center">
             <Button
               className="mx-auto! text-primary uppercase font-semibold px-8 h-10 center"
               variant={"secondary"}
             >
               {t("button")}
             </Button>
-          </div>
+          </Link>
           <p className="text-center text-[#fdfdfd] mx-auto max-w-600 opacity-80">
             {t("description")}
           </p>
