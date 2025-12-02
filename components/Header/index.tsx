@@ -33,7 +33,7 @@ export const Header = () => {
               <Globe />
 
               <Button asChild className="hidden 4xl:flex h-10">
-                <Link href="/get-started">
+                <Link href="https://console.netproxy.io">
                   {tCommon("getStarted").toUpperCase()}
                   <Image
                     src="/images/hero/pointer.svg"

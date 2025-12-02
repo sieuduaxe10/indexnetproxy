@@ -133,9 +133,12 @@ export const Footer = async () => {
             <div className="font-neue-kaine-bold text-primary text-21">
               {t("account.title")}
             </div>
-            <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
+            <Link
+              href="https://console.netproxy.io"
+              className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item"
+            >
               {t("account.login")}
-            </div>
+            </Link>
           </div>
           <div className="flex flex-col gap-4">
             <div className="font-neue-kaine-bold text-primary text-21">

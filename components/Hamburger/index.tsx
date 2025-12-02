@@ -47,7 +47,7 @@ const HamburgerMenu = (props: React.ComponentProps<"div">) => {
               <HamburgerMenuItem />
             </ul>
             <Button asChild className="h-9 flex mt-2 4xl:hidden">
-              <Link href="/get-started">
+              <Link href="https://console.netproxy.io">
                 GET STARTED
                 <Image
                   src="/images/hero/pointer.svg"
