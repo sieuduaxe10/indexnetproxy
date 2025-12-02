@@ -38,12 +38,12 @@ export const TrustedBy = () => {
   };
 
   return (
-    <section className="container bg-background px-5 py-8 md:px-10 md:py-10 flex flex-col gap-6">
+    <section className="container bg-background px-5 pt-8 pb-6 md:px-10 md:pt-10 flex flex-col gap-6">
       <p className="text-base text-footer-text mx-auto text-center leading-[27.2px]">
         {t("title")}
       </p>
 
-      <div className="container mx-auto overflow-hidden select-none w-[82%] h-[76px] mask-[linear-gradient(to_right,rgba(0,0,0,0)_0%,rgb(0,0,0)_12.5%,rgb(0,0,0)_87.5%,rgba(0,0,0,0)_100%)]">
+      <div className="container mx-auto overflow-hidden select-none h-[76px] mask-[linear-gradient(to_right,rgba(0,0,0,0)_0%,rgb(0,0,0)_12.5%,rgb(0,0,0)_87.5%,rgba(0,0,0,0)_100%)]">
         <GsapMarquee
           speed={speed}
           direction="left"
@@ -62,10 +62,10 @@ export const TrustedBy = () => {
               <Image
                 alt={`Vendor ${name}`}
                 src={logo}
-                width={155}
-                height={104}
+                width={109}
+                height={48}
                 draggable={false}
-                className="block w-[155px] max-h-[104px]"
+                className="block"
                 style={{ filter: "grayscale(1)" }} // default grayscale 1
               />
             </div>
