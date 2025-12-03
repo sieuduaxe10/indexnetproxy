@@ -63,7 +63,7 @@ export const Footer = async () => {
   return (
     <footer className="pt-20 pb-10 bg-[#f2f7f7] px-5 4xl:px-10">
       <div className="container flex flex-col 7xl:flex-row gap-10">
-        <div className="flex flex-col gap-30 max-w-[464px]">
+        <div className="flex flex-col gap-30 7xl:max-w-[464px]">
           <div>
             <Image
               src="/images/logo/Logo.webp"
@@ -76,10 +76,10 @@ export const Footer = async () => {
             {t("description")}
           </div>
 
-          <div className="grid grid-cols-1 4xl:grid-cols-2 font-ibm-plex-mono font-semibold text-xs gap-2 max-w-[271px] 4xl:max-w-full">
+          <div className="flex flex-col flex-wrap content-start items-start gap-2 w-full max-w-[271px] h-min p-0 overflow-visible font-ibm-plex-mono font-semibold text-xs 4xl:grid 4xl:grid-rows-2 4xl:grid-cols-2 4xl:grid-auto-rows-[minmax(0,1fr)] 4xl:justify-center 4xl:gap-2 4xl:w-full 4xl:max-w-[508px] 4xl:h-min 4xl:p-0 4xl:relative 4xl:overflow-hidden">
             <Link
               href="https://chromewebstore.google.com/detail/mnloefcpaepkpmhaoipjkpikbnkmbnic?utm_source=item-share-cb"
-              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-start 4xl:justify-center pl-[22px] 4xl:pl-0 box-border min-h-[56px]"
+              className="flex flex-row items-center gap-2 text-xs bg-white rounded-md justify-start box-border h-14 w-full self-start relative overflow-hidden pl-[22px] pr-8 py-0 [box-shadow:rgba(0,0,0,0.12)_0px_1px_1px_0px] 4xl:will-change-transform"
               target="_blank"
               rel="noreferrer"
             >
@@ -91,7 +91,7 @@ export const Footer = async () => {
             </Link>
             <Link
               href="https://www.proxifier.com/"
-              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-start 4xl:justify-center pl-[22px] 4xl:pl-0 box-border min-h-[56px]"
+              className="flex flex-row items-center gap-2 text-xs bg-white rounded-md justify-start box-border h-14 w-full self-start relative overflow-hidden pl-[22px] pr-8 py-0 [box-shadow:rgba(0,0,0,0.12)_0px_1px_1px_0px] 4xl:will-change-transform"
               target="_blank"
               rel="noreferrer"
             >
@@ -103,7 +103,7 @@ export const Footer = async () => {
             </Link>
             <Link
               href="https://apps.apple.com/us/app/shadowrocket/id932747118"
-              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-start 4xl:justify-center pl-[22px] 4xl:pl-0 box-border min-h-[56px]"
+              className="flex flex-row items-center gap-2 text-xs bg-white rounded-md justify-start box-border h-14 w-full self-start relative overflow-hidden pl-[22px] pr-8 py-0 [box-shadow:rgba(0,0,0,0.12)_0px_1px_1px_0px] 4xl:will-change-transform"
               target="_blank"
               rel="noreferrer"
             >
@@ -115,7 +115,7 @@ export const Footer = async () => {
             </Link>{" "}
             <Link
               href="https://play.google.com/store/apps/details?id=com.scheler.superproxy"
-              className="flex flex-row gap-2 items-center text-xs bg-white rounded-md justify-start 4xl:justify-center pl-[22px] 4xl:pl-0 box-border min-h-[56px]"
+              className="flex flex-row items-center gap-2 text-xs bg-white rounded-md justify-start box-border h-14 w-full self-start relative overflow-hidden pl-[22px] pr-8 py-0 [box-shadow:rgba(0,0,0,0.12)_0px_1px_1px_0px] 4xl:will-change-transform"
               target="_blank"
               rel="noreferrer"
             >
