@@ -160,7 +160,7 @@ export const Pricing = () => {
                     backgroundColor: plan.topLineColor,
                   }}
                 />
-                <div className="">
+                <div className="min-h-auto min-[50.625rem]:min-h-[120px] min-[75rem]:min-h-[95px]">
                   <h3 className="text-18 4xl:text-20 7xl:text-21 font-neue-kaine-bold text-[#2b303b]">
                     {plan.title}
                   </h3>
