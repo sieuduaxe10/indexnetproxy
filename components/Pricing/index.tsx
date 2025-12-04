@@ -131,7 +131,7 @@ export const Pricing = () => {
   return (
     <section
       id="pricing"
-      className="py-[60px] px-4 7xl:px-10 7xl:py-20 relative border-b border-[#e3ecec] bg-[#f2f7f7]"
+      className="py-[60px] px-4 4xl:px-10 4xl:py-20 relative border-b border-[#e3ecec] bg-[#f2f7f7]"
     >
       <div className="container flex flex-col gap-10">
         <div className="text-center">
@@ -146,7 +146,7 @@ export const Pricing = () => {
           </div>
         </div>
 
-        <div className="7xl:mt-10 grid grid-cols-1 md:grid-cols-2 4xl:grid-cols-4 gap-4 min-[810px]:gap-y-10 min-[810px]:gap-x-5 7xl:gap-2 cards-wrapper">
+        <div className="7xl:mt-10 grid grid-cols-1 4xl:grid-cols-2 7xl:grid-cols-4 gap-4 min-[810px]:gap-y-10 min-[810px]:gap-x-5 7xl:gap-2 cards-wrapper">
           {pricingPlans.map((plan, index) => (
             <div key={index} className="pricing-card h-full">
               <Link
@@ -160,7 +160,7 @@ export const Pricing = () => {
                     backgroundColor: plan.topLineColor,
                   }}
                 />
-                <div className="min-h-auto min-[50.625rem]:min-h-[120px] min-[75rem]:min-h-[95px]">
+                <div className="min-h-auto min-[75rem]:min-h-[95px]">
                   <h3 className="text-18 4xl:text-20 7xl:text-21 font-neue-kaine-bold text-[#2b303b]">
                     {plan.title}
                   </h3>
