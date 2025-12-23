@@ -122,7 +122,7 @@ export const HeroTextContent = () => {
         </div>
         <div className="w-full 4xl:w-fit mx-auto flex-row center gap-4">
           <Link
-            href="https://console.netproxy.io"
+            href="https://my.netproxy.io"
             className="grow shrink-0 basis-0 max-w-[420px] 4xl:max-w-full"
           >
             <Button
@@ -136,7 +136,7 @@ export const HeroTextContent = () => {
             </Button>
           </Link>
           <Link
-            href="https://console.netproxy.io"
+            href="https://my.netproxy.io"
             className="grow shrink-0 basis-0 max-w-[420px] 4xl:max-w-full"
           >
             <Button

@@ -14,7 +14,7 @@ export const Resellers = () => {
           <h3 className="text-center font-neue-kaine-bold text-2xl md:text-40 text-white max-w-[768px] mx-auto">
             {t("title")}
           </h3>
-          <Link href="https://console.netproxy.io" className="center">
+          <Link href="https://my.netproxy.io" className="center">
             <Button
               className="mx-auto! text-primary uppercase font-semibold px-8 h-10 center"
               variant={"secondary"}

@@ -134,7 +134,7 @@ export const Footer = async () => {
               {t("account.title")}
             </div>
             <Link
-              href="https://console.netproxy.io"
+              href="https://my.netproxy.io"
               className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item"
             >
               {t("account.login")}
