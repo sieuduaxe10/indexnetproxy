@@ -25,7 +25,7 @@ const HeroTopCrossIcon = dynamic(() => import("./HeroTopCrossIcon"), {
 });
 
 export const MainHero = () => {
-  const { isMobile, isTablet } = useResponsive();
+  const { isMobile } = useResponsive();
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {

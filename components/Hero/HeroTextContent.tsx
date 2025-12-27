@@ -49,7 +49,7 @@ export const HeroTextContent = () => {
       const wordEndIndex = charIndex + word.length;
 
       elements.push(
-        <span
+        <div
           key={`word-${wordIndex}`}
           className="inline-block whitespace-nowrap"
         >
@@ -73,7 +73,7 @@ export const HeroTextContent = () => {
               </span>
             );
           })}
-        </span>
+        </div>
       );
 
       charIndex += word.length + 1;
