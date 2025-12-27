@@ -1,4 +1,14 @@
 {
   "editor.formatOnSave": true,
-  "tailwindCSS.classFunctions": ["tw", "clsx", "cn", "cva", "tw\\.[a-z-]+"]
+  "tailwindCSS.classFunctions": [
+    "tw",
+    "clsx",
+    "cn",
+    "cva",
+    "tw\\.[a-z-]+"
+  ],
+  "i18n-ally.localesPaths": [
+    "i18n",
+    "messages"
+  ]
 }
