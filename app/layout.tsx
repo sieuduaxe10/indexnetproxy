@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "NetProxy.io offers secure, high-performance residential P2P proxies for MMO gamers and marketers. Enjoy global access, low latency, and stable connections with millions of real IPs. Experience ultimate online freedom and reliability.",
     images: [
       {
-        url: "/images/thumbnail.png",
+        url: "https://netproxy.io/thumbnail.png",
         width: 1200,
         height: 630,
         alt: "NetProxy.io - Residential P2P Proxies",
