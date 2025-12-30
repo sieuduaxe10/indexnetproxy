@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
+import { generateDynamicMetadata } from "@/lib/metadata/generate";
 
 type Locale = (typeof routing.locales)[number];
 
@@ -16,12 +17,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const messages = await getMessages({ locale });
-  const metadata = messages.metadata as Record<string, string>;
+  const localeMetadata = messages.metadata as Record<string, string>;
 
-  return {
-    title: metadata.title,
-    description: metadata.description,
-  };
+  // Generate metadata with reseller detection
+  // Returns reseller OG metadata if from reseller domain, otherwise uses locale metadata
+  return generateDynamicMetadata({
+    title: localeMetadata.title,
+    description: localeMetadata.description,
+  });
 }
 export default async function LocaleLayout({
   children,
