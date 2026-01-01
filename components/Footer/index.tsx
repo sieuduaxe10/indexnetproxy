@@ -6,9 +6,15 @@ import { AppleIcon } from "../icons/AppleIcon";
 import { Link } from "@/i18n/routing";
 import { FooterAccordionMenu } from "./FooterAccordionMenu";
 import { getTranslations } from "next-intl/server";
+import { fetchLogoUrl } from "@/lib/api/og-metadata";
+
+const DEFAULT_LOGO = "/images/logo/Logo.webp";
 
 export const Footer = async () => {
-  const t = await getTranslations("footer");
+  const [t, logoUrl] = await Promise.all([
+    getTranslations("footer"),
+    fetchLogoUrl("logo"),
+  ]);
 
   const categoryLinks = [
     { href: "#faqs", label: t("category.faqs").toLocaleUpperCase() },
@@ -66,10 +72,11 @@ export const Footer = async () => {
         <div className="flex flex-col gap-30 7xl:max-w-[464px]">
           <div>
             <Image
-              src="/images/logo/Logo.webp"
+              src={logoUrl || DEFAULT_LOGO}
               alt="Net proxy Logo"
               width={174}
               height={43}
+              unoptimized={!!logoUrl}
             />
           </div>
           <div className="text-[#6c7993] text-13 leading-[180%] tracking-[0em] font-semibold">
