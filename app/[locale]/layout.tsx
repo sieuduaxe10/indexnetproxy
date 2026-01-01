@@ -4,6 +4,8 @@ import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { generateDynamicMetadata } from "@/lib/metadata/generate";
+import { fetchLogoUrl } from "@/lib/api/og-metadata";
+import { BrandingProvider } from "@/lib/branding/context";
 
 type Locale = (typeof routing.locales)[number];
 
@@ -40,13 +42,15 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
-  const messages = await getMessages();
+  // Fetch branding data server-side
+  const [messages, logoUrl] = await Promise.all([
+    getMessages(),
+    fetchLogoUrl("logo"),
+  ]);
 
   return (
     <NextIntlClientProvider messages={messages}>
-      {children}
+      <BrandingProvider logoUrl={logoUrl}>{children}</BrandingProvider>
     </NextIntlClientProvider>
   );
 }
