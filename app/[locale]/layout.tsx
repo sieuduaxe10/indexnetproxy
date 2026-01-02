@@ -4,7 +4,7 @@ import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { generateDynamicMetadata } from "@/lib/metadata/generate";
-import { fetchLogoUrl } from "@/lib/api/og-metadata";
+import { fetchBranding } from "@/lib/api/branding";
 import { BrandingProvider } from "@/lib/branding/context";
 
 type Locale = (typeof routing.locales)[number];
@@ -42,15 +42,16 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  // Fetch branding data server-side
-  const [messages, logoUrl] = await Promise.all([
+  const [messages, branding] = await Promise.all([
     getMessages(),
-    fetchLogoUrl("logo"),
+    fetchBranding(),
   ]);
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <BrandingProvider logoUrl={logoUrl}>{children}</BrandingProvider>
+      <BrandingProvider branding={branding}>
+        {children}
+      </BrandingProvider>
     </NextIntlClientProvider>
   );
 }
