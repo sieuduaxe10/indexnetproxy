@@ -7,8 +7,10 @@ interface LogoURLs {
 }
 
 interface LogosResponse {
-  logo?: LogoURLs;
-  logo_icon?: LogoURLs;
+  logo_light?: LogoURLs;
+  logo_dark?: LogoURLs;
+  icon_light?: LogoURLs;
+  icon_dark?: LogoURLs;
   og_image?: LogoURLs;
 }
 
@@ -26,8 +28,10 @@ interface BrandingResponse {
 
 export interface Branding {
   businessName: string;
-  logoUrl: string | null;
-  logoIconUrl: string | null;
+  logoLightUrl: string | null;
+  logoDarkUrl: string | null;
+  iconLightUrl: string | null;
+  iconDarkUrl: string | null;
   ogImageUrl: string | null;
   ogMetadata: {
     title: string;
@@ -108,8 +112,10 @@ export const fetchBranding = cache(async function fetchBranding(): Promise<Brand
 
     return {
       businessName: data.business_name || "",
-      logoUrl: getPreferredLogoUrl(data.logos?.logo),
-      logoIconUrl: getPreferredLogoUrl(data.logos?.logo_icon),
+      logoLightUrl: getPreferredLogoUrl(data.logos?.logo_light),
+      logoDarkUrl: getPreferredLogoUrl(data.logos?.logo_dark),
+      iconLightUrl: getPreferredLogoUrl(data.logos?.icon_light),
+      iconDarkUrl: getPreferredLogoUrl(data.logos?.icon_dark),
       ogImageUrl: getPreferredLogoUrl(data.logos?.og_image),
       ogMetadata: data.og_metadata
         ? {

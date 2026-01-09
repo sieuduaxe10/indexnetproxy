@@ -8,8 +8,8 @@ const DEFAULT_LOGO = "/images/logo/Logo.webp";
 
 const Logo = () => {
   const [hasError, setHasError] = useState(false);
-  const { logoUrl } = useBranding();
-  const src = hasError || !logoUrl ? DEFAULT_LOGO : logoUrl;
+  const { logoLightUrl } = useBranding();
+  const src = hasError || !logoLightUrl ? DEFAULT_LOGO : logoLightUrl;
 
   return (
     <div className="flex items-center">
@@ -20,7 +20,7 @@ const Logo = () => {
         height={44}
         sizes="(min-width: 810px) 134.5px, 174px"
         className="w-[174px] h-[43.98px] 4xl:w-[134.5px] 4xl:h-[34px]"
-        unoptimized={!hasError && !!logoUrl}
+        unoptimized={!hasError && !!logoLightUrl}
         onError={() => setHasError(true)}
       />
     </div>

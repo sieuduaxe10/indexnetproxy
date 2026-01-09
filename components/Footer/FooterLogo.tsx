@@ -8,8 +8,8 @@ const DEFAULT_LOGO = "/images/logo/Logo.webp";
 
 export const FooterLogo = () => {
   const [hasError, setHasError] = useState(false);
-  const { logoUrl } = useBranding();
-  const src = hasError || !logoUrl ? DEFAULT_LOGO : logoUrl;
+  const { logoLightUrl } = useBranding();
+  const src = hasError || !logoLightUrl ? DEFAULT_LOGO : logoLightUrl;
 
   return (
     <Image
@@ -17,7 +17,7 @@ export const FooterLogo = () => {
       alt="Net proxy Logo"
       width={174}
       height={43}
-      unoptimized={!hasError && !!logoUrl}
+      unoptimized={!hasError && !!logoLightUrl}
       onError={() => setHasError(true)}
     />
   );

@@ -32,11 +32,11 @@ export async function generateDynamicMetadata(
     title,
     description,
 
-    icons: branding?.logoIconUrl
+    icons: branding?.iconLightUrl
       ? {
-          icon: branding.logoIconUrl,
-          shortcut: branding.logoIconUrl,
-          apple: branding.logoIconUrl,
+          icon: branding.iconLightUrl,
+          shortcut: branding.iconLightUrl,
+          apple: branding.iconLightUrl,
         }
       : DEFAULT_ICONS,
 
