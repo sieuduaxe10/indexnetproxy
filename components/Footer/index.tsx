@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ChromeIcon } from "../icons/ChromeIcon";
 import { WindowIcon } from "../icons/WindowIcon";
 import { AndroidIcon } from "../icons/AndroidIcon";
@@ -6,6 +5,7 @@ import { AppleIcon } from "../icons/AppleIcon";
 import { Link } from "@/i18n/routing";
 import { FooterAccordionMenu } from "./FooterAccordionMenu";
 import { getTranslations } from "next-intl/server";
+import { FooterLogo } from "./FooterLogo";
 
 export const Footer = async () => {
   const t = await getTranslations("footer");
@@ -65,12 +65,7 @@ export const Footer = async () => {
       <div className="container flex flex-col 7xl:flex-row gap-10">
         <div className="flex flex-col gap-30 7xl:max-w-[464px]">
           <div>
-            <Image
-              src="/images/logo/Logo.webp"
-              alt="Net proxy Logo"
-              width={174}
-              height={43}
-            />
+            <FooterLogo />
           </div>
           <div className="text-[#6c7993] text-13 leading-[180%] tracking-[0em] font-semibold">
             {t("description")}
