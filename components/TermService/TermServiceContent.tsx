@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const TermServiceContent = () => {
   return (
     <div>
@@ -291,9 +293,7 @@ const TermServiceContent = () => {
         <strong>UPGO Legal Department</strong>
         <br />
         Website:
-        <a href="https://netproxy.io/" rel="noopener">
-          https://upgo.io
-        </a>
+        <Link href="/">https://upgo.io</Link>
       </p>
       <p>© 2024 UpGo. All rights reserved.</p>
       <p>

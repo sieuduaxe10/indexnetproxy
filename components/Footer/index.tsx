@@ -6,9 +6,15 @@ import { Link } from "@/i18n/routing";
 import { FooterAccordionMenu } from "./FooterAccordionMenu";
 import { getTranslations } from "next-intl/server";
 import { FooterLogo } from "./FooterLogo";
+import { FooterLoginLink } from "./FooterLoginLink";
+import { fetchBranding } from "@/lib/api/branding";
 
 export const Footer = async () => {
-  const t = await getTranslations("footer");
+  const [t, branding] = await Promise.all([
+    getTranslations("footer"),
+    fetchBranding(),
+  ]);
+  const businessName = branding?.businessName || "NetProxy.io";
 
   const categoryLinks = [
     { href: "#faqs", label: t("category.faqs").toLocaleUpperCase() },
@@ -68,7 +74,7 @@ export const Footer = async () => {
             <FooterLogo />
           </div>
           <div className="text-[#6c7993] text-13 leading-[180%] tracking-[0em] font-semibold">
-            {t("description")}
+            {t("description", { business_name: businessName })}
           </div>
 
           <div className="flex flex-col flex-wrap content-start items-start gap-2 w-full max-w-[271px] h-min p-0 overflow-visible font-ibm-plex-mono font-semibold text-xs 4xl:grid 4xl:grid-rows-2 4xl:grid-cols-2 4xl:grid-auto-rows-[minmax(0,1fr)] 4xl:justify-center 4xl:gap-2 4xl:w-full 4xl:max-w-[508px] 4xl:h-min 4xl:p-0 4xl:relative 4xl:overflow-hidden">
@@ -128,12 +134,9 @@ export const Footer = async () => {
             <div className="font-neue-kaine-bold text-primary text-21">
               {t("account.title")}
             </div>
-            <Link
-              href="https://my.netproxy.io"
-              className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item"
-            >
+            <FooterLoginLink className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
               {t("account.login")}
-            </Link>
+            </FooterLoginLink>
           </div>
           <div className="flex flex-col gap-4">
             <div className="font-neue-kaine-bold text-primary text-21">

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const PrivacyContent = () => {
   return (
     <div>
@@ -429,9 +431,9 @@ const PrivacyContent = () => {
         <strong>UPGO Privacy Team</strong>
         <br />
         <strong>Website:</strong>
-        <a href="https://netproxy.io/" rel="noopener">
+        <Link href="/">
           <strong> https://upgo.io</strong>
-        </a>
+        </Link>
       </p>
       <p>
         <strong>© 2024 UpGo. All rights reserved.</strong>

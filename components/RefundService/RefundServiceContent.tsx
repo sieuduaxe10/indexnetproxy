@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const RefundServiceContent = () => {
   return (
     <div>
@@ -88,14 +90,7 @@ const RefundServiceContent = () => {
             <br />
             <strong>UpGo Billing Department</strong>
             <br />
-            Website:
-            <a href="https://netproxy.io/" rel="noopener">
-              https://
-            </a>
-            upgo
-            <a href="https://netproxy.io/" rel="noopener">
-              .io
-            </a>
+            Website: <Link href="/">https://upgo.io</Link>
           </p>
         </li>
       </ol>

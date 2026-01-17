@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Proxy Residential P2P – Giải pháp Proxy tốt nhất cho MMO",
-    "description": "NetProxy.io cung cấp proxy residential P2P an toàn, hiệu suất cao cho MMO và marketing. Truy cập toàn cầu, độ trễ thấp, kết nối ổn định với hàng triệu IP thật."
+    "description": "{business_name} cung cấp proxy residential P2P an toàn, hiệu suất cao cho MMO và marketing. Truy cập toàn cầu, độ trễ thấp, kết nối ổn định với hàng triệu IP thật."
   },
   "common": {
     "learnMore": "Tìm Hiểu Thêm",
@@ -95,19 +95,19 @@
     "title": "Tất cả câu hỏi, đã có lời đáp",
     "questions": {
       "q1": {
-        "question": "NetProxy.io cung cấp những loại proxy nào?",
-        "answer": "NetProxy.io cung cấp nhiều loại proxy: residential, datacenter và mobile. Mỗi loại phù hợp cho các nhu cầu như scraping, kiểm tra quảng cáo hoặc quản lý nhiều tài khoản."
+        "question": "{business_name} cung cấp những loại proxy nào?",
+        "answer": "{business_name} cung cấp nhiều loại proxy: residential, datacenter và mobile. Mỗi loại phù hợp cho các nhu cầu như scraping, kiểm tra quảng cáo hoặc quản lý nhiều tài khoản."
       },
       "q2": {
         "question": "Proxy là gì và hoạt động thế nào?",
-        "answer": "Proxy là một máy chủ trung gian giữa thiết bị và internet, giúp chuyển tiếp yêu cầu web và nhận phản hồi. NetProxy cung cấp gói proxy luân phiên theo phút, giúp bảo vệ danh tính và tăng mức độ an toàn."
+        "answer": "Proxy là một máy chủ trung gian giữa thiết bị và internet, giúp chuyển tiếp yêu cầu web và nhận phản hồi. {business_name} cung cấp gói proxy luân phiên theo phút, giúp bảo vệ danh tính và tăng mức độ an toàn."
       },
       "q3": {
-        "question": "NetProxy.io có phù hợp cho các tác vụ lớn như web scraping?",
-        "answer": "Hoàn toàn phù hợp! Proxy của NetProxy.io được thiết kế để vượt qua phát hiện, kết nối ổn định – lý tưởng cho thu thập dữ liệu quy mô lớn mà không lo bị chặn."
+        "question": "{business_name} có phù hợp cho các tác vụ lớn như web scraping?",
+        "answer": "Hoàn toàn phù hợp! Proxy của {business_name} được thiết kế để vượt qua phát hiện, kết nối ổn định – lý tưởng cho thu thập dữ liệu quy mô lớn mà không lo bị chặn."
       },
       "q4": {
-        "question": "Làm sao để bắt đầu với NetProxy.io?",
+        "question": "Làm sao để bắt đầu với {business_name}?",
         "answer": "Rất đơn giản! Tạo tài khoản, chọn gói proxy phù hợp và làm theo hướng dẫn thiết lập. Nếu gặp vấn đề, đội hỗ trợ 24/7 luôn sẵn sàng."
       }
     }
@@ -137,7 +137,7 @@
     }
   },
   "resellers": {
-    "title": "Bắt đầu với chương trình bán hàng của Netproxy.io",
+    "title": "Bắt đầu với chương trình bán hàng của {business_name}",
     "subtitle": "Tham gia chương trình đối tác",
     "button": "Bắt Đầu",
     "description": "Giải pháp tiết kiệm và an toàn nhất để khởi nghiệp với proxy – đừng bỏ lỡ!"
@@ -147,7 +147,7 @@
     "subtitle": "Các công ty tin tưởng dịch vụ của chúng tôi"
   },
   "footer": {
-    "description": "NetProxy.io cung cấp proxy residential giúp truy cập internet ẩn danh và an toàn, hỗ trợ các tác vụ như scraping và nghiên cứu thị trường với tốc độ cao và ổn định.",
+    "description": "{business_name} cung cấp proxy residential giúp truy cập internet ẩn danh và an toàn, hỗ trợ các tác vụ như scraping và nghiên cứu thị trường với tốc độ cao và ổn định.",
     "extensions": {
       "chrome": "CHROME",
       "windows": "WINDOWS",

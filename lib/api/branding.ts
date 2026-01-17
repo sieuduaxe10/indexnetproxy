@@ -22,12 +22,14 @@ interface OgMetadataResponse {
 
 interface BrandingResponse {
   business_name: string;
+  storefront_url?: string;
   logos?: LogosResponse;
   og_metadata?: OgMetadataResponse;
 }
 
 export interface Branding {
   businessName: string;
+  storefrontUrl: string | null;
   logoLightUrl: string | null;
   logoDarkUrl: string | null;
   iconLightUrl: string | null;
@@ -112,6 +114,7 @@ export const fetchBranding = cache(async function fetchBranding(): Promise<Brand
 
     return {
       businessName: data.business_name || "",
+      storefrontUrl: data.storefront_url || null,
       logoLightUrl: getPreferredLogoUrl(data.logos?.logo_light),
       logoDarkUrl: getPreferredLogoUrl(data.logos?.logo_dark),
       iconLightUrl: getPreferredLogoUrl(data.logos?.icon_light),

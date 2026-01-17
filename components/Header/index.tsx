@@ -8,9 +8,11 @@ import { TopBar } from "../TopBar";
 import HamburgerMenu from "../Hamburger";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
+import { useBranding } from "@/lib/branding/context";
 
 export const Header = () => {
   const tCommon = useTranslations("common");
+  const { storefrontUrl } = useBranding();
 
   return (
     <header className="w-full border-b border-gray-light fixed z-30 bg-background">
@@ -32,17 +34,19 @@ export const Header = () => {
             <div className="ml-auto flex items-center gap-2">
               <Globe />
 
-              <Button asChild className="hidden 4xl:flex h-10">
-                <Link href="https://my.netproxy.io">
-                  {tCommon("getStarted").toUpperCase()}
-                  <Image
-                    src="/images/hero/pointer.svg"
-                    alt="Proxy illustration"
-                    width={20}
-                    height={20}
-                  />
-                </Link>
-              </Button>
+              {storefrontUrl && (
+                <Button asChild className="hidden 4xl:flex h-10">
+                  <Link href={storefrontUrl}>
+                    {tCommon("getStarted").toUpperCase()}
+                    <Image
+                      src="/images/hero/pointer.svg"
+                      alt="Proxy illustration"
+                      width={20}
+                      height={20}
+                    />
+                  </Link>
+                </Button>
+              )}
               <HamburgerMenu className="flex items-center justify-center 7xl:hidden" />
             </div>
           </div>

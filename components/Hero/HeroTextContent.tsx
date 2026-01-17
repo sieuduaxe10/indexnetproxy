@@ -10,12 +10,14 @@ import { MessageIcon } from "@/components/icons/MessageIcon";
 import { BlueNetworkIcon } from "@/components/icons/BlueNetworkIcon";
 import { WifiIcon } from "@/components/icons/WifiIcon";
 import Link from "next/link";
+import { useBranding } from "@/lib/branding/context";
 
 gsap.registerPlugin(SplitText);
 
 export const HeroTextContent = () => {
   const t = useTranslations("hero");
   const tCommon = useTranslations("common");
+  const { storefrontUrl } = useBranding();
   const headerRef = useRef<HTMLHeadingElement>(null);
   const text = `${t("title")} ${t("subtitle")}`;
 
@@ -120,33 +122,35 @@ export const HeroTextContent = () => {
             {t("description")}
           </p>
         </div>
-        <div className="w-full 4xl:w-fit mx-auto flex-row center gap-4">
-          <Link
-            href="https://my.netproxy.io"
-            className="grow shrink-0 basis-0 max-w-[420px] 4xl:max-w-full"
-          >
-            <Button
-              size="lg"
-              className="get-started-button w-full h-14 px-4 4xl:px-8"
+        {storefrontUrl && (
+          <div className="w-full 4xl:w-fit mx-auto flex-row center gap-4">
+            <Link
+              href={storefrontUrl}
+              className="grow shrink-0 basis-0 max-w-[420px] 4xl:max-w-full"
             >
-              {tCommon("getStarted")?.toUpperCase()}{" "}
-              <p className="w-5 h-5">
-                <CursorIcon />
-              </p>
-            </Button>
-          </Link>
-          <Link
-            href="https://my.netproxy.io"
-            className="grow shrink-0 basis-0 max-w-[420px] 4xl:max-w-full"
-          >
-            <Button
-              className="w-full h-14 px-1 min-[420px]:px-4 7xl:px-8 py-0"
-              variant={"secondary"}
+              <Button
+                size="lg"
+                className="get-started-button w-full h-14 px-4 4xl:px-8"
+              >
+                {tCommon("getStarted")?.toUpperCase()}{" "}
+                <p className="w-5 h-5">
+                  <CursorIcon />
+                </p>
+              </Button>
+            </Link>
+            <Link
+              href={storefrontUrl}
+              className="grow shrink-0 basis-0 max-w-[420px] 4xl:max-w-full"
             >
-              {t("viewPrice")}
-            </Button>
-          </Link>
-        </div>
+              <Button
+                className="w-full h-14 px-1 min-[420px]:px-4 7xl:px-8 py-0"
+                variant={"secondary"}
+              >
+                {t("viewPrice")}
+              </Button>
+            </Link>
+          </div>
+        )}
       </div>
 
       <div className="flex flex-col 4xl:flex-row gap-4 7xl:gap-8 z-20">

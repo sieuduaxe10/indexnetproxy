@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Proksi Residensial P2P – Solusi Proxy Terbaik untuk MMO",
-    "description": "NetProxy.io menawarkan proksi residensial P2P yang aman dan berperforma tinggi untuk gamer MMO dan pemasar. Nikmati akses global, latensi rendah, dan koneksi stabil dengan jutaan IP asli. Rasakan kebebasan dan keandalan online terbaik."
+    "description": "{business_name} menawarkan proksi residensial P2P yang aman dan berperforma tinggi untuk gamer MMO dan pemasar. Nikmati akses global, latensi rendah, dan koneksi stabil dengan jutaan IP asli. Rasakan kebebasan dan keandalan online terbaik."
   },
   "common": {
     "learnMore": "Pelajari Lebih Lanjut",
@@ -95,19 +95,19 @@
     "title": "Semua Pertanyaan Anda Terjawab",
     "questions": {
       "q1": {
-        "question": "Jenis proxy apa yang ditawarkan NetProxy.io?",
-        "answer": "NetProxy.io menyediakan berbagai jenis proxy, termasuk proxy residensial, proxy pusat data, dan proxy seluler. Setiap jenis dirancang untuk kebutuhan berbeda seperti scraping, verifikasi iklan, atau mengelola banyak akun."
+        "question": "Jenis proxy apa yang ditawarkan {business_name}?",
+        "answer": "{business_name} menyediakan berbagai jenis proxy, termasuk proxy residensial, proxy pusat data, dan proxy seluler. Setiap jenis dirancang untuk kebutuhan berbeda seperti scraping, verifikasi iklan, atau mengelola banyak akun."
       },
       "q2": {
         "question": "Apa itu proxy dan bagaimana cara kerjanya?",
-        "answer": "Proxy adalah server perantara antara perangkat Anda dan internet, meneruskan permintaan web Anda dan mengembalikan respons dari server. NetProxy menawarkan paket proxy dengan rotasi IP berkelanjutan, seperti rotasi 1 menit atau 2 menit, yang membantu melindungi identitas dan meningkatkan keamanan online."
+        "answer": "Proxy adalah server perantara antara perangkat Anda dan internet, meneruskan permintaan web Anda dan mengembalikan respons dari server. {business_name} menawarkan paket proxy dengan rotasi IP berkelanjutan, seperti rotasi 1 menit atau 2 menit, yang membantu melindungi identitas dan meningkatkan keamanan online."
       },
       "q3": {
-        "question": "Apakah NetProxy.io cocok untuk tugas skala besar seperti web scraping?",
-        "answer": "Tentu! NetProxy.io sangat ideal untuk web scraping skala besar. Proksi kami dirancang untuk menghindari deteksi dan memastikan koneksi stabil serta tidak terputus untuk pengumpulan data tanpa risiko pemblokiran."
+        "question": "Apakah {business_name} cocok untuk tugas skala besar seperti web scraping?",
+        "answer": "Tentu! {business_name} sangat ideal untuk web scraping skala besar. Proksi kami dirancang untuk menghindari deteksi dan memastikan koneksi stabil serta tidak terputus untuk pengumpulan data tanpa risiko pemblokiran."
       },
       "q4": {
-        "question": "Bagaimana cara memulai dengan NetProxy.io?",
+        "question": "Bagaimana cara memulai dengan {business_name}?",
         "answer": "Sangat mudah! Daftar di situs web kami, pilih paket proxy yang sesuai kebutuhan Anda, dan ikuti panduan langkah demi langkah. Jika Anda mengalami masalah, tim dukungan kami tersedia 24/7."
       }
     }
@@ -137,7 +137,7 @@
     }
   },
   "resellers": {
-    "title": "Mulai dengan Program Reseller json.io",
+    "title": "Mulai dengan Program Reseller {business_name}",
     "subtitle": "Bergabung dengan program mitra kami",
     "button": "Mulai",
     "description": "Cara paling hemat biaya dan bebas risiko untuk memulai bisnis proxy — jangan lewatkan kesempatan ini."
@@ -147,7 +147,7 @@
     "subtitle": "Perusahaan yang mempercayai layanan kami"
   },
   "footer": {
-    "description": "NetProxy.io menyediakan layanan proxy residensial yang membantu pengguna mengakses internet secara anonim dan aman, mendukung tugas seperti web scraping dan riset pasar dengan kecepatan tinggi dan keandalan.",
+    "description": "{business_name} menyediakan layanan proxy residensial yang membantu pengguna mengakses internet secara anonim dan aman, mendukung tugas seperti web scraping dan riset pasar dengan kecepatan tinggi dan keandalan.",
     "extensions": {
       "chrome": "CHROME",
       "windows": "WINDOWS",

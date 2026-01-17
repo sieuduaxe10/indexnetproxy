@@ -8,10 +8,13 @@ import {
 import { useState } from "react";
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
+import { useBranding } from "@/lib/branding/context";
 
 export const FAQs = () => {
   const t = useTranslations("faqs");
+  const { businessName } = useBranding();
   const [openItem, setOpenItem] = useState<string | undefined>(undefined);
+  const interpolationValues = { business_name: businessName || "NetProxy.io" };
 
   const FAQsData = [
     {
@@ -86,12 +89,12 @@ export const FAQs = () => {
                     >
                       {index + 1}
                     </div>{" "}
-                    <strong>{t(faq.questionKey)}</strong>
+                    <strong>{t(faq.questionKey, interpolationValues)}</strong>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="p-4 border-t border-[#e3ecec] bg-white">
                   <div className="flex flex-col gap-2 font-inter text-16 text-footer-text">
-                    {t(faq.answerKey)}
+                    {t(faq.answerKey, interpolationValues)}
                   </div>
                 </AccordionContent>
               </AccordionItem>

@@ -8,11 +8,13 @@ import HamburgerMenuItem from "./HamburgerMenuItem";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { useBranding } from "@/lib/branding/context";
 
 const HamburgerMenu = (props: React.ComponentProps<"div">) => {
   const { isMobile, isTablet } = useResponsive();
   const [menuOpen, setMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const { storefrontUrl } = useBranding();
 
   useClickOutside(dropdownRef, () => setMenuOpen(false));
 
@@ -46,17 +48,19 @@ const HamburgerMenu = (props: React.ComponentProps<"div">) => {
             <ul className="flex flex-col gap-2 w-full">
               <HamburgerMenuItem />
             </ul>
-            <Button asChild className="h-9 flex mt-2 4xl:hidden">
-              <Link href="https://my.netproxy.io">
-                GET STARTED
-                <Image
-                  src="/images/hero/pointer.svg"
-                  alt="Proxy illustration"
-                  width={20}
-                  height={20}
-                />
-              </Link>
-            </Button>
+            {storefrontUrl && (
+              <Button asChild className="h-9 flex mt-2 4xl:hidden">
+                <Link href={storefrontUrl}>
+                  GET STARTED
+                  <Image
+                    src="/images/hero/pointer.svg"
+                    alt="Proxy illustration"
+                    width={20}
+                    height={20}
+                  />
+                </Link>
+              </Button>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
