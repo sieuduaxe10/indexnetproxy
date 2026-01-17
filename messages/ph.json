@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Residential P2P Proxies – Ang Pinakamahusay na Proxy Solution para sa MMO",
-    "description": "Nag-aalok ang NetProxy.io ng secure at high-performance na residential P2P proxies para sa MMO gamers at marketers. Masiyahan sa global access, mababang latency, at matatag na koneksyon gamit ang milyun-milyong tunay na IP. Maranasan ang tunay na online freedom at reliability."
+    "description": "Nag-aalok ang {business_name} ng secure at high-performance na residential P2P proxies para sa MMO gamers at marketers. Masiyahan sa global access, mababang latency, at matatag na koneksyon gamit ang milyun-milyong tunay na IP. Maranasan ang tunay na online freedom at reliability."
   },
   "common": {
     "learnMore": "Matuto Pa",
@@ -95,19 +95,19 @@
     "title": "Lahat ng Tanong Mo, Nasagot",
     "questions": {
       "q1": {
-        "question": "Anong uri ng proxies ang inaalok ng NetProxy.io?",
-        "answer": "Nag-aalok ang NetProxy.io ng iba’t ibang uri ng proxies tulad ng residential proxies, datacenter proxies, at mobile proxies. Ang bawat uri ay ginawa para sa iba’t ibang pangangailangan gaya ng scraping, ad verification, at multi-account management."
+        "question": "Anong uri ng proxies ang inaalok ng {business_name}?",
+        "answer": "Nag-aalok ang {business_name} ng iba't ibang uri ng proxies tulad ng residential proxies, datacenter proxies, at mobile proxies. Ang bawat uri ay ginawa para sa iba't ibang pangangailangan gaya ng scraping, ad verification, at multi-account management."
       },
       "q2": {
         "question": "Ano ang proxy at paano ito gumagana?",
-        "answer": "Ang proxy ay isang intermediary server sa pagitan ng iyong device at ng internet, na nagfa-forward ng request mo at bumabalik ng response mula sa server. Nag-aalok ang NetProxy ng continuous IP rotation plans tulad ng 1-minute o 2-minute rotation para maprotektahan ang iyong identity at online security."
+        "answer": "Ang proxy ay isang intermediary server sa pagitan ng iyong device at ng internet, na nagfa-forward ng request mo at bumabalik ng response mula sa server. Nag-aalok ang {business_name} ng continuous IP rotation plans tulad ng 1-minute o 2-minute rotation para maprotektahan ang iyong identity at online security."
       },
       "q3": {
-        "question": "Ang NetProxy.io ba ay angkop para sa large-scale tasks tulad ng web scraping?",
-        "answer": "Oo! Ang NetProxy.io ay perpekto para sa large-scale web scraping. Ang aming proxies ay ginawa upang maiwasan ang detection, kaya tiyak ang stable at uninterrupted connections—ideal para sa data gathering nang walang ban risk."
+        "question": "Ang {business_name} ba ay angkop para sa large-scale tasks tulad ng web scraping?",
+        "answer": "Oo! Ang {business_name} ay perpekto para sa large-scale web scraping. Ang aming proxies ay ginawa upang maiwasan ang detection, kaya tiyak ang stable at uninterrupted connections—ideal para sa data gathering nang walang ban risk."
       },
       "q4": {
-        "question": "Paano ako makakapagsimula sa NetProxy.io?",
+        "question": "Paano ako makakapagsimula sa {business_name}?",
         "answer": "Napakadali! Mag-sign up lang sa aming website, pumili ng proxy plan na akma sa iyong pangangailangan, at sundin ang step-by-step guide. Kung may problema ka, available ang aming support team 24/7."
       }
     }
@@ -137,7 +137,7 @@
     }
   },
   "resellers": {
-    "title": "Magsimula sa json.io Reseller Program",
+    "title": "Magsimula sa {business_name} Reseller Program",
     "subtitle": "Sumali sa aming partner program",
     "button": "Magsimula",
     "description": "Ang pinaka cost-effective at risk-free na paraan upang magsimula ng proxy business — huwag palampasin ang pagkakataong ito."
@@ -147,7 +147,7 @@
     "subtitle": "Mga kumpanyang nagtitiwala sa aming serbisyo"
   },
   "footer": {
-    "description": "Nagbibigay ang NetProxy.io ng residential proxy services na tumutulong sa users na makapag-browse nang anonymous at secure, para sa tasks tulad ng web scraping at market research na may mataas na bilis at reliability.",
+    "description": "Nagbibigay ang {business_name} ng residential proxy services na tumutulong sa users na makapag-browse nang anonymous at secure, para sa tasks tulad ng web scraping at market research na may mataas na bilis at reliability.",
     "extensions": {
       "chrome": "CHROME",
       "windows": "WINDOWS",

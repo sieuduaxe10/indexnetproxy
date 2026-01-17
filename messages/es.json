@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Proxies Residenciales P2P – La Mejor Solución de Proxy para MMO",
-    "description": "NetProxy.io ofrece proxies residenciales P2P seguros y de alto rendimiento para jugadores MMO y marketers. Disfruta de acceso global, baja latencia y conexiones estables con millones de IPs reales. Experimenta total libertad y fiabilidad online."
+    "description": "{business_name} ofrece proxies residenciales P2P seguros y de alto rendimiento para jugadores MMO y marketers. Disfruta de acceso global, baja latencia y conexiones estables con millones de IPs reales. Experimenta total libertad y fiabilidad online."
   },
   "common": {
     "learnMore": "Saber Más",
@@ -95,19 +95,19 @@
     "title": "Todas tus Preguntas, Respondidas",
     "questions": {
       "q1": {
-        "question": "¿Qué tipos de proxies ofrece NetProxy.io?",
-        "answer": "NetProxy.io ofrece diversos tipos de proxies, incluidos residenciales, de datacenter y móviles. Cada tipo está diseñado para distintas necesidades, como scraping, verificación de anuncios o gestión de múltiples cuentas."
+        "question": "¿Qué tipos de proxies ofrece {business_name}?",
+        "answer": "{business_name} ofrece diversos tipos de proxies, incluidos residenciales, de datacenter y móviles. Cada tipo está diseñado para distintas necesidades, como scraping, verificación de anuncios o gestión de múltiples cuentas."
       },
       "q2": {
         "question": "¿Qué es un proxy y cómo funciona?",
-        "answer": "Un proxy es un servidor intermediario entre tu dispositivo e internet. Redirige tus solicitudes y devuelve las respuestas. NetProxy ofrece paquetes con rotación continua de IP, como planes de rotación cada 1 o 2 minutos, que te ayudan a proteger tu identidad y aumentar la seguridad online."
+        "answer": "Un proxy es un servidor intermediario entre tu dispositivo e internet. Redirige tus solicitudes y devuelve las respuestas. {business_name} ofrece paquetes con rotación continua de IP, como planes de rotación cada 1 o 2 minutos, que te ayudan a proteger tu identidad y aumentar la seguridad online."
       },
       "q3": {
-        "question": "¿NetProxy.io es adecuado para tareas grandes como web scraping?",
-        "answer": "¡Totalmente! NetProxy.io es ideal para scraping a gran escala. Nuestros proxies evitan la detección y garantizan conexiones estables, perfectas para recopilar datos sin riesgo de bloqueos."
+        "question": "¿{business_name} es adecuado para tareas grandes como web scraping?",
+        "answer": "¡Totalmente! {business_name} es ideal para scraping a gran escala. Nuestros proxies evitan la detección y garantizan conexiones estables, perfectas para recopilar datos sin riesgo de bloqueos."
       },
       "q4": {
-        "question": "¿Cómo empiezo con NetProxy.io?",
+        "question": "¿Cómo empiezo con {business_name}?",
         "answer": "¡Es muy simple! Regístrate en nuestro sitio, elige el plan que necesites y sigue la guía de configuración. Si tienes problemas, nuestro soporte está disponible 24/7 para ayudarte."
       }
     }
@@ -137,7 +137,7 @@
     }
   },
   "resellers": {
-    "title": "Comienza con el Programa de Revendedores json.io",
+    "title": "Comienza con el Programa de Revendedores {business_name}",
     "subtitle": "Únete a nuestro programa de socios",
     "button": "Comenzar",
     "description": "La forma más económica y sin riesgos de iniciar un negocio de proxies. No pierdas esta oportunidad."
@@ -147,7 +147,7 @@
     "subtitle": "Compañías que confían en nuestro servicio"
   },
   "footer": {
-    "description": "NetProxy.io ofrece proxies residenciales para navegar de forma anónima y segura, apoyando tareas como scraping y estudios de mercado con alta velocidad y fiabilidad.",
+    "description": "{business_name} ofrece proxies residenciales para navegar de forma anónima y segura, apoyando tareas como scraping y estudios de mercado con alta velocidad y fiabilidad.",
     "extensions": {
       "chrome": "CHROME",
       "windows": "WINDOWS",

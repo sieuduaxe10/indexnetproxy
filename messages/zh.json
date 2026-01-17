@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "住宅 P2P 代理 – 最佳 MMO 代理解决方案",
-    "description": "NetProxy.io 提供安全、高性能的住宅 P2P 代理。享受全球访问、低延迟和稳定连接，覆盖数百万真实 IP，带来可靠自由的上网体验。"
+    "description": "{business_name} 提供安全、高性能的住宅 P2P 代理。享受全球访问、低延迟和稳定连接，覆盖数百万真实 IP，带来可靠自由的上网体验。"
   },
   "common": {
     "learnMore": "了解更多",
@@ -95,19 +95,19 @@
     "title": "所有问题，都有答案",
     "questions": {
       "q1": {
-        "question": "NetProxy.io 提供哪些类型的代理？",
+        "question": "{business_name} 提供哪些类型的代理？",
         "answer": "我们提供住宅代理、数据中心代理和移动代理，适用于抓取、广告验证、多账户管理等不同需求。"
       },
       "q2": {
         "question": "什么是代理？它如何工作？",
-        "answer": "代理是设备与互联网之间的中间服务器，负责转发请求并返回响应。NetProxy 提供按分钟轮换 IP 的套餐，用于保护身份并提升安全性。"
+        "answer": "代理是设备与互联网之间的中间服务器，负责转发请求并返回响应。{business_name} 提供按分钟轮换 IP 的套餐，用于保护身份并提升安全性。"
       },
       "q3": {
-        "question": "NetProxy.io 适合大规模任务，例如爬虫吗？",
+        "question": "{business_name} 适合大规模任务，例如爬虫吗？",
         "answer": "非常适合！我们的代理专为绕过检测设计，稳定不断线，是大规模数据采集的完美选择。"
       },
       "q4": {
-        "question": "如何开始使用 NetProxy.io？",
+        "question": "如何开始使用 {business_name}？",
         "answer": "注册账号，选择套餐，并按指南配置即可。如遇问题，我们的支持团队 24/7 可提供协助。"
       }
     }
@@ -137,7 +137,7 @@
     }
   },
   "resellers": {
-    "title": "加入 json.io 分销商计划",
+    "title": "加入 {business_name} 分销商计划",
     "subtitle": "成为合作伙伴",
     "button": "开始使用",
     "description": "启动代理业务最省钱、最安全的方式，不要错过机会。"
@@ -147,7 +147,7 @@
     "subtitle": "信任我们的企业"
   },
   "footer": {
-    "description": "NetProxy.io 提供住宅代理，让用户匿名、安全上网，并支持爬虫、市场研究等高速稳定的任务。",
+    "description": "{business_name} 提供住宅代理，让用户匿名、安全上网，并支持爬虫、市场研究等高速稳定的任务。",
     "extensions": {
       "chrome": "Chrome",
       "windows": "Windows",

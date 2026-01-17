@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Residential P2P Proxies – The Best Proxy Solution for MMO",
-    "description": "NetProxy.io offers secure, high-performance residential P2P proxies for MMO gamers and marketers. Enjoy global access, low latency, and stable connections with millions of real IPs. Experience ultimate online freedom and reliability."
+    "description": "{business_name} offers secure, high-performance residential P2P proxies for MMO gamers and marketers. Enjoy global access, low latency, and stable connections with millions of real IPs. Experience ultimate online freedom and reliability."
   },
   "common": {
     "learnMore": "Learn More",
@@ -95,19 +95,19 @@
     "title": "All your Questions, Answered",
     "questions": {
       "q1": {
-        "question": "What types of proxies does NetProxy.io offer?",
-        "answer": "NetProxy.io offers a variety of proxy types, including residential proxies, datacenter proxies, and mobile proxies. Each proxy type is designed to meet different needs, such as scraping, ad verification, or managing multiple accounts."
+        "question": "What types of proxies does {business_name} offer?",
+        "answer": "{business_name} offers a variety of proxy types, including residential proxies, datacenter proxies, and mobile proxies. Each proxy type is designed to meet different needs, such as scraping, ad verification, or managing multiple accounts."
       },
       "q2": {
         "question": "What is proxy and how does it work?",
-        "answer": "A proxy is an intermediary server between your device and the internet, helping to forward your web requests and return responses from the server. NetProxy offers continuous IP rotation proxy packages, such as 1-minute or 2-minute IP rotation plans, which help protect your identity and enhance online security."
+        "answer": "A proxy is an intermediary server between your device and the internet, helping to forward your web requests and return responses from the server. {business_name} offers continuous IP rotation proxy packages, such as 1-minute or 2-minute IP rotation plans, which help protect your identity and enhance online security."
       },
       "q3": {
-        "question": "Is NetProxy.io suitable for large-scale tasks like web scraping?",
-        "answer": "Absolutely! NetProxy.io is ideal for large-scale tasks like web scraping. Our proxies are designed to bypass detection, ensuring stable and uninterrupted connections, which are perfect for gathering data without risking bans."
+        "question": "Is {business_name} suitable for large-scale tasks like web scraping?",
+        "answer": "Absolutely! {business_name} is ideal for large-scale tasks like web scraping. Our proxies are designed to bypass detection, ensuring stable and uninterrupted connections, which are perfect for gathering data without risking bans."
       },
       "q4": {
-        "question": "How can I get started with NetProxy.io?",
+        "question": "How can I get started with {business_name}?",
         "answer": "Getting started is simple! Just sign up on our website, choose a proxy plan that fits your needs, and follow the step-by-step setup guide. If you encounter any issues, our support team is available 24/7 to assist you."
       }
     }
@@ -137,7 +137,7 @@
     }
   },
   "resellers": {
-    "title": "Get Started with Netproxy.io Reseller Program",
+    "title": "Get Started with {business_name} Reseller Program",
     "subtitle": "Join our partner program",
     "button": "Get Started",
     "description": "The most cost-effective and risk-free way to start a proxy business, don't miss out on this opportunity."
@@ -147,7 +147,7 @@
     "subtitle": "Companies that trust our service"
   },
   "footer": {
-    "description": "NetProxy.io provides residential proxy services, helping users to access the internet anonymously and securely, supporting tasks such as web scraping and market research with high speed and reliability.",
+    "description": "{business_name} provides residential proxy services, helping users to access the internet anonymously and securely, supporting tasks such as web scraping and market research with high speed and reliability.",
     "extensions": {
       "chrome": "CHROME",
       "windows": "WINDOWS",

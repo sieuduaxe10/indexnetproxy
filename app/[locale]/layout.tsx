@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { generateDynamicMetadata } from "@/lib/metadata/generate";
@@ -18,14 +18,17 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const messages = await getMessages({ locale });
-  const localeMetadata = messages.metadata as Record<string, string>;
+  const [t, branding] = await Promise.all([
+    getTranslations({ locale, namespace: "metadata" }),
+    fetchBranding(),
+  ]);
+  const businessName = branding?.businessName || "NetProxy.io";
 
   // Generate metadata with reseller detection
   // Returns reseller OG metadata if from reseller domain, otherwise uses locale metadata
   return generateDynamicMetadata({
-    title: localeMetadata.title,
-    description: localeMetadata.description,
+    title: t("title"),
+    description: t("description", { business_name: businessName }),
   });
 }
 export default async function LocaleLayout({
