@@ -4,6 +4,7 @@ import { createContext, useContext, ReactNode } from "react";
 
 export interface BrandingContextValue {
   businessName: string;
+  storefrontUrl: string | null;
   logoLightUrl: string | null;
   logoDarkUrl: string | null;
   iconLightUrl: string | null;
@@ -21,6 +22,7 @@ interface BrandingProviderProps {
 export function BrandingProvider({ children, branding }: BrandingProviderProps) {
   const value: BrandingContextValue = branding ?? {
     businessName: "",
+    storefrontUrl: null,
     logoLightUrl: null,
     logoDarkUrl: null,
     iconLightUrl: null,
@@ -41,6 +43,7 @@ export function useBranding(): BrandingContextValue {
   if (context === null) {
     return {
       businessName: "",
+      storefrontUrl: null,
       logoLightUrl: null,
       logoDarkUrl: null,
       iconLightUrl: null,

@@ -6,6 +6,7 @@ import { Link } from "@/i18n/routing";
 import { FooterAccordionMenu } from "./FooterAccordionMenu";
 import { getTranslations } from "next-intl/server";
 import { FooterLogo } from "./FooterLogo";
+import { FooterLoginLink } from "./FooterLoginLink";
 
 export const Footer = async () => {
   const t = await getTranslations("footer");
@@ -128,12 +129,9 @@ export const Footer = async () => {
             <div className="font-neue-kaine-bold text-primary text-21">
               {t("account.title")}
             </div>
-            <Link
-              href="https://my.netproxy.io"
-              className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item"
-            >
+            <FooterLoginLink className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
               {t("account.login")}
-            </Link>
+            </FooterLoginLink>
           </div>
           <div className="flex flex-col gap-4">
             <div className="font-neue-kaine-bold text-primary text-21">
