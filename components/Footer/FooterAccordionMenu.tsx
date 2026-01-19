@@ -13,6 +13,7 @@ type FooterAccordionSection = {
   items: Array<{
     label: string;
     href?: string;
+    external?: boolean;
   }>;
 };
 
@@ -43,6 +44,7 @@ export function FooterAccordionMenu({ sections }: FooterAccordionMenuProps) {
                       key={`${section.title}-${item.label}`}
                       href={item.href}
                       className="text-primary underline"
+                      {...(item.external && { target: "_blank", rel: "noreferrer" })}
                     >
                       {item.label}
                     </Link>

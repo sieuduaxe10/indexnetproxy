@@ -162,9 +162,9 @@
       "login": "Đăng Nhập"
     },
     "affiliate": {
-      "title": "Affiliate",
+      "title": "Đối Tác",
       "resellerProgram": "Chương Trình Reseller",
-      "linkProgram": "Chương Trình Link"
+      "linkProgram": "Affiliate"
     },
     "category": {
       "title": "Danh Mục",

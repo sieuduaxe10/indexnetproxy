@@ -162,9 +162,9 @@
       "login": "Войти"
     },
     "affiliate": {
-      "title": "Аффилиаты",
-      "resellerProgram": "Программа реселлеров",
-      "linkProgram": "Партнёрская программа ссылок"
+      "title": "Ortaklık",
+      "resellerProgram": "Bayi Programı",
+      "linkProgram": "Affiliate"
     },
     "category": {
       "title": "Категории",
