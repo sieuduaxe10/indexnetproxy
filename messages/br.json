@@ -162,9 +162,9 @@
       "login": "Entrar"
     },
     "affiliate": {
-      "title": "Afiliado",
+      "title": "Parceria",
       "resellerProgram": "Programa de Revenda",
-      "linkProgram": "Programa de Links"
+      "linkProgram": "Afiliado"
     },
     "category": {
       "title": "Categoria",
