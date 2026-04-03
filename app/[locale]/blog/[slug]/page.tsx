@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { cache } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -5,7 +7,6 @@ import { getTranslations } from "next-intl/server";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import {
   postBySlugQuery,
-  postSlugsQuery,
   relatedPostsQuery,
 } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
@@ -24,15 +25,6 @@ const getPostBySlug = cache((slug: string) =>
   })
 );
 
-export const dynamicParams = true;
-
-export async function generateStaticParams() {
-  const posts = await sanityFetch<{ slug: { current: string } }[]>({
-    query: postSlugsQuery,
-    tags: ["post"],
-  });
-  return posts.map((post) => ({ slug: post.slug.current }));
-}
 
 export async function generateMetadata({
   params,

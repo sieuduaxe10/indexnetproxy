@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { NextResponse } from "next/server";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { postsRssQuery } from "@/sanity/lib/queries";

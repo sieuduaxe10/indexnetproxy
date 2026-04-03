@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { cache } from "react";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";

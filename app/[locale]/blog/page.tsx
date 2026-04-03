@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { sanityFetch } from "@/sanity/lib/fetch";
