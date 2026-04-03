@@ -21,7 +21,7 @@ export function PostHeader({ post }: { post: Post }) {
           ))}
         </div>
       )}
-      <h1 className="font-neue-kaine-bold text-33 4xl:text-40 leading-[130%] text-foreground mb-4">
+      <h1 className="font-extrabold text-33 4xl:text-40 leading-[130%] text-foreground mb-4">
         {post.title}
       </h1>
       {post.publishedAt && (

@@ -1,4 +1,4 @@
-import { Geist, Noto_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Geist, Noto_Sans, IBM_Plex_Mono, Mulish } from "next/font/google";
 import localFont from "next/font/local";
 
 export const geistSans = Geist({
@@ -15,6 +15,12 @@ export const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-ibm-plex-mono",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+export const mulish = Mulish({
+  variable: "--font-mulish",
+  subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const inter = localFont({

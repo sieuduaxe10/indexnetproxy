@@ -158,7 +158,16 @@
     "previousPage": "Trang trước",
     "nextPage": "Trang sau",
     "backToBlog": "Quay lại blog",
-    "allCategories": "Tất cả"
+    "allCategories": "Tất cả",
+    "heroTitle": "NetProxy Blog — Kiến thức Proxy & Bảo mật mạng",
+    "heroDescription": "Cập nhật xu hướng, hướng dẫn sử dụng proxy, mẹo bảo mật mạng và các giải pháp truy cập internet an toàn từ đội ngũ NetProxy.",
+    "seoTitle": "Blog | NetProxy.io — Proxy, Bảo mật & MMO",
+    "seoDescription": "Đọc các bài viết chuyên sâu về residential proxy, datacenter proxy, bảo mật mạng, web scraping và giải pháp MMO từ NetProxy.io.",
+    "topicProxy": "Proxy & VPN",
+    "topicSecurity": "Bảo mật mạng",
+    "topicScraping": "Web Scraping",
+    "topicMMO": "MMO & Automation",
+    "latestPosts": "Bài viết mới nhất"
   },
   "footer": {
     "description": "{business_name} cung cấp proxy residential giúp truy cập internet ẩn danh và an toàn, hỗ trợ các tác vụ như scraping và nghiên cứu thị trường với tốc độ cao và ổn định.",

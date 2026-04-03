@@ -1,5 +1,3 @@
-export const runtime = "edge";
-
 import { cache } from "react";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
@@ -72,7 +70,7 @@ export default async function CategoryPage({
 
   return (
     <div>
-      <h1 className="font-neue-kaine-bold text-33 4xl:text-40 text-foreground mb-2">
+      <h1 className="font-extrabold text-33 4xl:text-40 text-foreground mb-2">
         {currentCategory?.title || t("title")}
       </h1>
       <p className="text-15 text-muted-foreground mb-8">{t("description")}</p>

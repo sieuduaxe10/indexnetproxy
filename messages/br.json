@@ -158,7 +158,16 @@
     "previousPage": "Previous",
     "nextPage": "Next",
     "backToBlog": "Back to blog",
-    "allCategories": "All"
+    "allCategories": "All",
+    "heroTitle": "NetProxy Blog — Proxy & Network Security Insights",
+    "heroDescription": "Stay updated with proxy tutorials, network security tips, and internet access solutions from the NetProxy team.",
+    "seoTitle": "Blog | NetProxy.io — Proxy, Security & MMO",
+    "seoDescription": "Read in-depth articles about residential proxies, datacenter proxies, network security, web scraping, and MMO solutions from NetProxy.io.",
+    "topicProxy": "Proxy & VPN",
+    "topicSecurity": "Network Security",
+    "topicScraping": "Web Scraping",
+    "topicMMO": "MMO & Automation",
+    "latestPosts": "Latest Posts"
   },
   "footer": {
     "description": "A {business_name} fornece serviços de proxy residencial, ajudando usuários a acessar a internet anonimamente e com segurança, apoiando tarefas como scraping e pesquisa de mercado com alta velocidade e confiabilidade.",

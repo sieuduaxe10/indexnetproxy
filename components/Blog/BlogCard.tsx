@@ -37,7 +37,7 @@ export function BlogCard({ post }: { post: Post }) {
             ))}
           </div>
         )}
-        <h2 className="font-neue-kaine-bold text-18 leading-[140%] text-foreground group-hover:text-primary transition-colors line-clamp-2">
+        <h2 className="font-extrabold text-18 leading-[140%] text-foreground group-hover:text-primary transition-colors line-clamp-2">
           {post.title}
         </h2>
         {post.excerpt && (

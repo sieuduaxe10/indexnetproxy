@@ -158,7 +158,16 @@
     "previousPage": "Previous",
     "nextPage": "Next",
     "backToBlog": "Back to blog",
-    "allCategories": "All"
+    "allCategories": "All",
+    "heroTitle": "NetProxy Blog — Proxy & Network Security Insights",
+    "heroDescription": "Stay updated with proxy tutorials, network security tips, and internet access solutions from the NetProxy team.",
+    "seoTitle": "Blog | NetProxy.io — Proxy, Security & MMO",
+    "seoDescription": "Read in-depth articles about residential proxies, datacenter proxies, network security, web scraping, and MMO solutions from NetProxy.io.",
+    "topicProxy": "Proxy & VPN",
+    "topicSecurity": "Network Security",
+    "topicScraping": "Web Scraping",
+    "topicMMO": "MMO & Automation",
+    "latestPosts": "Latest Posts"
   },
   "footer": {
     "description": "Nagbibigay ang {business_name} ng residential proxy services na tumutulong sa users na makapag-browse nang anonymous at secure, para sa tasks tulad ng web scraping at market research na may mataas na bilis at reliability.",

@@ -9,17 +9,17 @@ import { urlFor } from "@/sanity/lib/image";
 const components: PortableTextComponents = {
   block: {
     h2: ({ children }) => (
-      <h2 className="font-neue-kaine-bold text-28 mt-8 mb-4 text-foreground">
+      <h2 className="font-extrabold text-28 mt-8 mb-4 text-foreground">
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="font-neue-kaine-bold text-21 mt-6 mb-3 text-foreground">
+      <h3 className="font-extrabold text-21 mt-6 mb-3 text-foreground">
         {children}
       </h3>
     ),
     h4: ({ children }) => (
-      <h4 className="font-neue-kaine-bold text-18 mt-4 mb-2 text-foreground">
+      <h4 className="font-extrabold text-18 mt-4 mb-2 text-foreground">
         {children}
       </h4>
     ),
