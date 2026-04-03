@@ -18,6 +18,7 @@
     "country": "QUỐC GIA",
     "contact": "LIÊN HỆ",
     "faq": "FAQ",
+    "blog": "BLOG",
     "cookiePolicy": "Cookie Policy",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
@@ -146,6 +147,19 @@
     "title": "Được nhiều doanh nghiệp tin dùng để nâng cao trải nghiệm và hiệu quả.",
     "subtitle": "Các công ty tin tưởng dịch vụ của chúng tôi"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Chia sẻ kiến thức về proxy, bảo mật mạng và các giải pháp truy cập internet.",
+    "readMore": "Đọc thêm",
+    "publishedOn": "Đăng ngày",
+    "categories": "Danh mục",
+    "relatedPosts": "Bài viết liên quan",
+    "noPosts": "Chưa có bài viết nào.",
+    "previousPage": "Trang trước",
+    "nextPage": "Trang sau",
+    "backToBlog": "Quay lại blog",
+    "allCategories": "Tất cả"
+  },
   "footer": {
     "description": "{business_name} cung cấp proxy residential giúp truy cập internet ẩn danh và an toàn, hỗ trợ các tác vụ như scraping và nghiên cứu thị trường với tốc độ cao và ổn định.",
     "extensions": {
@@ -170,7 +184,8 @@
       "title": "Danh Mục",
       "faqs": "FAQs",
       "pricing": "Giá",
-      "contact": "Liên hệ"
+      "contact": "Liên hệ",
+      "blog": "Blog"
     },
     "serviceTerm": {
       "title": "Điều Khoản",

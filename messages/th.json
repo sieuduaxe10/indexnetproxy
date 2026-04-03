@@ -18,6 +18,7 @@
     "country": "ประเทศ",
     "contact": "ติดต่อ",
     "faq": "คำถามที่พบบ่อย",
+    "blog": "BLOG",
     "cookiePolicy": "นโยบายคุกกี้",
     "privacyPolicy": "นโยบายความเป็นส่วนตัว",
     "termsOfService": "ข้อกำหนดการให้บริการ",
@@ -146,6 +147,19 @@
     "title": "ธุรกิจมากมายไว้วางใจเราเพื่อพัฒนาการเรียนรู้และการเติบโตด้านการศึกษา",
     "subtitle": "บริษัทที่ไว้วางใจบริการของเรา"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Insights on proxies, network security, and internet access solutions.",
+    "readMore": "Read more",
+    "publishedOn": "Published on",
+    "categories": "Categories",
+    "relatedPosts": "Related posts",
+    "noPosts": "No posts yet.",
+    "previousPage": "Previous",
+    "nextPage": "Next",
+    "backToBlog": "Back to blog",
+    "allCategories": "All"
+  },
   "footer": {
     "description": "{business_name} ให้บริการพร็อกซีระดับ Residential เพื่อช่วยให้ผู้ใช้เข้าถึงอินเทอร์เน็ตอย่างปลอดภัยและไม่เปิดเผยตัวตน รองรับงานต่าง ๆ เช่น web scraping และการวิจัยตลาด ด้วยความเร็วสูงและความเสถียร",
     "extensions": {
@@ -170,7 +184,8 @@
       "title": "หมวดหมู่",
       "faqs": "FAQs",
       "pricing": "ราคา",
-      "contact": "ติดต่อ"
+      "contact": "ติดต่อ",
+      "blog": "Blog"
     },
     "serviceTerm": {
       "title": "บริการและเงื่อนไข",

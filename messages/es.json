@@ -18,6 +18,7 @@
     "country": "PAÍSES",
     "contact": "CONTACTO",
     "faq": "FAQ",
+    "blog": "BLOG",
     "cookiePolicy": "Política de Cookies",
     "privacyPolicy": "Política de Privacidad",
     "termsOfService": "Términos de Servicio",
@@ -146,6 +147,19 @@
     "title": "Confiado por muchas empresas para mejorar el aprendizaje y el crecimiento.",
     "subtitle": "Compañías que confían en nuestro servicio"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Insights on proxies, network security, and internet access solutions.",
+    "readMore": "Read more",
+    "publishedOn": "Published on",
+    "categories": "Categories",
+    "relatedPosts": "Related posts",
+    "noPosts": "No posts yet.",
+    "previousPage": "Previous",
+    "nextPage": "Next",
+    "backToBlog": "Back to blog",
+    "allCategories": "All"
+  },
   "footer": {
     "description": "{business_name} ofrece proxies residenciales para navegar de forma anónima y segura, apoyando tareas como scraping y estudios de mercado con alta velocidad y fiabilidad.",
     "extensions": {
@@ -170,7 +184,8 @@
       "title": "Categorías",
       "faqs": "FAQs",
       "pricing": "Precios",
-      "contact": "Contacto"
+      "contact": "Contacto",
+      "blog": "Blog"
     },
     "serviceTerm": {
       "title": "Servicios",

@@ -18,6 +18,7 @@
     "country": "देश",
     "contact": "संपर्क",
     "faq": "FAQ",
+    "blog": "BLOG",
     "cookiePolicy": "कुकी पॉलिसी",
     "privacyPolicy": "प्राइवेसी पॉलिसी",
     "termsOfService": "सेवा की शर्तें",
@@ -146,6 +147,19 @@
     "title": "सीखने और विकास को बढ़ावा देने के लिए कई व्यवसायों द्वारा विश्वसनीय।",
     "subtitle": "हमारी सेवा पर भरोसा करने वाली कंपनियाँ"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Insights on proxies, network security, and internet access solutions.",
+    "readMore": "Read more",
+    "publishedOn": "Published on",
+    "categories": "Categories",
+    "relatedPosts": "Related posts",
+    "noPosts": "No posts yet.",
+    "previousPage": "Previous",
+    "nextPage": "Next",
+    "backToBlog": "Back to blog",
+    "allCategories": "All"
+  },
   "footer": {
     "description": "{business_name} रेज़िडेंशियल प्रॉक्सी सेवाएँ प्रदान करता है, जिससे उपयोगकर्ता सुरक्षित और गुमनाम ब्राउज़ कर सकते हैं — स्क्रैपिंग और मार्केट रिसर्च के लिए तेज़ और स्थिर समर्थन।",
     "extensions": {
@@ -170,7 +184,8 @@
       "title": "श्रेणी",
       "faqs": "FAQs",
       "pricing": "कीमत",
-      "contact": "संपर्क"
+      "contact": "संपर्क",
+      "blog": "Blog"
     },
     "serviceTerm": {
       "title": "सेवा शर्तें",

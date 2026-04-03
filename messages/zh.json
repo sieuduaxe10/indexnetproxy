@@ -18,6 +18,7 @@
     "country": "国家",
     "contact": "联系",
     "faq": "FAQ",
+    "blog": "BLOG",
     "cookiePolicy": "Cookie 政策",
     "privacyPolicy": "隐私政策",
     "termsOfService": "服务条款",
@@ -146,6 +147,19 @@
     "title": "被众多企业信赖，用于提升学习与增长。",
     "subtitle": "信任我们的企业"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Insights on proxies, network security, and internet access solutions.",
+    "readMore": "Read more",
+    "publishedOn": "Published on",
+    "categories": "Categories",
+    "relatedPosts": "Related posts",
+    "noPosts": "No posts yet.",
+    "previousPage": "Previous",
+    "nextPage": "Next",
+    "backToBlog": "Back to blog",
+    "allCategories": "All"
+  },
   "footer": {
     "description": "{business_name} 提供住宅代理，让用户匿名、安全上网，并支持爬虫、市场研究等高速稳定的任务。",
     "extensions": {
@@ -170,7 +184,8 @@
       "title": "分类",
       "faqs": "FAQs",
       "pricing": "价格",
-      "contact": "联系"
+      "contact": "联系",
+      "blog": "Blog"
     },
     "serviceTerm": {
       "title": "服务条款",

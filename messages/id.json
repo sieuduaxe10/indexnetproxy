@@ -18,6 +18,7 @@
     "country": "NEGARA",
     "contact": "KONTAK",
     "faq": "FAQ",
+    "blog": "BLOG",
     "cookiePolicy": "Kebijakan Cookie",
     "privacyPolicy": "Kebijakan Privasi",
     "termsOfService": "Ketentuan Layanan",
@@ -146,6 +147,19 @@
     "title": "Dipercaya oleh banyak bisnis untuk meningkatkan pembelajaran dan pertumbuhan pendidikan.",
     "subtitle": "Perusahaan yang mempercayai layanan kami"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Insights on proxies, network security, and internet access solutions.",
+    "readMore": "Read more",
+    "publishedOn": "Published on",
+    "categories": "Categories",
+    "relatedPosts": "Related posts",
+    "noPosts": "No posts yet.",
+    "previousPage": "Previous",
+    "nextPage": "Next",
+    "backToBlog": "Back to blog",
+    "allCategories": "All"
+  },
   "footer": {
     "description": "{business_name} menyediakan layanan proxy residensial yang membantu pengguna mengakses internet secara anonim dan aman, mendukung tugas seperti web scraping dan riset pasar dengan kecepatan tinggi dan keandalan.",
     "extensions": {
@@ -170,7 +184,8 @@
       "title": "Kategori",
       "faqs": "FAQs",
       "pricing": "Harga",
-      "contact": "Kontak"
+      "contact": "Kontak",
+      "blog": "Blog"
     },
     "serviceTerm": {
       "title": "Layanan & Ketentuan",

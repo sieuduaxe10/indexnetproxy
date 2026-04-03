@@ -20,6 +20,7 @@ export const Footer = async () => {
     { href: "#faqs", label: t("category.faqs").toLocaleUpperCase() },
     { href: "#pricing", label: t("category.pricing").toLocaleUpperCase() },
     { href: "#contact", label: t("category.contact").toLocaleUpperCase() },
+    { href: "/blog", label: t("category.blog").toLocaleUpperCase() },
   ];
 
   const serviceTermLinks = [

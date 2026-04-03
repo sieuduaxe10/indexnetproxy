@@ -18,6 +18,7 @@
     "country": "СТРАНЫ",
     "contact": "КОНТАКТЫ",
     "faq": "FAQ",
+    "blog": "BLOG",
     "cookiePolicy": "Политика Cookies",
     "privacyPolicy": "Политика конфиденциальности",
     "termsOfService": "Условия обслуживания",
@@ -146,6 +147,19 @@
     "title": "Нам доверяют многие компании для улучшения обучения и развития.",
     "subtitle": "Компании, использующие наш сервис"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Insights on proxies, network security, and internet access solutions.",
+    "readMore": "Read more",
+    "publishedOn": "Published on",
+    "categories": "Categories",
+    "relatedPosts": "Related posts",
+    "noPosts": "No posts yet.",
+    "previousPage": "Previous",
+    "nextPage": "Next",
+    "backToBlog": "Back to blog",
+    "allCategories": "All"
+  },
   "footer": {
     "description": "{business_name} предоставляет резидентские прокси-услуги, позволяющие пользователям анонимно и безопасно выходить в интернет. Подходит для web-scraping, исследований рынка и других задач с высокой скоростью и надежностью.",
     "extensions": {
@@ -170,7 +184,8 @@
       "title": "Категории",
       "faqs": "FAQs",
       "pricing": "Цены",
-      "contact": "Контакты"
+      "contact": "Контакты",
+      "blog": "Blog"
     },
     "serviceTerm": {
       "title": "Сервис и условия",

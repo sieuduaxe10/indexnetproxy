@@ -8,7 +8,7 @@ import { QuestionOutlineIcon } from "../icons/QuestionOutlineIcon";
 export type NavItem = {
   href: string;
   label: string;
-  labelKey: "home" | "pricing" | "caseStudy" | "country" | "contact" | "faq";
+  labelKey: "home" | "pricing" | "caseStudy" | "country" | "contact" | "faq" | "blog";
   iconPath: string;
   iconComponent?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 };
@@ -55,5 +55,11 @@ export const navLink: NavItem[] = [
     labelKey: "faq",
     iconPath: "/images/header/question-mask.svg",
     iconComponent: QuestionOutlineIcon,
+  },
+  {
+    href: "/blog",
+    label: "BLOG",
+    labelKey: "blog",
+    iconPath: "/images/header/info.svg",
   },
 ];

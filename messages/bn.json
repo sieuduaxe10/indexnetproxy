@@ -18,6 +18,7 @@
     "country": "দেশ",
     "contact": "যোগাযোগ",
     "faq": "FAQ",
+    "blog": "BLOG",
     "cookiePolicy": "কুকি নীতি",
     "privacyPolicy": "গোপনীয়তা নীতি",
     "termsOfService": "সেবা শর্তাবলী",
@@ -146,6 +147,19 @@
     "title": "শিক্ষা উন্নয়ন ও শিক্ষণ বৃদ্ধিতে অনেক ব্যবসা আমাদের উপর ভরসা করে।",
     "subtitle": "যেসব কোম্পানি আমাদের পরিষেবায় বিশ্বাস করে"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Insights on proxies, network security, and internet access solutions.",
+    "readMore": "Read more",
+    "publishedOn": "Published on",
+    "categories": "Categories",
+    "relatedPosts": "Related posts",
+    "noPosts": "No posts yet.",
+    "previousPage": "Previous",
+    "nextPage": "Next",
+    "backToBlog": "Back to blog",
+    "allCategories": "All"
+  },
   "footer": {
     "description": "{business_name} রেসিডেনশিয়াল প্রক্সি পরিষেবা প্রদান করে, যা গোপনীয়তা এবং নিরাপত্তাসহ ব্রাউজিং পরিচালনা করতে সহায়তা করে। স্ক্র্যাপিং, বাজার গবেষণা সহ উচ্চগতির ও নির্ভরযোগ্য ব্যবহারের জন্য আদর্শ।",
     "extensions": {
@@ -170,7 +184,8 @@
       "title": "বিভাগ",
       "faqs": "FAQs",
       "pricing": "মূল্য",
-      "contact": "যোগাযোগ"
+      "contact": "যোগাযোগ",
+      "blog": "Blog"
     },
     "serviceTerm": {
       "title": "সেবা ও শর্ত",

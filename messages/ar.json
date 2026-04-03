@@ -18,6 +18,7 @@
     "country": "الدول",
     "contact": "اتصال",
     "faq": "الأسئلة الشائعة",
+    "blog": "BLOG",
     "cookiePolicy": "سياسة الكوكيز",
     "privacyPolicy": "سياسة الخصوصية",
     "termsOfService": "شروط الخدمة",
@@ -146,6 +147,19 @@
     "title": "موثوق من العديد من الشركات لتعزيز التعلم ودعم النمو.",
     "subtitle": "شركات تثق بخدمتنا"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Insights on proxies, network security, and internet access solutions.",
+    "readMore": "Read more",
+    "publishedOn": "Published on",
+    "categories": "Categories",
+    "relatedPosts": "Related posts",
+    "noPosts": "No posts yet.",
+    "previousPage": "Previous",
+    "nextPage": "Next",
+    "backToBlog": "Back to blog",
+    "allCategories": "All"
+  },
   "footer": {
     "description": "يوفّر {business_name} خدمات بروكسي سكني تساعد المستخدمين على تصفح الإنترنت بشكل آمن ومجهول، مع دعم مهام مثل استخلاص البيانات وأبحاث السوق بسرعة وموثوقية عالية.",
     "extensions": {
@@ -170,7 +184,8 @@
       "title": "الفئات",
       "faqs": "الأسئلة",
       "pricing": "الأسعار",
-      "contact": "الاتصال"
+      "contact": "الاتصال",
+      "blog": "Blog"
     },
     "serviceTerm": {
       "title": "الخدمة والشروط",

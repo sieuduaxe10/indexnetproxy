@@ -1,5 +1,6 @@
 "use client";
-import Link from "next/link";
+import NextLink from "next/link";
+import { Link as I18nLink } from "@/i18n/routing";
 import { ibmPlexMono } from "@/app/fonts";
 import Image from "next/image";
 
@@ -12,9 +13,12 @@ export const NavItem = ({
   label: string;
   iconPath: string;
 }) => {
+  const isAnchor = href.startsWith("#");
+  const LinkComponent = isAnchor ? NextLink : I18nLink;
+
   return (
     <li className="cursor-pointer">
-      <Link
+      <LinkComponent
         href={href}
         className={`${ibmPlexMono.className} text-xs font-medium cursor-pointer`}
       >
@@ -28,7 +32,7 @@ export const NavItem = ({
           />
           <p className="group-hover:pr-4">{label}</p>
         </div>
-      </Link>
+      </LinkComponent>
     </li>
   );
 };

@@ -18,6 +18,7 @@
     "country": "COUNTRY",
     "contact": "CONTACT",
     "faq": "FAQ",
+    "blog": "BLOG",
     "cookiePolicy": "Cookie Policy",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
@@ -146,6 +147,19 @@
     "title": "Trusted ng maraming negosyo para mapahusay ang learning at educational growth.",
     "subtitle": "Mga kumpanyang nagtitiwala sa aming serbisyo"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Insights on proxies, network security, and internet access solutions.",
+    "readMore": "Read more",
+    "publishedOn": "Published on",
+    "categories": "Categories",
+    "relatedPosts": "Related posts",
+    "noPosts": "No posts yet.",
+    "previousPage": "Previous",
+    "nextPage": "Next",
+    "backToBlog": "Back to blog",
+    "allCategories": "All"
+  },
   "footer": {
     "description": "Nagbibigay ang {business_name} ng residential proxy services na tumutulong sa users na makapag-browse nang anonymous at secure, para sa tasks tulad ng web scraping at market research na may mataas na bilis at reliability.",
     "extensions": {
@@ -170,7 +184,8 @@
       "title": "Category",
       "faqs": "FAQs",
       "pricing": "Pricing",
-      "contact": "Contact"
+      "contact": "Contact",
+      "blog": "Blog"
     },
     "serviceTerm": {
       "title": "Service & Term",
