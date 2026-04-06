@@ -11,15 +11,12 @@ export async function POST(request: NextRequest) {
   const { _type, slug } = body;
 
   if (_type === "post") {
-    revalidateTag("post", "default");
-    if (slug?.current) {
-      revalidateTag(`post:${slug.current}`, "default");
-    }
-    revalidateTag("sitemap", "default");
+    revalidateTag("post");
+    revalidateTag("sitemap");
   }
 
   if (_type === "category") {
-    revalidateTag("category", "default");
+    revalidateTag("category");
   }
 
   return NextResponse.json({ revalidated: true, now: Date.now() });

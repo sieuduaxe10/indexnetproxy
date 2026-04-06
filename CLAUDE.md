@@ -64,8 +64,6 @@ All pages live under `app/[locale]/`. The middleware (`middleware.ts`) handles l
 
 **Studio**: Not hosted on production. Run `npx sanity dev` locally for content management. Config in `sanity.config.ts`.
 
-**n8n automation**: See `N8N_BLOG_WORKFLOW.md` for AI auto-publishing workflow setup.
-
 ### Middleware
 
 `middleware.ts` uses `next-intl/middleware` for locale routing. The matcher excludes `/api`, `/_next`, `/_vercel`, and static files so API routes (revalidation, RSS) work without locale prefixing.
@@ -90,6 +88,6 @@ Required in `.env.local`:
 NEXT_PUBLIC_SANITY_PROJECT_ID    # Sanity project ID
 NEXT_PUBLIC_SANITY_DATASET       # "production"
 NEXT_PUBLIC_SANITY_API_VERSION   # e.g. "2026-04-01"
-SANITY_API_TOKEN                 # Write token (for n8n)
+SANITY_API_TOKEN                 # Write token (for API mutations)
 REVALIDATION_SECRET              # Secret for /api/revalidate webhook
 ```
