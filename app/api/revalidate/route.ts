@@ -1,4 +1,4 @@
-import { revalidateTag } from "next/cache";
+import { expireTag } from "next/cache";
 import { type NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
@@ -11,12 +11,12 @@ export async function POST(request: NextRequest) {
   const { _type, slug } = body;
 
   if (_type === "post") {
-    revalidateTag("post");
-    revalidateTag("sitemap");
+    expireTag("post");
+    expireTag("sitemap");
   }
 
   if (_type === "category") {
-    revalidateTag("category");
+    expireTag("category");
   }
 
   return NextResponse.json({ revalidated: true, now: Date.now() });
