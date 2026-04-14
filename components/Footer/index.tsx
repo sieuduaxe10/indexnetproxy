@@ -61,7 +61,10 @@ export const Footer = async () => {
     {
       title: t("affiliate.title"),
       items: [
-        { href: "https://seller.prx.network/", label: t("affiliate.resellerProgram"), external: true },
+        {
+          href: "/reseller-program",
+          label: t("affiliate.resellerProgram"),
+        },
         { label: t("affiliate.linkProgram") },
       ],
     },
@@ -145,9 +148,7 @@ export const Footer = async () => {
             </div>
             <div>
               <Link
-                href="https://seller.prx.network/"
-                target="_blank"
-                rel="noreferrer"
+                href="/reseller-program"
                 className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item block"
               >
                 {t("affiliate.resellerProgram")}
