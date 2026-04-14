@@ -62,8 +62,9 @@ export const Footer = async () => {
       title: t("affiliate.title"),
       items: [
         {
-          href: "/reseller-program",
+          href: "https://seller.prx.network/",
           label: t("affiliate.resellerProgram"),
+          external: true,
         },
         { label: t("affiliate.linkProgram") },
       ],
