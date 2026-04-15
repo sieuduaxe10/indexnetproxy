@@ -59,6 +59,46 @@ async function pickUnusedTopic() {
   return unused[Math.floor(Math.random() * unused.length)];
 }
 
+// ── Gemini call with retry (handles 503/429/5xx transient errors) ──────────
+const RETRYABLE_STATUS = new Set([429, 500, 502, 503, 504]);
+const FALLBACK_MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-2.5-pro"];
+
+function extractStatus(err) {
+  return (
+    err?.status ??
+    err?.error?.code ??
+    err?.response?.status ??
+    (typeof err?.message === "string" && err.message.match(/"code"\s*:\s*(\d+)/)?.[1] * 1) ??
+    null
+  );
+}
+
+async function callGeminiWithRetry(request, { maxAttempts = 6, baseDelayMs = 5000 } = {}) {
+  let lastErr;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    const model = FALLBACK_MODELS[Math.min(attempt - 1, FALLBACK_MODELS.length - 1)] ?? request.model;
+    try {
+      if (model !== request.model) {
+        console.log(`🔁 Attempt ${attempt}/${maxAttempts} — falling back to model "${model}"`);
+      }
+      return await ai.models.generateContent({ ...request, model });
+    } catch (err) {
+      lastErr = err;
+      const status = extractStatus(err);
+      const retryable = status == null || RETRYABLE_STATUS.has(Number(status));
+      if (!retryable || attempt === maxAttempts) {
+        throw err;
+      }
+      const delay = Math.min(baseDelayMs * 2 ** (attempt - 1), 60_000);
+      console.warn(
+        `⚠️  Gemini error (status=${status ?? "unknown"}) on attempt ${attempt}/${maxAttempts}. Retrying in ${delay / 1000}s...`
+      );
+      await new Promise((r) => setTimeout(r, delay));
+    }
+  }
+  throw lastErr;
+}
+
 // ── Generate blog post with Gemini ──────────────────────────────────────────
 async function generatePost(topic) {
   console.log(`✍️  Generating post about: "${topic}"`);
@@ -89,7 +129,7 @@ Meta description (150-160 ký tự)
 ---BODY---
 Nội dung bài viết dạng markdown đầy đủ ở đây`;
 
-  const response = await ai.models.generateContent({
+  const response = await callGeminiWithRetry({
     model: "gemini-2.5-flash",
     contents: prompt,
   });
