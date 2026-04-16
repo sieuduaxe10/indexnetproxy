@@ -23,7 +23,9 @@ export default defineType({
       title: 'Excerpt',
       type: 'text',
       rows: 4,
-      description: 'Mô tả ngắn hiển thị trên listing và meta description',
+      description: 'Mô tả ngắn (120-200 ký tự) hiển thị trên listing và dùng làm meta description mặc định',
+      validation: (rule) =>
+        rule.max(200).warning('Excerpt nên dưới 200 ký tự để hiển thị đẹp trên listing và Google SERP'),
     }),
     defineField({
       name: 'body',
@@ -56,12 +58,38 @@ export default defineType({
       initialValue: () => new Date().toISOString(),
     }),
     defineField({
+      name: 'noIndex',
+      title: 'Hide from search engines (noindex)',
+      type: 'boolean',
+      description: 'Bật khi muốn ẩn bài viết khỏi Google. Bài vẫn hiển thị công khai trên site.',
+      initialValue: false,
+    }),
+    defineField({
       name: 'seo',
       title: 'SEO',
       type: 'object',
       fields: [
-        { name: 'metaTitle', title: 'Meta Title', type: 'string' },
-        { name: 'metaDescription', title: 'Meta Description', type: 'text', rows: 3 },
+        {
+          name: 'metaTitle',
+          title: 'Meta Title',
+          type: 'string',
+          description: 'Tiêu đề SEO (30-65 ký tự). Nếu trống, dùng tiêu đề bài.',
+          validation: (rule) =>
+            rule
+              .max(70)
+              .warning('Meta title nên dưới 65 ký tự để không bị Google cắt'),
+        },
+        {
+          name: 'metaDescription',
+          title: 'Meta Description',
+          type: 'text',
+          rows: 3,
+          description: 'Mô tả SEO (120-165 ký tự). Nếu trống, dùng excerpt.',
+          validation: (rule) =>
+            rule
+              .max(170)
+              .warning('Meta description nên dưới 165 ký tự để không bị Google cắt'),
+        },
         { name: 'ogImage', title: 'OG Image', type: 'image' },
       ],
     }),

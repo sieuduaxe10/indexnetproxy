@@ -13,8 +13,10 @@ import { PostHeader } from "@/components/Blog/PostHeader";
 import { PortableTextRenderer } from "@/components/Blog/PortableTextRenderer";
 import { RelatedPosts } from "@/components/Blog/RelatedPosts";
 import { JsonLd } from "@/components/Blog/JsonLd";
+import { BreadcrumbJsonLd } from "@/components/JsonLd/Breadcrumb";
 import type { Post } from "@/components/Blog/types";
 import { Link } from "@/i18n/routing";
+import { buildAlternates } from "@/lib/metadata/alternates";
 
 const getPostBySlug = cache((slug: string) =>
   sanityFetch<Post | null>({
@@ -39,7 +41,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const post = await getPostBySlug(slug);
 
   if (!post) return { title: "Not Found" };
@@ -50,15 +52,32 @@ export async function generateMetadata({
       ? urlFor(post.featuredImage).width(1200).height(630).url()
       : undefined;
 
+  const title = post.seo?.metaTitle || post.title;
+  const description = post.seo?.metaDescription || post.excerpt;
+  const alternates = buildAlternates(`/blog/${slug}`, locale);
+  const images = imageUrl
+    ? [{ url: imageUrl, width: 1200, height: 630, alt: post.title }]
+    : undefined;
+
   return {
-    title: post.seo?.metaTitle || post.title,
-    description: post.seo?.metaDescription || post.excerpt,
+    title,
+    description,
+    alternates,
+    ...(post.noIndex && { robots: { index: false, follow: true } }),
     openGraph: {
-      title: post.seo?.metaTitle || post.title,
-      description: post.seo?.metaDescription || post.excerpt,
-      images: imageUrl ? [imageUrl] : undefined,
+      title,
+      description,
+      url: alternates.canonical,
       type: "article",
       publishedTime: post.publishedAt,
+      modifiedTime: post._updatedAt || post.publishedAt,
+      ...(images && { images }),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      ...(imageUrl && { images: [imageUrl] }),
     },
   };
 }
@@ -88,7 +107,14 @@ export default async function BlogPostPage({
 
   return (
     <article>
-      <JsonLd post={post} />
+      <JsonLd post={post} locale={locale} />
+      <BreadcrumbJsonLd
+        locale={locale}
+        items={[
+          { name: t("title"), path: "/blog" },
+          { name: post.title, path: `/blog/${slug}` },
+        ]}
+      />
 
       <Link
         href="/blog"

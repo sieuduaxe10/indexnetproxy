@@ -12,6 +12,7 @@ export interface Category {
 
 export interface Post {
   _id: string;
+  _updatedAt?: string;
   title: string;
   slug: { current: string };
   excerpt?: string;
@@ -19,6 +20,7 @@ export interface Post {
   featuredImage?: SanityImageSource & { alt?: string };
   categories?: Category[];
   publishedAt?: string;
+  noIndex?: boolean;
   seo?: {
     metaTitle?: string;
     metaDescription?: string;

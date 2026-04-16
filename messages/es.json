@@ -203,5 +203,23 @@
       "termsOfService": "Términos de Servicio",
       "refundPolicy": "Política de Reembolso"
     }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy | NetProxy.io",
+      "description": "Learn how NetProxy.io collects, uses, and protects your personal information when you use our residential P2P proxy services."
+    },
+    "cookie": {
+      "title": "Cookie Policy | NetProxy.io",
+      "description": "Understand how NetProxy.io uses cookies and similar technologies to improve your browsing experience on our proxy platform."
+    },
+    "term": {
+      "title": "Terms of Service | NetProxy.io",
+      "description": "Read the terms of service governing your use of NetProxy.io residential, datacenter, and mobile proxy services."
+    },
+    "refund": {
+      "title": "Refund Policy | NetProxy.io",
+      "description": "Review the NetProxy.io refund policy for proxy subscription plans and one-time purchases."
+    }
   }
 }

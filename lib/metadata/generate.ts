@@ -1,23 +1,28 @@
 import type { Metadata } from "next";
 import { fetchBranding } from "@/lib/api/branding";
-import {
-  DEFAULT_TITLE,
-  DEFAULT_DESCRIPTION,
-  DEFAULT_OG_IMAGE,
-  DEFAULT_ICONS,
-} from "./defaults";
+import { buildAlternates, SITE_URL } from "./alternates";
+import { DEFAULT_TITLE, DEFAULT_DESCRIPTION, DEFAULT_ICONS } from "./defaults";
 
 interface LocaleMetadata {
   title?: string;
   description?: string;
 }
 
+interface GenerateOptions {
+  /** Locale-agnostic path, e.g. "", "/blog". Used for canonical + hreflang alternates. */
+  path?: string;
+  /** Current request locale (required when path is provided to emit canonical URL). */
+  locale?: string;
+}
+
 /**
  * Generates metadata with reseller override support.
- * Fetches branding from the API which includes logos and og metadata.
+ * When no reseller branding is present, `openGraph.images` is intentionally
+ * left unset so the Next.js file-based `opengraph-image.tsx` convention wins.
  */
 export async function generateDynamicMetadata(
-  localeMetadata?: LocaleMetadata
+  localeMetadata?: LocaleMetadata,
+  options: GenerateOptions = {}
 ): Promise<Metadata> {
   const branding = await fetchBranding();
 
@@ -28,9 +33,22 @@ export async function generateDynamicMetadata(
     localeMetadata?.description ||
     DEFAULT_DESCRIPTION;
 
+  const brandingImage =
+    branding?.ogMetadata?.imageUrl || branding?.ogImageUrl || null;
+
+  const alternates =
+    options.path !== undefined && options.locale
+      ? {
+          ...buildAlternates(options.path, options.locale),
+          types: { "application/rss+xml": `${SITE_URL}/api/rss` },
+        }
+      : undefined;
+
   return {
+    metadataBase: new URL(SITE_URL),
     title,
     description,
+    ...(alternates && { alternates }),
 
     icons: branding?.iconLightUrl
       ? {
@@ -43,19 +61,26 @@ export async function generateDynamicMetadata(
     openGraph: {
       title,
       description,
-      images: branding?.ogMetadata?.imageUrl
-        ? [
-            {
-              url: branding.ogMetadata.imageUrl,
-              width: 1200,
-              height: 630,
-              alt: branding.businessName || "",
-            },
-          ]
-        : branding?.ogImageUrl
-          ? [{ url: branding.ogImageUrl, width: 1200, height: 630, alt: "" }]
-          : [DEFAULT_OG_IMAGE],
+      type: "website",
+      ...(alternates && { url: alternates.canonical }),
       ...(branding?.businessName && { siteName: branding.businessName }),
+      ...(brandingImage && {
+        images: [
+          {
+            url: brandingImage,
+            width: 1200,
+            height: 630,
+            alt: branding?.businessName || title,
+          },
+        ],
+      }),
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      ...(brandingImage && { images: [brandingImage] }),
     },
   };
 }

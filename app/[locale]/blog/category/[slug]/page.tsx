@@ -11,6 +11,8 @@ import { BlogList } from "@/components/Blog/BlogList";
 import { BlogPagination } from "@/components/Blog/BlogPagination";
 import { CategoryFilter } from "@/components/Blog/CategoryFilter";
 import type { Post, Category } from "@/components/Blog/types";
+import { buildAlternates } from "@/lib/metadata/alternates";
+import { BreadcrumbJsonLd } from "@/components/JsonLd/Breadcrumb";
 
 const POSTS_PER_PAGE = 12;
 
@@ -31,8 +33,25 @@ export async function generateMetadata({
   const categories = await getCategories();
   const category = categories.find((c) => c.slug.current === slug);
 
+  const title = category ? `${category.title} - ${t("title")}` : t("title");
+  const description = category?.description || t("seoDescription");
+  const alternates = buildAlternates(`/blog/category/${slug}`, locale);
+
   return {
-    title: category ? `${category.title} - ${t("title")}` : t("title"),
+    title,
+    description,
+    alternates,
+    openGraph: {
+      title,
+      description,
+      url: alternates.canonical,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
 
@@ -70,6 +89,16 @@ export default async function CategoryPage({
 
   return (
     <div>
+      <BreadcrumbJsonLd
+        locale={locale}
+        items={[
+          { name: t("title"), path: "/blog" },
+          {
+            name: currentCategory?.title || slug,
+            path: `/blog/category/${slug}`,
+          },
+        ]}
+      />
       <h1 className="font-extrabold text-33 4xl:text-40 text-foreground mb-2">
         {currentCategory?.title || t("title")}
       </h1>

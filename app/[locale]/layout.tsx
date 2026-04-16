@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { generateDynamicMetadata } from "@/lib/metadata/generate";
 import { fetchBranding } from "@/lib/api/branding";
 import { BrandingProvider } from "@/lib/branding/context";
+import { OrganizationJsonLd } from "@/components/JsonLd/Organization";
 
 type Locale = (typeof routing.locales)[number];
 
@@ -26,10 +27,13 @@ export async function generateMetadata({
 
   // Generate metadata with reseller detection
   // Returns reseller OG metadata if from reseller domain, otherwise uses locale metadata
-  return generateDynamicMetadata({
-    title: t("title"),
-    description: t("description", { business_name: businessName }),
-  });
+  return generateDynamicMetadata(
+    {
+      title: t("title"),
+      description: t("description", { business_name: businessName }),
+    },
+    { path: "", locale }
+  );
 }
 export default async function LocaleLayout({
   children,
@@ -53,6 +57,7 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <BrandingProvider branding={branding}>
+        <OrganizationJsonLd />
         {children}
       </BrandingProvider>
     </NextIntlClientProvider>

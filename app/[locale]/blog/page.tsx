@@ -10,32 +10,40 @@ import { BlogList } from "@/components/Blog/BlogList";
 import { BlogPagination } from "@/components/Blog/BlogPagination";
 import { CategoryFilter } from "@/components/Blog/CategoryFilter";
 import type { Post, Category } from "@/components/Blog/types";
+import { buildAlternates, SITE_URL } from "@/lib/metadata/alternates";
 
 const POSTS_PER_PAGE = 12;
-const BASE_URL = "https://netproxy.io";
+const BASE_URL = SITE_URL;
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ page?: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const { page } = await searchParams;
   const t = await getTranslations({ locale, namespace: "blog" });
+
+  const currentPage = Math.max(1, Number(page) || 1);
+  const base = buildAlternates("/blog", locale);
+  const canonical =
+    currentPage > 1 ? `${base.canonical}?page=${currentPage}` : base.canonical;
+
   return {
     title: t("seoTitle"),
     description: t("seoDescription"),
-    alternates: {
-      canonical: `${BASE_URL}/${locale}/blog`,
-    },
+    alternates: { ...base, canonical },
     openGraph: {
       title: t("seoTitle"),
       description: t("seoDescription"),
-      url: `${BASE_URL}/${locale}/blog`,
+      url: canonical,
       siteName: "NetProxy.io",
       type: "website",
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: t("seoTitle"),
       description: t("seoDescription"),
     },

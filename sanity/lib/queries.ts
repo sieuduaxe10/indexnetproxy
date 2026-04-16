@@ -22,12 +22,14 @@ export const postCountQuery = groq`
 export const postBySlugQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
     _id,
+    _updatedAt,
     title,
     slug,
     excerpt,
     body,
     featuredImage,
     publishedAt,
+    noIndex,
     categories[]->{ _id, title, slug },
     seo,
   }
@@ -83,6 +85,14 @@ export const postsSitemapQuery = groq`
   *[_type == "post"] {
     slug,
     publishedAt,
+    _updatedAt,
+  }
+`
+
+// Categories for sitemap
+export const categoriesSitemapQuery = groq`
+  *[_type == "category"] {
+    slug,
     _updatedAt,
   }
 `

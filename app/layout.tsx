@@ -2,6 +2,7 @@ import "./globals.css";
 import { geistSans, ibmPlexMono, notoSans, inter } from "./fonts";
 import localFont from "next/font/local";
 import { routing } from "@/i18n/routing";
+import { Analytics } from "@/components/Analytics";
 
 const neueKaineFont = localFont({
   src: "./fonts/neue-kaine-variable-bold.woff2",
@@ -18,6 +19,8 @@ const neueKaineBoldFont = localFont({
 
 type Locale = (typeof routing.locales)[number];
 
+const RTL_LOCALES = new Set<string>(["ar", "fa"]);
+
 export default async function RootLayout({
   children,
   params,
@@ -27,11 +30,15 @@ export default async function RootLayout({
 }) {
   const resolvedParams = params ? await params : undefined;
   const locale = resolvedParams?.locale ?? "en";
+  const dir = RTL_LOCALES.has(locale) ? "rtl" : "ltr";
   const bodyClassName = `${notoSans.variable} ${ibmPlexMono.variable} ${geistSans.variable} ${neueKaineFont.variable} ${neueKaineBoldFont.variable} ${inter.variable} antialiased`;
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className={bodyClassName}>{children}</body>
+    <html lang={locale} dir={dir} suppressHydrationWarning>
+      <body className={bodyClassName}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

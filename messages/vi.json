@@ -203,5 +203,23 @@
       "termsOfService": "Terms of Service",
       "refundPolicy": "Refund Policy"
     }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Chính sách Bảo mật | NetProxy.io",
+      "description": "Tìm hiểu cách NetProxy.io thu thập, sử dụng và bảo vệ thông tin cá nhân khi bạn dùng dịch vụ proxy residential P2P."
+    },
+    "cookie": {
+      "title": "Chính sách Cookie | NetProxy.io",
+      "description": "Hiểu cách NetProxy.io sử dụng cookie và công nghệ tương tự để cải thiện trải nghiệm duyệt web trên nền tảng proxy."
+    },
+    "term": {
+      "title": "Điều khoản Dịch vụ | NetProxy.io",
+      "description": "Đọc các điều khoản dịch vụ khi bạn sử dụng proxy residential, datacenter và mobile của NetProxy.io."
+    },
+    "refund": {
+      "title": "Chính sách Hoàn tiền | NetProxy.io",
+      "description": "Xem chính sách hoàn tiền của NetProxy.io áp dụng cho các gói proxy đăng ký và mua lẻ."
+    }
   }
 }
