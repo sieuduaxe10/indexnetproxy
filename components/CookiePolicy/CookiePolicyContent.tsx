@@ -1,11 +1,12 @@
 const CookiePolicyContent = () => {
   return (
     <div>
+      <h1>Cookie Policy</h1>
       <p>
-        <strong>Last Updated: December 8, 2024</strong>
+        <strong>Last Updated: April 17, 2026</strong>
       </p>
       <p>
-        UPGO (&quot;UpGo,&quot; &quot;we,&quot; &quot;us,&quot; or
+        NetProxy.io (&quot;NetProxy.io,&quot; &quot;we,&quot; &quot;us,&quot; or
         &quot;our&quot;) uses cookies and similar tracking technologies to
         enhance user experience, analyze performance, and support the provision
         of our services (&quot;Services&quot;). This Cookie Policy explains what
@@ -15,9 +16,7 @@ const CookiePolicyContent = () => {
         agree, please disable cookies as outlined below or discontinue using our
         Services.
       </p>
-      <p>
-        <strong>1. What Are Cookies?</strong>
-      </p>
+      <h2>1. What Are Cookies?</h2>
       <p>
         Cookies are small text files placed on your device (computer,
         smartphone, tablet) by websites you visit. They are widely used to make
@@ -26,17 +25,15 @@ const CookiePolicyContent = () => {
         technologies (such as pixels, web beacons, and device fingerprinting)
         may also be used for similar purposes.
       </p>
-      <p>
-        <strong>2. Types of Cookies We Use</strong>
-      </p>
+      <h2>2. Types of Cookies We Use</h2>
       <p>
         We use both first-party and third-party cookies. First-party cookies are
         set by us and help enable core functionalities, whereas third-party
         cookies are set by service providers and partners to provide additional
         features.
       </p>
+      <h3>a. Strictly Necessary Cookies</h3>
       <p>
-        <strong>a. Strictly Necessary Cookies</strong>:<br />
         These cookies are essential for the proper operation of our Services.
         They enable core features such as security measures, session management,
         and network traffic distribution. Without these cookies, the Services
@@ -50,8 +47,8 @@ const CookiePolicyContent = () => {
           </p>
         </li>
       </ul>
+      <h3>b. Functional Cookies</h3>
       <p>
-        <strong>b. Functional Cookies</strong>:<br />
         These cookies allow the Services to remember choices you make (such as
         language preference or region) and provide enhanced, more personalized
         features. Disabling these cookies may result in a less personalized
@@ -65,8 +62,8 @@ const CookiePolicyContent = () => {
           </p>
         </li>
       </ul>
+      <h3>c. Performance and Analytics Cookies</h3>
       <p>
-        <strong>c. Performance and Analytics Cookies</strong>:<br />
         We use these cookies to understand how users interact with the Services.
         They help us track and measure performance, detect and fix errors, and
         improve the overall user experience. The information collected by these
@@ -81,8 +78,8 @@ const CookiePolicyContent = () => {
           </p>
         </li>
       </ul>
+      <h3>d. Targeting and Advertising Cookies</h3>
       <p>
-        <strong>d. Targeting and Advertising Cookies</strong>:<br />
         We may use these cookies to deliver relevant advertisements about our
         Services or to measure the effectiveness of our marketing campaigns.
         These cookies track browsing habits and activity across our Services and
@@ -98,9 +95,7 @@ const CookiePolicyContent = () => {
           </p>
         </li>
       </ul>
-      <p>
-        <strong>3. Third-Party Cookies and Services</strong>
-      </p>
+      <h2>3. Third-Party Cookies and Services</h2>
       <p>
         Our Services may include features provided by third parties, such as
         analytics tools, content delivery networks (CDNs), payment processors,
@@ -109,9 +104,7 @@ const CookiePolicyContent = () => {
         content. We do not control these cookies, and their use is governed by
         the third party’s own privacy and cookie policies.
       </p>
-      <p>
-        <strong>4. How We Use Cookies and Similar Technologies</strong>
-      </p>
+      <h2>4. How We Use Cookies and Similar Technologies</h2>
       <p>We use cookies and related technologies to:</p>
       <ul>
         <li>
@@ -139,9 +132,7 @@ const CookiePolicyContent = () => {
           <p>Comply with legal and regulatory obligations.</p>
         </li>
       </ul>
-      <p>
-        <strong>5. Cookie Duration</strong>
-      </p>
+      <h2>5. Cookie Duration</h2>
       <p>Cookies can be session-based or persistent:</p>
       <ul>
         <li>
@@ -165,9 +156,7 @@ const CookiePolicyContent = () => {
         function and the third party that sets them. We regularly review and
         update our use of cookies and their expiration periods.
       </p>
-      <p>
-        <strong>6. Managing Your Cookie Preferences</strong>
-      </p>
+      <h2>6. Managing Your Cookie Preferences</h2>
       <p>
         You have several options to manage and control how cookies are used on
         your device:
@@ -209,9 +198,7 @@ const CookiePolicyContent = () => {
         Please note that disabling certain types of cookies may impact the
         functionality or usability of some parts of our Services.
       </p>
-      <p>
-        <strong>7. Legal Bases for Using Cookies</strong>
-      </p>
+      <h2>7. Legal Bases for Using Cookies</h2>
       <p>
         In jurisdictions that require user consent for non-essential cookies
         (e.g., under the EU’s General Data Protection Regulation), we rely on
@@ -220,9 +207,7 @@ const CookiePolicyContent = () => {
         necessary cookies are used based on our legitimate interest in
         delivering and securing the Services.
       </p>
-      <p>
-        <strong>8. Changes to This Cookie Policy</strong>
-      </p>
+      <h2>8. Changes to This Cookie Policy</h2>
       <p>
         We may update this Cookie Policy periodically to reflect changes in
         technology, legal requirements, or our business operations. When we
@@ -230,22 +215,20 @@ const CookiePolicyContent = () => {
         above. Your continued use of the Services after any changes indicates
         your acceptance of the updated Cookie Policy.
       </p>
-      <p>
-        <strong>9. Contact Us</strong>
-      </p>
+      <h2>9. Contact Us</h2>
       <p>
         If you have questions, concerns, or requests related to this Cookie
         Policy, please contact us:
       </p>
       <p>
-        <strong>UpGo Privacy Team</strong>
+        <strong>NetProxy.io Privacy Team</strong>
         <br />
         Website:
-        <a href="https://upgo.io" rel="noopener">
-          https://upgo.io
+        <a href="https://netproxy.io" rel="noopener">
+          https://netproxy.io
         </a>
       </p>
-      <p>© 2024 UpGo. All rights reserved.</p>
+      <p>© 2026 NetProxy.io. All rights reserved.</p>
     </div>
   );
 };

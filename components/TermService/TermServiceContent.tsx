@@ -3,11 +3,12 @@ import Link from "next/link";
 const TermServiceContent = () => {
   return (
     <div>
+      <h1>Terms of Service</h1>
       <p>
-        <strong>Last Updated: December 8, 2024</strong>
+        <strong>Last Updated: April 17, 2026</strong>
       </p>
       <p>
-        Welcome to UpGo (&quot;UpGo,&quot; &quot;we,&quot; &quot;us,&quot; or
+        Welcome to NetProxy.io (&quot;NetProxy.io,&quot; &quot;we,&quot; &quot;us,&quot; or
         &quot;our&quot;). These Terms of Service (&quot;Terms&quot;) govern your
         access to and use of our proxy and related services, including all
         associated applications, software, websites, products, and content that
@@ -19,9 +20,7 @@ const TermServiceContent = () => {
         Privacy Policy and Cookie Policy. If you do not agree to these Terms,
         you must discontinue your use of the Services immediately.
       </p>
-      <p>
-        <strong>1. Eligibility and Account Registration</strong>
-      </p>
+      <h2>1. Eligibility and Account Registration</h2>
       <p>
         1.1 <strong>Eligibility</strong>: You must be at least 18 years of age,
         or the age of majority in your jurisdiction (if different), to use the
@@ -41,9 +40,7 @@ const TermServiceContent = () => {
         impersonate another person, create an account using a false identity, or
         register for an account on behalf of someone else without authorization.
       </p>
-      <p>
-        <strong>2. License and Restrictions</strong>
-      </p>
+      <h2>2. License and Restrictions</h2>
       <p>
         2.1 <strong>Limited License</strong>: Subject to your compliance with
         these Terms, we grant you a limited, non-exclusive, non-transferable,
@@ -90,9 +87,7 @@ const TermServiceContent = () => {
         laws and regulations when using the Services, including intellectual
         property, privacy, and data protection laws.
       </p>
-      <p>
-        <strong>3. P2P Usage of Your Network Resources</strong>
-      </p>
+      <h2>3. P2P Usage of Your Network Resources</h2>
       <p>
         3.1 <strong>Acknowledgment</strong>: By using the Services, you
         acknowledge and agree that a portion of your device’s internet bandwidth
@@ -108,13 +103,11 @@ const TermServiceContent = () => {
         network resources for P2P traffic, you must discontinue using the
         Services immediately.
       </p>
-      <p>
-        <strong>4. Intellectual Property</strong>
-      </p>
+      <h2>4. Intellectual Property</h2>
       <p>
         4.1 <strong>Ownership</strong>: All content, trademarks, service marks,
         logos, and intellectual property displayed on or through the Services
-        are the exclusive property of UpGo or its licensors. Nothing in these
+        are the exclusive property of NetProxy.io or its licensors. Nothing in these
         Terms grants you any right, title, or interest in or to any of our
         intellectual property.
       </p>
@@ -125,9 +118,7 @@ const TermServiceContent = () => {
         feedback into the Services or other products without any obligation to
         you.
       </p>
-      <p>
-        <strong>5. Payments, Fees, and Taxes</strong>
-      </p>
+      <h2>5. Payments, Fees, and Taxes</h2>
       <p>
         5.1 <strong>Subscriptions and Payments</strong>: If the Services or
         certain features require payment, you agree to pay all applicable fees.
@@ -149,9 +140,7 @@ const TermServiceContent = () => {
         5.4 <strong>Taxes</strong>: You are responsible for paying any
         applicable taxes (if any) associated with your use of the Services.
       </p>
-      <p>
-        <strong>6. Termination and Suspension</strong>
-      </p>
+      <h2>6. Termination and Suspension</h2>
       <p>
         6.1 <strong>Termination by You</strong>: You may discontinue using the
         Services at any time. If you wish to delete your account, please contact
@@ -170,9 +159,7 @@ const TermServiceContent = () => {
         termination (e.g., intellectual property, disclaimers, limitation of
         liability, governing law, dispute resolution) will remain in effect.
       </p>
-      <p>
-        <strong>7. Disclaimers</strong>
-      </p>
+      <h2>7. Disclaimers</h2>
       <p>
         7.1 <strong>As-Is Basis</strong>: The Services are provided &quot;as
         is&quot; and &quot;as available,&quot; without warranties of any kind,
@@ -187,12 +174,10 @@ const TermServiceContent = () => {
         or damage resulting from downtime, data loss, or the unavailability of
         the Services.
       </p>
-      <p>
-        <strong>8. Limitation of Liability</strong>
-      </p>
+      <h2>8. Limitation of Liability</h2>
       <p>
         8.1 <strong>Limitations</strong>: To the fullest extent permitted by
-        law, in no event shall UpGo, its affiliates, partners, or licensors be
+        law, in no event shall NetProxy.io, its affiliates, partners, or licensors be
         liable for any indirect, incidental, consequential, special, exemplary,
         or punitive damages, including lost profits, data loss, or service
         interruption, arising out of or related to your use of or inability to
@@ -204,11 +189,9 @@ const TermServiceContent = () => {
         the twelve (12) months preceding the event giving rise to the claim, or
         one hundred US dollars (USD 100) if no fees were paid.
       </p>
+      <h2>9. Indemnification</h2>
       <p>
-        <strong>9. Indemnification</strong>
-      </p>
-      <p>
-        You agree to indemnify, defend, and hold harmless UpGo and its
+        You agree to indemnify, defend, and hold harmless NetProxy.io and its
         affiliates from and against any claims, losses, liabilities, damages,
         costs, and expenses (including reasonable attorneys’ fees) arising out
         of or related to:
@@ -226,13 +209,11 @@ const TermServiceContent = () => {
           </p>
         </li>
       </ul>
-      <p>
-        <strong>10. Governing Law and Dispute Resolution</strong>
-      </p>
+      <h2>10. Governing Law and Dispute Resolution</h2>
       <p>
         10.1 <strong>Governing Law</strong>: These Terms and any dispute or
         claim arising out of or related to them shall be governed by and
-        construed in accordance with the laws of the jurisdiction where UpGo is
+        construed in accordance with the laws of the jurisdiction where NetProxy.io is
         incorporated, without regard to conflict-of-law principles.
       </p>
       <p>
@@ -249,22 +230,18 @@ const TermServiceContent = () => {
         disputes on an individual basis and waive any right to bring or
         participate in a class action lawsuit or class-wide arbitration.
       </p>
-      <p>
-        <strong>11. Changes to These Terms</strong>
-      </p>
+      <h2>11. Changes to These Terms</h2>
       <p>
         We may update these Terms from time to time. The &quot;Last
         Updated&quot; date at the top indicates the most recent changes. By
         continuing to use the Services after any changes become effective, you
         agree to be bound by the revised Terms.
       </p>
-      <p>
-        <strong>12. Miscellaneous</strong>
-      </p>
+      <h2>12. Miscellaneous</h2>
       <p>
         12.1 <strong>Entire Agreement</strong>: These Terms, together with our
         Privacy Policy and Cookie Policy, constitute the entire agreement
-        between you and UpGo regarding your use of the Services, superseding any
+        between you and NetProxy.io regarding your use of the Services, superseding any
         prior agreements.
       </p>
       <p>
@@ -282,36 +259,23 @@ const TermServiceContent = () => {
         rights or obligations under these Terms without our prior written
         consent. We may assign or transfer our rights and obligations freely.
       </p>
-      <p>
-        <strong>13. Contact Us</strong>
-      </p>
+      <h2>13. Contact Us</h2>
       <p>
         If you have questions or concerns about these Terms, please contact us
         at:
       </p>
       <p>
-        <strong>UPGO Legal Department</strong>
+        <strong>NetProxy.io Legal Department</strong>
         <br />
         Website:
-        <Link href="/">https://upgo.io</Link>
+        <Link href="/">https://netproxy.io</Link>
       </p>
-      <p>© 2024 UpGo. All rights reserved.</p>
+      <p>© 2026 NetProxy.io. All rights reserved.</p>
       <p>
         <br />
         <br />
       </p>
-      <p>Copyright © UpGo. All rights belong to UPGO.IO</p>
-      <ul>
-        <li>
-          <p>
-            <br />
-          </p>
-        </li>
-      </ul>
-      <p>
-        <br />
-        <br />
-      </p>
+      <p>Copyright © NetProxy.io. All rights belong to NETPROXY.IO</p>
     </div>
   );
 };

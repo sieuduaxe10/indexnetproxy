@@ -3,12 +3,13 @@ import Link from "next/link";
 const PrivacyContent = () => {
   return (
     <div>
+      <h1>Privacy Policy</h1>
       <p>
-        <strong>Last Updated: December 8, 2024</strong>
+        <strong>Last Updated: April 17, 2026</strong>
       </p>
       <p>
         <strong>
-          Welcome to UPGO (&quot;UpGO,&quot; &quot;we,&quot; &quot;us,&quot; or
+          Welcome to NetProxy.io (&quot;NetProxy.io,&quot; &quot;we,&quot; &quot;us,&quot; or
           &quot;our&quot;). We are committed to protecting your privacy and
           personal data. This Privacy Policy explains how we collect, use,
           share, and safeguard your information when you access or use our
@@ -18,9 +19,7 @@ const PrivacyContent = () => {
           Services immediately.
         </strong>
       </p>
-      <p>
-        <strong>1. Scope of This Policy</strong>
-      </p>
+      <h2>1. Scope of This Policy</h2>
       <p>
         <strong>
           This Privacy Policy applies to all users who access or use our
@@ -28,15 +27,11 @@ const PrivacyContent = () => {
           websites.
         </strong>
       </p>
-      <p>
-        <strong>2. Information We Collect</strong>
-      </p>
+      <h2>2. Information We Collect</h2>
       <p>
         <strong>We collect the following types of information:</strong>
       </p>
-      <p>
-        <strong>a. Personal Information:</strong>
-      </p>
+      <h3>a. Personal Information</h3>
       <ul>
         <li>
           <p>
@@ -57,9 +52,7 @@ const PrivacyContent = () => {
           </p>
         </li>
       </ul>
-      <p>
-        <strong>b. Log Data:</strong>
-      </p>
+      <h3>b. Log Data</h3>
       <ul>
         <li>
           <p>
@@ -79,26 +72,22 @@ const PrivacyContent = () => {
           </p>
         </li>
       </ul>
+      <h3>c. Anonymous Data</h3>
       <p>
-        <strong>c. Anonymous Data:</strong>
-        <br />
         <strong>
           We may aggregate and anonymize data to analyze usage trends and
           service performance without identifying you personally.
         </strong>
       </p>
+      <h3>d. Cookies and Tracking Technologies</h3>
       <p>
-        <strong>d. Cookies and Tracking Technologies:</strong>
-        <br />
         <strong>
           We use cookies, beacons, and similar technologies to maintain user
           sessions, enhance user experience, and measure performance. You may
           adjust your cookie preferences through your browser settings.
         </strong>
       </p>
-      <p>
-        <strong>3. Use of Your Network Resources for P2P Traffic</strong>
-      </p>
+      <h2>3. Use of Your Network Resources for P2P Traffic</h2>
       <p>
         <strong>
           Important: By using the Services, you acknowledge and agree that a
@@ -137,9 +126,7 @@ const PrivacyContent = () => {
           </p>
         </li>
       </ul>
-      <p>
-        <strong>4. How We Use Your Information</strong>
-      </p>
+      <h2>4. How We Use Your Information</h2>
       <p>
         <strong>We use your information for the following purposes:</strong>
       </p>
@@ -195,9 +182,7 @@ const PrivacyContent = () => {
           </p>
         </li>
       </ul>
-      <p>
-        <strong>5. How We Share Your Information</strong>
-      </p>
+      <h2>5. How We Share Your Information</h2>
       <p>
         <strong>
           We do not sell your personal information. We may share information in
@@ -233,9 +218,7 @@ const PrivacyContent = () => {
           </p>
         </li>
       </ul>
-      <p>
-        <strong>6. Data Retention</strong>
-      </p>
+      <h2>6. Data Retention</h2>
       <p>
         <strong>
           We retain your data only as long as necessary to provide the Services
@@ -274,9 +257,7 @@ const PrivacyContent = () => {
           us, subject to legal and operational constraints.
         </strong>
       </p>
-      <p>
-        <strong>7. Security Measures</strong>
-      </p>
+      <h2>7. Security Measures</h2>
       <p>
         <strong>We employ industry-standard security measures:</strong>
       </p>
@@ -311,9 +292,7 @@ const PrivacyContent = () => {
           If you suspect a data breach, contact us immediately.
         </strong>
       </p>
-      <p>
-        <strong>8. Your Rights and Choices</strong>
-      </p>
+      <h2>8. Your Rights and Choices</h2>
       <p>
         <strong>
           Depending on your jurisdiction, you may have the following rights:
@@ -373,9 +352,7 @@ const PrivacyContent = () => {
           verification of your identity before processing your request.
         </strong>
       </p>
-      <p>
-        <strong>9. International Data Transfers</strong>
-      </p>
+      <h2>9. International Data Transfers</h2>
       <p>
         <strong>
           If you access our Services from outside your country of residence,
@@ -396,9 +373,7 @@ const PrivacyContent = () => {
           </p>
         </li>
       </ul>
-      <p>
-        <strong>10. Children’s Privacy</strong>
-      </p>
+      <h2>10. Children’s Privacy</h2>
       <p>
         <strong>
           Our Services are not directed at individuals under the age of 18. We
@@ -407,9 +382,7 @@ const PrivacyContent = () => {
           delete it.
         </strong>
       </p>
-      <p>
-        <strong>11. Changes to This Privacy Policy</strong>
-      </p>
+      <h2>11. Changes to This Privacy Policy</h2>
       <p>
         <strong>
           We may update this Privacy Policy periodically. The &quot;Last
@@ -418,9 +391,7 @@ const PrivacyContent = () => {
           acceptance of the revised Privacy Policy.
         </strong>
       </p>
-      <p>
-        <strong>12. Contact Us</strong>
-      </p>
+      <h2>12. Contact Us</h2>
       <p>
         <strong>
           If you have questions, concerns, or complaints about this Privacy
@@ -428,15 +399,15 @@ const PrivacyContent = () => {
         </strong>
       </p>
       <p>
-        <strong>UPGO Privacy Team</strong>
+        <strong>NetProxy.io Privacy Team</strong>
         <br />
         <strong>Website:</strong>
         <Link href="/">
-          <strong> https://upgo.io</strong>
+          <strong> https://netproxy.io</strong>
         </Link>
       </p>
       <p>
-        <strong>© 2024 UpGo. All rights reserved.</strong>
+        <strong>© 2026 NetProxy.io. All rights reserved.</strong>
       </p>
       <p>
         <br />
