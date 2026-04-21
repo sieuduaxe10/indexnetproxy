@@ -49,20 +49,26 @@ export interface Branding {
  * Wrapped with React cache() to deduplicate within a single request.
  */
 export const getDerivedDomain = cache(async function getDerivedDomain(): Promise<string> {
-  const headersList = await headers();
+  try {
+    const headersList = await headers();
 
-  const host = headersList.get("host");
-  const xForwardedHost = headersList.get("x-forwarded-host");
+    const host = headersList.get("host");
+    const xForwardedHost = headersList.get("x-forwarded-host");
 
-  // Prefer x-forwarded-host (set by reverse proxy) over direct host
-  const effectiveHost = xForwardedHost || host;
+    // Prefer x-forwarded-host (set by reverse proxy) over direct host
+    const effectiveHost = xForwardedHost || host;
 
-  if (!effectiveHost) {
+    if (!effectiveHost) {
+      return "";
+    }
+
+    // Remove port if present
+    return effectiveHost.split(":")[0];
+  } catch {
+    // headers() throws during static generation (DYNAMIC_SERVER_USAGE).
+    // Return empty domain so fetchBranding falls back to default branding.
     return "";
   }
-
-  // Remove port if present
-  return effectiveHost.split(":")[0];
 });
 
 /**
