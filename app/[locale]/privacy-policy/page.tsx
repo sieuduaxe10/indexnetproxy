@@ -7,7 +7,6 @@ import { Partnerships } from "@/components/Partnerships";
 import Privacy from "@/components/Privacy";
 import { buildAlternates } from "@/lib/metadata/alternates";
 
-export const runtime = "edge";
 
 export async function generateMetadata({
   params,

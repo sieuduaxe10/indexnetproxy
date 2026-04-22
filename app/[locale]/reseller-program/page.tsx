@@ -4,7 +4,6 @@ import { Header } from "@/components/Header";
 import { Partnerships } from "@/components/Partnerships";
 import ResellerProgram from "@/components/ResellerProgram";
 
-export const runtime = "edge";
 
 export const metadata = {
   title: "Reseller Program — Start a Proxy Business with $0 | NetProxy",
