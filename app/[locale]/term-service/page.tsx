@@ -7,7 +7,6 @@ import { Partnerships } from "@/components/Partnerships";
 import TermService from "@/components/TermService";
 import { buildAlternates } from "@/lib/metadata/alternates";
 
-export const runtime = 'edge';
 
 export async function generateMetadata({
   params,
