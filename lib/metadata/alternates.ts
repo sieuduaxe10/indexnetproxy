@@ -1,6 +1,7 @@
 import { locales } from "@/common/constant";
 
-export const SITE_URL = "https://netproxy.io";
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://netproxy.io";
 
 const LOCALE_CODES = locales.map((l) => l.code);
 
