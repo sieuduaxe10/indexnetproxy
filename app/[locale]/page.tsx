@@ -16,7 +16,6 @@ import { TrustedBy } from "@/components/TrustedBy";
 import { FAQPageJsonLd } from "@/components/JsonLd/FAQPage";
 import { fetchBranding } from "@/lib/api/branding";
 
-export const runtime = "edge";
 
 const FAQ_KEYS = ["q1", "q2", "q3", "q4"] as const;
 
