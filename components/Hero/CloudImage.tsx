@@ -6,7 +6,7 @@ export const CloudImage = () => {
       <div className="absolute inset-0">
         <Image
           src="/images/hero/cloud-background-decor.png"
-          alt="netproxy Hero background"
+          alt=""
           width={924}
           height={704}
           className="aspect-[1.31203] object-cover object-center"

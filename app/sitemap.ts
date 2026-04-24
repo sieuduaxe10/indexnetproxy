@@ -34,6 +34,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "/cookie-policy", priority: 0.3, changeFrequency: "monthly" },
     { path: "/term-service", priority: 0.3, changeFrequency: "monthly" },
     { path: "/refund-service", priority: 0.3, changeFrequency: "monthly" },
+    { path: "/reseller-program", priority: 0.7, changeFrequency: "monthly" },
   ];
 
   const staticEntries = LOCALE_CODES.flatMap((locale) =>

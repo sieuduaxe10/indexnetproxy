@@ -80,7 +80,9 @@ export async function generateDynamicMetadata(
       card: "summary_large_image",
       title,
       description,
-      ...(brandingImage && { images: [brandingImage] }),
+      ...(brandingImage && {
+        images: [{ url: brandingImage, alt: branding?.businessName || title }],
+      }),
     },
   };
 }

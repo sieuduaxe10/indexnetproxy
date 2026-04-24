@@ -5,7 +5,7 @@ const HeroGlobeIcon = () => {
       <div className="absolute inset-0">
         <Image
           src="/images/hero/hero-globe-icon.png"
-          alt="netproxy globe icon"
+          alt=""
           width={56}
           height={60}
           className="w-full h-auto"

@@ -80,7 +80,7 @@ export const Partnerships = () => {
         <div className="absolute top-0 left-0 right-0 h-[270px] z-0 bottom-0">
           <Image
             src={"/images/disclaimer/background.png"}
-            alt={"Disclaimer background"}
+            alt=""
             fill
             style={{ objectFit: "cover" }}
           />
@@ -119,7 +119,7 @@ export const Partnerships = () => {
                   width={40}
                   height={20}
                   src={imgSrc}
-                  alt={`Disclaimer ${index + 1}`}
+                  alt={imgSrc.split("/").pop()?.replace(/\.\w+$/, "").replace(/-/g, " ") || ""}
                   style={{ objectFit: "contain" }}
                 />
               </div>

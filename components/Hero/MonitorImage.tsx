@@ -7,7 +7,7 @@ export const MonitorImage = () => {
     <div className="absolute inset-0">
       <Image
         src="/images/hero/monitor-icon.webp"
-        alt="netproxy monitor icon"
+        alt="Proxy dashboard interface"
         width={153}
         height={176}
         sizes="(min-width:1200px) 153px, (min-width:810px) 139px, 144px"

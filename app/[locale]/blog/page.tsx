@@ -13,7 +13,6 @@ import type { Post, Category } from "@/components/Blog/types";
 import { buildAlternates, SITE_URL } from "@/lib/metadata/alternates";
 
 const POSTS_PER_PAGE = 12;
-const BASE_URL = SITE_URL;
 
 export async function generateMetadata({
   params,
@@ -24,12 +23,27 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const { page } = await searchParams;
-  const t = await getTranslations({ locale, namespace: "blog" });
+  const [t, totalCount] = await Promise.all([
+    getTranslations({ locale, namespace: "blog" }),
+    sanityFetch<number>({ query: postCountQuery, tags: ["post"] }),
+  ]);
 
   const currentPage = Math.max(1, Number(page) || 1);
+  const totalPages = Math.ceil(totalCount / POSTS_PER_PAGE);
   const base = buildAlternates("/blog", locale);
   const canonical =
     currentPage > 1 ? `${base.canonical}?page=${currentPage}` : base.canonical;
+
+  const paginationLinks: Record<string, string> = {};
+  if (currentPage > 1) {
+    paginationLinks.prev =
+      currentPage === 2
+        ? base.canonical
+        : `${base.canonical}?page=${currentPage - 1}`;
+  }
+  if (currentPage < totalPages) {
+    paginationLinks.next = `${base.canonical}?page=${currentPage + 1}`;
+  }
 
   return {
     title: t("seoTitle"),
@@ -47,6 +61,7 @@ export async function generateMetadata({
       title: t("seoTitle"),
       description: t("seoDescription"),
     },
+    other: paginationLinks,
   };
 }
 
@@ -88,11 +103,11 @@ export default async function BlogPage({
     "@type": "Blog",
     name: t("heroTitle"),
     description: t("seoDescription"),
-    url: `${BASE_URL}/${locale}/blog`,
+    url: `${SITE_URL}/${locale}/blog`,
     publisher: {
       "@type": "Organization",
       name: "NetProxy.io",
-      url: BASE_URL,
+      url: SITE_URL,
     },
   };
 

@@ -87,7 +87,7 @@ export const TopCountries = () => {
         <div className="absolute inset-0">
           <Image
             src="/images/hero/hero-round-icon.png"
-            alt="netproxy play icon"
+            alt=""
             width={39}
             height={35}
           />
@@ -101,7 +101,7 @@ export const TopCountries = () => {
         <div className="absolute inset-0">
           <Image
             src="/images/hero/hero-cross-icon-medium.png"
-            alt="netproxy play icon"
+            alt=""
             width={70}
             height={70}
           />
@@ -115,7 +115,7 @@ export const TopCountries = () => {
         <div className="absolute inset-0">
           <Image
             src="/images/hero/hero-play-icon.png"
-            alt="netproxy play icon"
+            alt=""
             width={39}
             height={35}
           />
@@ -126,7 +126,7 @@ export const TopCountries = () => {
           src={"/images/decor/orange-circle.png"}
           width={48}
           height={48}
-          alt="Orange circle"
+          alt=""
         />
       </div>
 
@@ -135,7 +135,7 @@ export const TopCountries = () => {
           src={"/images/decor/blue-x.png"}
           width={30}
           height={30}
-          alt="Orange circle"
+          alt=""
         />
       </div>
 

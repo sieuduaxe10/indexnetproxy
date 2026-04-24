@@ -7,6 +7,9 @@ import { generateDynamicMetadata } from "@/lib/metadata/generate";
 import { fetchBranding } from "@/lib/api/branding";
 import { BrandingProvider } from "@/lib/branding/context";
 import { OrganizationJsonLd } from "@/components/JsonLd/Organization";
+import { WebSiteJsonLd } from "@/components/JsonLd/WebSite";
+
+export const dynamic = "force-dynamic";
 
 type Locale = (typeof routing.locales)[number];
 
@@ -58,6 +61,7 @@ export default async function LocaleLayout({
     <NextIntlClientProvider messages={messages}>
       <BrandingProvider branding={branding}>
         <OrganizationJsonLd />
+        <WebSiteJsonLd />
         {children}
       </BrandingProvider>
     </NextIntlClientProvider>

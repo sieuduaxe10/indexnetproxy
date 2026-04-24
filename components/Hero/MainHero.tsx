@@ -64,7 +64,7 @@ export const MainHero = () => {
           <div className="absolute inset-0">
             <Image
               src="/images/hero/block-1.webp"
-              alt="netproxy Hero Image"
+              alt="Proxy management dashboard preview"
               width={206}
               height={130}
               sizes="(min-width:1200px) 206px, (min-width:810px) 206px, 186px"
@@ -80,7 +80,7 @@ export const MainHero = () => {
           <div className="absolute inset-0">
             <Image
               src="/images/hero/block-1.webp"
-              alt="netproxy Hero Image"
+              alt="Proxy management dashboard preview"
               width={206}
               height={130}
               sizes="(min-width:1200px) 206px, (min-width:810px) 206px, 186px"
@@ -92,7 +92,7 @@ export const MainHero = () => {
           <div className="absolute inset-0">
             <Image
               src="/images/hero/block-1.webp"
-              alt="netproxy Hero Image"
+              alt="Proxy management dashboard preview"
               width={206}
               height={130}
               sizes="(min-width:1200px) 206px, (min-width:810px) 206px, 186px"
@@ -114,7 +114,7 @@ export const MainHero = () => {
           <div className="absolute inset-0">
             <Image
               src="/images/hero/hero-round-icon.png"
-              alt="netproxy round orange icon"
+              alt=""
               width={59}
               height={59}
               sizes="(min-width:1200px) 59px, (min-width:810px) 39px, 28px"
@@ -129,7 +129,7 @@ export const MainHero = () => {
           <div className="absolute inset-0">
             <Image
               src="/images/hero/hero-play-icon.png"
-              alt="netproxy play icon"
+              alt=""
               width={39}
               height={35}
               sizes="(min-width:1200px) 39px, (min-width:810px) 39px, 28px"
@@ -145,7 +145,7 @@ export const MainHero = () => {
           <div className="absolute">
             <Image
               src="/images/hero/hero-cross-icon-medium.png"
-              alt="netproxy cross icon"
+              alt=""
               width={31}
               height={31}
               sizes="(min-width:1200px) 31px, (min-width:810px) 31px, 28px"

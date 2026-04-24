@@ -51,7 +51,7 @@ export default function ExpandableItem() {
       <div className="py-3 px-2 flex items-center justify-between overflow-hidden">
         <Image
           src="/images/login-io.png"
-          alt="Login IO"
+          alt="XLogin.io antidetect browser"
           width={84}
           height={27}
           sizes="(min-width:1200px) 84px, (min-width:810px) 84px, 84px"
@@ -86,7 +86,7 @@ export default function ExpandableItem() {
         <Link href="https://xlogin.io" target="_blank">
           <Image
             src="/images/anonymous-browser.png"
-            alt="Anonymous Browser"
+            alt="XLogin.io antidetect browser features"
             width={230}
             height={416}
             sizes="(min-width:1200px) 230px, (min-width:810px) 230px, 230px"

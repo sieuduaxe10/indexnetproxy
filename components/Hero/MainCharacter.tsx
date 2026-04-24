@@ -6,7 +6,7 @@ export const MainCharacter = () => {
       <div className="absolute inset-0">
         <Image
           src="/images/hero/goose.webp"
-          alt="netproxy goose character"
+          alt="NetProxy mascot"
           width={400}
           height={421}
           sizes="(min-width:1200px) 400px, (min-width:810px) 363px, 374px"

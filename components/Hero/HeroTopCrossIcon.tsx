@@ -51,7 +51,7 @@ const HeroTopCrossIcon = () => {
       <div className="absolute">
         <Image
           src="/images/hero/hero-cross-icon.png"
-          alt="netproxy cross icon"
+          alt=""
           width={71}
           height={70}
           sizes="(min-width:1200px) 49px, (min-width:810px) 49px, 28px"

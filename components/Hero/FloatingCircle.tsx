@@ -34,7 +34,7 @@ export const FloatingCircle = () => {
       <div className="absolute inset-0">
         <Image
           src="/images/hero/round-orange.png"
-          alt="netproxy circle decor"
+          alt=""
           width={59}
           height={59}
           sizes="(min-width:1200px) 59px, (min-width:810px) 39px, 28px"
