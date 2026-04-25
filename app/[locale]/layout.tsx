@@ -48,10 +48,14 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  console.log("[Layout] rendering locale:", locale);
+
   const [messages, branding] = await Promise.all([
     getMessages(),
     fetchBranding(),
   ]);
+
+  console.log("[Layout] branding result:", JSON.stringify(branding));
 
   return (
     <NextIntlClientProvider messages={messages}>
