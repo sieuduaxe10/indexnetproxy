@@ -108,8 +108,7 @@ export const fetchBranding = cache(async function fetchBranding(): Promise<Brand
     }
 
     const response = await fetch(url.toString(), {
-      // Cache for 5 minutes - branding doesn't change frequently
-      next: { revalidate: 300 },
+      cache: "no-store",
     });
 
     if (!response.ok) {

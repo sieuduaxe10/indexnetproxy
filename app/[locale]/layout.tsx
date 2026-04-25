@@ -12,10 +12,6 @@ import { WebSiteJsonLd } from "@/components/JsonLd/WebSite";
 export const dynamic = "force-dynamic";
 
 type Locale = (typeof routing.locales)[number];
-
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
 export async function generateMetadata({
   params,
 }: {
