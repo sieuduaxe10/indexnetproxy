@@ -107,9 +107,13 @@ export const fetchBranding = cache(async function fetchBranding(): Promise<Brand
       url.searchParams.set("domain", domain);
     }
 
+    console.log("[Branding]", url.toString(), "domain:", domain);
+
     const response = await fetch(url.toString(), {
       cache: "no-store",
     });
+
+    console.log("[Branding] status:", response.status);
 
     if (!response.ok) {
       return null;

@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import { useBranding } from "@/lib/branding/context";
 
 export function FooterLoginLink({
