@@ -1,20 +1,51 @@
+import dynamic from "next/dynamic";
 import { getTranslations } from "next-intl/server";
-import { BlurBackground } from "@/components/BlurBackground";
-import { CaseStudies } from "@/components/CaseStudies";
-import { Contact } from "@/components/Contact";
-import { FAQs } from "@/components/FAQs";
-import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { Partnerships } from "@/components/Partnerships";
-import { Pricing } from "@/components/Pricing";
-import { Resellers } from "@/components/Resellers";
-import { SmoothScrollProvider } from "@/components/ScrollSmothlyProvider";
-import StickyExpandableList from "@/components/StickyExpandableList";
-import { TopCountries } from "@/components/TopCountries";
 import { TrustedBy } from "@/components/TrustedBy";
+import { SmoothScrollProvider } from "@/components/ScrollSmothlyProvider";
 import { FAQPageJsonLd } from "@/components/JsonLd/FAQPage";
 import { fetchBranding } from "@/lib/api/branding";
+
+// Lazy load below-the-fold sections to reduce initial bundle size
+const Pricing = dynamic(
+  () => import("@/components/Pricing").then((mod) => ({ default: mod.Pricing })),
+  { ssr: true }
+);
+const CaseStudies = dynamic(
+  () => import("@/components/CaseStudies").then((mod) => ({ default: mod.CaseStudies })),
+  { ssr: true }
+);
+const TopCountries = dynamic(
+  () => import("@/components/TopCountries").then((mod) => ({ default: mod.TopCountries })),
+  { ssr: true }
+);
+const Contact = dynamic(
+  () => import("@/components/Contact").then((mod) => ({ default: mod.Contact })),
+  { ssr: true }
+);
+const FAQs = dynamic(
+  () => import("@/components/FAQs").then((mod) => ({ default: mod.FAQs })),
+  { ssr: true }
+);
+const Resellers = dynamic(
+  () => import("@/components/Resellers").then((mod) => ({ default: mod.Resellers })),
+  { ssr: true }
+);
+const Footer = dynamic(
+  () => import("@/components/Footer").then((mod) => ({ default: mod.Footer })),
+  { ssr: true }
+);
+const Partnerships = dynamic(
+  () => import("@/components/Partnerships").then((mod) => ({ default: mod.Partnerships })),
+  { ssr: true }
+);
+const BlurBackground = dynamic(
+  () => import("@/components/BlurBackground").then((mod) => ({ default: mod.BlurBackground }))
+);
+const StickyExpandableList = dynamic(
+  () => import("@/components/StickyExpandableList")
+);
 
 
 const FAQ_KEYS = ["q1", "q2", "q3", "q4"] as const;

@@ -1,10 +1,15 @@
+"use client";
+
 import dynamic from "next/dynamic";
 import { MainHero } from "./MainHero";
-import TwoLayerParticles from "./TwoLayerParticles";
 
 const HeroTextContent = dynamic(() => import("./HeroTextContent"), {
   loading: () => null,
   ssr: true,
+});
+
+const TwoLayerParticles = dynamic(() => import("./TwoLayerParticles"), {
+  ssr: false,
 });
 
 export const Hero = () => {
