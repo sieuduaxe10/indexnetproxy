@@ -1,21 +1,6 @@
 import type { MetadataRoute } from "next";
-import { sanityFetch } from "@/sanity/lib/fetch";
-import {
-  postsSitemapQuery,
-  categoriesSitemapQuery,
-} from "@/sanity/lib/queries";
+import { getSitemapEntries } from "@/lib/api/blog";
 import { LOCALE_CODES, SITE_URL, toHreflang } from "@/lib/metadata/alternates";
-
-type PostSitemap = {
-  slug: { current: string };
-  publishedAt: string;
-  _updatedAt: string;
-};
-
-type CategorySitemap = {
-  slug: { current: string };
-  _updatedAt: string;
-};
 
 function buildLanguages(path: string): Record<string, string> {
   const languages: Record<string, string> = {};
@@ -47,42 +32,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   );
 
-  const [posts, categories] = await Promise.all([
-    sanityFetch<PostSitemap[]>({
-      query: postsSitemapQuery,
-      tags: ["sitemap"],
-    }),
-    sanityFetch<CategorySitemap[]>({
-      query: categoriesSitemapQuery,
-      tags: ["sitemap"],
-    }),
-  ]);
-
-  const postEntries = LOCALE_CODES.flatMap((locale) =>
-    posts.map((post) => {
-      const path = `/blog/${post.slug.current}`;
-      return {
-        url: `${SITE_URL}/${locale}${path}`,
-        lastModified: new Date(post._updatedAt || post.publishedAt),
-        changeFrequency: "weekly" as const,
-        priority: 0.8,
-        alternates: { languages: buildLanguages(path) },
-      };
+  // Fetch blog entries per locale — backend filters by language_code so each
+  // locale only emits posts that actually exist for it.
+  const localePostEntries = await Promise.all(
+    LOCALE_CODES.map(async (locale) => {
+      const posts = await getSitemapEntries(locale);
+      return posts.map((post) => {
+        const path = `/blog/${post.slug}`;
+        return {
+          url: `${SITE_URL}/${locale}${path}`,
+          lastModified: new Date(post.updated_at),
+          changeFrequency: "weekly" as const,
+          priority: 0.8,
+          alternates: { languages: buildLanguages(path) },
+        };
+      });
     })
   );
 
-  const categoryEntries = LOCALE_CODES.flatMap((locale) =>
-    categories.map((cat) => {
-      const path = `/blog/category/${cat.slug.current}`;
-      return {
-        url: `${SITE_URL}/${locale}${path}`,
-        lastModified: new Date(cat._updatedAt),
-        changeFrequency: "weekly" as const,
-        priority: 0.6,
-        alternates: { languages: buildLanguages(path) },
-      };
-    })
-  );
-
-  return [...staticEntries, ...postEntries, ...categoryEntries];
+  return [...staticEntries, ...localePostEntries.flat()];
 }

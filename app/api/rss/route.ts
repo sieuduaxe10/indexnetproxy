@@ -1,51 +1,28 @@
-import { NextResponse } from "next/server";
-import { sanityFetch } from "@/sanity/lib/fetch";
-import { postsRssQuery } from "@/sanity/lib/queries";
+import { headers } from "next/headers";
+import { getRssUrl } from "@/lib/api/blog";
 
-const BASE_URL = "https://netproxy.io";
+export const revalidate = 300;
 
+// Returns the backend-rendered RSS XML directly. Domain is derived from the
+// inbound request so each reseller storefront gets their own feed.
 export async function GET() {
-  const posts = await sanityFetch<
-    {
-      title: string;
-      slug: { current: string };
-      excerpt: string;
-      publishedAt: string;
-    }[]
-  >({
-    query: postsRssQuery,
-    tags: ["post"],
-  });
+  const hdrs = await headers();
+  const host = hdrs.get("x-forwarded-host") || hdrs.get("host") || "";
+  const domain = host.split(":")[0];
 
-  const items = posts
-    .map(
-      (post) => `
-    <item>
-      <title><![CDATA[${post.title}]]></title>
-      <link>${BASE_URL}/vi/blog/${post.slug.current}</link>
-      <description><![CDATA[${post.excerpt || ""}]]></description>
-      <pubDate>${new Date(post.publishedAt).toUTCString()}</pubDate>
-      <guid>${BASE_URL}/vi/blog/${post.slug.current}</guid>
-    </item>`
-    )
-    .join("");
+  // VI is the primary feed. Add ?lang param later if multi-feed needed.
+  const upstream = getRssUrl("vi", domain);
+  const res = await fetch(upstream, { next: { revalidate: 300 } });
 
-  const rss = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>NetProxy Blog</title>
-    <link>${BASE_URL}/vi/blog</link>
-    <description>Chia sẻ kiến thức về proxy, bảo mật mạng và các giải pháp truy cập internet.</description>
-    <language>vi</language>
-    <atom:link href="${BASE_URL}/api/rss" rel="self" type="application/rss+xml"/>
-    ${items}
-  </channel>
-</rss>`;
+  if (!res.ok) {
+    return new Response("RSS feed unavailable", { status: 502 });
+  }
 
-  return new NextResponse(rss, {
+  const body = await res.text();
+  return new Response(body, {
     headers: {
-      "Content-Type": "application/xml",
-      "Cache-Control": "s-maxage=3600, stale-while-revalidate",
+      "Content-Type": "application/rss+xml; charset=utf-8",
+      "Cache-Control": "public, max-age=300, s-maxage=300, stale-while-revalidate=600",
     },
   });
 }

@@ -25,6 +25,7 @@ interface BrandingResponse {
   storefront_url?: string;
   logos?: LogosResponse;
   og_metadata?: OgMetadataResponse;
+  blog_enabled?: boolean;
 }
 
 export interface Branding {
@@ -35,6 +36,7 @@ export interface Branding {
   iconLightUrl: string | null;
   iconDarkUrl: string | null;
   ogImageUrl: string | null;
+  blogEnabled: boolean;
   ogMetadata: {
     title: string;
     description: string;
@@ -129,6 +131,7 @@ export const fetchBranding = cache(async function fetchBranding(): Promise<Brand
       iconLightUrl: getPreferredLogoUrl(data.logos?.icon_light),
       iconDarkUrl: getPreferredLogoUrl(data.logos?.icon_dark),
       ogImageUrl: getPreferredLogoUrl(data.logos?.og_image),
+      blogEnabled: !!data.blog_enabled,
       ogMetadata: data.og_metadata
         ? {
             title: data.og_metadata.title,

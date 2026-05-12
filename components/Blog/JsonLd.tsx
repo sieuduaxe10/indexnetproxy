@@ -1,25 +1,18 @@
-import type { Post } from "./types";
-import { urlFor } from "@/sanity/lib/image";
 import { SITE_URL } from "@/lib/metadata/alternates";
+import type { PostDetail } from "./types";
 
-export function JsonLd({ post, locale }: { post: Post; locale: string }) {
-  const imageUrl = post.featuredImage
-    ? urlFor(post.featuredImage).width(1200).height(630).url()
-    : undefined;
-
-  const url = `${SITE_URL}/${locale}/blog/${post.slug.current}`;
-  const articleSection = post.categories?.map((c) => c.title).filter(Boolean);
+export function JsonLd({ post, locale }: { post: PostDetail; locale: string }) {
+  const url = `${SITE_URL}/${locale}/blog/${post.slug}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "@id": `${url}#article`,
-    headline: post.seo?.metaTitle || post.title,
-    description: post.seo?.metaDescription || post.excerpt,
-    ...(imageUrl && { image: imageUrl }),
-    datePublished: post.publishedAt,
-    dateModified: post._updatedAt || post.publishedAt,
-    inLanguage: locale,
+    headline: post.meta_title || post.title,
+    description: post.meta_description || post.excerpt,
+    datePublished: post.published_at,
+    dateModified: post.updated_at || post.published_at,
+    inLanguage: post.language || locale,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": url,
@@ -38,7 +31,6 @@ export function JsonLd({ post, locale }: { post: Post; locale: string }) {
         url: `${SITE_URL}/images/logo/Logo.webp`,
       },
     },
-    ...(articleSection && articleSection.length > 0 && { articleSection }),
   };
 
   return (

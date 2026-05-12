@@ -10,6 +10,7 @@ export interface BrandingContextValue {
   iconLightUrl: string | null;
   iconDarkUrl: string | null;
   ogImageUrl: string | null;
+  blogEnabled: boolean;
 }
 
 const BrandingContext = createContext<BrandingContextValue | null>(null);
@@ -28,6 +29,7 @@ export function BrandingProvider({ children, branding }: BrandingProviderProps) 
     iconLightUrl: null,
     iconDarkUrl: null,
     ogImageUrl: null,
+    blogEnabled: false,
   };
 
   return (
@@ -49,6 +51,7 @@ export function useBranding(): BrandingContextValue {
       iconLightUrl: null,
       iconDarkUrl: null,
       ogImageUrl: null,
+      blogEnabled: false,
     };
   }
 
