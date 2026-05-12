@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+
 import { BlurBackground } from "@/components/BlurBackground";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Partnerships } from "@/components/Partnerships";
 import RefundService from "@/components/RefundService";
 import { buildAlternates } from "@/lib/metadata/alternates";
-
-export const runtime = "edge";
-
 
 export async function generateMetadata({
   params,
@@ -36,7 +34,14 @@ export async function generateMetadata({
   };
 }
 
-const RefundServicePage = () => {
+export default async function RefundServicePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <main>
       <Header />
@@ -46,6 +51,4 @@ const RefundServicePage = () => {
       <BlurBackground />
     </main>
   );
-};
-
-export default RefundServicePage;
+}

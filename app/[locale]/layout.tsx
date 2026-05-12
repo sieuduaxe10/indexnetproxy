@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations } from "next-intl/server";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { generateDynamicMetadata } from "@/lib/metadata/generate";
@@ -9,8 +9,14 @@ import { BrandingProvider } from "@/lib/branding/context";
 import { OrganizationJsonLd } from "@/components/JsonLd/Organization";
 import { WebSiteJsonLd } from "@/components/JsonLd/WebSite";
 
-export const runtime = "edge";
-export const dynamic = "force-dynamic";
+// Static by default — branding is embedded at build time (lib/branding.generated.ts).
+// Reseller updates trigger a CF Pages rebuild via webhook, so each deploy carries
+// fresh branding. No `runtime = "edge"` needed for static pages.
+
+// Pre-render every locale so Next.js generates static HTML at build time.
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 type Locale = (typeof routing.locales)[number];
 export async function generateMetadata({
@@ -45,11 +51,12 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as Locale)) {
+  if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
-  console.log("[Layout] rendering locale:", locale);
+  // Enable static rendering for this locale's tree.
+  setRequestLocale(locale);
 
   const [messages, branding] = await Promise.all([
     getMessages(),

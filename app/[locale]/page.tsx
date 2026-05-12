@@ -1,13 +1,11 @@
 import dynamic from "next/dynamic";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { TrustedBy } from "@/components/TrustedBy";
 import { SmoothScrollProvider } from "@/components/ScrollSmothlyProvider";
 import { FAQPageJsonLd } from "@/components/JsonLd/FAQPage";
 import { fetchBranding } from "@/lib/api/branding";
-
-export const runtime = "edge";
 
 // Lazy load below-the-fold sections to reduce initial bundle size
 const Pricing = dynamic(
@@ -58,6 +56,7 @@ const MainPage = async ({
   params: Promise<{ locale: string }>;
 }) => {
   const { locale } = await params;
+  setRequestLocale(locale);
   const [t, branding] = await Promise.all([
     getTranslations({ locale, namespace: "faqs.questions" }),
     fetchBranding(),

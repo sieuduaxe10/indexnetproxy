@@ -1,32 +1,6 @@
 import { cache } from "react";
 import { headers } from "next/headers";
-
-interface LogoURLs {
-  original: string;
-  variants?: Record<string, string>;
-}
-
-interface LogosResponse {
-  logo_light?: LogoURLs;
-  logo_dark?: LogoURLs;
-  icon_light?: LogoURLs;
-  icon_dark?: LogoURLs;
-  og_image?: LogoURLs;
-}
-
-interface OgMetadataResponse {
-  title: string;
-  description: string;
-  image_url: string;
-}
-
-interface BrandingResponse {
-  business_name: string;
-  storefront_url?: string;
-  logos?: LogosResponse;
-  og_metadata?: OgMetadataResponse;
-  blog_enabled?: boolean;
-}
+import { STATIC_BRANDING } from "@/lib/branding.generated";
 
 export interface Branding {
   businessName: string;
@@ -45,103 +19,57 @@ export interface Branding {
 }
 
 /**
- * Derives the domain from available request headers.
- * Uses x-forwarded-host (set by reverse proxy) or host header.
+ * Derives the domain from request headers. Used by blog fetchers that still
+ * need per-request host (since blog data isn't embeddable — it changes daily).
  *
- * Wrapped with React cache() to deduplicate within a single request.
+ * Returns "" during static generation (no request scope) so callers fall back
+ * to NEXT_PUBLIC_DOMAIN or other build-time hints.
  */
 export const getDerivedDomain = cache(async function getDerivedDomain(): Promise<string> {
   try {
     const headersList = await headers();
-
     const host = headersList.get("host");
     const xForwardedHost = headersList.get("x-forwarded-host");
-
-    // Prefer x-forwarded-host (set by reverse proxy) over direct host
     const effectiveHost = xForwardedHost || host;
-
-    if (!effectiveHost) {
-      return "";
-    }
-
-    // Remove port if present
+    if (!effectiveHost) return "";
     return effectiveHost.split(":")[0];
   } catch {
-    // headers() throws during static generation (DYNAMIC_SERVER_USAGE).
-    // Return empty domain so fetchBranding falls back to default branding.
     return "";
   }
 });
 
 /**
- * Gets the preferred logo URL from LogoURLs.
- * Prefers the first variant if available, falls back to original.
- */
-function getPreferredLogoUrl(logoUrls: LogoURLs | undefined): string | null {
-  if (!logoUrls) return null;
-
-  // If variants exist, use the first one (typically the optimized size)
-  if (logoUrls.variants && Object.keys(logoUrls.variants).length > 0) {
-    const firstVariant = Object.values(logoUrls.variants)[0];
-    if (firstVariant) return firstVariant;
-  }
-
-  return logoUrls.original || null;
-}
-
-/**
- * Fetches branding (logos + og metadata) from the API.
- * Returns null on error (graceful degradation).
+ * Returns branding embedded at build time by scripts/fetch-branding.mjs.
  *
- * Wrapped with React cache() to deduplicate within a single request.
+ * Each reseller deploys their own copy with NEXT_PUBLIC_DOMAIN pointing at
+ * their domain → branding is fixed for the lifetime of that deploy. Embedding
+ * it at build time means:
+ *   - No per-request HTTP call to backend
+ *   - No `force-dynamic` needed → CF Pages serves static HTML
+ *   - SEO crawlers see the right branding in the HTML
+ *
+ * When the reseller updates branding (logo / OG / business name), the backend
+ * triggers a CF Pages rebuild via deploy hook → new bundle within ~1 minute.
  */
 export const fetchBranding = cache(async function fetchBranding(): Promise<Branding | null> {
-  try {
-    const domain = await getDerivedDomain();
-    const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-
-    if (!apiBaseUrl) {
-      return null;
-    }
-
-    const url = new URL(`${apiBaseUrl}/public/branding`);
-    if (domain) {
-      url.searchParams.set("domain", domain);
-    }
-
-    console.log("[Branding]", url.toString(), "domain:", domain);
-
-    const response = await fetch(url.toString(), {
-      cache: "no-store",
-    });
-
-    console.log("[Branding] status:", response.status);
-
-    if (!response.ok) {
-      return null;
-    }
-
-    const data: BrandingResponse = await response.json();
-
-    return {
-      businessName: data.business_name || "",
-      storefrontUrl: data.storefront_url || null,
-      logoLightUrl: getPreferredLogoUrl(data.logos?.logo_light),
-      logoDarkUrl: getPreferredLogoUrl(data.logos?.logo_dark),
-      iconLightUrl: getPreferredLogoUrl(data.logos?.icon_light),
-      iconDarkUrl: getPreferredLogoUrl(data.logos?.icon_dark),
-      ogImageUrl: getPreferredLogoUrl(data.logos?.og_image),
-      blogEnabled: !!data.blog_enabled,
-      ogMetadata: data.og_metadata
-        ? {
-            title: data.og_metadata.title,
-            description: data.og_metadata.description,
-            imageUrl: data.og_metadata.image_url,
-          }
-        : null,
-    };
-  } catch (error) {
-    console.error("[Branding] Failed to fetch:", error);
-    return null;
+  if (!STATIC_BRANDING.businessName && !STATIC_BRANDING.logoLightUrl) {
+    return null; // never built (or fetched empty) — caller renders defaults
   }
+  return {
+    businessName: STATIC_BRANDING.businessName,
+    storefrontUrl: STATIC_BRANDING.storefrontUrl,
+    logoLightUrl: STATIC_BRANDING.logoLightUrl,
+    logoDarkUrl: STATIC_BRANDING.logoDarkUrl,
+    iconLightUrl: STATIC_BRANDING.iconLightUrl,
+    iconDarkUrl: STATIC_BRANDING.iconDarkUrl,
+    ogImageUrl: STATIC_BRANDING.ogImageUrl,
+    blogEnabled: STATIC_BRANDING.blogEnabled,
+    ogMetadata: STATIC_BRANDING.ogMetadata
+      ? {
+          title: STATIC_BRANDING.ogMetadata.title,
+          description: STATIC_BRANDING.ogMetadata.description,
+          imageUrl: STATIC_BRANDING.ogMetadata.imageUrl,
+        }
+      : null,
+  };
 });
