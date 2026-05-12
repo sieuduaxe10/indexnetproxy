@@ -4,6 +4,8 @@ import localFont from "next/font/local";
 import { routing } from "@/i18n/routing";
 import { Analytics } from "@/components/Analytics";
 
+export const runtime = "edge";
+
 const neueKaineFont = localFont({
   src: "./fonts/neue-kaine-variable-bold.woff2",
   variable: "--font-neue-kaine",
