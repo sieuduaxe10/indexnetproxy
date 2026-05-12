@@ -17,8 +17,9 @@ interface GenerateOptions {
 
 /**
  * Generates metadata with reseller override support.
- * When no reseller branding is present, `openGraph.images` is intentionally
- * left unset so the Next.js file-based `opengraph-image.tsx` convention wins.
+ * Falls back to /og-default.png (static asset) when reseller has not uploaded
+ * an OG image. The static fallback is served from the same host as the page,
+ * so reseller storefronts host their own copy automatically.
  */
 export async function generateDynamicMetadata(
   localeMetadata?: LocaleMetadata,
@@ -34,7 +35,9 @@ export async function generateDynamicMetadata(
     DEFAULT_DESCRIPTION;
 
   const brandingImage =
-    branding?.ogMetadata?.imageUrl || branding?.ogImageUrl || null;
+    branding?.ogMetadata?.imageUrl ||
+    branding?.ogImageUrl ||
+    `${SITE_URL}/og-default.png`;
 
   const alternates =
     options.path !== undefined && options.locale
@@ -64,25 +67,21 @@ export async function generateDynamicMetadata(
       type: "website",
       ...(alternates && { url: alternates.canonical }),
       ...(branding?.businessName && { siteName: branding.businessName }),
-      ...(brandingImage && {
-        images: [
-          {
-            url: brandingImage,
-            width: 1200,
-            height: 630,
-            alt: branding?.businessName || title,
-          },
-        ],
-      }),
+      images: [
+        {
+          url: brandingImage,
+          width: 1200,
+          height: 630,
+          alt: branding?.businessName || title,
+        },
+      ],
     },
 
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      ...(brandingImage && {
-        images: [{ url: brandingImage, alt: branding?.businessName || title }],
-      }),
+      images: [{ url: brandingImage, alt: branding?.businessName || title }],
     },
   };
 }
