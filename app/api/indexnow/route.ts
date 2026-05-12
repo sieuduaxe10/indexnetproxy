@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+export const runtime = "edge";
+
 /**
  * IndexNow key verification endpoint.
  * Bing/IndexNow verifies ownership by fetching the key file.

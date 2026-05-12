@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { getSitemapEntries } from "@/lib/api/blog";
 import { LOCALE_CODES, SITE_URL, toHreflang } from "@/lib/metadata/alternates";
 
+export const runtime = "edge";
+
 function buildLanguages(path: string): Record<string, string> {
   const languages: Record<string, string> = {};
   for (const code of LOCALE_CODES) {

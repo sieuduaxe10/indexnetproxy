@@ -1,6 +1,7 @@
 import { headers } from "next/headers";
 import { getRssUrl } from "@/lib/api/blog";
 
+export const runtime = "edge";
 export const revalidate = 300;
 
 // Returns the backend-rendered RSS XML directly. Domain is derived from the

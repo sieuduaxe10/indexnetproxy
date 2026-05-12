@@ -9,6 +9,7 @@ import { BrandingProvider } from "@/lib/branding/context";
 import { OrganizationJsonLd } from "@/components/JsonLd/Organization";
 import { WebSiteJsonLd } from "@/components/JsonLd/WebSite";
 
+export const runtime = "edge";
 export const dynamic = "force-dynamic";
 
 type Locale = (typeof routing.locales)[number];

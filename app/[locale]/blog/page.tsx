@@ -5,6 +5,8 @@ import { BlogList } from "@/components/Blog/BlogList";
 import { BlogPagination } from "@/components/Blog/BlogPagination";
 import { buildAlternates, SITE_URL } from "@/lib/metadata/alternates";
 
+export const runtime = "edge";
+
 export async function generateMetadata({
   params,
   searchParams,

@@ -12,6 +12,7 @@ import { buildAlternates } from "@/lib/metadata/alternates";
 
 // All posts are dynamic — generated on demand from the backend, no
 // generateStaticParams. Pages are cached via fetch revalidate (60s).
+export const runtime = "edge";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({

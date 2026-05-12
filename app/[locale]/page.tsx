@@ -7,6 +7,8 @@ import { SmoothScrollProvider } from "@/components/ScrollSmothlyProvider";
 import { FAQPageJsonLd } from "@/components/JsonLd/FAQPage";
 import { fetchBranding } from "@/lib/api/branding";
 
+export const runtime = "edge";
+
 // Lazy load below-the-fold sections to reduce initial bundle size
 const Pricing = dynamic(
   () => import("@/components/Pricing").then((mod) => ({ default: mod.Pricing })),
