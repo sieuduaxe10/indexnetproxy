@@ -41,3 +41,36 @@ export function buildAlternates(path: string, currentLocale: string) {
 }
 
 export { LOCALE_CODES };
+
+/**
+ * Build canonical + hreflang alternates for a blog post when slugs differ per
+ * locale (Option B: SEO-optimized per-language slugs).
+ *
+ * Only emits alternates for locales the post actually exists in — we never
+ * link to a 404. x-default points at English if available, else the first
+ * translation.
+ */
+export function buildAlternatesForBlogPost(
+  currentLocale: string,
+  slugByLocale: Record<string, string>,
+): { canonical: string; languages: Record<string, string> } {
+  const currentSlug = slugByLocale[currentLocale];
+  const canonical = currentSlug
+    ? `${SITE_URL}/${currentLocale}/blog/${currentSlug}`
+    : `${SITE_URL}/${currentLocale}/blog`;
+
+  const languages: Record<string, string> = {};
+  for (const [locale, slug] of Object.entries(slugByLocale)) {
+    languages[toHreflang(locale)] = `${SITE_URL}/${locale}/blog/${slug}`;
+  }
+
+  const defaultEntry = slugByLocale["en"]
+    ? ["en", slugByLocale["en"]]
+    : Object.entries(slugByLocale)[0];
+  if (defaultEntry) {
+    const [locale, slug] = defaultEntry;
+    languages["x-default"] = `${SITE_URL}/${locale}/blog/${slug}`;
+  }
+
+  return { canonical, languages };
+}

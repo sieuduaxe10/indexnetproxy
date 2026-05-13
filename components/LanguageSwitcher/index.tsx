@@ -4,6 +4,7 @@ import { locales } from "@/common/constant";
 import { usePathname, useRouter } from "@/i18n/routing";
 import { useLocale } from "next-intl";
 import { useState, useTransition } from "react";
+import { useBlogPostContext } from "@/components/Blog/BlogPostContext";
 
 export function LanguageSwitcher() {
   const [isPending, startTransition] = useTransition();
@@ -11,12 +12,30 @@ export function LanguageSwitcher() {
   const pathname = usePathname();
   const locale = useLocale();
   const [isOpen, setIsOpen] = useState(false);
+  const blogPost = useBlogPostContext();
 
   const currentLocale = locales.find((l) => l.code === locale);
 
+  // When rendered on a blog detail page, the slug differs per language —
+  // looking up the target translation's slug avoids navigating to a 404.
+  const slugByLocale = blogPost
+    ? Object.fromEntries(blogPost.availableLanguages.map((t) => [t.language, t.slug]))
+    : null;
+
+  // On blog detail, only allow switching to languages where the post exists.
+  // Filter out the current locale (no point) and any locale without a translation.
+  const availableLocales = slugByLocale
+    ? locales.filter((l) => slugByLocale[l.code] !== undefined)
+    : locales;
+
   function onSelectChange(nextLocale: string) {
     startTransition(() => {
-      router.replace(pathname, { locale: nextLocale });
+      if (slugByLocale && slugByLocale[nextLocale]) {
+        // Blog detail: navigate to the target locale's actual slug.
+        router.replace(`/blog/${slugByLocale[nextLocale]}`, { locale: nextLocale });
+      } else {
+        router.replace(pathname, { locale: nextLocale });
+      }
       setIsOpen(false);
     });
   }
@@ -58,7 +77,7 @@ export function LanguageSwitcher() {
             aria-hidden="true"
           />
           <div className="absolute right-0 mt-2 w-48 rounded-lg bg-white dark:bg-gray-800 shadow-lg z-20 overflow-hidden">
-            {locales.map((loc) => (
+            {availableLocales.map((loc) => (
               <button
                 key={loc.code}
                 onClick={() => onSelectChange(loc.code)}

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getSitemapEntries } from "@/lib/api/blog";
+import { getSitemapAll } from "@/lib/api/blog";
 import { LOCALE_CODES, SITE_URL, toHreflang } from "@/lib/metadata/alternates";
 
 export const runtime = "edge";
@@ -34,23 +34,33 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   );
 
-  // Fetch blog entries per locale — backend filters by language_code so each
-  // locale only emits posts that actually exist for it.
-  const localePostEntries = await Promise.all(
-    LOCALE_CODES.map(async (locale) => {
-      const posts = await getSitemapEntries(locale);
-      return posts.map((post) => {
-        const path = `/blog/${post.slug}`;
-        return {
-          url: `${SITE_URL}/${locale}${path}`,
-          lastModified: new Date(post.updated_at),
-          changeFrequency: "weekly" as const,
-          priority: 0.8,
-          alternates: { languages: buildLanguages(path) },
-        };
-      });
-    })
-  );
+  // Single backend round-trip — returns every post with all translations.
+  // We expand each into N per-locale URLs (one per existing translation) and
+  // emit hreflang alternates pointing only at slugs that actually exist.
+  // This is correct for SEO under Option B (slugs differ per language).
+  const { posts } = await getSitemapAll();
 
-  return [...staticEntries, ...localePostEntries.flat()];
+  const blogEntries = posts.flatMap((post) => {
+    // Per-post hreflang map: only the locales this post is translated into.
+    const perPostLanguages: Record<string, string> = {};
+    for (const t of post.translations) {
+      perPostLanguages[toHreflang(t.language)] = `${SITE_URL}/${t.language}/blog/${t.slug}`;
+    }
+    // x-default → English if available, else first translation.
+    const enTranslation = post.translations.find((t) => t.language === "en");
+    const defaultT = enTranslation ?? post.translations[0];
+    if (defaultT) {
+      perPostLanguages["x-default"] = `${SITE_URL}/${defaultT.language}/blog/${defaultT.slug}`;
+    }
+
+    return post.translations.map((t) => ({
+      url: `${SITE_URL}/${t.language}/blog/${t.slug}`,
+      lastModified: new Date(post.updated_at),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+      alternates: { languages: perPostLanguages },
+    }));
+  });
+
+  return [...staticEntries, ...blogEntries];
 }
