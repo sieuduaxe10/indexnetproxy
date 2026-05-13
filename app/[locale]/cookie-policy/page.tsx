@@ -8,6 +8,8 @@ import { Partnerships } from "@/components/Partnerships";
 import CookiePolicy from "@/components/CookiePolicy";
 import { buildAlternates } from "@/lib/metadata/alternates";
 
+export const runtime = "edge";
+
 export async function generateMetadata({
   params,
 }: {

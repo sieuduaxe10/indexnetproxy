@@ -8,6 +8,8 @@ import { Partnerships } from "@/components/Partnerships";
 import ResellerProgram from "@/components/ResellerProgram";
 import { buildAlternates } from "@/lib/metadata/alternates";
 
+export const runtime = "edge";
+
 export async function generateMetadata({
   params,
 }: {
