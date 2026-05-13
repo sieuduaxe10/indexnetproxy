@@ -6,9 +6,14 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Partnerships } from "@/components/Partnerships";
 import TermService from "@/components/TermService";
+import { routing } from "@/i18n/routing";
 import { buildAlternates } from "@/lib/metadata/alternates";
 
-export const runtime = "edge";
+export const dynamic = "force-static";
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata({
   params,
