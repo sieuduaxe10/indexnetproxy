@@ -7,9 +7,9 @@ import { Header } from "@/components/Header";
 import { Partnerships } from "@/components/Partnerships";
 import RefundService from "@/components/RefundService";
 import { routing } from "@/i18n/routing";
-import { buildAlternates } from "@/lib/metadata/alternates";
+import { generateDynamicMetadata } from "@/lib/metadata/generate";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -22,23 +22,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "legal.refund" });
-  const alternates = await buildAlternates("/refund-service", locale);
-  return {
-    title: t("title"),
-    description: t("description"),
-    alternates,
-    openGraph: {
-      title: t("title"),
-      description: t("description"),
-      url: alternates.canonical,
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
-    },
-  };
+  return generateDynamicMetadata(
+    { title: t("title"), description: t("description") },
+    { path: "/refund-service", locale }
+  );
 }
 
 export default async function RefundServicePage({

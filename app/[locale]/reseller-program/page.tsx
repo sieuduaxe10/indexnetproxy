@@ -9,7 +9,7 @@ import { Partnerships } from "@/components/Partnerships";
 import ResellerProgram from "@/components/ResellerProgram";
 import { routing } from "@/i18n/routing";
 import { fetchBranding } from "@/lib/api/branding";
-import { buildAlternates } from "@/lib/metadata/alternates";
+import { generateDynamicMetadata } from "@/lib/metadata/generate";
 
 // Per-request: page must inspect Host to decide whether to serve. Reseller
 // domains shouldn't expose the "become a NetProxy reseller" page to their
@@ -35,23 +35,10 @@ export async function generateMetadata({
   }
 
   const t = await getTranslations({ locale, namespace: "resellerProgram" });
-  const alternates = await buildAlternates("/reseller-program", locale);
-  return {
-    title: t("seoTitle"),
-    description: t("seoDescription"),
-    alternates,
-    openGraph: {
-      title: t("seoTitle"),
-      description: t("seoDescription"),
-      url: alternates.canonical,
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("seoTitle"),
-      description: t("seoDescription"),
-    },
-  };
+  return generateDynamicMetadata(
+    { title: t("seoTitle"), description: t("seoDescription") },
+    { path: "/reseller-program", locale }
+  );
 }
 
 export default async function ResellerProgramPage({
