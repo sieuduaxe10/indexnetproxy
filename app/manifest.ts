@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { fetchBranding } from "@/lib/api/branding";
 
-export const runtime = "edge";
+// OpenNext Workers serves the whole app on edge by default — no need to set
+// runtime here (and setting it can conflict with metadata-route handling).
 export const dynamic = "force-dynamic";
 
 export default async function manifest(): Promise<MetadataRoute.Manifest> {

@@ -9,14 +9,17 @@ import { BrandingProvider } from "@/lib/branding/context";
 import { OrganizationJsonLd } from "@/components/JsonLd/Organization";
 import { WebSiteJsonLd } from "@/components/JsonLd/WebSite";
 
-// Runtime per-request branding: one deploy serves every reseller's domain.
-// We read the request's Host header to pick the right reseller's branding,
-// so the layout must NOT be statically prerendered with a single branding.
+// Runtime per-request branding: one Worker deploy serves every reseller's
+// domain, and we read Host on each request to pick the right branding.
+// `force-dynamic` opts out of static rendering at the layout level so the
+// branding fetch is never frozen into prerendered HTML. We do NOT set
+// `runtime = "edge"` here — that would conflict with `generateStaticParams`
+// (Next forbids the pairing). OpenNext Workers serves the whole app on edge
+// regardless, so the runtime hint is unnecessary.
 export const dynamic = "force-dynamic";
-export const runtime = "edge";
 
-// Still emit static params so next-intl knows the locale set, but the actual
-// render happens per-request because of `dynamic = "force-dynamic"` above.
+// Still emit static params so next-intl can discover the locale list at build
+// time. The actual page render happens per-request because of force-dynamic.
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
