@@ -7,7 +7,7 @@ import { buildAlternates } from "@/lib/metadata/alternates";
 import { getCurrentSiteUrl } from "@/lib/metadata/site-url";
 import { fetchBranding } from "@/lib/api/branding";
 
-export const runtime = "edge";
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,

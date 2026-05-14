@@ -1,9 +1,4 @@
 import nextDynamic from "next/dynamic";
-
-// Branding is fetched per request from the incoming domain. The page must
-// render dynamically so each reseller's CNAME serves their own branding.
-export const dynamic = "force-dynamic";
-export const runtime = "edge";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
@@ -12,7 +7,18 @@ import { SmoothScrollProvider } from "@/components/ScrollSmothlyProvider";
 import { FAQPageJsonLd } from "@/components/JsonLd/FAQPage";
 import { fetchBranding } from "@/lib/api/branding";
 
-// Lazy load below-the-fold sections to reduce initial bundle size
+// Async server components — `next/dynamic` is only for CLIENT components.
+// Loading an async server component through next/dynamic produces a runtime
+// "Cannot read properties of undefined (reading 'default')" once OpenNext's
+// chunk resolver tries to await it. Import these directly instead.
+import { Footer } from "@/components/Footer";
+import { BlurBackground } from "@/components/BlurBackground";
+
+// Branding is fetched per request from the incoming domain. The page must
+// render dynamically so each reseller's CNAME serves their own branding.
+export const dynamic = "force-dynamic";
+
+// Client components below — safe to lazy-load via next/dynamic.
 const Pricing = nextDynamic(
   () => import("@/components/Pricing").then((mod) => ({ default: mod.Pricing })),
   { ssr: true }
@@ -37,16 +43,9 @@ const Resellers = nextDynamic(
   () => import("@/components/Resellers").then((mod) => ({ default: mod.Resellers })),
   { ssr: true }
 );
-const Footer = nextDynamic(
-  () => import("@/components/Footer").then((mod) => ({ default: mod.Footer })),
-  { ssr: true }
-);
 const Partnerships = nextDynamic(
   () => import("@/components/Partnerships").then((mod) => ({ default: mod.Partnerships })),
   { ssr: true }
-);
-const BlurBackground = nextDynamic(
-  () => import("@/components/BlurBackground").then((mod) => ({ default: mod.BlurBackground }))
 );
 const StickyExpandableList = nextDynamic(
   () => import("@/components/StickyExpandableList")

@@ -13,7 +13,8 @@ import { buildAlternatesForBlogPost } from "@/lib/metadata/alternates";
 
 // All posts are dynamic — generated on demand from the backend, no
 // generateStaticParams. Pages are cached via fetch revalidate (300s).
-export const runtime = "edge";
+// OpenNext Workers serves the whole app on edge regardless, so runtime hint
+// is unnecessary (and conflicts with the parent layout's generateStaticParams).
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
