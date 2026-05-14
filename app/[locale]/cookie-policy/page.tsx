@@ -22,7 +22,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "legal.cookie" });
-  const alternates = buildAlternates("/cookie-policy", locale);
+  const alternates = await buildAlternates("/cookie-policy", locale);
   return {
     title: t("title"),
     description: t("description"),

@@ -8,14 +8,15 @@ const DEFAULT_LOGO = "/images/logo/Logo.webp";
 
 const Logo = () => {
   const [hasError, setHasError] = useState(false);
-  const { logoLightUrl } = useBranding();
+  const { logoLightUrl, businessName } = useBranding();
   const src = hasError || !logoLightUrl ? DEFAULT_LOGO : logoLightUrl;
+  const alt = `${businessName || "NetProxy"} logo`;
 
   return (
     <div className="flex items-center">
       <Image
         src={src}
-        alt="Netproxy Logo"
+        alt={alt}
         width={174}
         height={44}
         sizes="(min-width: 810px) 134.5px, 174px"

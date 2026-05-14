@@ -37,7 +37,7 @@ export async function generateMetadata({
       : [{ language: locale, slug }]
     ).map((t) => [t.language, t.slug]),
   );
-  const alternates = buildAlternatesForBlogPost(locale, slugByLocale);
+  const alternates = await buildAlternatesForBlogPost(locale, slugByLocale);
 
   return {
     title,

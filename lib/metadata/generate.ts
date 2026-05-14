@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { fetchBranding } from "@/lib/api/branding";
-import { buildAlternates, SITE_URL } from "./alternates";
+import { buildAlternates } from "./alternates";
+import { getCurrentSiteUrl } from "./site-url";
 import { DEFAULT_TITLE, DEFAULT_DESCRIPTION, DEFAULT_ICONS } from "./defaults";
 
 interface LocaleMetadata {
@@ -25,7 +26,10 @@ export async function generateDynamicMetadata(
   localeMetadata?: LocaleMetadata,
   options: GenerateOptions = {}
 ): Promise<Metadata> {
-  const branding = await fetchBranding();
+  const [branding, siteUrl] = await Promise.all([
+    fetchBranding(),
+    getCurrentSiteUrl(),
+  ]);
 
   const title =
     branding?.ogMetadata?.title || localeMetadata?.title || DEFAULT_TITLE;
@@ -37,18 +41,18 @@ export async function generateDynamicMetadata(
   const brandingImage =
     branding?.ogMetadata?.imageUrl ||
     branding?.ogImageUrl ||
-    `${SITE_URL}/og-default.png`;
+    `${siteUrl}/og-default.png`;
 
   const alternates =
     options.path !== undefined && options.locale
       ? {
-          ...buildAlternates(options.path, options.locale),
-          types: { "application/rss+xml": `${SITE_URL}/api/rss` },
+          ...(await buildAlternates(options.path, options.locale)),
+          types: { "application/rss+xml": `${siteUrl}/api/rss` },
         }
       : undefined;
 
   return {
-    metadataBase: new URL(SITE_URL),
+    metadataBase: new URL(siteUrl),
     title,
     description,
     ...(alternates && { alternates }),

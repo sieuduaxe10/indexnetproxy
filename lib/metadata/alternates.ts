@@ -1,17 +1,15 @@
 import { locales } from "@/common/constant";
+import { getCurrentSiteUrl, FALLBACK_SITE_URL } from "./site-url";
 
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://netproxy.io";
+/**
+ * @deprecated Prefer `await getCurrentSiteUrl()` so canonical/hreflang point
+ * at the request's actual host. Kept exported only for callers that cannot
+ * await (e.g. callbacks emitting purely build-time URLs).
+ */
+export const SITE_URL = FALLBACK_SITE_URL;
 
 const LOCALE_CODES = locales.map((l) => l.code);
 
-/**
- * Map next-intl locale codes to BCP-47 hreflang values.
- * - `br` → `pt-BR` (Portuguese, Brazil)
- * - `ph` → `fil` (Filipino)
- * - `zh` → `zh-CN` (Simplified Chinese)
- * Others map 1:1.
- */
 const HREFLANG_MAP: Record<string, string> = {
   br: "pt-BR",
   ph: "fil",
@@ -23,19 +21,20 @@ export function toHreflang(locale: string): string {
 }
 
 /**
- * Build canonical + alternates.languages for a given path.
- * `path` is the locale-agnostic path segment, e.g. "", "/blog", "/blog/foo".
- * Must start with "/" or be empty.
+ * Build canonical + hreflang alternates for a non-blog page (homepage,
+ * /cookie-policy, etc.). Uses the request's host so canonical matches the
+ * domain the user is actually on — critical for multi-tenant SEO.
  */
-export function buildAlternates(path: string, currentLocale: string) {
+export async function buildAlternates(path: string, currentLocale: string) {
+  const siteUrl = await getCurrentSiteUrl();
   const normalized = path === "" || path === "/" ? "" : path;
-  const canonical = `${SITE_URL}/${currentLocale}${normalized}`;
+  const canonical = `${siteUrl}/${currentLocale}${normalized}`;
 
   const languages: Record<string, string> = {};
   for (const code of LOCALE_CODES) {
-    languages[toHreflang(code)] = `${SITE_URL}/${code}${normalized}`;
+    languages[toHreflang(code)] = `${siteUrl}/${code}${normalized}`;
   }
-  languages["x-default"] = `${SITE_URL}/en${normalized}`;
+  languages["x-default"] = `${siteUrl}/en${normalized}`;
 
   return { canonical, languages };
 }
@@ -50,18 +49,19 @@ export { LOCALE_CODES };
  * link to a 404. x-default points at English if available, else the first
  * translation.
  */
-export function buildAlternatesForBlogPost(
+export async function buildAlternatesForBlogPost(
   currentLocale: string,
   slugByLocale: Record<string, string>,
-): { canonical: string; languages: Record<string, string> } {
+): Promise<{ canonical: string; languages: Record<string, string> }> {
+  const siteUrl = await getCurrentSiteUrl();
   const currentSlug = slugByLocale[currentLocale];
   const canonical = currentSlug
-    ? `${SITE_URL}/${currentLocale}/blog/${currentSlug}`
-    : `${SITE_URL}/${currentLocale}/blog`;
+    ? `${siteUrl}/${currentLocale}/blog/${currentSlug}`
+    : `${siteUrl}/${currentLocale}/blog`;
 
   const languages: Record<string, string> = {};
   for (const [locale, slug] of Object.entries(slugByLocale)) {
-    languages[toHreflang(locale)] = `${SITE_URL}/${locale}/blog/${slug}`;
+    languages[toHreflang(locale)] = `${siteUrl}/${locale}/blog/${slug}`;
   }
 
   const defaultEntry = slugByLocale["en"]
@@ -69,7 +69,7 @@ export function buildAlternatesForBlogPost(
     : Object.entries(slugByLocale)[0];
   if (defaultEntry) {
     const [locale, slug] = defaultEntry;
-    languages["x-default"] = `${SITE_URL}/${locale}/blog/${slug}`;
+    languages["x-default"] = `${siteUrl}/${locale}/blog/${slug}`;
   }
 
   return { canonical, languages };

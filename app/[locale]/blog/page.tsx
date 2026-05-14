@@ -3,7 +3,9 @@ import { getTranslations } from "next-intl/server";
 import { listPosts, POSTS_PER_PAGE } from "@/lib/api/blog";
 import { BlogList } from "@/components/Blog/BlogList";
 import { BlogPagination } from "@/components/Blog/BlogPagination";
-import { buildAlternates, SITE_URL } from "@/lib/metadata/alternates";
+import { buildAlternates } from "@/lib/metadata/alternates";
+import { getCurrentSiteUrl } from "@/lib/metadata/site-url";
+import { fetchBranding } from "@/lib/api/branding";
 
 export const runtime = "edge";
 
@@ -19,7 +21,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "blog" });
 
   const currentPage = Math.max(1, Number(page) || 1);
-  const base = buildAlternates("/blog", locale);
+  const base = await buildAlternates("/blog", locale);
   const canonical =
     currentPage > 1 ? `${base.canonical}?page=${currentPage}` : base.canonical;
 
@@ -54,7 +56,11 @@ export default async function BlogPage({
   const t = await getTranslations({ locale, namespace: "blog" });
 
   const currentPage = Math.max(1, Number(page) || 1);
-  const { items, total } = await listPosts(locale, currentPage);
+  const [{ items, total }, branding, siteUrl] = await Promise.all([
+    listPosts(locale, currentPage),
+    fetchBranding(),
+    getCurrentSiteUrl(),
+  ]);
   const totalPages = Math.max(1, Math.ceil(total / POSTS_PER_PAGE));
 
   const jsonLd = {
@@ -62,11 +68,11 @@ export default async function BlogPage({
     "@type": "Blog",
     name: t("heroTitle"),
     description: t("seoDescription"),
-    url: `${SITE_URL}/${locale}/blog`,
+    url: `${siteUrl}/${locale}/blog`,
     publisher: {
       "@type": "Organization",
-      name: "NetProxy.io",
-      url: SITE_URL,
+      name: branding?.businessName || "NetProxy.io",
+      url: siteUrl,
     },
   };
 

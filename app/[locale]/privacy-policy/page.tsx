@@ -22,7 +22,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "legal.privacy" });
-  const alternates = buildAlternates("/privacy-policy", locale);
+  const alternates = await buildAlternates("/privacy-policy", locale);
   return {
     title: t("title"),
     description: t("description"),
