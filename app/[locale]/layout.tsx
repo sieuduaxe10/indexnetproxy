@@ -9,11 +9,14 @@ import { BrandingProvider } from "@/lib/branding/context";
 import { OrganizationJsonLd } from "@/components/JsonLd/Organization";
 import { WebSiteJsonLd } from "@/components/JsonLd/WebSite";
 
-// Static by default — branding is embedded at build time (lib/branding.generated.ts).
-// Reseller updates trigger a CF Pages rebuild via webhook, so each deploy carries
-// fresh branding. No `runtime = "edge"` needed for static pages.
+// Runtime per-request branding: one deploy serves every reseller's domain.
+// We read the request's Host header to pick the right reseller's branding,
+// so the layout must NOT be statically prerendered with a single branding.
+export const dynamic = "force-dynamic";
+export const runtime = "edge";
 
-// Pre-render every locale so Next.js generates static HTML at build time.
+// Still emit static params so next-intl knows the locale set, but the actual
+// render happens per-request because of `dynamic = "force-dynamic"` above.
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }

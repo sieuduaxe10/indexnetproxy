@@ -4,8 +4,7 @@
   "private": true,
   "packageManager": "pnpm@10.20.0",
   "scripts": {
-    "dev": "node scripts/fetch-branding.mjs && next dev",
-    "prebuild": "node scripts/fetch-branding.mjs",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

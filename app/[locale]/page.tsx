@@ -1,4 +1,9 @@
-import dynamic from "next/dynamic";
+import nextDynamic from "next/dynamic";
+
+// Branding is fetched per request from the incoming domain. The page must
+// render dynamically so each reseller's CNAME serves their own branding.
+export const dynamic = "force-dynamic";
+export const runtime = "edge";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
@@ -8,42 +13,42 @@ import { FAQPageJsonLd } from "@/components/JsonLd/FAQPage";
 import { fetchBranding } from "@/lib/api/branding";
 
 // Lazy load below-the-fold sections to reduce initial bundle size
-const Pricing = dynamic(
+const Pricing = nextDynamic(
   () => import("@/components/Pricing").then((mod) => ({ default: mod.Pricing })),
   { ssr: true }
 );
-const CaseStudies = dynamic(
+const CaseStudies = nextDynamic(
   () => import("@/components/CaseStudies").then((mod) => ({ default: mod.CaseStudies })),
   { ssr: true }
 );
-const TopCountries = dynamic(
+const TopCountries = nextDynamic(
   () => import("@/components/TopCountries").then((mod) => ({ default: mod.TopCountries })),
   { ssr: true }
 );
-const Contact = dynamic(
+const Contact = nextDynamic(
   () => import("@/components/Contact").then((mod) => ({ default: mod.Contact })),
   { ssr: true }
 );
-const FAQs = dynamic(
+const FAQs = nextDynamic(
   () => import("@/components/FAQs").then((mod) => ({ default: mod.FAQs })),
   { ssr: true }
 );
-const Resellers = dynamic(
+const Resellers = nextDynamic(
   () => import("@/components/Resellers").then((mod) => ({ default: mod.Resellers })),
   { ssr: true }
 );
-const Footer = dynamic(
+const Footer = nextDynamic(
   () => import("@/components/Footer").then((mod) => ({ default: mod.Footer })),
   { ssr: true }
 );
-const Partnerships = dynamic(
+const Partnerships = nextDynamic(
   () => import("@/components/Partnerships").then((mod) => ({ default: mod.Partnerships })),
   { ssr: true }
 );
-const BlurBackground = dynamic(
+const BlurBackground = nextDynamic(
   () => import("@/components/BlurBackground").then((mod) => ({ default: mod.BlurBackground }))
 );
-const StickyExpandableList = dynamic(
+const StickyExpandableList = nextDynamic(
   () => import("@/components/StickyExpandableList")
 );
 
