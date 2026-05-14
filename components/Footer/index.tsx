@@ -15,6 +15,9 @@ export const Footer = async () => {
     fetchBranding(),
   ]);
   const businessName = branding?.businessName || "NetProxy.io";
+  // Affiliate section is only relevant on the platform — reseller storefronts
+  // shouldn't promote "become a NetProxy reseller" links to their end users.
+  const isPlatform = branding?.isPlatform ?? false;
 
   const categoryLinks = [
     { href: "#faqs", label: t("category.faqs").toLocaleUpperCase() },
@@ -58,17 +61,21 @@ export const Footer = async () => {
       title: t("serviceTerm.title"),
       items: serviceTermLinks,
     },
-    {
-      title: t("affiliate.title"),
-      items: [
-        {
-          href: "https://seller.prx.network/",
-          label: t("affiliate.resellerProgram"),
-          external: true,
-        },
-        { label: t("affiliate.linkProgram") },
-      ],
-    },
+    ...(isPlatform
+      ? [
+          {
+            title: t("affiliate.title"),
+            items: [
+              {
+                href: "https://seller.prx.network/",
+                label: t("affiliate.resellerProgram"),
+                external: true,
+              },
+              { label: t("affiliate.linkProgram") },
+            ],
+          },
+        ]
+      : []),
   ];
 
   return (
@@ -143,22 +150,24 @@ export const Footer = async () => {
               {t("account.login")}
             </FooterLoginLink>
           </div>
-          <div className="flex flex-col gap-4">
-            <div className="font-neue-kaine-bold text-primary text-21">
-              {t("affiliate.title")}
-            </div>
-            <div>
-              <Link
-                href="/reseller-program"
-                className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item block"
-              >
-                {t("affiliate.resellerProgram")}
-              </Link>
-              <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
-                {t("affiliate.linkProgram")}
+          {isPlatform && (
+            <div className="flex flex-col gap-4">
+              <div className="font-neue-kaine-bold text-primary text-21">
+                {t("affiliate.title")}
+              </div>
+              <div>
+                <Link
+                  href="/reseller-program"
+                  className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item block"
+                >
+                  {t("affiliate.resellerProgram")}
+                </Link>
+                <div className="text-xs font-ibm-plex-mono uppercase text-footer-text font-medium menu-item">
+                  {t("affiliate.linkProgram")}
+                </div>
               </div>
             </div>
-          </div>
+          )}
           <div className="flex flex-col gap-4">
             <div className="font-neue-kaine-bold text-primary text-21">
               {t("category.title")}

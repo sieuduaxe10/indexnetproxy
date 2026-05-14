@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { BlurBackground } from "@/components/BlurBackground";
@@ -7,9 +8,13 @@ import { Header } from "@/components/Header";
 import { Partnerships } from "@/components/Partnerships";
 import ResellerProgram from "@/components/ResellerProgram";
 import { routing } from "@/i18n/routing";
+import { fetchBranding } from "@/lib/api/branding";
 import { buildAlternates } from "@/lib/metadata/alternates";
 
-export const dynamic = "force-static";
+// Per-request: page must inspect Host to decide whether to serve. Reseller
+// domains shouldn't expose the "become a NetProxy reseller" page to their
+// own end users.
+export const dynamic = "force-dynamic";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -21,6 +26,14 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const branding = await fetchBranding();
+
+  // Don't emit metadata for a page that returns 404 — keeps social
+  // crawlers honest if they hit /reseller-program on a reseller domain.
+  if (branding && !branding.isPlatform) {
+    return { title: "Not Found" };
+  }
+
   const t = await getTranslations({ locale, namespace: "resellerProgram" });
   const alternates = await buildAlternates("/reseller-program", locale);
   return {
@@ -48,6 +61,15 @@ export default async function ResellerProgramPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  const branding = await fetchBranding();
+  // Reseller domain → page doesn't exist.
+  // Branding null (backend unreachable, etc.) → fall through and serve the
+  // page; treating an outage as "hide it" would be a worse UX than rendering
+  // marketing copy meant for the platform.
+  if (branding && !branding.isPlatform) {
+    notFound();
+  }
 
   return (
     <main>

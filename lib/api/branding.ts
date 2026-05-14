@@ -26,6 +26,7 @@ interface BrandingResponse {
   logos?: LogosResponse;
   og_metadata?: OgMetadataResponse;
   blog_enabled?: boolean;
+  is_platform?: boolean;
 }
 
 export interface Branding {
@@ -37,6 +38,12 @@ export interface Branding {
   iconDarkUrl: string | null;
   ogImageUrl: string | null;
   blogEnabled: boolean;
+  /**
+   * TRUE when the request resolves to the platform's main site
+   * (config.IsMainSiteDomain on backend). FALSE for any reseller domain.
+   * Gates platform-only routes like /reseller-program.
+   */
+  isPlatform: boolean;
   ogMetadata: {
     title: string;
     description: string;
@@ -120,6 +127,7 @@ export const fetchBranding = cache(async function fetchBranding(): Promise<Brand
       iconLightUrl: getPreferredLogoUrl(data.logos?.icon_light),
       iconDarkUrl: getPreferredLogoUrl(data.logos?.icon_dark),
       ogImageUrl: getPreferredLogoUrl(data.logos?.og_image),
+      isPlatform: !!data.is_platform,
       blogEnabled: !!data.blog_enabled,
       ogMetadata: data.og_metadata
         ? {
