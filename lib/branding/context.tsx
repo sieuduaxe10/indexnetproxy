@@ -11,6 +11,11 @@ export interface BrandingContextValue {
   iconDarkUrl: string | null;
   ogImageUrl: string | null;
   blogEnabled: boolean;
+  /**
+   * TRUE on the platform main site; FALSE on reseller domains. Used to hide
+   * platform-only nav links (e.g. /reseller-program) on reseller storefronts.
+   */
+  isPlatform: boolean;
 }
 
 const BrandingContext = createContext<BrandingContextValue | null>(null);
@@ -30,6 +35,7 @@ export function BrandingProvider({ children, branding }: BrandingProviderProps) 
     iconDarkUrl: null,
     ogImageUrl: null,
     blogEnabled: false,
+    isPlatform: false,
   };
 
   return (
@@ -52,6 +58,7 @@ export function useBranding(): BrandingContextValue {
       iconDarkUrl: null,
       ogImageUrl: null,
       blogEnabled: false,
+      isPlatform: false,
     };
   }
 

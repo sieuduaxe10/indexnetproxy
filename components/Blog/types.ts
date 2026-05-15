@@ -3,5 +3,6 @@
 export type {
   PublicPostListItem as PostListItem,
   PublicPostDetail as PostDetail,
-  SitemapEntry,
+  TranslationReference,
+  SitemapPost,
 } from "@/lib/api/blog";

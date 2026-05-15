@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { fetchBranding } from "@/lib/api/branding";
-import { buildAlternates, SITE_URL } from "./alternates";
+import { buildAlternates } from "./alternates";
+import { getCurrentSiteUrl } from "./site-url";
 import { DEFAULT_TITLE, DEFAULT_DESCRIPTION, DEFAULT_ICONS } from "./defaults";
 
 interface LocaleMetadata {
@@ -17,14 +18,18 @@ interface GenerateOptions {
 
 /**
  * Generates metadata with reseller override support.
- * When no reseller branding is present, `openGraph.images` is intentionally
- * left unset so the Next.js file-based `opengraph-image.tsx` convention wins.
+ * Falls back to /og-default.png (static asset) when reseller has not uploaded
+ * an OG image. The static fallback is served from the same host as the page,
+ * so reseller storefronts host their own copy automatically.
  */
 export async function generateDynamicMetadata(
   localeMetadata?: LocaleMetadata,
   options: GenerateOptions = {}
 ): Promise<Metadata> {
-  const branding = await fetchBranding();
+  const [branding, siteUrl] = await Promise.all([
+    fetchBranding(),
+    getCurrentSiteUrl(),
+  ]);
 
   const title =
     branding?.ogMetadata?.title || localeMetadata?.title || DEFAULT_TITLE;
@@ -34,18 +39,20 @@ export async function generateDynamicMetadata(
     DEFAULT_DESCRIPTION;
 
   const brandingImage =
-    branding?.ogMetadata?.imageUrl || branding?.ogImageUrl || null;
+    branding?.ogMetadata?.imageUrl ||
+    branding?.ogImageUrl ||
+    `${siteUrl}/og-default.png`;
 
   const alternates =
     options.path !== undefined && options.locale
       ? {
-          ...buildAlternates(options.path, options.locale),
-          types: { "application/rss+xml": `${SITE_URL}/api/rss` },
+          ...(await buildAlternates(options.path, options.locale)),
+          types: { "application/rss+xml": `${siteUrl}/api/rss` },
         }
       : undefined;
 
   return {
-    metadataBase: new URL(SITE_URL),
+    metadataBase: new URL(siteUrl),
     title,
     description,
     ...(alternates && { alternates }),
@@ -64,25 +71,21 @@ export async function generateDynamicMetadata(
       type: "website",
       ...(alternates && { url: alternates.canonical }),
       ...(branding?.businessName && { siteName: branding.businessName }),
-      ...(brandingImage && {
-        images: [
-          {
-            url: brandingImage,
-            width: 1200,
-            height: 630,
-            alt: branding?.businessName || title,
-          },
-        ],
-      }),
+      images: [
+        {
+          url: brandingImage,
+          width: 1200,
+          height: 630,
+          alt: branding?.businessName || title,
+        },
+      ],
     },
 
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      ...(brandingImage && {
-        images: [{ url: brandingImage, alt: branding?.businessName || title }],
-      }),
+      images: [{ url: brandingImage, alt: branding?.businessName || title }],
     },
   };
 }

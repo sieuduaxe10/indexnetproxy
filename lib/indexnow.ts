@@ -1,4 +1,5 @@
-import { SITE_URL, LOCALE_CODES } from "@/lib/metadata/alternates";
+import { LOCALE_CODES } from "@/lib/metadata/alternates";
+import { getCurrentSiteUrl } from "@/lib/metadata/site-url";
 
 const INDEXNOW_KEY = process.env.INDEXNOW_API_KEY;
 
@@ -7,25 +8,23 @@ const INDEXNOW_ENDPOINTS = [
   "https://api.indexnow.org/indexnow",
 ];
 
-/**
- * Build all locale URLs for a given path.
- * e.g. path="/blog/my-post" → ["https://netproxy.io/en/blog/my-post", "https://netproxy.io/vi/blog/my-post", ...]
- */
-function buildLocaleUrls(path: string): string[] {
-  return LOCALE_CODES.map((locale) => `${SITE_URL}/${locale}${path}`);
+function buildLocaleUrls(siteUrl: string, path: string): string[] {
+  return LOCALE_CODES.map((locale) => `${siteUrl}/${locale}${path}`);
 }
 
 /**
  * Submit URLs to IndexNow (Bing + shared endpoint covering Yandex, Seznam, Naver).
- * Non-blocking — logs errors but never throws.
+ * Non-blocking — logs errors but never throws. Must be called from a request
+ * scope so getCurrentSiteUrl() can resolve the right host.
  */
 export async function submitToIndexNow(urls: string[]): Promise<void> {
   if (!INDEXNOW_KEY || urls.length === 0) return;
+  const siteUrl = await getCurrentSiteUrl();
 
   const payload = {
-    host: new URL(SITE_URL).host,
+    host: new URL(siteUrl).host,
     key: INDEXNOW_KEY,
-    keyLocation: `${SITE_URL}/api/indexnow`,
+    keyLocation: `${siteUrl}/api/indexnow`,
     urlList: urls,
   };
 
@@ -47,21 +46,17 @@ export async function submitToIndexNow(urls: string[]): Promise<void> {
   );
 }
 
-/**
- * Submit a blog post path to IndexNow across all locales.
- */
 export async function submitPostToIndexNow(slug: string): Promise<void> {
+  const siteUrl = await getCurrentSiteUrl();
   const urls = [
-    ...buildLocaleUrls(`/blog/${slug}`),
-    `${SITE_URL}/sitemap.xml`,
+    ...buildLocaleUrls(siteUrl, `/blog/${slug}`),
+    `${siteUrl}/sitemap.xml`,
   ];
   await submitToIndexNow(urls);
 }
 
-/**
- * Submit a blog category path to IndexNow across all locales.
- */
 export async function submitCategoryToIndexNow(slug: string): Promise<void> {
-  const urls = buildLocaleUrls(`/blog/category/${slug}`);
+  const siteUrl = await getCurrentSiteUrl();
+  const urls = buildLocaleUrls(siteUrl, `/blog/category/${slug}`);
   await submitToIndexNow(urls);
 }

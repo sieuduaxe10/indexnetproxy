@@ -40,3 +40,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Build-time generated branding (per-deploy artifact)
+lib/branding.generated.ts
+
+# OpenNext / Cloudflare
+.open-next/
+.wrangler/
+.dev.vars
+cloudflare-env.d.ts

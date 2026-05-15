@@ -1,4 +1,6 @@
 // GsapMarquee.tsx
+"use client";
+
 import React, {
   FC,
   ReactNode,

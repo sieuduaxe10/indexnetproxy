@@ -1,8 +1,15 @@
-import { SITE_URL } from "@/lib/metadata/alternates";
+import { fetchBranding } from "@/lib/api/branding";
+import { getCurrentSiteUrl } from "@/lib/metadata/site-url";
 import type { PostDetail } from "./types";
 
-export function JsonLd({ post, locale }: { post: PostDetail; locale: string }) {
-  const url = `${SITE_URL}/${locale}/blog/${post.slug}`;
+export async function JsonLd({ post, locale }: { post: PostDetail; locale: string }) {
+  const [branding, siteUrl] = await Promise.all([
+    fetchBranding(),
+    getCurrentSiteUrl(),
+  ]);
+  const name = branding?.businessName || "NetProxy.io";
+  const logoUrl = branding?.logoLightUrl || `${siteUrl}/images/logo/Logo.webp`;
+  const url = `${siteUrl}/${locale}/blog/${post.slug}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -19,16 +26,16 @@ export function JsonLd({ post, locale }: { post: PostDetail; locale: string }) {
     },
     author: {
       "@type": "Organization",
-      name: "NetProxy.io",
-      url: SITE_URL,
+      name,
+      url: siteUrl,
     },
     publisher: {
       "@type": "Organization",
-      name: "NetProxy.io",
-      url: SITE_URL,
+      name,
+      url: siteUrl,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/images/logo/Logo.webp`,
+        url: logoUrl,
       },
     },
   };

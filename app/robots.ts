@@ -1,7 +1,10 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL } from "@/lib/metadata/alternates";
+import { getCurrentSiteUrl } from "@/lib/metadata/site-url";
 
-export default function robots(): MetadataRoute.Robots {
+export const dynamic = "force-dynamic";
+
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const siteUrl = await getCurrentSiteUrl();
   return {
     rules: [
       {
@@ -10,7 +13,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/studio/"],
       },
     ],
-    sitemap: `${SITE_URL}/sitemap.xml`,
-    host: SITE_URL,
+    sitemap: `${siteUrl}/sitemap.xml`,
+    host: siteUrl,
   };
 }

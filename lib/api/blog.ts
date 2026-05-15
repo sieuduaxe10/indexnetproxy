@@ -39,6 +39,11 @@ export interface PublicPostListItem {
   updated_at: string;
 }
 
+export interface TranslationReference {
+  language: string;
+  slug: string;
+}
+
 export interface PublicPostDetail {
   id: string;
   slug: string;
@@ -51,6 +56,7 @@ export interface PublicPostDetail {
   source_language: string;
   published_at: string;
   updated_at: string;
+  available_languages: TranslationReference[];
 }
 
 export interface ListPostsResponse {
@@ -60,9 +66,14 @@ export interface ListPostsResponse {
   per_page: number;
 }
 
-export interface SitemapEntry {
-  slug: string;
+export interface SitemapPost {
+  post_id: string;
   updated_at: string;
+  translations: TranslationReference[];
+}
+
+export interface SitemapAllResponse {
+  posts: SitemapPost[];
 }
 
 export const listPosts = cache(async (lang: string, page = 1): Promise<ListPostsResponse> => {
@@ -97,14 +108,18 @@ export const getRelatedPosts = cache(async (lang: string, slug: string, limit = 
   return data?.items ?? [];
 });
 
-export const getSitemapEntries = cache(async (lang: string): Promise<SitemapEntry[]> => {
+/**
+ * Returns ALL posts for the resolved tenant with ALL their translations.
+ * Frontend expands each entry into N per-locale URLs with hreflang alternates
+ * for the sitemap. Single backend round-trip — no per-locale loop.
+ */
+export const getSitemapAll = cache(async (): Promise<SitemapAllResponse> => {
   const domain = await getDerivedDomain();
   const url = buildUrl("/public/blog/sitemap", {
-    lang,
     domain: domain || undefined,
   });
-  const data = await fetchJson<{ items: SitemapEntry[] }>(url, 3600);
-  return data?.items ?? [];
+  const data = await fetchJson<SitemapAllResponse>(url, 3600);
+  return data ?? { posts: [] };
 });
 
 export function getRssUrl(lang: string, domain: string) {

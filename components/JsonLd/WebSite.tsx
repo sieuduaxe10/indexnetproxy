@@ -1,14 +1,21 @@
-import { SITE_URL } from "@/lib/metadata/alternates";
+import { fetchBranding } from "@/lib/api/branding";
+import { getCurrentSiteUrl } from "@/lib/metadata/site-url";
 
-export function WebSiteJsonLd() {
+export async function WebSiteJsonLd() {
+  const [branding, siteUrl] = await Promise.all([
+    fetchBranding(),
+    getCurrentSiteUrl(),
+  ]);
+  const name = branding?.businessName || "NetProxy.io";
+
   const data = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${SITE_URL}#website`,
-    name: "NetProxy.io",
-    url: SITE_URL,
+    "@id": `${siteUrl}#website`,
+    name,
+    url: siteUrl,
     publisher: {
-      "@id": `${SITE_URL}#organization`,
+      "@id": `${siteUrl}#organization`,
     },
     inLanguage: [
       "en",
