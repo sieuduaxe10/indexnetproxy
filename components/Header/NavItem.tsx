@@ -1,6 +1,6 @@
 "use client";
 import NextLink from "next/link";
-import { Link as I18nLink } from "@/i18n/routing";
+import { Link as I18nLink, usePathname } from "@/i18n/routing";
 import { ibmPlexMono } from "@/app/fonts";
 import Image from "next/image";
 
@@ -13,13 +13,20 @@ export const NavItem = ({
   label: string;
   iconPath: string;
 }) => {
+  const pathname = usePathname();
   const isAnchor = href.startsWith("#");
-  const LinkComponent = isAnchor ? NextLink : I18nLink;
+  const isHome = pathname === "/";
+
+  // On non-home pages, anchor links must navigate to the home page first
+  // (next-intl's Link applies the locale prefix automatically).
+  const useI18nLink = !isAnchor || !isHome;
+  const LinkComponent = useI18nLink ? I18nLink : NextLink;
+  const finalHref = isAnchor && !isHome ? `/${href}` : href;
 
   return (
     <li className="cursor-pointer">
       <LinkComponent
-        href={href}
+        href={finalHref}
         className={`${ibmPlexMono.className} text-xs font-medium cursor-pointer`}
       >
         <div className="group relative flex items-center px-4 h-11 rounded-lg  cursor-pointer top-nav-item hover:gap-1 leading-[120%] tracking-normal">

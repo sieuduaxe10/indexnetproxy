@@ -1,19 +1,25 @@
+"use client";
 import NextLink from "next/link";
-import { Link as I18nLink } from "@/i18n/routing";
+import { Link as I18nLink, usePathname } from "@/i18n/routing";
 import { navLink } from "../Header/navLink";
 import { ibmPlexMono } from "@/app/fonts";
 
 export const HamburgerMenuItem = () => {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   return navLink.map((item) => {
     const isAnchor = item.href.startsWith("#");
-    const LinkComponent = isAnchor ? NextLink : I18nLink;
+    const useI18nLink = !isAnchor || !isHome;
+    const LinkComponent = useI18nLink ? I18nLink : NextLink;
+    const finalHref = isAnchor && !isHome ? `/${item.href}` : item.href;
 
     return (
       <li
         key={item.href}
         className="h-11 px-4 hover:bg-gray-light rounded-md flex justify-center"
       >
-        <LinkComponent href={item.href} className="flex items-center gap-2">
+        <LinkComponent href={finalHref} className="flex items-center gap-2">
           {item.iconComponent && (
             <item.iconComponent
               width={20}
